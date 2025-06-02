@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>주문내역</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/order.css">
+</head>
+<body>
+    <main id="orderHistory" class="bgGray">
+        <header>
+            <h1>주문내역</h1>
+            <button class="btnShowCalendar">
+                <svg viewBox="0 0 16 16">
+                    <g>
+                        <path d="m2,5v9h12V5H2Zm11-3h2c.52-.03.97.37,1,.89,0,.04,0,.08,0,.11v12c.03.52-.37.97-.89,1-.04,0-.08,0-.11,0H1c-.52.03-.97-.37-1-.89,0-.04,0-.08,0-.11V3c-.03-.52.37-.97.89-1,.04,0,.08,0,.11,0h2v-1C2.97.48,3.37.03,3.89,0c.04,0,.08,0,.11,0,.52-.03.97.37,1,.89,0,.04,0,.08,0,.11v1h6v-1C11,.45,11.45,0,12,0s1,.45,1,1v1Zm-1,10h-2v-2h2v2Zm-3,0h-2v-2h2v2Zm3-3h-2v-2h2v2Zm-3,0h-2v-2h2v2Zm-3,3h-2v-2h2v2Z"/>
+                    </g>
+                </svg>
+                <span class="blind">달력으로 보</span>
+            </button>
+        </header>
+        <div class="bgContent bgGray">
+            <section class="sectionDate">
+                <button class="btnDatePicker">
+                    <span class="title">수령일</span>2023.01.30 월요일
+                    <svg viewBox="0 0 16 16" class="iconUnfold">
+                        <g>
+                            <rect width="16" height="16"/>
+                            <path d="m3.75,5.88l4.25,4.24,4.25-4.24"/>
+                        </g>
+                    </svg>
+                    <svg viewBox="0 0 16 16" class="iconFold hidden">
+                        <g>
+                            <rect width="16" height="16"/>
+                            <path d="m3.75,10.77l4.25-4.24,4.25,4.24"/>
+                        </g>
+                    </svg>
+                </button>
+            </section>
+            <section class="sectionPicker hidden">
+                <div class="areaCurrent">
+                    <fieldset class="setPrevious">
+                        <button class="btnPrevious">
+                            <svg viewBox="0 0 16 16" class="iconBack">
+                                <g>
+                                    <rect width="16" height="16"/>
+                                    <path d="M9.74,11.98L5.5,7.75,9.74,3.5"/>
+                                </g>
+                            </svg>
+                            <span class="blind">이전월</span>
+                        </button>
+                    </fieldset>
+                    2022.01
+                    <fieldset class="setNext">
+                        <button class="btnNext">
+                            <svg viewBox="0 0 16 16" class="iconMore">
+                                <g>
+                                    <rect width="16" height="16"/>
+                                    <path d="M6.26,11.98l4.24-4.24L6.26,3.5"/>
+                                </g>
+                            </svg>
+                            <span class="blind">다음월</span>
+                        </button>
+                    </fieldset>
+                </div>
+                <table class="areaDateTable">
+                    <tr>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                        <th>토</th>
+                        <th>일</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="previous-26" disabled/>
+                                <label for="previous-26" class="labelDate borderMain">26</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="previous-27" disabled/>
+                                <label for="previous-27" class="labelDate borderMain">27</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="previous-28" disabled/>
+                                <label for="previous-28" class="labelDate borderMain">28</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="previous-29" disabled/>
+                                <label for="previous-29" class="labelDate borderMain">29</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="previous-30" disabled/>
+                                <label for="previous-30" class="labelDate borderMain">30</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="previous-31" disabled/>
+                                <label for="previous-31" class="labelDate borderMain">31</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-1" />
+                                <label for="current-1" class="labelDate borderMain">1</label>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-2" />
+                                <label for="current-2" class="labelDate borderMain">2</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-3" />
+                                <label for="current-3" class="labelDate borderMain">3</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-4" />
+                                <label for="current-4" class="labelDate borderMain">4</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-5" />
+                                <label for="current-5" class="labelDate borderMain">5</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-6" />
+                                <label for="current-6" class="labelDate borderMain">6</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-7" />
+                                <label for="current-7" class="labelDate borderMain">7</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-8" />
+                                <label for="current-8" class="labelDate borderMain">8</label>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-9" />
+                                <label for="current-9" class="labelDate borderMain">9</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-10" />
+                                <label for="current-10" class="labelDate borderMain">10</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-11" />
+                                <label for="current-11" class="labelDate borderMain">11</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-12" />
+                                <label for="current-12" class="labelDate borderMain">12</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-13" />
+                                <label for="current-13" class="labelDate borderMain">13</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-14" />
+                                <label for="current-14" class="labelDate borderMain">14</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-15" />
+                                <label for="current-15" class="labelDate borderMain">15</label>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-16" />
+                                <label for="current-16" class="labelDate borderMain">16</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-17" />
+                                <label for="current-17" class="labelDate borderMain">17</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-18" />
+                                <label for="current-18" class="labelDate borderMain">18</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-19" />
+                                <label for="current-19" class="labelDate borderMain">19</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-20" />
+                                <label for="current-20" class="labelDate borderMain">20</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-21" />
+                                <label for="current-21" class="labelDate borderMain">21</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-22" />
+                                <label for="current-22" class="labelDate borderMain">22</label>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-23" />
+                                <label for="current-23" class="labelDate borderMain">23</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-24" />
+                                <label for="current-24" class="labelDate borderMain">24</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-25" />
+                                <label for="current-25" class="labelDate borderMain">25</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-26" />
+                                <label for="current-26" class="labelDate borderMain">26</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-27" />
+                                <label for="current-27" class="labelDate borderMain">27</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-28" />
+                                <label for="current-28" class="labelDate borderMain">28</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-29" />
+                                <label for="current-29" class="labelDate borderMain">29</label>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate checked" id="current-30" />
+                                <label for="current-30" class="labelDate borderMain">30</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="current-31" />
+                                <label for="current-31" class="labelDate borderMain">31</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="next-1" disabled/>
+                                <label for="next-1" class="labelDate borderMain">1</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="next-2" disabled/>
+                                <label for="next-2" class="labelDate borderMain">2</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="next-3" disabled/>
+                                <label for="next-3" class="labelDate borderMain">3</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="next-4" disabled/>
+                                <label for="next-4" class="labelDate borderMain">4</label>
+                            </fieldset>
+                        </td>
+                        <td>
+                            <fieldset class="setDate">
+                                <input type="radio" name="date" class="inputDate" id="next-5" disabled/>
+                                <label for="next-5" class="labelDate borderMain">5</label>
+                            </fieldset>
+                        </td>
+                    </tr>
+                </table>
+                <div class="areaButton">
+                    <fieldset class="setPickerCancel">
+                        <button class="btnPickerCancel borderMain fontMain">취소</button>
+                    </fieldset>
+                    <fieldset class="setPicker">
+                        <button class="btnPicker bgMain">검색</button>
+                    </fieldset>
+                </div>
+            </section>
+            <section class="sectionNone hidden"><!-- 주문내역이 없을 경우 -->
+                <svg viewBox="0 0 55 55" class="iconNone">
+                    <g>
+                        <path d="m29.67,32.32h-4.36l-.45-17.35h5.29l-.47,17.35Zm-2.17,7.7c-.51,0-1.01-.13-1.45-.38-.44-.25-.8-.61-1.05-1.05-.26-.44-.38-.94-.37-1.45-.02-.5.11-.99.37-1.42.25-.43.61-.79,1.05-1.03.44-.25.94-.37,1.44-.37.49,0,.98.13,1.41.37.44.25.8.6,1.06,1.04.26.43.4.91.4,1.41,0,.51-.14,1.01-.4,1.45-.25.44-.62.8-1.06,1.05-.43.25-.91.38-1.41.38Z"/>
+                        <circle cx="27.5" cy="27.5" r="26"/>
+                    </g>
+                </svg>
+                <div class="textNone">해당 날짜의 주문내역이 없어요</div>
+            </section>
+            <section class="sectionOrderCard">
+                <fieldset class="setSquare allCheck">
+                    <input type="checkbox" class="inputSquare" id="is-all" />
+                    <label for="is-all" class="labelSquare">
+                        <svg viewBox="0 0 16 16" class="iconSquare">
+                            <g>
+                                <rect width="16" height="16"/>
+                                <path d="m6.97,11.81l-3.97-3.97.8-.8,3.16,3.1,5.24-5.23.8.8-6.03,6.1Z"/>
+                            </g>
+                        </svg>
+                        전체선택
+                    </label>
+                </fieldset>
+                <div class="areaOrderCard">
+                    <div class="areaStore">
+                        <fieldset class="setSquare storeName">
+                            <input type="checkbox" class="inputSquare" id="isStore-1" />
+                            <label for="isStore-1" class="labelSquare">
+                                <svg viewBox="0 0 16 16" class="iconSquare">
+                                    <g>
+                                        <rect width="16" height="16"/>
+                                        <path d="m6.97,11.81l-3.97-3.97.8-.8,3.16,3.1,5.24-5.23.8.8-6.03,6.1Z"/>
+                                    </g>
+                                </svg>
+                                프리미엄관
+                                <div class="badgeSubscribe">구독</div><!-- 구독뱃지 -->
+                            </label>
+                        </fieldset>
+                        <fieldset class="setSquare orderMenu">
+                            <input type="checkbox" class="inputSquare" id="isOrder-1" />
+                            <label for="isOrder-1" class="labelSquare">
+                                <svg viewBox="0 0 16 16" class="iconSquare">
+                                    <g>
+                                        <rect width="16" height="16"/>
+                                        <path d="m6.97,11.81l-3.97-3.97.8-.8,3.16,3.1,5.24-5.23.8.8-6.03,6.1Z"/>
+                                    </g>
+                                </svg>
+                                <p>
+                                    <span class="menu">도시락</span>
+                                    <span class="amount">9,500원</span>
+                                </p>
+                                <p>
+                                    <span class="orderStatus fontMain">접수대기</span><!-- 접수대기일 경우 클래스 fontMain -->
+                                    <span class="quantity">1개</span>
+                                </p>
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="areaStore">
+                        <fieldset class="setSquare storeName">
+                            <input type="checkbox" class="inputSquare" id="isStore-2" disabled /><!-- 해당 상점의 주문내역에 체크박스가 없을 경우 체크박스 인풋 disable -->
+                            <label for="isStore-2" class="labelSquare">
+                                <svg viewBox="0 0 16 16" class="iconSquare">
+                                    <g>
+                                        <rect width="16" height="16"/>
+                                        <path d="m6.97,11.81l-3.97-3.97.8-.8,3.16,3.1,5.24-5.23.8.8-6.03,6.1Z"/>
+                                    </g>
+                                </svg>
+                                프리미엄관
+                                <div class="badgeSubscribe">구독</div><!-- 구독뱃지 -->
+                            </label>
+                        </fieldset>
+                        <fieldset class="setSquare orderMenu">
+                            <input type="checkbox" class="inputSquare" id="isOrder-2" disabled /><!-- 주문접수일 경우 체크박스 인풋 disable -->
+                            <label for="isOrder-2" class="labelSquare">
+                                <svg viewBox="0 0 16 16" class="iconSquare">
+                                    <g>
+                                        <rect width="16" height="16"/>
+                                        <path d="m6.97,11.81l-3.97-3.97.8-.8,3.16,3.1,5.24-5.23.8.8-6.03,6.1Z"/>
+                                    </g>
+                                </svg>
+                                <p>
+                                    <span class="menu">샐러드</span>
+                                    <span class="amount">9,500원</span>
+                                </p>
+                                <p>
+                                    <span class="orderStatus fontMain">주문접수</span><!-- 주문접수일 경우 클래스 fontMain -->
+                                    <span class="quantity">1개</span>
+                                </p>
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="areaOrderDetail">
+                        <dl class="dlOrderDetail">
+                            <dt class="dtOrderDetail">수령시간</dt>
+                            <dd class="ddOrderDetail">오후 6시</dd>
+                        </dl>
+                        <dl class="dlOrderDetail">
+                            <dt class="dtOrderDetail">수령장소</dt>
+                            <dd class="ddOrderDetail">커뮤니티센터 연회장</dd>
+                        </dl>
+                        <dl class="dlOrderDetail">
+                            <dt class="dtOrderDetail">주문일시</dt>
+                            <dd class="ddOrderDetail">23.01.16 00:01</dd>
+                        </dl>
+                        <dl class="dlOrderDetail">
+                            <dt class="dtOrderDetail">연락처</dt>
+                            <dd class="ddOrderDetail">010-1234-5678</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="areaOrderCard">
+                    <div class="areaStore">
+                        <fieldset class="setSquare storeName">
+                            <input type="checkbox" class="inputSquare" id="isStore-3" disabled /><!-- 해당 상점의 주문내역에 체크박스가 없을 경우 체크박스 인풋 disable -->
+                            <label for="isStore-3" class="labelSquare">
+                                <svg viewBox="0 0 16 16" class="iconSquare">
+                                    <g>
+                                        <rect width="16" height="16"/>
+                                        <path d="m6.97,11.81l-3.97-3.97.8-.8,3.16,3.1,5.24-5.23.8.8-6.03,6.1Z"/>
+                                    </g>
+                                </svg>
+                                프리미엄관
+                            </label>
+                        </fieldset>
+                        <fieldset class="setSquare orderMenu">
+                            <input type="checkbox" class="inputSquare" id="isOrder-3" disabled /><!-- 배달완료일 경우 체크박스 인풋 disable -->
+                            <label for="isOrder-3" class="labelSquare">
+                                <svg viewBox="0 0 16 16" class="iconSquare">
+                                    <g>
+                                        <rect width="16" height="16"/>
+                                        <path d="m6.97,11.81l-3.97-3.97.8-.8,3.16,3.1,5.24-5.23.8.8-6.03,6.1Z"/>
+                                    </g>
+                                </svg>
+                                <p>
+                                    <span class="menu">도시락</span>
+                                    <span class="amount">9,500원</span>
+                                </p>
+                                <p>
+                                    <span class="orderStatus fontDisable">배달완료</span><!-- 배달완료일 경우 클래스 fontDisable -->
+                                    <span class="quantity">1개</span>
+                                </p>
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="areaStore">
+                        <fieldset class="setSquare storeName">
+                            <input type="checkbox" class="inputSquare" id="isStore-4" disabled /><!-- 해당 상점의 주문내역에 체크박스가 없을 경우 체크박스 인풋 disable -->
+                            <label for="isStore-4" class="labelSquare">
+                                <svg viewBox="0 0 16 16" class="iconSquare">
+                                    <g>
+                                        <rect width="16" height="16"/>
+                                        <path d="m6.97,11.81l-3.97-3.97.8-.8,3.16,3.1,5.24-5.23.8.8-6.03,6.1Z"/>
+                                    </g>
+                                </svg>
+                                프리미엄관
+                            </label>
+                        </fieldset>
+                        <fieldset class="setSquare orderMenu">
+                            <input type="checkbox" class="inputSquare" id="isOrder-4" disabled /><!-- 취소완료일 경우 체크박스 인풋 disable -->
+                            <label for="isOrder-4" class="labelSquare">
+                                <svg viewBox="0 0 16 16" class="iconSquare">
+                                    <g>
+                                        <rect width="16" height="16"/>
+                                        <path d="m6.97,11.81l-3.97-3.97.8-.8,3.16,3.1,5.24-5.23.8.8-6.03,6.1Z"/>
+                                    </g>
+                                </svg>
+                                <p>
+                                    <span class="menu">샐러드</span>
+                                    <span class="amount">9,500원</span>
+                                </p>
+                                <p>
+                                    <span class="orderStatus fontRed">취소완료</span><!-- 취소완료일 경우 클래스 fontRed -->
+                                    <span class="quantity">1개</span>
+                                </p>
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="areaOrderDetail">
+                        <dl class="dlOrderDetail">
+                            <dt class="dtOrderDetail">수령시간</dt>
+                            <dd class="ddOrderDetail">오후 6시</dd>
+                        </dl>
+                        <dl class="dlOrderDetail">
+                            <dt class="dtOrderDetail">수령장소</dt>
+                            <dd class="ddOrderDetail">커뮤니티센터 연회장</dd>
+                        </dl>
+                        <dl class="dlOrderDetail">
+                            <dt class="dtOrderDetail">주문일시</dt>
+                            <dd class="ddOrderDetail">23.01.14 16:00</dd>
+                        </dl>
+                        <dl class="dlOrderDetail">
+                            <dt class="dtOrderDetail">연락처</dt>
+                            <dd class="ddOrderDetail">010-1234-5678</dd>
+                        </dl>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        <div id="bottomFix">
+            <section class="sectionAmount hidden"><!-- 주문취소 체크가 있을경우 주문하기버튼 노출 -->
+                <div class="leftAmount">
+                    <div class="quantity">총 1개 선택</div>
+                    <div class="amount">9,500원</div>
+                </div>
+                <div class="sectionFull">
+                    <fieldset class="setFull">
+                        <button class="btnFull bgMain">주문취소</button>
+                    </fieldset>
+                </div>
+            </section>
+            <nav>
+                <a href="#" class="linkNav" tabindex="2">
+                    <svg viewBox="0 0 16 16" class="iconNav">
+                        <g>
+                            <rect class="areaIcon" width="16" height="16"/>
+                            <path class="fill" d="M8.13,1.1L1.3,5.69V15.1H6.06v-5.59h3.81v5.59h4.76V5.47L8.13,1.1Z"/>
+                        </g>
+                    </svg>
+                    <div class="txtNav">홈</div>
+                </a>
+                <a href="#" class="linkNav" tabindex="3">
+                    <svg viewBox="0 0 16 16" class="iconNav">
+                        <g>
+                            <rect class="areaIcon" width="16" height="16"/>
+                            <rect class="stroke" x="1.37" y="7.45" width="13.27" height="1.51"/>
+                            <rect class="stroke" x="5.12" y="13.3" width="5.76" height="1.51"/>
+                            <path class="stroke" d="m1.37,8.96h13.27v.19c0,2.21-1.79,4-4,4h-5.27c-2.21,0-4-1.79-4-4v-.19h0Z"/>
+                            <path class="stroke" d="m4.45,7.45s.23-1.87,1.77-1.87,1.76,1.44,1.78,1.78"/>
+                            <path class="stroke" d="m2.88,7.45s-1.43-1.05-.76-2.58c0,0,0-.35-.4-.68s-.66-1.44.32-2.14,2.21-.02,2.22.99c.01.75.4.85.4.85,0,0,1.25.54,1.39,1.7"/>
+                            <line class="stroke" x1="3.71" y1="5.07" x2="4.5" y2="6.4"/>
+                            <path class="stroke" d="m4.53,3.8s1.19-2.93,3.64-2.58c0,0,.96,1.18.49,2.45s-1.2,2.39-1.2,2.39"/>
+                            <line class="stroke" x1="6.85" y1="3.63" x2="5.9" y2="5.07"/>
+                            <path class="stroke" d="m13.77,7.45v-2.39s-.32-.67-.94-.67c-.71,0-.87,1-.87,1v-1.31s.03-.56-.91-.56-1.07.73-1.07.73v1.02s-.18-1.12-.78-1.12c-.74,0-.87.3-.87.3"/>
+                        </g>
+                    </svg>
+                    <div class="txtNav">식단 정기구독</div>
+                </a>
+                <a href="#" class="linkNav active" tabindex="4">
+                    <svg viewBox="0 0 16 16" class="iconNav">
+                        <g>
+                            <rect class="areaIcon" width="16" height="16"/>
+                            <path class="stroke" d="M5,11.49V3.5h-1.94c-.49,.03-.87,.44-.85,.93V13.39c-.02,.49,.36,.91,.85,.93h6.99c.49-.03,.87-.44,.85-.93v-.97H5.85c-.49-.03-.87-.44-.85-.94Z"/>
+                            <path class="stroke" d="M10.89,12.42H5.85c-.49-.03-.87-.44-.85-.93V2.53c-.02-.49,.36-.91,.85-.93h4.43l3.41,3.5v6.39c.02,.49-.36,.91-.85,.93h-1.94Z"/>
+                            <path class="stroke" d="M13.04,5.09h-2.77V1.59l3.41,3.5h-.64Z"/>
+                            <line class="stroke" x1="7.81" y1="7.98" x2="11.08" y2="7.98"/>
+                            <line class="stroke" x1="7.81" y1="9.85" x2="11.08" y2="9.85"/>
+                        </g>
+                    </svg>
+                    <div class="txtNav">주문내역</div>
+                </a>
+                <a href="#" class="linkNav" tabindex="5">
+                    <svg viewBox="0 0 16 16" class="iconNav">
+                        <g>
+                            <rect class="areaIcon" width="16" height="16"/>
+                            <circle class="fill" cx="8.01" cy="4.34" r="2.75"/>
+                            <path class="fill" d="M1.61,14.41s.57-5.51,6.42-5.51,6.35,5.51,6.35,5.51"/>
+                        </g>
+                    </svg>
+                    <div class="txtNav">MY</div>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <div id="popCalendar" class="hidden"><!-- 달력으로 보기 팝업 -->
+        <div class="bgPopCalendar">
+            <div class="areaCurrent">
+                <fieldset class="setPrevious">
+                    <button class="btnPrevious">
+                        <svg viewBox="0 0 16 16" class="iconBack">
+                            <g>
+                                <rect width="16" height="16"/>
+                                <path d="M9.74,11.98L5.5,7.75,9.74,3.5"/>
+                            </g>
+                        </svg>
+                        <span class="blind">이전월</span>
+                    </button>
+                </fieldset>
+                2022.01
+                <fieldset class="setNext">
+                    <button class="btnNext">
+                        <svg viewBox="0 0 16 16" class="iconMore">
+                            <g>
+                                <rect width="16" height="16"/>
+                                <path d="M6.26,11.98l4.24-4.24L6.26,3.5"/>
+                            </g>
+                        </svg>
+                        <span class="blind">다음월</span>
+                    </button>
+                </fieldset>
+            </div>
+            <table class="areaCalendarTable">
+                <tr>
+                    <th class="headCalendar">월</th>
+                    <th class="headCalendar">화</th>
+                    <th class="headCalendar">수</th>
+                    <th class="headCalendar">목</th>
+                    <th class="headCalendar">금</th>
+                    <th class="headCalendar">토</th>
+                    <th class="headCalendar">일</th>
+                </tr>
+                <tr>
+                    <td class="bodyCalendar"></td>
+                    <td class="bodyCalendar"></td>
+                    <td class="bodyCalendar"></td>
+                    <td class="bodyCalendar"></td>
+                    <td class="bodyCalendar"></td>
+                    <td class="bodyCalendar"></td>
+                    <td class="bodyCalendar">
+                        <div class="date">1</div>
+                        <div class="order">
+                            <div class="badgeOrder subscribe">정기 2개</div>
+                            <div class="badgeOrder add">추가 1개</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bodyCalendar">
+                        <div class="date">2</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">3</div>
+                        <div class="order">
+                            <div class="badgeOrder subscribe">정기 2개</div>
+                            <div class="badgeOrder add">추가 1개</div>
+                        </div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">4</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">5</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">6</div>
+                        <div class="order">
+                            <div class="badgeOrder subscribe">정기 2개</div>
+                            <div class="badgeOrder add">추가 1개</div>
+                        </div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">7</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">8</div>
+                        <div class="order">
+                            <div class="badgeOrder subscribe">정기 2개</div>
+                            <div class="badgeOrder add">추가 1개</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bodyCalendar">
+                        <div class="date">9</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">10</div>
+                        <div class="order">
+                            <div class="badgeOrder subscribe">정기 2개</div>
+                            <div class="badgeOrder add">추가 1개</div>
+                        </div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">11</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">12</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">13</div>
+                        <div class="order">
+                            <div class="badgeOrder subscribe">정기 2개</div>
+                            <div class="badgeOrder add">추가 1개</div>
+                        </div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">14</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">15</div>
+                        <div class="order">
+                            <div class="badgeOrder subscribe">정기 2개</div>
+                            <div class="badgeOrder add">추가 1개</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bodyCalendar">
+                        <div class="date">16</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">17</div>
+                        <div class="order">
+                            <div class="badgeOrder subscribe">정기 2개</div>
+                            <div class="badgeOrder add">추가 1개</div>
+                        </div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">18</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">19</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">20</div>
+                        <div class="order">
+                            <div class="badgeOrder subscribe">정기 2개</div>
+                            <div class="badgeOrder add">추가 1개</div>
+                        </div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">21</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">22</div>
+                        <div class="order">
+                            <div class="badgeOrder subscribe">정기 2개</div>
+                            <div class="badgeOrder add">추가 1개</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bodyCalendar">
+                        <div class="date">23</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">24</div>
+                        <div class="order">
+                            <div class="badgeOrder subscribe">정기 2개</div>
+                            <div class="badgeOrder add">추가 1개</div>
+                        </div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">25</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">26</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">27</div>
+                        <div class="order">
+                            <div class="badgeOrder subscribe">정기 2개</div>
+                            <div class="badgeOrder add">추가 1개</div>
+                        </div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">28</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">29</div>
+                        <div class="order">
+                            <div class="badgeOrder subscribe">정기 2개</div>
+                            <div class="badgeOrder add">추가 1개</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bodyCalendar">
+                        <div class="date">30</div>
+                    </td>
+                    <td class="bodyCalendar">
+                        <div class="date">31<span class="willBe">주문예정</span></div>
+                        <div class="order">
+                            <div class="badgeOrder disable">정기 2개</div>
+                            <div class="badgeOrder disable">추가 1개</div>
+                        </div>
+                    </td>
+                    <td class="bodyCalendar"></td>
+                    <td class="bodyCalendar"></td>
+                    <td class="bodyCalendar"></td>
+                    <td class="bodyCalendar"></td>
+                    <td class="bodyCalendar"></td>
+                </tr>
+            </table>
+            <section class="sectionFull">
+                <fieldset class="setFull">
+                    <button class="btnFull bgMain">확인</button>
+                </fieldset>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

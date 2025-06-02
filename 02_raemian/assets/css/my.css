@@ -1,0 +1,67 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : my
+	설　명 : 마이페이지
+	클래스명 : 카멜케이스, 태그역활 + 컨텐츠내용 조합, 넘버링은 하이픈
+	작성순서 : 1. 레이아웃  2.크기/간격  3.박스모양  4.폰트  5.기타
+			position / display / float / width / height / margin / padding / border / background / font / overflow / etc...
+---------------------------------------------*/
+/* 마이페이지 */
+#my {padding: 50px 0 72px 0;}
+#my .sectionApt{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding: 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#my .sectionApt .aptName{line-height: 0.86rem; margin-bottom: 5px; font-size: 0.86rem; text-align: center;}
+#my .sectionApt h2{text-align: center;}
+#my .sectionMy{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding-bottom: 20px; background-color: #FFFFFF;}
+#my .sectionMy h3{padding: 20px; box-sizing: border-box;}
+#my .sectionMy .dlMy{position: relative; width:100%; height: auto; margin-bottom: 15px; padding: 0 20px; box-sizing: border-box;}
+#my .sectionMy .dlMy:last-child{margin-bottom: 0;}
+#my .sectionMy .dlMy .titleMy{position: absolute; top: 0; left: 30px; width:80px; height:auto; line-height: 1rem;}
+#my .sectionMy .dlMy .contentMy{position: relative; width:100%; height:auto; line-height: 1rem; padding-left: 120px; box-sizing: border-box; color: #A0A0A0;}
+#my .sectionLink{position: relative; width: 100%; height: auto; margin-bottom: 5px; background-color: #FFFFFF;}
+#my .sectionLink .linkMy{position: relative; width: 100%; height: auto; padding: 0 20px; box-sizing: border-box; background-color: #FFFFFF; cursor:pointer;}
+#my .sectionLink .linkMy:hover,
+#my .sectionLink .linkMy:focus{background-color: #F8F8F8;}
+#my .sectionLink .linkMy h3{padding: 20px 0; border-bottom: 1px solid #F0F0F0;}
+#my .sectionLink .linkMy:last-child h3{border-bottom: none;}
+#my .sectionLink .textRight{position: absolute; top: 0; right: 46px; line-height: 1.14rem; padding: 20px 0; color: #A0A0A0; text-align: right;}
+#my .sectionLink .iconMore{position: absolute; right: 20px; top:50%; margin-top: -8px;}
+#bottomFix .sectionClst{width: 100%; height: auto; line-height: 0.86rem; padding: 5px 0; background-color: #F0F0F0; color:#A0A0A0; font-size: 0.86rem; text-align: center; box-shadow: 0 0 4px rgba(0,0,0,6%);}
+
+/* 포인트 내역 */
+#pointHistory {padding-top: 50px;}
+#pointHistory .sectionHave{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding: 30px 20px 20px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#pointHistory .sectionHave .titleHave{width:100%; height:auto; line-height: 1.14rem; margin-bottom: 5px; font-size: 1.14rem;}
+#pointHistory .sectionHave h2{font-size: 1.98rem; margin-bottom: 15px;}
+#pointHistory .sectionHave .areaKindOfCredit{position: relative; width: 100%; height: auto;}
+#pointHistory .sectionHave .areaKindOfCredit:after{content: ""; display: block; clear: both;}
+#pointHistory .sectionHave .setKindOfCredit{float: left; position: relative; width: 64px; height: auto; margin-right: 5px;}
+#pointHistory .sectionHave .inputKindOfCredit{position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0;}
+#pointHistory .sectionHave .labelKindOfCredit{display: block; position: relative; width: 100%; height: 30px; line-height: 28px; border: 1px solid #F0F0F0; border-radius: 20px; box-sizing: border-box; background-color: #FFFFFF; color: #A0A0A0; text-align: center;}
+#pointHistory .sectionHave .inputKindOfCredit:checked + .labelKindOfCredit{line-height: 26px; border: 2px solid #009dad; color: #009dad; font-weight: 600;}
+#pointHistory .sectionHave .areaDatePicker{position: relative; width: 100%; height: auto; margin-top: 10px; padding-right: 80px; box-sizing: border-box;}
+#pointHistory .sectionHave .areaDatePicker:after{content: ""; display: block; clear: both;}
+#pointHistory .sectionHave .setDatePicker{float: left; position: relative; width: 50%; box-sizing: border-box;}
+#pointHistory .sectionHave .setDatePicker:nth-child(1){padding-right: 10px;}
+#pointHistory .sectionHave .setDatePicker:nth-child(2){padding-left: 10px;}
+#pointHistory .sectionHave .setDatePicker:nth-child(1):after{content: "~"; position: absolute; top: 0; right: -10px; bottom: 0; width: 20px; height: 40px; line-height: 40px; color: #A0A0A0; text-align: center;}
+#pointHistory .sectionHave .btnDatePicker{display: block; width: 100%; height: 40px; line-height: 38px; padding: 0 10px; border: 1px solid #F0F0F0; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF; color: #505050; font-size: 1rem; font-weight: 500; text-align: left;}
+#pointHistory .sectionHave .btnDatePicker.active{border-color: #505050;}
+#pointHistory .sectionHave .setFilter{position: absolute; top: 0; right: 0;}
+#pointHistory .sectionHave .btnFilter{display: block; width: 70px; height: 40px; line-height: 40px; border: none; border-radius: 5px; color: #FFFFFF; font-size: 1.1rem; font-weight: 600; text-align: center;}
+
+#pointHistory .sectionPicker{top: 175px; left: 20px; right: 100px;}
+@media (min-width: 520px){
+    #pointHistory .sectionPicker{width: 400px;}
+    #pointHistory .sectionPicker.start{left: 20px; right: unset;}
+    #pointHistory .sectionPicker.end{left: 50%; right: unset; margin-left: -30px;}
+}
+#pointHistory .sectionPicker .titlePicker{padding: 10px 15px; box-sizing: border-box; margin-left: -15px; margin-right: -15px; background-color: #F8F8F8; font-size: 0.86rem;}
+#pointHistory .sectionPicker .titlePicker .fontMain{font-weight: 600;}
+
+#pointHistory .sectionHistory{position: relative; width: 100%; height: auto; background-color: #FFFFFF;}
+#pointHistory .ulHistory{position: relative; width: 100%; height: auto; padding: 0 20px; box-sizing: border-box;}
+#pointHistory .liHistory{position: relative; width: 100%; height: auto; padding: 20px 0; border-bottom: 1px solid #F0F0F0;}
+#pointHistory .liHistory:last-child{border-bottom: none;}
+#pointHistory .detailHistory{width: 100%; height: auto; line-height: 1.28rem; margin-bottom: 3px; padding-right: 120px; box-sizing: border-box;}
+#pointHistory .timeHistory{width: 100%; height: auto; line-height: 0.86rem; padding-right: 120px; box-sizing: border-box; color: #A0A0A0; font-size: 0.86rem;}
+#pointHistory .amountHistory{position: absolute; top: 50%; right: 0; line-height: 1.14rem; margin-top: -0.57rem; color: #131313; font-size:1.14rem; text-align: right;}
