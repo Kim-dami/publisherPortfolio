@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>배달장소 설정</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/location.css">
+    <!-- 페이지별 css 파일 링크 -->
+</head>
+<body>
+<main>
+    <div class="areaWebCopy">
+        <div class="copy">배달의 발견, 일상의 변화.</div>
+        <div class="logo"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/textBDG.png" alt="배달긱"></div>
+        <ul class="ulAdvantage">
+            <li class="liAdvantage">배달비 0원</li>
+            <li class="liAdvantage">최소주문금액 0원</li>
+            <li class="liAdvantage">AI 루트시스템 친환경 ESG배달</li>
+            <li class="liAdvantage">비대면 안심배달</li>
+            <li class="liAdvantage">사전예약정시도착</li>
+        </ul>
+        <div class="areaStore">
+            <div class="textStore">앱 다운로드</div>
+            <a href="#" target="_blank" class="linkStore">
+                <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webAppstore.svg">
+            </a>
+            <a href="#" target="_blank" class="linkStore">
+                <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webGooglestore.svg">
+            </a>
+        </div>
+    </div>
+    <div class="bottomSheet isFixedBig insideHeader insideBottom" id="locationSheet"><!-- 픽업준비중일 경우 insideHeader, 픽업가능일 경우 insideTab -->
+        <div class="sheetBg">
+            <div class="sheetFold">
+                <button class="btnSheetFold"><span class="foldBar"></span></button>
+            </div>
+            <div class="sheetHeader left">
+                배달장소 설정
+                <fieldset class="setLinkPlace">
+                    <button class="btnLinkPlace">
+                        서울대학교
+                        <svg viewBox="0 0 20 20" class="iconUnfold">
+                            <g>
+                                <rect width="20" height="20" />
+                                <path d="m4.69,7.88l5.31,5.3,5.31-5.3" />
+                            </g>
+                        </svg>
+                    </button>
+                </fieldset>
+            </div>
+            <section class="sectionTabUnder hidden"><!-- 픽업준비중일 경우 hidden -->
+                <fieldset class="setTabUnder">
+                    <input type="radio" name="locationType" class="inputTabUnder" id="locationType-1" />
+                    <label for="locationType-1" class="labelTabUnder">수령장소</label>
+                </fieldset>
+                <fieldset class="setTabUnder">
+                    <input type="radio" name="locationType" class="inputTabUnder" id="locationType-2" checked="checked" />
+                    <label for="locationType-2" class="labelTabUnder">직접입력</label>
+                </fieldset>
+            </section>
+            <div class="sheetContent">
+                <section class="sectionDirectLocation hidden"><!-- 직접입력 탭 클릭한 경우 -->
+                    <div class="directMap" id="directMap"></div>
+                    <div class="areaMapNotice hidden">
+                        * 해당 영역안에서 핀을 움직여 배달받을 위치를 선택해주세요
+                    </div>
+                    <div class="areaMapNotice bgSub">
+                        영역을 벗어났어요!
+                    </div>
+                    <div class="areaDirectAddress">
+                        <div class="directAddress">
+                            서울특별시 관악구 관악로 1
+                        </div>
+                        <fieldset class="setBorder">
+                            <input type="text" class="inputBorder" placeholder="상세주소(필수)" disabled>
+                        </fieldset>
+                        <fieldset class="setBorder">
+                            <input type="text" class="inputBorder" placeholder="장소명(선택)" disabled>
+                        </fieldset>
+                    </div>
+                </section>
+
+                <section class="sectionRecent hidden"><!-- 최근내역이 있을 경우 -->
+                    <div class="titleRecent">최근내역</div>
+                    <ul class="ulRecent">
+                        <li class="liRecent">
+                            <fieldset class="setRow">
+                                <input type="radio" name="recentList" class="inputRow" />
+                                <label class="labelRow">
+                                    <svg viewBox="0 0 20 20" class="iconCircles">
+                                        <g>
+                                            <rect width="20" height="20" />
+                                            <circle cx="10" cy="10" r="10" />
+                                            <path d="m7.69,14.64h-.01s-4.64-4.63-4.64-4.63l1.4-1.39,3.51,3.51,7.32-7.32,1.4,1.39L7.95,14.9l-.26-.26Z"/>
+                                        </g>
+                                    </svg>
+                                    <div class="recentName">학과사무실<span class="bgMain">최근</span></div>
+                                    <div class="recentDetail">서울특별시 관악구 관악로 1 자연과학관 301호</div>
+                                </label>
+                            </fieldset>
+                        </li>
+                        <li class="liRecent">
+                            <fieldset class="setRow">
+                                <input type="radio" name="recentList" class="inputRow" />
+                                <label class="labelRow">
+                                    <svg viewBox="0 0 20 20" class="iconCircles">
+                                        <g>
+                                            <rect width="20" height="20" />
+                                            <circle cx="10" cy="10" r="10" />
+                                            <path d="m7.69,14.64h-.01s-4.64-4.63-4.64-4.63l1.4-1.39,3.51,3.51,7.32-7.32,1.4,1.39L7.95,14.9l-.26-.26Z"/>
+                                        </g>
+                                    </svg>
+                                    <div class="recentName">장소명</div>
+                                    <div class="recentDetail">도로명주소 + 상세주소</div>
+                                </label>
+                            </fieldset>
+                        </li>
+                    </ul>
+                </section>
+                <section class="sectionSpotLocation "><!-- 수령장소 탭 클릭한 경우 -->
+                    <div class="areaTabRound">
+                        <fieldset class="setTabRound">
+                            <input type="radio" name="howTo" class="inputTabRound" id="howTo-1">
+                            <label for="howTo-1" class="labelTabRound">리스트</label>
+                        </fieldset>
+                        <fieldset class="setTabRound">
+                            <input type="radio" name="howTo" class="inputTabRound" id="howTo-2" checked="checked" >
+                            <label for="howTo-2" class="labelTabRound">지도</label>
+                        </fieldset>
+                    </div>
+                    <div class="spotMap" id="spotMap"></div><!-- 수령장소 지도 클릭한 경우 -->
+                    <ul class="ulSpot">
+                        <li class="liSpot detail"><!-- 자세히보기 클릭시 detail 클래스 추가 -->
+                            <fieldset class="setRow">
+                                <input type="radio" name="spotList" class="inputRow" checked="checked" />
+                                <label class="labelRow">
+                                    <svg viewBox="0 0 20 20" class="iconCircles">
+                                        <g>
+                                            <rect width="20" height="20" />
+                                            <circle cx="10" cy="10" r="10" />
+                                            <path d="m7.69,14.64h-.01s-4.64-4.63-4.64-4.63l1.4-1.39,3.51,3.51,7.32-7.32,1.4,1.39L7.95,14.9l-.26-.26Z"/>
+                                        </g>
+                                    </svg>
+                                    <div class="areaImgSpot">
+                                        <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/place/dev/11/building/11Z_1662097959.png" class="imgSpot">
+                                        <div class="badgeRobot">로봇</div><!-- 로봇배달일 경우 -->
+                                    </div>
+                                    <div class="areaMapSpot"></div>
+                                    <div class="spotName">16동 사회과학대학</div>
+                                    <div class="spotDistance">107m</div>
+                                    <button class="btnSpotMore">간략히보기</button><!-- 자세히보기 클릭시 '간략히보기'로 문구변경 -->
+                                    <div class="spotDetail">
+                                        <div class="titleSpotTime">수령시간</div>
+                                        <ul class="ulSpotTime">
+                                            <li class="liSpotTime">(지스트)점심1  : 12시05분 ~ 12시30분</li>
+                                            <li class="liSpotTime">(지스트)점심2  : 13시05분 ~ 13시30분</li>
+                                            <li class="liSpotTime">(지스트)저녁1  : 18시05분 ~ 18시30분</li>
+                                            <li class="liSpotTime">(지스트)저녁2  : 19시05분 ~ 19시30분</li>
+                                        </ul>
+                                    </div>
+                                </label>
+                            </fieldset>
+                        </li>
+                        <li class="liSpot">
+                            <fieldset class="setRow">
+                                <input type="radio" name="spotList" class="inputRow"  />
+                                <label class="labelRow">
+                                    <svg viewBox="0 0 20 20" class="iconCircles">
+                                        <g>
+                                            <rect width="20" height="20" />
+                                            <circle cx="10" cy="10" r="10" />
+                                            <path d="m7.69,14.64h-.01s-4.64-4.63-4.64-4.63l1.4-1.39,3.51,3.51,7.32-7.32,1.4,1.39L7.95,14.9l-.26-.26Z"/>
+                                        </g>
+                                    </svg>
+                                    <div class="areaImgSpot">
+                                        <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/place/dev/11/building/11W_1672635136.png" class="imgSpot">
+                                        <div class="badgeRobot">로봇</div><!-- 로봇배달일 경우 -->
+                                    </div>
+                                    <div class="areaMapSpot"></div>
+                                    <div class="spotName">63동 학생회관</div>
+                                    <div class="spotDistance">307m</div>
+                                </label>
+                                <button class="btnSpotMore">자세히보기</button>
+                            </fieldset>
+                        </li>
+                        <li class="liSpot">
+                            <fieldset class="setRow">
+                                <input type="radio" name="spotList" class="inputRow"  />
+                                <label class="labelRow">
+                                    <svg viewBox="0 0 20 20" class="iconCircles">
+                                        <g>
+                                            <rect width="20" height="20" />
+                                            <circle cx="10" cy="10" r="10" />
+                                            <path d="m7.69,14.64h-.01s-4.64-4.63-4.64-4.63l1.4-1.39,3.51,3.51,7.32-7.32,1.4,1.39L7.95,14.9l-.26-.26Z"/>
+                                        </g>
+                                    </svg>
+                                    <div class="areaImgSpot">
+                                        <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/place/dev/11/building/11V_1679641620.png" class="imgSpot">
+                                    </div>
+                                    <div class="areaMapSpot"></div>
+                                    <div class="spotName">924동</div>
+                                    <div class="spotDistance">314m</div>
+                                </label>
+                                <button class="btnSpotMore">자세히보기</button>
+                            </fieldset>
+                        </li>
+                        <li class="liSpot">
+                            <fieldset class="setRow">
+                                <input type="radio" name="spotList" class="inputRow"  />
+                                <label class="labelRow">
+                                    <svg viewBox="0 0 20 20" class="iconCircles">
+                                        <g>
+                                            <rect width="20" height="20" />
+                                            <circle cx="10" cy="10" r="10" />
+                                            <path d="m7.69,14.64h-.01s-4.64-4.63-4.64-4.63l1.4-1.39,3.51,3.51,7.32-7.32,1.4,1.39L7.95,14.9l-.26-.26Z"/>
+                                        </g>
+                                    </svg>
+                                    <div class="areaImgSpot">
+                                        <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/place/dev/11/building/11U_1679641711.png" class="imgSpot">
+                                    </div>
+                                    <div class="areaMapSpot"></div>
+                                    <div class="spotName">925동</div>
+                                    <div class="spotDistance">518m</div>
+                                </label>
+                                <button class="btnSpotMore">자세히보기</button>
+                            </fieldset>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="sectionVote"><!-- 수령장소 탭 클릭한 경우 -->
+                    <div class="areaText">
+                        <div class="titleVote">오픈했으면 하는 수령장소에 투표해주세요</div>
+                        <div class="bodyVote">
+                            투표는 최대 2표까지 가능하며 직접 제안도 가능해요<br />
+                            투표인원이 모두 충족되면 오픈심사가 진행되며<br />
+                            실제로 오픈시 Push로 알려드릴께요(회원 및 수신동의시)
+                        </div>
+                    </div>
+                    <ul class="ulVote">
+                        <li class="liVote">
+                            <div class="voteName">법학길</div>
+                            <button class="btnVoteMore">위치확인</button>
+                            <div class="voteMap"></div>
+                            <div class="areaProgress">
+                                <div class="progress bgSub" style="width: 100%;"></div>
+                                <div class="number">249/100</div>
+                            </div>
+                            <button class="btnVote">
+                                <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/button_vote.svg">
+                            </button>
+                        </li>
+                        <li class="liVote">
+                            <div class="voteName">조형예술대학 b동</div>
+                            <button class="btnVoteMore">위치확인</button>
+                            <div class="areaProgress">
+                                <div class="progress bgSub" style="width: 50%;"></div>
+                                <div class="number">50/100</div>
+                            </div>
+                            <button class="btnVote">
+                                <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/button_voteCancel.svg">
+                            </button>
+                        </li>
+                    </ul>
+                    <fieldset class="setApply">
+                        <button class="btnApply borderMain fontMain">수령장소 직접 제안하기</button>
+                    </fieldset>
+                </section>
+            </div>
+            <section class="sectionFull">
+                <fieldset class="setFull">
+                    <button class="btnFull bgMain">확인</button>
+                </fieldset>
+            </section>
+        </div>
+    </div>
+</main>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=07ab4926694236a9f0d4da97734ad8cd"></script>
+<script>
+    // 수령장소 위치 배역
+    let spotPositions = [
+        {
+            name: '16동 사회과학대학',
+            latlng: new kakao.maps.LatLng(37.45943399764616, 126.95026746006177),
+            robot: true
+        },
+        {
+            name: '63동 학생회관',
+            latlng: new kakao.maps.LatLng(37.4608948550136, 126.95325050284096),
+            robot: true
+        },
+        {
+            name: '924동',
+            latlng: new kakao.maps.LatLng(37.459345764401625, 126.9549242869513),
+            robot: false
+        },
+        {
+            name: '925동',
+            latlng: new kakao.maps.LatLng(37.45884104172554, 126.95451769053352),
+            robot: false
+        }
+    ];
+
+    let spotContainer = document.getElementById('spotMap'); // 지도를 표시할 div
+    let directContainer = document.getElementById('directMap'); // 지도를 표시할 div
+
+    let options = {
+        center: new kakao.maps.LatLng(37.45963252248931, 126.95099071285293), // 지도의 중심좌표
+        level: 4 // 지도의 확대 레벨
+    };
+
+    let spotMap = new kakao.maps.Map(spotContainer, options); //지도 생성 및 객체 리턴
+    let directMap = new kakao.maps.Map(directContainer, options); //지도 생성 및 객체 리턴
+
+    let imageNormalSrc = 'https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/imgMarkerNormal.svg', // 마커 일반배달 이미지 주소
+        imageRobotSrc = 'https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/imgMarkerRobot.svg', // 마커 로봇배달 이미지 주소
+        imageSize = new kakao.maps.Size(20, 27), // 마커 노멀사이즈
+        imageOption = {offset: new kakao.maps.Point(10, 27)}; // 마커 사이즈 옵션
+
+    // 마커 이미지 생성
+    let markerNormalImage = new kakao.maps.MarkerImage(imageNormalSrc, imageSize, imageOption),
+        markerRobotImage = new kakao.maps.MarkerImage(imageRobotSrc, imageSize, imageOption);
+
+    for (let i = 0; i < spotPositions.length; i ++) {
+
+        if(spotPositions[i].robot){ //로봇배달인 수령장소
+
+            // 마커 생성
+            let spotMarker = new kakao.maps.Marker({
+                map: spotMap, // 마커를 표시할 지도
+                position: spotPositions[i].latlng, // 마커를 표시할 위치
+                image : markerRobotImage // 마커 이미지
+            });
+
+            spotMarker.setMap(spotMap);
+
+            // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            let overlayContent = '<div class="spotOverlay robot"><p class="name">'+ spotPositions[i].name + '</p></div>';
+
+            // 커스텀 오버레이를 생성합니다
+            let customOverlay = new kakao.maps.CustomOverlay({
+                map: spotMap,
+                position: spotPositions[i].latlng,
+                content: overlayContent,
+                yAnchor: 1
+            });
+
+        } else { // 일반배달인 수령장소
+
+            // 마커 생성
+            let spotMarker = new kakao.maps.Marker({
+                map: spotMap, // 마커를 표시할 지도
+                position: spotPositions[i].latlng, // 마커를 표시할 위치
+                image : markerNormalImage // 마커 이미지
+            });
+
+            spotMarker.setMap(spotMap);
+
+            // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            let overlayContent = '<div class="spotOverlay"><p class="name">'+ spotPositions[i].name + '</p></div>';
+
+            // 커스텀 오버레이를 생성합니다
+            let customOverlay = new kakao.maps.CustomOverlay({
+                map: spotMap,
+                position: spotPositions[i].latlng,
+                content: overlayContent,
+                yAnchor: 1
+            });
+
+        }
+
+    }
+
+
+    let directMarkerSrc = 'https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/marker_main.svg'
+
+    // 마커 이미지 생성
+    let directMarkerImage = new kakao.maps.MarkerImage(directMarkerSrc, imageNormalSize, imageOption);
+    // 마커 생성
+    var directMarker = new kakao.maps.Marker({
+        // 지도 중심좌표에 마커를 생성합니다
+        position: directMap.getCenter(),
+        image: directMarkerImage // 마커 이미지
+    });
+    // 지도에 마커를 표시합니다
+    directMarker.setMap(directMap);
+
+    kakao.maps.event.addListener(directMap, 'click', function(mouseEvent) {
+
+        // 클릭한 위도, 경도 정보를 가져옵니다
+        var latlng = mouseEvent.latLng;
+
+        // 마커 위치를 클릭한 위치로 옮깁니다
+        directMarker.setPosition(latlng);
+
+    });
+
+    // 다각형을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 다각형을 표시합니다
+    var polygonPath = [
+        new kakao.maps.LatLng(37.46650609822327, 126.94830719865769),
+        new kakao.maps.LatLng(37.46567706904602, 126.94808169367779),
+        new kakao.maps.LatLng(37.46387516563877, 126.94835422408381),
+        new kakao.maps.LatLng(37.46243388081913, 126.94912383986652),
+        new kakao.maps.LatLng(37.46120858275312, 126.94930551990481),
+        new kakao.maps.LatLng(37.45936968879668, 126.94740788425796),
+        new kakao.maps.LatLng(37.45753186430049, 126.94795169429266),
+        new kakao.maps.LatLng(37.45576617674137, 126.94863105575794),
+        new kakao.maps.LatLng(37.454793491971714, 126.94958110167744),
+        new kakao.maps.LatLng(37.452919462288754, 126.94976318951184),
+        new kakao.maps.LatLng(37.451585789293766, 126.94935722139617),
+        new kakao.maps.LatLng(37.45032435133605, 126.94931286589002),
+        new kakao.maps.LatLng(37.44783716274659, 126.9484104556491),
+        new kakao.maps.LatLng(37.44632402439448, 126.94972239635383),
+        new kakao.maps.LatLng(37.446144558379, 126.9514854490037),
+        new kakao.maps.LatLng(37.44755085062999, 1126.95324750646705),
+        new kakao.maps.LatLng(37.44949707594038, 126.95333670610937),
+        new kakao.maps.LatLng(37.45317377242538, 126.95478106624068),
+        new kakao.maps.LatLng(37.453714722692276, 126.95568489968042),
+        new kakao.maps.LatLng(37.4585449277848, 126.9578069601324),
+        new kakao.maps.LatLng(37.459085551224334, 126.95785186757642),
+        new kakao.maps.LatLng(37.46049165270992, 126.95934307553786),
+        new kakao.maps.LatLng(37.46254602165616, 126.95952281629941),
+        new kakao.maps.LatLng(37.465754213061835, 126.96128447970796),
+        new kakao.maps.LatLng(37.467303757995246, 126.96069587084706),
+        new kakao.maps.LatLng(37.46802446097858, 126.96037897752855),
+        new kakao.maps.LatLng(37.46834798093387, 126.95793710140829),
+        new kakao.maps.LatLng(37.4687083045173, 126.95771081460202),
+        new kakao.maps.LatLng(37.468563881682584, 126.9569874256224),
+        new kakao.maps.LatLng(37.46877898265497, 126.95395776168682),
+        new kakao.maps.LatLng(37.47000372969016, 126.95237438881625),
+        new kakao.maps.LatLng(37.468381653922016, 126.95174238288311)
+    ];
+
+
+
+    // 지도에 표시할 다각형을 생성합니다
+    var polygon = new kakao.maps.Polygon({
+        path:polygonPath, // 그려질 다각형의 좌표 배열입니다
+        strokeWeight: 3, // 선의 두께입니다
+        strokeColor: '#F5CC1F', // 선의 색깔입니다
+        strokeOpacity: 0.6, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: 'solid', // 선의 스타일입니다
+        fillColor: '#F5CC1F', // 채우기 색깔입니다
+        fillOpacity: 0.1 // 채우기 불투명도 입니다
+    });
+
+    // 지도에 다각형을 표시합니다
+    polygon.setMap(directMap);
+</script>
+</body>
+</html>

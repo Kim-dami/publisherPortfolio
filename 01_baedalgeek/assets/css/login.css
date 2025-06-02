@@ -1,0 +1,123 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : login
+	설　명 : 로그인 및 회원가입
+---------------------------------------------*/
+/* 로그인 */
+#login header{box-shadow: none;}
+#login .sectionLogin{position: fixed; top: 0; bottom: 0; width: 100%; padding: 0 30px; box-sizing: border-box; background-color: #FFFFFF;}
+@media screen and (min-width: 480px) {
+    #login .sectionLogin{width: 480px;}
+}
+#login .sectionLogin .areaLoginCopy{position: relative; width: 100%; height: auto; margin: 80px 0 40px 0;}
+#login .sectionLogin .areaLoginCopy .copy{line-height: 1.125rem; margin-bottom: 10px; color: #131313; font-weight: 600; text-align: center;}
+#login .sectionLogin .areaLoginCopy .logo{height: 40px; text-align: center;}
+#login .sectionLogin .areaLoginCopy .logo img{height: 40px;}
+#login .sectionLogin .areaLogin{width: 100%; height: auto; margin-bottom: 22px;}
+#login .sectionLogin .areaLogin .setBorder{margin-bottom: 7px;}
+#login .sectionLogin .areaLogin .setFull{margin-top: 15px;}
+#login .sectionLogin .areaFind{height: auto; margin-bottom: 30px; text-align: center;}
+#login .sectionLogin .areaFind a{display: inline-block; line-height: 0.875rem; padding: 0 12px; color: #909090; font-size: 0.875rem;}
+#login .sectionLogin .areaFind a:first-of-type{border-right: 1px solid #DADADA;}
+
+#login .sectionLogin .areaSocial{width: 100%; height: auto;}
+#login .sectionLogin .areaSocial .bgKakao{height: 40px; line-height: 40px; margin-bottom: 10px; background-color: #F7DF05; color: #131313; font-size: 0.875rem;}
+#login .sectionLogin .areaSocial .bgKakao svg{width: 16px; vertical-align: top; margin-top: 12px; margin-right: 4px;}
+#login .sectionLogin .areaSocial .bgKakao path{fill: #131313;}
+#login .sectionLogin .areaSocial .bgApple{height: 40px; line-height: 38px; border: 1px solid #DADADA; box-sizing: border-box; background-color: #FFFFFF; color: #131313; font-size: 0.875rem;}
+#login .sectionLogin .areaSocial .bgApple svg{width: 16px; vertical-align: top; margin-top: 11px; margin-right: 2px;}
+#login .sectionLogin .areaSocial .bgApple text{fill: #131313; font-size:21px; font-family:Helvetica;}
+#login .sectionLogin .areaJoin{position: absolute; right: 0; bottom: 60px; left: 0; z-index: 10;}
+#login .sectionLogin .linkJoin{width: 100%; text-align: center;}
+#login .sectionLogin .bubbleJoin{position: relative; width: 180px; height: 32px; line-height: 32px; margin: 0 auto 15px auto; border-radius: 16px; background-color: #FFF; font-size: 0.875rem; font-weight: 500; text-align: center; text-decoration: unset; box-shadow: 0 1px 4px rgba(0,0,0,12%);}
+#login .sectionLogin .bubbleJoin .triangleTooltip{position: absolute; bottom: -15px; left: 50%; z-index: -1; width: 25px; transform: rotate(-180deg); margin-left: -12px;}
+#login .sectionLogin .bubbleJoin .imgFastJoin{width: 12px; vertical-align: top; margin-top: 7px; margin-right: 5px;}
+#login .sectionLogin .textJoin{color: #131313; font-weight: 700; text-decoration: underline;}
+
+/* 아이디찾기 비밀번호찾기 */
+#findMember {padding-top: 50px; padding-bottom: 70px;}
+#findMember .bgContent{padding-bottom: 70px;}
+#findMember .sectionID{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding: 40px 20px 0 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#findMember .sectionID h3{margin-bottom: 15px;}
+#findMember .sectionCertification{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding: 40px 20px 0 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#findMember .sectionCertification h3{margin-bottom: 15px;}
+#findMember .sectionNewPassword{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding: 40px 20px 0 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#findMember .sectionNewPassword h3{margin-bottom: 15px;}
+#findMember .sectionNewPassword .setBorder{margin-bottom: 10px;}
+#findMember .sectionNewPassword .setBorder:last-of-type{margin-bottom: 0;}
+#findMember .sectionMember{position: fixed; top: 50px; bottom: 130px; width: 100%; padding: 50px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+@media screen and (min-width: 480px) {
+    #findMember .sectionMember{width: 480px;}
+}
+#findMember .sectionMember .areaMemberNotice{width: 100%; height: auto; margin-bottom: 50px; text-align: center;}
+#findMember .sectionMember .mainNotice{line-height: 1.125; margin-bottom: 10px; color: #131313; font-size: 1.125rem; font-weight: 700;}
+#findMember .sectionMember .subNotice{line-height: 1rem; color: #909090;}
+#findMember .sectionMember h3{width: fit-content; padding: 22px 0; margin: 0 auto; border-top: 1px solid #DADADA; border-bottom: 1px solid #DADADA;}
+#findMember .sectionMember .areaSocialMember{line-height: 0.875rem; margin-top: 22px; color: #A0A0A0; font-size: 0.875rem; text-align: center;}
+#findMember #bottomFix .setFull{margin-bottom: 10px;}
+#findMember #bottomFix .setFull:last-of-type{margin-bottom: 0;}
+#findMember #bottomFix .setFull .borderMain{line-height: 48px; box-sizing: border-box; border-width: 1px!important;}
+
+/* 회원가입 */
+#join{padding-top: 50px; padding-bottom: 70px;}
+#join .bgContent{padding-bottom: 70px;}
+
+#join .sectionStep{position: relative; width: 100%; height: auto; line-height: 1.5rem; background-color: #FFFFFF; padding: 40px 20px; box-sizing: border-box; color: #131313; font-size: 1.25rem; font-weight: 600;}
+
+#join .sectionJoinTerms{position: relative; width: 100%; height: auto; padding: 0 20px 40px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#join .sectionJoinTerms .setRow{margin-bottom: 15px; padding: 0 15px; box-sizing: border-box;}
+#join .sectionJoinTerms .setRow.setLowerRow{margin-bottom: 15px; margin-left: 20px; padding: 0 15px; box-sizing: border-box;}
+#join .sectionJoinTerms .setRow:last-of-type{margin-bottom: 0;}
+#join .sectionJoinTerms .setRow.setTermsAll{margin-bottom: 30px; padding: 15px 15px; border: 1px solid #EAEAEA; border-radius: 5px; box-sizing: border-box;}
+#join .sectionJoinTerms .labelRow{padding-left: 30px; padding-right: 25px;}
+#join .sectionJoinTerms .setRow.setTermsAll .labelRow{font-weight: 700;}
+#join .sectionJoinTerms .iconRadius{left: 15px; transform: scale(0.875); transform-origin: left center;}
+#join .sectionJoinTerms .setRow.setTermsDetail .checkbox{fill: none; stroke: none;}
+#join .sectionJoinTerms .setRow.setTermsDetail .check{stroke: #DADADA;}
+#join .sectionJoinTerms .setRow.setTermsDetail .inputRow:checked + .labelRow .checkbox{fill: none; stroke: none;}
+#join .sectionJoinTerms .setRow.setTermsDetail .inputRow:checked + .labelRow .check{stroke: #0f173a;}
+#join .sectionJoinTerms .btnMore{position: absolute; top: 50%; right: 15px; z-index: 10; margin-top: -10px; padding-left: 100px;}
+#join .sectionJoinTerms .iconMore{transform: scale(0.875); transform-origin: right center;}
+
+#join .sectionInput{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding: 0 20px 22px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#join .sectionInput h3{margin-bottom: 15px;}
+#join .sectionInput .setSelect{position: relative; width: 100%; height: auto; padding-left: 125px; box-sizing: border-box;}
+#join .sectionInput .areaRegionSelect{position: absolute; top: 0; left: 0; width: 115px;}
+#join .sectionInput .areaPlaceSelect{position: relative; width: 100%; height: auto;}
+#join .sectionInput .setSelect .textSelect{position: relative; width: 100%; height: 44px; line-height: 42px; padding: 0 30px 0 14px; border: 1px solid #EAEAEA; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+#join .sectionInput .setSelect .iconUnfold{position: absolute; top: 50%; right: 12px; margin-top: -10px;}
+#join .sectionInput .setSelect .select{position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 10; width: 100%; height: 100%; opacity: 0;}
+#join .sectionCertification{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding: 0 20px 22px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#join .sectionCertification h3{margin-bottom: 15px;}
+#join .sectionMember{position: fixed; top: 50px; bottom: 130px; width: 100%; padding: 50px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+@media screen and (min-width: 480px) {
+    #join .sectionMember{width: 480px;}
+}
+#join .sectionMember .areaMemberNotice{width: 100%; height: auto; margin-bottom: 50px;}
+#join .sectionMember .mainNotice{line-height: 1.125; margin-bottom: 10px; color: #131313; font-size: 1.125rem; font-weight: 700;}
+#join .sectionMember .subNotice{line-height: 1rem; color: #909090;}
+#join .sectionMember h3{width: fit-content; padding: 22px 0; margin: 0 auto; border-top: 1px solid #DADADA; border-bottom: 1px solid #DADADA;}
+#join .sectionMember .areaSocialMember{line-height: 0.875rem; margin-top: 22px; color: #A0A0A0; font-size: 0.875rem; text-align: center;}
+#join #bottomFix .setFull{margin-bottom: 10px;}
+#join #bottomFix .setFull:last-of-type{margin-bottom: 0;}
+#join #bottomFix .setFull .borderMain{line-height: 48px; box-sizing: border-box; border-width: 1px!important;}
+
+/* 탈퇴하기 */
+#unsubscribe{padding-top: 50px; padding-bottom: 70px;}
+#unsubscribe .bgContent{padding-bottom: 70px;}
+#unsubscribe .sectionStep{position: relative; width: 100%; height: auto; line-height: 1.5rem; background-color: #FFFFFF; padding: 40px 20px; box-sizing: border-box; color: #131313; font-size: 1.25rem; font-weight: 600; text-align: center;}
+#unsubscribe .sectionStep .imgUnsubscribeLogo{display: block; width: 60px; height: 60px; margin: 0 auto 20px auto;}
+#unsubscribe .sectionAgreement{position: relative; width: 100%; height: auto; padding: 30px 20px; box-sizing: border-box; background-color: #F5F5F5;}
+#unsubscribe .sectionAgreement .ulAgreement{position: relative; width: 100%; height: auto;}
+#unsubscribe .sectionAgreement .liAgreement{position: relative; width: 100%; height: auto; line-height: 1.25rem; margin-bottom: 12px; padding-left: 15px; box-sizing: border-box; font-size: 0.875rem; word-break: keep-all;}
+#unsubscribe .sectionAgreement .liAgreement:last-of-type{margin-bottom: 0;}
+#unsubscribe .sectionAgreement .liAgreement:before{content: "-"; position: absolute; top: 0; left: 0; line-height: 1.25rem; color: #A0A0A0;}
+#unsubscribe .sectionRemaining{position: relative; width: 100%; height: auto; padding: 30px 20px; box-sizing: border-box;}
+#unsubscribe .sectionRemaining:before {content: ""; position: absolute; top: 25px; bottom: 25px; left: 20px; width: 1.5px; background-color: #DADADA;}
+#unsubscribe .sectionRemaining .dlRemaining{position: relative; width: 100%; height: auto; margin-bottom: 20px; padding-right: 120px; box-sizing: border-box;}
+#unsubscribe .sectionRemaining .dlRemaining:last-of-type{margin-bottom: 0;}
+#unsubscribe .sectionRemaining .dtRemaining{position: relative; width: 100%; height: auto; line-height: 1.125rem; padding-left: 18px;}
+#unsubscribe .sectionRemaining .ddRemaining{position: absolute; top: 0; right: 10px; width:100px; height:auto; line-height: 1.125rem; color: #131313; font-weight: 700; text-align: right;}
+
+#unsubscribe .sectionRow{position: relative; width: 100%; height: auto; padding: 10px 20px 30px 20px; box-sizing: border-box;}
+#unsubscribe .sectionRow .setRow .labelRow{padding-left: 30px; font-size: 0.875rem;}

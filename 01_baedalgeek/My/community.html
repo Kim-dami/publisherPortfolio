@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>투표</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/location.css">
+    <!-- 페이지별 css 파일 링크 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/my.css">
+</head>
+<body>
+<main id="community">
+    <header>
+        <a href="#" class="linkBack">
+            <svg viewBox="0 0 20 20" class="iconBack">
+                <g>
+                    <rect width="20" height="20"/>
+                    <path d="m8.66,4.34l-5.66,5.66,5.66,5.66"/>
+                    <line x1="3" y1="10" x2="17" y2="10"/>
+                </g>
+            </svg>
+        </a>
+        <h1>
+            투표
+            <fieldset class="setLinkPlace">
+                <button class="btnLinkPlace">
+                    서울대학교
+                    <svg viewBox="0 0 20 20" class="iconUnfold">
+                        <g>
+                            <rect width="20" height="20" />
+                            <path d="m4.69,7.88l5.31,5.3,5.31-5.3" />
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+        </h1>
+        <section class="sectionTabUnder">
+            <fieldset class="setTabUnder">
+                <input type="radio" name="voteList" class="inputTabUnder" id="voteList-1" checked="checked">
+                <label for="voteList-1" class="labelTabUnder">수령장소 투표</label>
+            </fieldset>
+            <fieldset class="setTabUnder">
+                <input type="radio" name="voteList" class="inputTabUnder" id="voteList-2" >
+                <label for="voteList-2" class="labelTabUnder">배달시간 투표</label>
+            </fieldset>
+        </section>
+    </header>
+    <div class="bgContent">
+        <div class="areaWebCopy">
+            <div class="copy">배달의 발견, 일상의 변화.</div>
+            <div class="logo"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/textBDG.png" alt="배달긱"></div>
+            <ul class="ulAdvantage">
+                <li class="liAdvantage">배달비 0원</li>
+                <li class="liAdvantage">최소주문금액 0원</li>
+                <li class="liAdvantage">AI 루트시스템 친환경 ESG배달</li>
+                <li class="liAdvantage">비대면 안심배달</li>
+                <li class="liAdvantage">사전예약정시도착</li>
+            </ul>
+            <div class="areaStore">
+                <div class="textStore">앱 다운로드</div>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webAppstore.svg">
+                </a>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webGooglestore.svg">
+                </a>
+            </div>
+        </div>
+        <section class="sectionVoteSpot">
+            <div class="spotVoteMap" id="spotVoteMap"></div>
+            <div class="bottomSheet noModal isFlexible onlyFold" id="locationSheet">
+                <div class="sheetBg">
+                    <fieldset class="setVoteTop">
+                        <button class="btnVoteTop hidden"><!-- 지도 위 마커 선택시 || 직접 제안하기시 hidden -->
+                            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/marker_main.svg"/>직접 제안하기
+                        </button>
+                        <button class="btnVoteTop">
+                            <svg class="iconVoteList" viewBox="0 0 20 20">
+                                <rect width="20" height="20"/>
+                                <line x1="7.83" y1="6.4" x2="15.83" y2="6.4"/>
+                                <line x1="7.83" y1="9.89" x2="15.83" y2="9.89"/>
+                                <line x1="7.83" y1="13.6" x2="15.83" y2="13.6"/>
+                                <circle cx="4.92" cy="6.4" r=".75"/>
+                                <circle cx="4.92" cy="9.89" r=".75"/>
+                                <circle cx="4.92" cy="13.6" r=".75"/>
+                            </svg>
+                            투표리스트
+                        </button>
+                    </fieldset>
+                    <div class="sheetFold">
+                        <button class="btnSheetFold"><span class="foldBar"></span></button>
+                    </div>
+                    <div class="sheetContent">
+                        <div class="sheetScroll">
+                            <div class="areaVoteIntro">
+                                <ul class="ulLegend">
+                                    <li class="liLegend">
+                                        <spna class="existLegend"></spna>현재 수령장소
+                                    </li>
+                                    <li class="liLegend">
+                                        <spna class="voteLegend"></spna>투표중인 수령장소
+                                    </li>
+                                </ul>
+                                <h3 class="h3VoteSpot ">배달받고 싶은 수령장소를 투표해주세요</h3><!-- 지도 위 마커 선택시 || 직접 제안하기시 hidden -->
+                                <div class="possibleVote ">투표권 : 서비스장소당 최대 2개</div><!-- 지도 위 마커 선택시 || 직접 제안하기시 hidden -->
+                            </div>
+                            <div class="areaVoteSpot"><!-- 직접 제안하기시 hidden -->
+                                <div class="areaSort "><!-- 지도 위 마커 선택시 hidden -->
+                                    <fieldset class="setSort">
+                                        <input type="radio" name="sort" class="inputSort" checked>
+                                        <label class="labelSort">인기순</label>
+                                    </fieldset>
+                                    <fieldset class="setSort">
+                                        <input type="radio" name="sort" class="inputSort">
+                                        <label class="labelSort">최신순</label>
+                                    </fieldset>
+                                </div>
+                                <ul class="ulVoteSpot">
+                                    <li class="liVoteSpot">
+                                        <div class="voteName">법학길</div>
+                                        <button class="btnVoteMore">위치확인</button>
+                                        <div class="areaProgress">
+                                            <div class="progress bgSub" style="width: 100%;"></div>
+                                            <div class="number">249/100</div>
+                                        </div>
+                                        <button class="btnVote">
+                                            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/button_vote.svg">
+                                        </button>
+                                    </li>
+                                    <li class="liVoteSpot">
+                                        <div class="voteName">조형예술대학 b동</div>
+                                        <button class="btnVoteMore">위치확인</button>
+                                        <div class="areaProgress">
+                                            <div class="progress bgSub" style="width: 50%;"></div>
+                                            <div class="number">50/100</div>
+                                        </div>
+                                        <button class="btnVote">
+                                            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/button_voteCancel.svg">
+                                        </button>
+                                    </li>
+                                    <li class="liVoteSpot">
+                                        <div class="voteName">법학길</div>
+                                        <button class="btnVoteMore">위치확인</button>
+                                        <div class="areaProgress">
+                                            <div class="progress bgSub" style="width: 100%;"></div>
+                                            <div class="number">249/100</div>
+                                        </div>
+                                        <button class="btnVote">
+                                            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/button_vote.svg">
+                                        </button>
+                                    </li>
+                                    <li class="liVoteSpot">
+                                        <div class="voteName">법학길</div>
+                                        <button class="btnVoteMore">위치확인</button>
+                                        <div class="areaProgress">
+                                            <div class="progress bgSub" style="width: 100%;"></div>
+                                            <div class="number">249/100</div>
+                                        </div>
+                                        <button class="btnVote">
+                                            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/button_vote.svg">
+                                        </button>
+                                    </li>
+                                    <li class="liVoteSpot">
+                                        <div class="voteName">법학길</div>
+                                        <button class="btnVoteMore">위치확인</button>
+                                        <div class="areaProgress">
+                                            <div class="progress bgSub" style="width: 100%;"></div>
+                                            <div class="number">249/100</div>
+                                        </div>
+                                        <button class="btnVote">
+                                            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/button_vote.svg">
+                                        </button>
+                                    </li>
+                                    <li class="liVoteSpot">
+                                        <div class="voteName">법학길</div>
+                                        <button class="btnVoteMore">위치확인</button>
+                                        <div class="areaProgress">
+                                            <div class="progress bgSub" style="width: 100%;"></div>
+                                            <div class="number">249/100</div>
+                                        </div>
+                                        <button class="btnVote">
+                                            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/button_vote.svg">
+                                        </button>
+                                    </li>
+                                    <li class="liVoteSpot">
+                                        <div class="voteName">법학길</div>
+                                        <button class="btnVoteMore">위치확인</button>
+                                        <div class="areaProgress">
+                                            <div class="progress bgSub" style="width: 100%;"></div>
+                                            <div class="number">249/100</div>
+                                        </div>
+                                        <button class="btnVote">
+                                            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/button_vote.svg">
+                                        </button>
+                                    </li>
+                                    <li class="liVoteSpot">
+                                        <div class="voteName">법학길</div>
+                                        <button class="btnVoteMore">위치확인</button>
+                                        <div class="areaProgress">
+                                            <div class="progress bgSub" style="width: 100%;"></div>
+                                            <div class="number">249/100</div>
+                                        </div>
+                                        <button class="btnVote">
+                                            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/button_vote.svg">
+                                        </button>
+                                    </li>
+                                    <li class="liVoteSpot">
+                                        <div class="voteName">법학길</div>
+                                        <button class="btnVoteMore">위치확인</button>
+                                        <div class="areaProgress">
+                                            <div class="progress bgSub" style="width: 100%;"></div>
+                                            <div class="number">249/100</div>
+                                        </div>
+                                        <button class="btnVote">
+                                            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/button_vote.svg">
+                                        </button>
+                                    </li>
+                                    <li class="liVoteSpot">
+                                        <div class="voteName">법학길</div>
+                                        <button class="btnVoteMore">위치확인</button>
+                                        <div class="areaProgress">
+                                            <div class="progress bgSub" style="width: 100%;"></div>
+                                            <div class="number">249/100</div>
+                                        </div>
+                                        <button class="btnVote">
+                                            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/button_vote.svg">
+                                        </button>
+                                    </li>
+                                </ul><!-- 지도 위 마커 중 현재 수령장소 선택시 hidden -->
+                                <div class="areaExistSpot"><!-- 지도 위 마커 중 현재 수령장소 선택시 -->
+                                    <div class="areaImgSpot">
+                                        <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/place/dev/11/building/11Z_1662097959.png" class="imgSpot">
+                                        <div class="badgeRobot">로봇</div><!-- 로봇배달일 경우 -->
+                                    </div>
+                                    <div class="spotName">16동 사회과학대학</div>
+                                    <div class="spotDetail">
+                                        <div class="titleSpotTime">수령시간</div>
+                                        <ul class="ulSpotTime">
+                                            <li class="liSpotTime">(지스트)점심1  : 12시05분 ~ 12시30분</li>
+                                            <li class="liSpotTime">(지스트)점심2  : 13시05분 ~ 13시30분</li>
+                                            <li class="liSpotTime">(지스트)저녁1  : 18시05분 ~ 18시30분</li>
+                                            <li class="liSpotTime">(지스트)저녁2  : 19시05분 ~ 19시30분</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="areaApply">
+                                <ol class="olApply">
+                                    <li class="liApply">
+                                        <div class="howToApply">1. 지도를 움직여 정확한 위치를 선택해주세요</div>
+                                    </li>
+                                    <li class="liApply">
+                                        <div class="howToApply">2. 해당 장소 이름을 입력해주세요</div>
+                                        <fieldset class="setBorder"><!-- 유효하지 않을 경우 error 클래스 추가 -->
+                                            <input type="text" class="inputBorder" id="nameApply" required="required" value="음" >
+                                            <label for="nameApply" class="placeholderBorder">3자 ~ 12자</label>
+                                            <div class="errorMessage">이미 등록된 수령장소명입니다</div>
+                                            <button class="btnDelete">
+                                                <span class="blind">검색어 삭제</span>
+                                                <svg class="iconDelete" viewBox="0 0 16 16">
+                                                    <rect width="16" height="16"/>
+                                                    <circle cx="8" cy="8" r="8"/>
+                                                    <line x1="5.42" y1="5.42" x2="10.58" y2="10.58"/>
+                                                    <line x1="5.42" y1="10.58" x2="10.58" y2="5.42"/>
+                                                </svg>
+                                            </button>
+                                        </fieldset>
+                                        <ul class="ulResultApply">
+                                            <li class="liResultApply">
+                                                <a href="#" class="linkResultApply">
+                                                    <span class="fontMain">음</span>악
+                                                    <svg class="iconLinkArrow" viewBox="0 0 20 20">
+                                                        <rect width="20" height="20"/>
+                                                        <path d="m14.54,13.34v-7.33h-7.33"/>
+                                                        <line x1="14.54" y1="6.01" x2="5.46" y2="15.08"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="liResultApply">
+                                                <a href="#" class="linkResultApply">
+                                                    <span class="fontMain">음</span>악대학
+                                                    <svg class="iconLinkArrow" viewBox="0 0 20 20">
+                                                        <rect width="20" height="20"/>
+                                                        <path d="m14.54,13.34v-7.33h-7.33"/>
+                                                        <line x1="14.54" y1="6.01" x2="5.46" y2="15.08"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="liResultApply">
+                                                <a href="#" class="linkResultApply">
+                                                    <span class="fontMain">음</span>악대학 54동
+                                                    <svg class="iconLinkArrow" viewBox="0 0 20 20">
+                                                        <rect width="20" height="20"/>
+                                                        <path d="m14.54,13.34v-7.33h-7.33"/>
+                                                        <line x1="14.54" y1="6.01" x2="5.46" y2="15.08"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li class="liResultApply">
+                                                <a href="#" class="linkResultApply">
+                                                    <span class="fontMain">음</span>악대학 자판기 앞
+                                                    <svg class="iconLinkArrow" viewBox="0 0 20 20">
+                                                        <rect width="20" height="20"/>
+                                                        <path d="m14.54,13.34v-7.33h-7.33"/>
+                                                        <line x1="14.54" y1="6.01" x2="5.46" y2="15.08"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                                <fieldset class="setFull">
+                                    <button class="btnFull bgDisable fontDisable hidden">제안하기</button>
+                                    <button class="btnFull bgMain ">제안하기</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sectionVoteTime hidden">
+            <div class="areaSpotSelect">
+                <h3>배달받고 싶은 시간을 투표해주세요</h3>
+                <div class="spotSelect">
+                    <div class="textSelect">
+                        63동 학생회관
+                        <svg viewBox="0 0 20 20" class="iconUnfold">
+                            <g>
+                                <rect width="20" height="20" />
+                                <path d="m4.69,7.88l5.31,5.3,5.31-5.3" />
+                            </g>
+                        </svg>
+                    </div>
+                    <select class="select">
+                        <option selected>63동 학생회관</option>
+                        <option>301동 공과대학 윗공대</option>
+                        <option>12동 사범대학</option>
+                        <option>916동 CU동</option>
+                        <option>919동 취사실(C/D)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="areaVoteTime">
+                <ul class="ulLegend">
+                    <li class="liLegend">
+                        <spna class="ableLegend"></spna>투표가능
+                    </li>
+                    <li class="liLegend">
+                        <spna class="unableLegend"></spna>투표불가능
+                    </li>
+                    <li class="liLegend">
+                        <spna class="completeLegend"></spna>투표완료
+                    </li>
+                </ul>
+                <fieldset class="setVoteTime">
+                    <input type="checkbox" name="voteTime" class="inputVoteTime" id="voteTime-1" />
+                    <label for="voteTime-1" class="labelVoteTime">
+                        <div class="textVoteTime">10:00 - 11:00</div>
+                        <div class="textVoteCount">
+                            <svg viewBox="0 0 20 20" class="iconVoter">
+                                <g>
+                                    <rect width="20" height="20" />
+                                    <path d="m10,4.31c1.66,0,3,1.34,3,3,0,1.66-1.34,3-3,3s-3-1.34-3-3c0,0,0,0,0-.01,0-1.65,1.35-2.99,3-2.99" />
+                                    <path d="m5.25,15.69c-.18-.08-.28-.27-.25-.46.06-2.07,1.57-3.81,3.61-4.18.25-.04.51-.06.76-.06.45,0,.9-.02,1.35,0,1.61.01,3.07.93,3.79,2.36.31.58.48,1.23.49,1.89.03.19-.07.37-.24.45H5.25Z" />
+                                </g>
+                            </svg>
+                            45
+                        </div>
+                    </label>
+                </fieldset>
+                <fieldset class="setVoteTime">
+                    <input type="checkbox" name="voteTime" class="inputVoteTime" id="voteTime-2" />
+                    <label for="voteTime-2" class="labelVoteTime">
+                        <div class="textVoteTime">11:00 - 12:00</div>
+                        <div class="textVoteCount">
+                            <svg viewBox="0 0 20 20" class="iconVoter">
+                                <g>
+                                    <rect width="20" height="20" />
+                                    <path d="m10,4.31c1.66,0,3,1.34,3,3,0,1.66-1.34,3-3,3s-3-1.34-3-3c0,0,0,0,0-.01,0-1.65,1.35-2.99,3-2.99" />
+                                    <path d="m5.25,15.69c-.18-.08-.28-.27-.25-.46.06-2.07,1.57-3.81,3.61-4.18.25-.04.51-.06.76-.06.45,0,.9-.02,1.35,0,1.61.01,3.07.93,3.79,2.36.31.58.48,1.23.49,1.89.03.19-.07.37-.24.45H5.25Z" />
+                                </g>
+                            </svg>
+                            0
+                        </div>
+                    </label>
+                </fieldset>
+                <fieldset class="setVoteTime">
+                    <input type="checkbox" name="voteTime" class="inputVoteTime" id="voteTime-3" disabled />
+                    <label for="voteTime-3" class="labelVoteTime">
+                        <div class="textVoteTime">12:00 - 13:00</div>
+                        <div class="textVoteCount">
+                            <svg viewBox="0 0 20 20" class="iconVoter">
+                                <g>
+                                    <rect width="20" height="20" />
+                                    <path d="m10,4.31c1.66,0,3,1.34,3,3,0,1.66-1.34,3-3,3s-3-1.34-3-3c0,0,0,0,0-.01,0-1.65,1.35-2.99,3-2.99" />
+                                    <path d="m5.25,15.69c-.18-.08-.28-.27-.25-.46.06-2.07,1.57-3.81,3.61-4.18.25-.04.51-.06.76-.06.45,0,.9-.02,1.35,0,1.61.01,3.07.93,3.79,2.36.31.58.48,1.23.49,1.89.03.19-.07.37-.24.45H5.25Z" />
+                                </g>
+                            </svg>
+                            현재 운영중(점심1)
+                        </div>
+                    </label>
+                </fieldset>
+                <fieldset class="setVoteTime">
+                    <input type="checkbox" name="voteTime" class="inputVoteTime" id="voteTime-4" disabled />
+                    <label for="voteTime-4" class="labelVoteTime">
+                        <div class="textVoteTime">12:00 - 13:00</div>
+                        <div class="textVoteCount">
+                            <svg viewBox="0 0 20 20" class="iconVoter">
+                                <g>
+                                    <rect width="20" height="20" />
+                                    <path d="m10,4.31c1.66,0,3,1.34,3,3,0,1.66-1.34,3-3,3s-3-1.34-3-3c0,0,0,0,0-.01,0-1.65,1.35-2.99,3-2.99" />
+                                    <path d="m5.25,15.69c-.18-.08-.28-.27-.25-.46.06-2.07,1.57-3.81,3.61-4.18.25-.04.51-.06.76-.06.45,0,.9-.02,1.35,0,1.61.01,3.07.93,3.79,2.36.31.58.48,1.23.49,1.89.03.19-.07.37-.24.45H5.25Z" />
+                                </g>
+                            </svg>
+                            현재 운영중(점심2)
+                        </div>
+                    </label>
+                </fieldset>
+                <fieldset class="setVoteTime">
+                    <input type="checkbox" name="voteTime" class="inputVoteTime" id="voteTime-5" checked />
+                    <label for="voteTime-5" class="labelVoteTime">
+                        <div class="textVoteTime">13:00 - 14:00</div>
+                        <div class="textVoteCount">
+                            <svg viewBox="0 0 20 20" class="iconVoter">
+                                <g>
+                                    <rect width="20" height="20" />
+                                    <path d="m10,4.31c1.66,0,3,1.34,3,3,0,1.66-1.34,3-3,3s-3-1.34-3-3c0,0,0,0,0-.01,0-1.65,1.35-2.99,3-2.99" />
+                                    <path d="m5.25,15.69c-.18-.08-.28-.27-.25-.46.06-2.07,1.57-3.81,3.61-4.18.25-.04.51-.06.76-.06.45,0,.9-.02,1.35,0,1.61.01,3.07.93,3.79,2.36.31.58.48,1.23.49,1.89.03.19-.07.37-.24.45H5.25Z" />
+                                </g>
+                            </svg>
+                            242
+                        </div>
+                    </label>
+                </fieldset>
+                <fieldset class="setVoteTime">
+                    <input type="checkbox" name="voteTime" class="inputVoteTime" id="voteTime-6" />
+                    <label for="voteTime-6" class="labelVoteTime">
+                        <div class="textVoteTime">15:00 - 16:00</div>
+                        <div class="textVoteCount">
+                            <svg viewBox="0 0 20 20" class="iconVoter">
+                                <g>
+                                    <rect width="20" height="20" />
+                                    <path d="m10,4.31c1.66,0,3,1.34,3,3,0,1.66-1.34,3-3,3s-3-1.34-3-3c0,0,0,0,0-.01,0-1.65,1.35-2.99,3-2.99" />
+                                    <path d="m5.25,15.69c-.18-.08-.28-.27-.25-.46.06-2.07,1.57-3.81,3.61-4.18.25-.04.51-.06.76-.06.45,0,.9-.02,1.35,0,1.61.01,3.07.93,3.79,2.36.31.58.48,1.23.49,1.89.03.19-.07.37-.24.45H5.25Z" />
+                                </g>
+                            </svg>
+                            7
+                        </div>
+                    </label>
+                </fieldset>
+            </div>
+        </section>
+    </div>
+</main>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=07ab4926694236a9f0d4da97734ad8cd"></script>
+<script>
+    // 수령장소 위치 배역
+    let spotPositions = [
+        {
+            name: '16동 사회과학대학',
+            latlng: new kakao.maps.LatLng(37.45943399764616, 126.95026746006177),
+            vote: true
+        },
+        {
+            name: '63동 학생회관',
+            latlng: new kakao.maps.LatLng(37.4608948550136, 126.95325050284096),
+            vote: true
+        },
+        {
+            name: '924동',
+            latlng: new kakao.maps.LatLng(37.459345764401625, 126.9549242869513),
+            vote: false
+        },
+        {
+            name: '925동',
+            latlng: new kakao.maps.LatLng(37.45884104172554, 126.95451769053352),
+            vote: false
+        }
+    ];
+
+    let spotContainer = document.getElementById('spotVoteMap'); // 지도를 표시할 div
+
+    let options = {
+        center: new kakao.maps.LatLng(37.45487575932038, 126.95241788943736), // 지도의 중심좌표
+        level: 4 // 지도의 확대 레벨
+    };
+
+    let spotVoteMap = new kakao.maps.Map(spotContainer, options); //지도 생성 및 객체 리턴
+
+    let imgaeExistSrc = 'https://kim-dami.github.io/carnival/imgMarkerExist.png', // 마커 기존 수령장소 이미지 주소
+        imageVoteSrc = 'https://kim-dami.github.io/carnival/imgMarkerVote.png', // 마커 투표중 수령장소 이미지 주소
+        imageSize = new kakao.maps.Size(30, 30), // 마커 사이즈
+        imageOption = {offset: new kakao.maps.Point(15, 15)}; // 마커 사이즈 옵션
+
+    // 마커 이미지 생성
+    let markerNormalImage = new kakao.maps.MarkerImage(imgaeExistSrc, imageSize, imageOption),
+        markerVoteImage = new kakao.maps.MarkerImage(imageVoteSrc, imageSize, imageOption);
+
+    for (let i = 0; i < spotPositions.length; i ++) {
+
+        if(spotPositions[i].vote){ //투표중 수령장소
+
+            // 마커 생성
+            let spotMarker = new kakao.maps.Marker({
+                map: spotVoteMap, // 마커를 표시할 지도
+                position: spotPositions[i].latlng, // 마커를 표시할 위치
+                image : markerVoteImage // 마커 이미지
+            });
+
+            spotMarker.setMap(spotVoteMap);
+
+        } else { // 기존 수령장소
+
+            // 마커 생성
+            let spotMarker = new kakao.maps.Marker({
+                map: spotVoteMap, // 마커를 표시할 지도
+                position: spotPositions[i].latlng, // 마커를 표시할 위치
+                image : markerNormalImage // 마커 이미지
+            });
+
+            spotMarker.setMap(spotVoteMap);
+
+        }
+
+    }
+
+
+    // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+    let overlayContent = '<div class="spotOverlay"><p class="name">'+ spotPositions[0].name + '</p></div>';
+
+    // 커스텀 오버레이를 생성합니다
+    let customOverlay = new kakao.maps.CustomOverlay({
+        map: spotVoteMap,
+        position: spotPositions[0].latlng,
+        content: overlayContent,
+        yAnchor: 1
+    });
+</script>
+</body>
+</html>

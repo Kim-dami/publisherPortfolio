@@ -1,0 +1,306 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : event
+	설　명 : 이벤트
+---------------------------------------------*/
+/* 친구추천 이벤트 */
+#friendRecommend {padding-top: 50px;}
+#friendRecommend header{box-shadow: none;}
+#friendRecommend .sectionWelcome{position: relative; width: 100%; height: auto; padding: 0 20px; box-sizing: border-box; text-align: center;}
+#friendRecommend .textRecommend{height: 91px; margin: 50px 0 30px 0;}
+#friendRecommend .areaRecommendID{width: 100%; border-bottom: 1px solid #DADADA;}
+#friendRecommend .areaRecommendID .titleRecommendID{width: 290px; line-height: 0.875rem; margin: 0 auto 10px auto; font-size: 0.875rem; text-align: left;}
+#friendRecommend .areaRecommendID .setRecommendID{position: relative; width: 290px; height: auto; margin: 0 auto 50px auto;}
+#friendRecommend .areaRecommendID .inputRecommendID{width: 100%; height: 42px; line-height: 40px; padding: 0 80px 0 10px; border: 1px solid #DADADA; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF; font-size: 0.875rem;}
+#friendRecommend .areaRecommendID .btnRecommendID{position: absolute; bottom: 0; right: 0; width: 70px; height: 42px; line-height: 42px; border-radius: 0 5px 5px 0; background-color: #0F1838; color: #FFFFFF; font-size: 0.875rem; font-weight: 700; text-align: center;}
+#friendRecommend .sectionEvent{position: relative; width: 100%; height: auto; padding: 0 20px; box-sizing: border-box; text-align: center;}
+#friendRecommend .areaRecommendEvent{width: 100%; border-bottom: 1px solid #DADADA;}
+#friendRecommend .areaRecommendEvent .titleRecommendEvent{width: 100%; margin-bottom: 50px; color: #909090; font-size: 0.875rem; text-align: center;}
+#friendRecommend .areaRecommendEvent .imgRecommendCoupon{width: 220px; margin-bottom: 50px;}
+#friendRecommend .areaRecommendEvent .btnKakao{width: 290px; height: 42px; line-height: 42px; margin-bottom: 10px; border-radius: 5px; background-color: #FFE900; color: #131313; font-size: 0.875rem; text-align: center;}
+#friendRecommend .areaRecommendEvent .btnMyID{width: 290px; height: 42px; line-height: 42px; margin-bottom: 50px; border-radius: 5px; background-color: #0F1838; color: #FFFFFF; font-size: 0.875rem; text-align: center;}
+#friendRecommend .areaRecommendEvent .btnMyRecommend{position: relative; width: 290px; height: 74px; margin-bottom: 50px; padding: 18px 87px 18px 75px; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF; text-align: left; box-shadow: 0 1px 5px rgba(0,0,0,10%);}
+#friendRecommend .areaRecommendEvent .imgMyRecommend{position: absolute; top: 12px; left: 12px; bottom: 10px; width: 50px; height: 50px; border-radius: 100%; background: #F5F5F5 url("https://kim-dami.github.io/carnival/imgMyRecommend.png") no-repeat center center; background-size: 100%; }
+#friendRecommend .areaRecommendEvent .titileMyRecommend{line-height: 0.75rem; margin-bottom: 6px; color: #909090; font-size: 0.75rem;}
+#friendRecommend .areaRecommendEvent .potionMyRecommend{line-height: 1.25rem; color: #131313; font-size: 1.25rem; font-weight: 900; letter-spacing: -0.5px;}
+#friendRecommend .areaRecommendEvent .btnMyRecommend.zero .potionMyRecommend{color: #909090;}
+#friendRecommend .areaRecommendEvent .moreMyRecommend{position: absolute; top: 50%; right: 12px; width: 75px; height: 32px; line-height: 32px; margin-top: -16px; border-radius: 5px; background-color: #EBEFFE; color: #3B61F6; font-size: 0.75rem; text-align: center;}
+#friendRecommend .sectionRanking{position: relative; width: 100%; height: auto; padding: 0 20px; box-sizing: border-box; text-align: center;}
+#friendRecommend .textRecommendRanking{height: 54px; margin: 50px 0 30px 0;}
+#friendRecommend .areaRecommendRanking{position: relative; width: 100%; padding-bottom: 50px; border-bottom: 1px solid #DADADA;}
+#friendRecommend .filterRanking{position: relative; width: 100%; height: auto; margin-bottom: 10px;}
+#friendRecommend .filterRanking:after{content: ""; display: block; clear: both;}
+#friendRecommend .filterRanking .setRanking{float: right; position: relative; padding: 10px 0;}
+#friendRecommend .filterRanking .inputRanking{position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 10; opacity: 0;}
+#friendRecommend .filterRanking .labelRanking{display: block; position: relative; line-height: 0.75rem; padding: 0 15px; color: #909090; font-size: 0.75rem;}
+#friendRecommend .filterRanking .setRanking:first-of-type .labelRanking:after{content: ""; position: absolute; top: 1px; left: 0; bottom: 1px; width: 1px; background-color: #DADADA;}
+#friendRecommend .filterRanking .inputRanking:checked + .labelRanking{color: #131313; font-weight: 700;}
+#friendRecommend .filterNotice{position: absolute; top: 0; left: 5px; line-height: 32px; font-size: 0.75rem; color: #a0a0a0;}
+#friendRecommend .tableRanking{position: relative; width: 100%; height: auto; border: none; border-radius: 5px; background-color: #FFFFFF; overflow: hidden; box-shadow: 0 1px 5px rgba(0,0,0,10%);}
+#friendRecommend .tableRanking th{padding: 13px 0; background-color: #F8F8F8; color: #131313; font-size: 0.875rem; font-weight: 700;}
+#friendRecommend .tableRanking td{line-height: 16px; padding: 13px 0; border-bottom: 1px solid #EAEAEA; background-color: #FFFFFF; color: #505050; font-size: 0.875rem;}
+#friendRecommend .tableRanking tr:last-of-type td{border-bottom: none;}
+#friendRecommend .tableRanking .nickname{display: inline-block; width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+#friendRecommend .tableRanking .imgSchoolLogo{vertical-align: top; width: 16px; height: 16px; margin-right: 3px;}
+#friendRecommend .tableRanking .sectionNone{border-bottom: none; padding: 50px 0;}
+#friendRecommend .tableRanking .sectionNone .textNone{font-size: 0.875rem;}
+#friendRecommend .areaPagination{position: relative; display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 20px;}
+#friendRecommend .areaPagination .btnPagination{display: flex; justify-content: center; align-items: center; width: 30px; height: 30px; border: none; background: transparent; outline: none;}
+#friendRecommend .areaPagination .btnPagination path{fill: #0F1838;}
+#friendRecommend .areaPagination .btnPagination:disabled path{fill: #d8d8d8;}
+#friendRecommend .areaPagination .prePage svg{width: 6.1px; height: 9.4px;}
+#friendRecommend .areaPagination .nextPage svg{width: 6.1px; height: 9.4px;}
+#friendRecommend .areaPagination .numberOfPage{position: relative;}
+#friendRecommend .areaPagination .numberOfPage .btnNumber{width: 30px; height: 30px; border-radius: 100%; color: #909090; font-size: 0.875rem; border: none; background: transparent; outline: none; text-align: center;}
+#friendRecommend .areaPagination .numberOfPage .btnNumber.active{background: #0F1838; color: #FFFFFF; font-weight: 700;}
+#friendRecommend .sectionNotice{position: relative; width: 100%; height: auto; padding: 30px 20px; box-sizing: border-box;}
+#friendRecommend .sectionNotice .titleNotice {margin-bottom: 10px; color: #131313; font-size: 0.875rem; font-weight: 700;}
+#friendRecommend .sectionNotice .ulNotice {position: relative; width: 100%; height: auto;}
+#friendRecommend .sectionNotice .liNotice {position: relative; width: 100%; height: auto; line-height: 1rem; padding-left: 8px; box-sizing: border-box; color: #A0A0A0; font-size: 0.75rem;}
+#friendRecommend .sectionNotice .liNotice:before {content: ""; display: block; position: absolute; top: 7px; left: 0; width: 2px; height: 2px; border-radius: 100%; background-color: #A0A0A0;}
+#friendRecommend .sectionNotice .liNotice .subNotice{margin-top: 4px; color: inherit; font-size: inherit;}
+#friendRecommend .sectionNotice .liNotice .nameNotice{margin: 4px 0; padding-left: 8px; box-sizing: border-box; color: inherit; font-size: inherit;}
+
+#alertReferral .sectionText{width: unset; margin: 0 20px; padding: 25px 0; border-top: 1px solid #DADADA; text-align: left;}
+
+#myReferral .sectionMyReferral{padding-top: 10px; max-height: 400px; overflow-y: auto;}
+#myReferral .areaMyReferral{padding: 0 20px 30px 20px; box-sizing: border-box;}
+#myReferral .areaMyReferral .dlMyReferral{position: relative; width: 100%; height: auto; margin-bottom: 7px;}
+#myReferral .areaMyReferral .dtMyReferral{position: absolute; top: 0; left: 0; line-height: 20px; font-size: 0.75rem;}
+#myReferral .areaMyReferral .dtMyReferral img{vertical-align: top; width: 20px; margin-right: 3px;}
+#myReferral .areaMyReferral .ddMyReferral{width: 100%; line-height: 20px; padding-left: 130px; box-sizing: border-box; color: #131313; font-size: 0.75rem; font-weight: 700; text-align: right;}
+#myReferral .areaTable{padding: 0 20px 30px 20px; box-sizing: border-box;}
+#myReferral .areaTable table{width: 100%; border-collapse: collapse; border-spacing: 0; border: none;}
+#myReferral .areaTable th{vertical-align: middle; padding: 10px 0; border-top: 1px solid #EAEAEA; border-bottom: 1px solid #EAEAEA; color: #131313; background-color: #FAFAFA; font-size: 0.75rem; font-weight: 700; text-align: center;}
+#myReferral .areaTable td{vertical-align: middle; padding: 10px 0; border-bottom: 1px solid #EAEAEA; color: #505050; font-size: 0.75rem; text-align: center;}
+#myReferral .areaTable tr:nth-of-type(odd) td{background-color: #FAFAFA;}
+#myReferral .areaTable th:nth-of-type(2),
+#myReferral .areaTable td:nth-of-type(2){width: 80px;}
+
+/* 룰렛이벤트 */
+#rouletteEventV2{padding-top: 50px; padding-bottom: 50px;}
+#rouletteEventV2 .bgContent{padding-bottom: 50px;}
+#rouletteEventV2 .areaRoulette{position: relative; width: 100%; height: auto; overflow: hidden;}
+#rouletteEventV2 .bgRoulette{width: 100%; height: auto;}
+#rouletteEventV2 .txtRestChance{position: absolute; top: 31%; left: 18%; right: 18%; z-index: 1; height: 40px; line-height: 40px; border-radius: 10px; background-color: rgba(255,255,255,0.9); text-align: center;}
+#rouletteEventV2 .txtRestChance .txtRest{vertical-align: top; height: 18px; margin-top: 12px; margin-right: 7px;}
+#rouletteEventV2 .txtRestChance .txtChance{vertical-align: top; height: 22px; margin-top: 8px;}
+#rouletteEventV2 .btnRoulette{position: absolute; top: 40.5%; left: 5.83%; z-index: 1; width: 88.33%; height: auto;}
+#rouletteEventV2 .btnRoulette .imgPanel{position: relative; width:100%; height: auto; transform-origin: center; -webkit-transform-origin: center; -moz-transform-origin: center; -ms-transform-origin: center; -o-transform-origin: center;}
+#rouletteEventV2 .btnRoulette .imgArrow{position: absolute; top:-0.31%; left:44.97%; width:10.06%; height: auto;}
+#rouletteEventV2 .btnRoulette .imgStart{position: absolute; top:31.34%; left:31.13%; width:37.73%; height: auto;}
+#rouletteEventV2 .txtRoulette{position: absolute; top:93.5%; right: 0; left: 0; width: 100%; height: auto; line-height: 0.875rem; color:#fff; font-size: 1rem; text-align: center;}
+
+#rouletteEventV2 .areaProbability{position: relative; width: 100%; height: auto; padding: 35px 0; background: #FFFAE4; text-align: center; overflow: hidden;}
+#rouletteEventV2 .titlePbb{width:26.11%; margin-bottom: 12px;}
+#rouletteEventV2 .ulPbb{display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; width: 100%; height: auto;}
+#rouletteEventV2 .liPbb{display: flex; flex-direction: column; align-items: center; width: 50%; height: auto;}
+#rouletteEventV2 .txtToday{width: 75%; margin-bottom: 10px;}
+#rouletteEventV2 .txtMore{width: 63.88%; margin-bottom: 10px;}
+#rouletteEventV2 .descriptionPbb{line-height: 1.125rem; margin-bottom: 20px; color: #505050; font-size: 0.875rem;}
+#rouletteEventV2 .descriptionPbb .txtBig{color: #131313; font-weight: 700;}
+#rouletteEventV2 .illuPbb{position: relative; width: 61.11%;}
+#rouletteEventV2 .illuPbb .imgPbbRoulette{width:100%; height: auto;}
+#rouletteEventV2 .illuPbb .circlePbb{position: absolute; top: -5.45%; right : -10.9%; display: flex; flex-direction: column;justify-content: center; align-items: center; width: 54.54%; height: 54.54%; border-radius: 100%; box-sizing: border-box; font-weight: 700; box-shadow: 0 1px 6px rgba(0,0,0,0.15);}
+#rouletteEventV2 .illuPbb .circleToday{line-height: 1rem; border: 2px solid #D10000; background-color: #FFFFFF; color: #D10000; font-size: 1rem;}
+#rouletteEventV2 .illuPbb .circleToday .txtSmall{margin-top:-5px; font-size: 0.75rem;}
+#rouletteEventV2 .illuPbb .circleMore{line-height: 1.25rem; background-color: #D10000; color: #FFFFFF; font-size: 1.25rem;}
+#rouletteEventV2 .illuPbb .circleMore .txtSmall{line-height: 0.75rem; margin-top:-5px; font-size: 0.75rem; letter-spacing: -0.5px;}
+#rouletteEventV2 .bgTriangle{position: absolute; left: 50%; bottom: 0; z-index: 1; width:11.11%; transform: translate(-50%,100%);}
+
+#rouletteEventV2 .areaHow{position: relative; display: flex; flex-direction: column; align-items: center; width: 100%; height: auto; padding: 35px 0; box-sizing: border-box; background: #FFFAE4; overflow: hidden;}
+#rouletteEventV2 .titleHow{width:26.11%;}
+#rouletteEventV2 .ulHow{width:100%; height: auto; padding: 30px 20px 0 15px; box-sizing: border-box;}
+#rouletteEventV2 .liHow{position: relative; width:100%; height: auto; line-height: 1.375rem; margin-bottom: 25px; padding-top: 28px; padding-left: 74px; box-sizing: border-box; color: #505050; font-size: 0.875rem; letter-spacing: -0.5px;}
+#rouletteEventV2 .stepHow{position: absolute; top: 0; left: 0;}
+#rouletteEventV2 .stepHow img{vertical-align: top; height: 35px;}
+#rouletteEventV2 .choiceHow{display: inline-block; width: 85px; height: auto; color: #131313; font-size: 0.875rem; font-weight: 700;}
+#rouletteEventV2 .imgStep{width: 16px; height: auto; vertical-align: bottom;}
+#rouletteEventV2 .txtBold{color: #131313; font-weight: 700;}
+
+#rouletteEventV2 .areaNotice{position: relative; width: 100%; height: auto; padding: 30px 25px; box-sizing: border-box; background: #F0F0F0; overflow: hidden;}
+#rouletteEventV2 .titleNotice{margin-bottom: 10px; color: #131313; font-size: 0.875rem; font-weight: 700;}
+#rouletteEventV2 .ulNotice{position: relative; width:100%; height: auto;}
+#rouletteEventV2 .liNotice{position: relative; width:100%; height: auto; line-height: 1rem; padding-left: 8px; box-sizing: border-box; color: #A0A0A0; font-size: 0.75rem;}
+#rouletteEventV2 .liNotice:before{content: ""; display: block; position: absolute; top: 7px; left: 0; width: 2px; height: 2px; border-radius: 100%; background-color: #A0A0A0;}
+
+#bottomFix .btnBotFix{width: 100%; height: 50px; line-height: 50px; background: #FAE300; color: #131313; font-size: 1rem; font-weight: 700; text-align: center;}
+#bottomFix .btnBotFix .iconKakao{width: 20px; margin-top:-3px; margin-right: 7px; vertical-align: middle;}
+#bottomFix .btnBotFix .iconFriend{width: 23px; margin-top: -7px; margin-right: 4px; vertical-align: middle;}
+
+#rouletteResult .popRst{position: relative; width: 320px; height: auto; margin: 0 auto; border-radius: 20px; background:#fff;}
+#rouletteResult .btnRstClose{position: absolute; top:0; right: 0; width:5.66%; padding:6.29%; box-sizing: content-box; background: transparent; z-index: 1000;}
+#rouletteResult .btnRstClose img{width: 100%;}
+#rouletteResult .rstWin{width: 100%; padding: 50px 0 45px 0; text-align: center;}
+#rouletteResult .rstLose{width: 100%; padding: 8.3% 0; text-align: center;}
+#rouletteResult .rstToday{width: 100%; padding: 8.3% 0; text-align: center;}
+#rouletteResult .titleRst{margin-bottom: 20px; line-height: 0.875rem; color: #131313; font-size: 0.875rem; font-weight: 700;}
+#rouletteResult .titlePoint{margin-bottom: 20px; line-height: 0.875rem; color: #505050; font-size: 0.875rem; font-weight: 500;}
+#rouletteResult .txtPoint{line-height: 2rem; color: #131313; font-size: 2rem; font-weight: 900; letter-spacing: -0.5px;}
+#rouletteResult .txtValid{margin-top: 10px; line-height: 0.625rem; color: #909090; font-size: 0.625rem;}
+#rouletteResult .imgWin{width: 25.15%; margin-bottom: 15px;}
+#rouletteResult .imgLose{position: absolute; top: -6.75%; left: -1.25%; width: 101.57%;}
+#rouletteResult .imgToday{position: absolute; top: -5.9%; left: -4.08%; width: 105.34%;}
+#rouletteResult .bannerShare{position: relative; width: 100%; height: auto; padding: 15px 20px; background-color: #f0f0f0; box-sizing: border-box;}
+#rouletteResult .bannerShare img{width:86%; margin-bottom: 7px;}
+#rouletteResult .bannerShare .txtFriend{margin-bottom: 3px; line-height: 0.875rem; color: #606060; font-size: 0.875rem;}
+#rouletteResult .bannerShare .txtBold{color: #131313; font-weight: 700; letter-spacing: -0.5px;}
+#rouletteResult .bannerChance{position: relative; width: 100%; height: 50px; line-height: 50px; padding: 0 20px; box-sizing: border-box; background-color: #f0f0f0; box-sizing: border-box; color: #505050; font-size: 0.875rem; text-align: center;}
+#rouletteResult .bannerChance .nickname{margin-left: -6px; color: #156B0A; font-size: inherit; font-weight: 700;}
+#rouletteResult .bannerChance .number{display: inline-block; vertical-align: top; margin-left: 5px; color: #131313; font-size: 1rem; font-weight: 800;}
+#rouletteResult .reviewbanner{width: 320px; padding: 10px 0; text-align: center; line-height: 0.625rem; font-size: 0.625rem; font-weight: 500; background-color: #131313; position: absolute; top: -75px; color: #FFFFFF }
+#rouletteResult .reviewbanner .txtreview {margin-top: 5px; text-align: center; line-height: 0.75rem; font-size: 0.75rem; font-weight: 500; color: #ffffff;}
+#rouletteResult .areaBotBtn{position: relative; display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end; width: 100%; height: auto;}
+#rouletteResult .areaBotBtn .btnStop, #rouletteResult .areaBotBtn .btnMore{display: flex; flex-direction: column; justify-content: center; align-items: center; width: 50%; height: auto; line-height: 1rem; padding: 4.71% 0; color: #131313; font-size: 1rem; font-weight: 700; text-align: center;}
+#rouletteResult .areaBotBtn .btnStop{border-top: 1px solid #F0F0F0; border-radius: 0 0 0 20px; background: #fff;}
+#rouletteResult .areaBotBtn .btnMore{border-radius: 0 0 20px 0; background: #FAE300;}
+#rouletteResult .areaBotBtn .txtSmall{line-height: 0.75rem; margin-bottom:5px; color: #505050; font-size: 0.75rem; font-weight: 500;}
+#rouletteResult .areaBotBtn .btnMore .txtBoldRed {display: contents; color: #D10005; font-weight: 700; letter-spacing: -0.5px;}
+#rouletteResult .areaBotBtn .illuNextPbb{position: absolute; right: -10px; bottom: 40px; width: 70px;}
+#rouletteResult .areaBotBtn .illuNextPbb .imgNextPbb{width: 100%;}
+#rouletteResult .areaBotBtn .illuNextPbb .txtNextPbb{position: absolute; top:12px; right:0; left: 0; line-height: 1.5rem; color: #fff; font-size: 1.5rem; font-weight: 700; text-align: center; letter-spacing: -0.5px;}
+#rouletteResult .areaBotBtn .illuNextPbb .txtNextPbb .txtSmall{line-height: 0.875rem; color:#fff; font-size: 0.875rem; font-weight: 400;}
+#rouletteResult .areaBotBtn .btnShare{display: flex; align-items: center; justify-content: center; width:100%; height: auto; line-height: 23px; padding: 13px 0; border-radius: 0 0 20px 20px; background: #FAE300; color: #131313; font-size: 1rem; font-weight: 700; text-align: center;}
+#rouletteResult .areaBotBtn .btnShare img{width: 23px; margin-right: 4px; vertical-align: middle;}
+#rouletteResult .areaBotBtn .btnChance{display: flex; align-items: center; justify-content: center; width:100%; height: auto; line-height: 23px; padding: 13px 0; border-radius: 0 0 20px 20px; background: #156B0A; color: #FFFFFF; font-size: 1rem; font-weight: 700; text-align: center;}
+
+/* 페이코 */
+#paycoEvent {padding-top: 50px;}
+#paycoEvent header{box-shadow: none;}
+.sectionPayco{position: relative; width: 100%; height: auto;}
+.sectionPayco img{width: 100%;}
+
+/* 배달긱 리포트 */
+#bdgReport{padding-top: 50px;}
+#bdgReport .imgBdgReport{width: 100%; margin: 0;}
+#bdgReport h3{line-height: 1.5rem;}
+#bdgReport h3 .subTitle{font-size: 0.875rem;}
+#bdgReport .allDataSection{position: relative; width: 100%; height: auto; padding: 0 20px 40px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#bdgReport .allDataSection h3{margin-bottom: 20px;}
+#bdgReport .allDataSection .highlight{background-color: #FFD52B; font-size: inherit;}
+#bdgReport .allDataSection .asOf{position: absolute; bottom: 0; right: 0; color: #A0A0A0; font-size: 0.75rem; font-weight: 500;}
+#bdgReport .allDataSection .dlAllData{position: relative; width: 100%; margin-bottom: 10px; padding: 20px 15px; border-radius: 10px; box-sizing: border-box; box-shadow: 0 1px 4px rgba(0,0,0,12%);}
+#bdgReport .allDataSection .dlAllData:last-of-type{margin-bottom: 0;}
+#bdgReport .allDataSection .dtAllData{position: absolute; top: 50%; left: 15px; line-height: 0.875rem; margin-top: -7px; color: #909090; font-size: 0.875rem;}
+#bdgReport .allDataSection .ddAllData{position: relative; width: 100%; line-height: 1.25rem; padding-left: 100px; padding-right: 20px; box-sizing: border-box; font-size: 1.25rem; text-align: right;}
+#bdgReport .allDataSection .ddAllData .counter{display: inline-block; color: #131313; font-size: inherit; font-weight: 900; letter-spacing: -0.5px;}
+#bdgReport .allDataSection .ddAllData .unit{position: absolute; top: 50%; right: 0; line-height: 0.875rem; margin-top: -7px; color: #909090; font-size: 0.875rem; font-weight: 500;}
+#bdgReport .placeDataSection{position: relative; width: 100%; height: auto; padding: 0 20px 40px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#bdgReport .placeDataSection:after{content: ''; display: block; clear: both;}
+#bdgReport .placeDataSection h3{margin-bottom: 20px;}
+#bdgReport .placeDataSection .placeSchool{position: absolute; bottom: -2px; right: 0; max-width: 150px; line-height: 16px; padding: 5px 15px; border-radius: 20px; background-color: #F5F5F5; color: #505050; font-size: 0.75rem; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+#bdgReport .placeDataSection .placeSchool .imgSchoolLogo{vertical-align: top; height: 16px; margin-right: 5px;}
+#bdgReport .placeDataSection .dlPlaceData{position: relative; width: 42%; height: 0; margin: 0 4%; padding-bottom: 42%; border-radius: 100%; box-shadow: 0 1px 4px rgba(0,0,0,12%);}
+#bdgReport .placeDataSection .dlPlaceData:first-of-type{float: left;}
+#bdgReport .placeDataSection .dlPlaceData:last-of-type{float: right;}
+#bdgReport .placeDataSection .dtPlaceData{position: absolute; top: 50%; width: 100%; line-height: 0.875rem; margin-top: 24px; color: #909090; font-size: 0.875rem; text-align: center;}
+#bdgReport .placeDataSection .ddPlaceData{position: absolute; top: 50%; width: 100%; line-height: 1.5rem; margin-top: -46px; color: #131313; font-size: 1.5rem; font-weight: 900; text-align: center;}
+#bdgReport .placeDataSection .ddPlaceData svg{display: block; width: 30px; height: 30px; margin: 0 auto 7px auto;}
+#bdgReport .placeDataSection .ddPlaceData svg rect{fill: none;}
+#bdgReport .placeDataSection .ddPlaceData svg circle,
+#bdgReport .placeDataSection .ddPlaceData svg line,
+#bdgReport .placeDataSection .ddPlaceData svg path{fill: none; stroke: #000; stroke-miterlimit: 10; stroke-linecap: round; stroke-linejoin: round;}
+#bdgReport .majorStoresSection{position: relative; width: 100%; height: auto; padding: 0 20px 40px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#bdgReport .majorStoresSection h3{margin-bottom: 20px;}
+#bdgReport .majorStoresSection .ulMajorStores{position: relative; width: 100%; height: auto;}
+#bdgReport .majorStoresSection .ulMajorStores:after{content: ""; display: block; clear: both;}
+#bdgReport .majorStoresSection .liMajorStores{float: left; margin-right: 10px; margin-bottom: 12px; color: #909090; font-size: 0.75rem;}
+#bdgReport .majorStoresSection .scriptMajorStores{line-height: 0.875rem; margin-top: 10px; font-size: 0.875rem;}
+#bdgReport .supportersSection{position: relative; width: 100%; height: auto; padding: 0 20px 40px 20px; box-sizing: border-box; background-color: #FFFFFF; overflow: hidden;}
+#bdgReport .supportersSection h3{margin-bottom: 20px;}
+#bdgReport .supportersSection .imgSupporterMessage{vertical-align: top; width: 20px; height: 20px; margin-top: 2px; margin-left: 5px;}
+#bdgReport .supportersSection .topRollingSupporters{display: flex; margin-left: -50px; margin-bottom: 15px;}
+#bdgReport .supportersSection .bottomRollingSupporters{display: flex;}
+.rollingSupporters.original {animation: rollingleft1 80s linear infinite;}
+.rollingSupporters.clone {animation: rollingleft2 80s linear infinite;}
+@keyframes rollingleft1 {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-100%); }
+    50.01% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+@keyframes rollingleft2 {
+    0% { transition: translateX(0); }
+    100% { transform: translateX(-200%); }
+}
+#bdgReport .supportersSection .ulSupporters{display: flex;}
+#bdgReport .supportersSection .liSupporters{position: relative; display: flex; justify-content: center; width: 260px; height: auto; padding-right: 15px;}
+#bdgReport .supportersSection .imgSchoolLogo{position: absolute; top: 15px; left: 15px; width: 35px;}
+#bdgReport .supportersSection .supporterMessage{width: 100%; height: 115px; padding: 15px 15px 15px 65px; border-radius: 10px; box-sizing: border-box; background-color: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,12%);}
+#bdgReport .supportersSection .schoolAndName{line-height: 0.625rem; margin-bottom: 10px; color: #909090; font-size: 0.625rem;}
+#bdgReport .supportersSection .message{line-height: 1rem; font-size: 0.75rem; text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4;}
+
+/* 최저가 보상 */
+#lowestPrice{padding-top: 50px;}
+#lowestPrice .imgLowestPrice{width: 100%; margin: 0;}
+#lowestPrice .sectionReason{position: relative; width: 100%; height: auto; background-color: #F5F5F5;}
+#lowestPrice .sectionReason h3{width: 100%; height: 55px; line-height: 55px; color: #FFFFFF; font-size: 1.25rem; text-align: center;}
+#lowestPrice .sectionReason .contentReason{position: relative; width: 100%; height: auto; line-height: 1.25rem; padding: 30px 20px; box-sizing: border-box; color: #909090; font-size: 0.875rem; word-break: keep-all;}
+#lowestPrice .sectionReason b{color: #131313; font-size: inherit; font-weight: 700;}
+#lowestPrice .sectionReason .areaDeliveryProcess{position: relative; width: 100%; padding-bottom: 30px;}
+#lowestPrice .sectionReason .dlProcess{position: relative; width: 100%; margin-bottom: 15px;}
+#lowestPrice .sectionReason .dlProcess:last-of-type{margin-bottom: 0;}
+#lowestPrice .sectionReason .dtProcess{position: relative; width: 100%; height: 20px; line-height: 20px; margin-bottom: 12px; padding: 0 25px; box-sizing: border-box; color: #131313; font-size: 1.125rem; font-weight: 700;}
+#lowestPrice .sectionReason .dtProcess .line{display: inline-block; vertical-align: top; width: 3px; height: 100%; margin-right: 10px; background-color: #FCD52B;}
+#lowestPrice .sectionReason .ddProcess{width: 100%; height: auto;}
+#lowestPrice .sectionReason .ddProcess img{width: 100%; height: auto;}
+#lowestPrice .sectionHowToApply{position: relative; width: 100%; height: auto; padding: 30px 25px; box-sizing: border-box; background-color: #EAEAEA;}
+#lowestPrice .sectionHowToApply .areaApply{position: relative; width: 100%; height: auto; margin-bottom: 30px;}
+#lowestPrice .sectionHowToApply .dlApply{position: relative; width: 100%; margin-bottom: 12px;}
+#lowestPrice .sectionHowToApply .dtApply{position: absolute; top: 0; left: 0; line-height: 1.25rem; color: #909090; font-size: 0.875rem; font-weight: 700;}
+#lowestPrice .sectionHowToApply .ddApply{width: 100%; line-height: 1.25rem; padding-left: 70px; box-sizing: border-box; color: #131313; font-size: 0.875rem;}
+#lowestPrice .sectionHowToApply .setApply{position: relative; width: 100%; height: auto;}
+#lowestPrice .sectionHowToApply .btnApply{display: block; width: 100%; height: 45px; border-radius: 5px;}
+#lowestPrice .sectionHowToApply .btnApply.borderMain{line-height: 43px; margin-bottom: 7px; border-width: 1px; box-sizing: border-box; background-color: #FFFFFF;}
+#lowestPrice .sectionHowToApply .btnApply.bgMain{line-height: 45px; color: #FFFFFF;}
+#lowestPrice .sectionNotice{position: relative; width: 100%; padding: 20px; box-sizing: border-box;}
+#lowestPrice .sectionNotice .titleNotice {margin-bottom: 10px; color: #131313; font-size: 0.875rem; font-weight: 700;}
+#lowestPrice .sectionNotice .ulNotice {position: relative; width: 100%; height: auto;}
+#lowestPrice .sectionNotice .liNotice {position: relative; width: 100%; height: auto; margin-bottom: 2px; line-height: 1rem; padding-left: 8px; box-sizing: border-box; color: #A0A0A0; font-size: 0.75rem;}
+#lowestPrice .sectionNotice .liNotice:before{content: ""; display: block; position: absolute; top: 7px; left: 0; width: 2px; height: 2px; border-radius: 100%; background-color: #A0A0A0;}
+#lowestPrice .sectionNotice .liNotice .subNotice{position: relative; width: 100%; margin: 2px 0; padding-left: 10px; box-sizing: border-box; color: inherit; font-size: inherit;}
+#lowestPrice .sectionNotice .liNotice .subNotice:before{content: ""; display: block; position: absolute; top: 7px; left: 0; width: 4px; height: 1px; background-color: #A0A0A0;}
+#lowestPrice .sectionNotice .liNotice .small{color: inherit; font-size: 0.625rem;}
+
+#compensationStandard .sectionStandard{max-height: 400px; overflow-y: auto;}
+#compensationStandard .sectionStandard h3{font-size: 1rem;}
+#compensationStandard .areaPriceStandard{width: 100%; padding: 0 20px 20px 20px; box-sizing: border-box;}
+#compensationStandard .areaPriceStandard .ulPriceStandard{width: 100%; margin-top: 12px; padding: 15px; box-sizing: border-box; background-color: #F5F5F5; border-radius: 5px;}
+#compensationStandard .areaPriceStandard .liPriceStandard{position: relative; width: 100%; line-height: 0.75rem; margin-bottom: 10px; padding-left: 8px; box-sizing: border-box; color: #131313; font-size: 0.75rem; font-weight: 700;}
+#compensationStandard .areaPriceStandard .liPriceStandard:last-of-type{margin-bottom: 0;}
+#compensationStandard .areaPriceStandard .liPriceStandard:before{content: ""; display: block; position: absolute; top: 4px; left: 0; width: 2px; height: 2px; border-radius: 100%; background-color: #505050;}
+#compensationStandard .areaPriceStandard .subStandard{margin-top: 5px; color: #909090; font-size: 0.625rem; font-weight: 500;}
+#compensationStandard .areaProcess{width: 100%; padding: 0 20px 20px 20px; box-sizing: border-box;}
+#compensationStandard .areaProcess .imgCompensationProcess{width: 100%; margin-top: 12px;}
+#compensationStandard .areaAmount{width: 100%; padding: 0 20px 25px 20px; box-sizing: border-box;}
+#compensationStandard .areaAmount .imgCompensationAmount{width: 100%; margin-top: 12px;}
+
+/* 다회용기 서비스 */
+#multiUseContainer{padding-top: 50px;}
+#multiUseContainer .sectionHowToUse{position: relative; width: 100%; height: auto; padding-top: 150px; padding-bottom: 25px; box-sizing: border-box; background-color: #59BFFF;}
+#multiUseContainer .sectionHowToUse .textContainerTitle{position: absolute; top: 35px; left: 50%; width: 290px; margin-left: -110px;}
+#multiUseContainer .sectionHowToUse .areaExplanation{color: #000; text-align: center; font-size: 0.75rem;}
+#multiUseContainer .sectionHowToUse .underline{color: inherit; font-size: inherit; text-decoration: underline;}
+#multiUseContainer .sectionHowToUse .imgContainerImage{display: block; width: 360px; margin: -30px auto 25px auto;}
+#multiUseContainer .sectionHowToUse .olHowToUse{position: relative; width: 100%; height: auto;}
+#multiUseContainer .sectionHowToUse .liHowToUse{position: relative; width: 100%; height: auto; margin-bottom: 30px; color: #000; text-align: center; font-size: 0.875rem;}
+#multiUseContainer .sectionHowToUse .textContainerHow{display: block; height: 69px; margin: 0 auto 15px auto;}
+#multiUseContainer .sectionAdvantage{position: relative; width: 100%; height: auto; padding: 40px 0 15px 0; box-sizing: border-box; background-color: #F5F5F5;}
+#multiUseContainer .sectionAdvantage .textContainerSubTitle{display: block; height: 28px; margin: 0 auto 25px auto;}
+#multiUseContainer .sectionAdvantage .bgCarbonPoint{width: 320px; height: auto; margin: 0 auto 40px auto; padding: 25px 0 25px 0; box-sizing: border-box; background-color: #FFFFFF; border-radius: 20px; text-align: center; box-shadow: 0 1px 5px rgba(0,0,0,10%);}
+#multiUseContainer .sectionAdvantage .bgCarbonPoint b{color: #000; font-weight: 900;}
+#multiUseContainer .sectionAdvantage .imgEnvironmentLogo{display: block; width: 120px; margin: 0 auto 15px auto;}
+#multiUseContainer .sectionAdvantage .linkEnvironment{line-height: 12px; margin-top: 15px; color: #909090; font-size: 0.75rem; text-decoration: underline;}
+#multiUseContainer .sectionAdvantage .linkEnvironment .iconMore{width: 12px; height: 12px; vertical-align: top; margin-top: 1px;}
+#multiUseContainer .sectionAdvantage .ulAdvantage{position: relative; width: 320px; height: auto; margin: 0 auto;}
+#multiUseContainer .sectionAdvantage .ulAdvantage:after{content: ""; display: block; clear: both;}
+#multiUseContainer .sectionAdvantage .liAdvantage{float: left; position: relative; width: 50%; height: auto; margin-bottom: 25px; text-align: center;}
+#multiUseContainer .sectionAdvantage .bgAdvantage{width: 100px; height: 100px; margin: 0 auto 12px auto; border-radius: 100%; background-color: #FFFFFF; box-shadow: 0 1px 5px rgba(0,0,0,10%);}
+#multiUseContainer .sectionAdvantage .bgAdvantage img{width: 100%; height: 100%;}
+#multiUseContainer .sectionAdvantage .liAdvantage p{line-height: 26px; margin-bottom: 3px; color: #000; font-size: 1.5rem; font-weight: 900;}
+#multiUseContainer .sectionAdvantage .textAdvantage{font-size: 0.875rem;}
+#multiUseContainer .sectionNotice{position: relative; width: 100%; padding: 25px 20px 5px 20px; box-sizing: border-box; background-color: #EAEAEA;}
+#multiUseContainer .sectionNotice .titleNotice {margin-bottom: 10px; color: #131313; font-size: 0.875rem; font-weight: 700;}
+#multiUseContainer .sectionNotice .ulNotice {position: relative; width: 100%; height: auto; margin-bottom: 20px;}
+#multiUseContainer .sectionNotice .liNotice {position: relative; width: 100%; height: auto; margin-bottom: 2px; line-height: 1rem; padding-left: 8px; box-sizing: border-box; color: #A0A0A0; font-size: 0.75rem;}
+#multiUseContainer .sectionNotice .liNotice:before{content: ""; display: block; position: absolute; top: 7px; left: 0; width: 2px; height: 2px; border-radius: 100%; background-color: #A0A0A0;}

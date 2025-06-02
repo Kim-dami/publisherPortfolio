@@ -1,0 +1,204 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : geekmoney
+	설　명 : 긱머니
+---------------------------------------------*/
+/* 긱머니 공통UI */
+.sectionMyGeekmoney{position: relative; width: 100%; margin-bottom: 5px; padding: 30px 20px; box-sizing: border-box; background-color: #FFFFFF; color: #131313; font-size: 1.25rem; font-weight: 900;}
+.sectionMyGeekmoney .subTitle{margin-bottom: 7px; color: #909090; font-size: 0.75rem; font-weight: 500;}
+
+.sectionUsageHistory{position: relative; width: 100%; padding: 30px 20px 10px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+.sectionUsageHistory .areaFilter{position: relative; width: 100%; height: auto; margin-bottom: 20px;}
+.sectionUsageHistory .areaFilter:after{content: ""; display: block; clear: both;}
+.sectionUsageHistory .areaFilter .setFilter{float: left; position: relative; margin-right: 7px;}
+.sectionUsageHistory .areaFilter .setFilter:last-of-type{margin-right: 0;}
+.sectionUsageHistory .areaFilter .inputFilter{position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 10; width: 100%; height: 100%;}
+.sectionUsageHistory .areaFilter .labelFilter{display: block; width: 65px; height: 34px; line-height: 32px; border: 1px solid #EAEAEA; border-radius: 20px; box-sizing: border-box; color: #909090; text-align: center;}
+.sectionUsageHistory .areaFilter .inputFilter:checked + .labelFilter{line-height: 30px; border: 2px solid #0f173a; color: #0f173a; font-weight: 700;}
+.sectionUsageHistory .areaHistory{position: relative; width: 100%; height: auto;}
+.sectionUsageHistory .ulHistory{position: relative; width: 100%; height: auto;}
+.sectionUsageHistory .liHistory{position: relative; width: 100%; height: auto; padding: 20px 120px 20px 10px; box-sizing: border-box; border-bottom: 1px solid #F0F0F0;}
+.sectionUsageHistory .liHistory:last-child{border-bottom: none;}
+.sectionUsageHistory .detailHistory{width: 100%; height: auto; line-height: 1.25rem; margin-bottom: 5px;}
+.sectionUsageHistory .timeHistory{width: 100%; height: auto; line-height: 0.875rem; color: #A0A0A0; font-size: 0.75rem;}
+.sectionUsageHistory .amountHistory{position: absolute; top: 50%; right: 10px; line-height: 1.125rem; margin-top: -9px; color: #131313; font-size:1.125rem; font-weight: 700; text-align: right; letter-spacing: -0.5px;}
+
+.sectionTerms{position: relative; width: 100%; height: auto; padding: 30px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+.sectionTerms .setTerms{position: relative; width: 100%; height: auto;}
+.sectionTerms .btnTerms{display: block; width: 100%; height: auto; margin-bottom: 12px; border: none; background-color: transparent; color: #707070; font-size: 0.875rem; text-align: left;}
+.sectionTerms .btnTerms:last-of-type{margin-bottom: 0;}
+.sectionTerms .noticeTerms{position: relative; width: 100%; margin-top: 20px; padding-top: 15px; border-top: 1px solid #EAEAEA; box-sizing: border-box;}
+.sectionTerms .setRow .labelRow {padding-left: 30px; color: #707070; font-size: 0.875rem;}
+.sectionTerms .setRow .checkbox{stroke: #DADADA; stroke-width: 1px;}
+.sectionTerms .setRow .inputRow:checked + .labelRow .checkbox{stroke: none;}
+
+/* 긱머니 */
+#geekmoney{padding-top: 50px; padding-bottom: 50px;}
+#geekmoney .bgContent{padding-bottom: 50px;}
+#geekmoney .sectionBenefits{position: relative; width: 100%; height: 100px;}
+#geekmoney .sectionBenefits .linkBenefits{display: block; width: 100%; height: 100%; background: #0f173a url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/image/bannerGeekmoney.png") no-repeat center center; background-size: cover;}
+#geekmoney .sectionMyGeekmoney h3{margin-bottom: 15px;}
+#geekmoney .sectionMyGeekmoney .subTitle{margin-top: 3px;}
+#geekmoney .sectionMyGeekmoney .myGeekmoney{position: relative; width: 100%; line-height: 35px; padding-right: 110px; box-sizing: border-box; color: #131313; font-size: 1.25rem; font-weight: 900;}
+#geekmoney .sectionUsageHistory .areaUsageBenefits{position: relative; width: 100%; height: auto; margin-bottom: 10px; padding: 18px 18px 15px 18px; box-sizing: border-box; background-color: #F5F5F5;}
+#geekmoney .sectionUsageHistory .titleUsageBenefits{line-height: 14px; margin-bottom: 7px;}
+#geekmoney .sectionUsageHistory .titleUsageBenefits img{height: 14px; vertical-align: top;}
+#geekmoney .sectionUsageHistory .contentUsageBenefits{line-height: 1.125rem; color: #909090; font-size: 0.75rem;}
+#geekmoney .sectionUsageHistory .contentUsageBenefits b{color: #505050; font-size: inherit;}
+#geekmoney .sectionMyGeekmoney .btnGeekmoneyCharge{position: absolute; top: 0; right: 0; width: 100px; height: 35px; line-height: 35px; border-radius: 5px; color: #FFFFFF; font-size: 0.875rem; font-weight: 700; text-align: center;}
+#geekmoney .sectionOther{position: relative; width: 100%; padding: 15px 0; box-sizing: border-box; background-color: #F5F5F5; text-align: center;}
+#geekmoney .sectionOther .btnOther{display: inline-block; position: relative; height: 0.875rem; line-height: 0.875rem; padding: 0 15px; color: #909090; font-size: 0.875rem;}
+#geekmoney .sectionOther .btnOther:after{content: ""; position: absolute; top: 2px; right: 0; bottom: 2px; width: 1px; background-color: #DADADA;}
+#geekmoney .sectionOther .btnOther:last-of-type:after{background-color: transparent;}
+
+/* 긱머니 혜택 */
+#geekmoneyBenefits{padding-top: 50px; padding-bottom: 70px;}
+#geekmoneyBenefits .bgContent{padding-bottom: 70px;}
+#geekmoneyBenefits .sectionBenefits{position: relative; width: 100%; height: auto;}
+#geekmoneyBenefits .sectionBenefits .imgBenefit{display: block; width: 100%;}
+#geekmoneyBenefits .sectionBenefits .areaGeekNumber{position: relative; width: 100%; height: auto; padding: 30px 0 10px 0; box-sizing: border-box; background-color: #FFFFFF;}
+#geekmoneyBenefits .sectionBenefits .areaGeekNumber h3{text-align: center; margin-bottom: 25px; clear: both;}
+#geekmoneyBenefits .sectionBenefits .ulGeekNumber{position: relative; max-width: 420px; height: auto; margin: 0 auto; padding: 0 20px 0 15px; box-sizing: border-box;}
+#geekmoneyBenefits .sectionBenefits .ulGeekNumber:after{content: ""; display: block; clear: both;}
+#geekmoneyBenefits .sectionBenefits .liGeekNumber{float: left; width: 50%; margin-bottom: 20px;}
+#geekmoneyBenefits .sectionBenefits .liGeekNumber .title{line-height: 0.875rem; margin-bottom: 10px; color: #A0A0A0; font-size: 0.875rem; text-align: center;}
+#geekmoneyBenefits .sectionBenefits .liGeekNumber .number{line-height: 1.125rem; color: #131313; font-size: 1.125rem; font-weight: 700; letter-spacing: -0.5px; text-align: center;}
+#geekmoneyBenefits .sectionBenefits .liGeekNumber .number img{width: 20px; vertical-align: top;}
+#geekmoneyBenefits .sectionBenefits .liGeekNumber .number span{font-size: inherit; font-weight: inherit;}
+
+/* 긱머니 충전 */
+#geekmoneyCharge{padding-top: 50px; padding-bottom: 70px;}
+#geekmoneyCharge .bgContent{padding-bottom: 70px;}
+#geekmoneyCharge .sectionHowCharge{position: relative; width: 100%; margin-bottom: 5px; padding: 30px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#geekmoneyCharge .sectionHowCharge h3{padding-bottom: 22px;}
+#geekmoneyCharge .sectionHowCharge .areaHowCharge{position: relative; width: 100%; height: auto;}
+#geekmoneyCharge .sectionHowCharge .areaHowCharge .setRow{margin-bottom: 15px;}
+#geekmoneyCharge .sectionHowCharge .areaHowCharge .setRow:last-of-type{margin-bottom: 0;}
+#geekmoneyCharge .sectionHowCharge .areaHowCharge .inputRow:disabled + .labelRow{color: #A0A0A0;}
+#geekmoneyCharge .sectionHowCharge .areaHowCharge .inputRow:disabled + .labelRow .iconTwoCircles circle{fill: #F5F5F5;}
+#geekmoneyCharge .sectionHowMuch{position: relative; width: 100%; margin-bottom: 5px; padding-top: 30px; box-sizing: border-box; background-color: #FFFFFF;}
+#geekmoneyCharge .sectionHowMuch h3{padding: 0 20px 22px 20px; box-sizing: border-box;}
+#geekmoneyCharge .sectionHowMuch .bonusPoint{margin-left: 10px; color: #505050; font-size: 0.75rem; font-weight: 500;}
+#geekmoneyCharge .sectionHowMuch .areaHowMuch{position: relative; width: 100%; height: auto; padding: 0 15px 30px 15px; box-sizing: border-box;}
+#geekmoneyCharge .sectionHowMuch .areaHowMuch:after{content: ""; display: block; clear: both;}
+#geekmoneyCharge .sectionHowMuch .setHowMuch{float: left; position: relative; width: 25%; padding: 0 5px; box-sizing: border-box;}
+#geekmoneyCharge .sectionHowMuch .inputHowMuch{position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; opacity: 0;}
+#geekmoneyCharge .sectionHowMuch .labelHowMuch{display: block; width: 100%; height: 40px; line-height: 38px; border: 1px solid #EAEAEA; border-radius: 5px; background-color: #FFFFFF; color: #909090; text-align: center;}
+#geekmoneyCharge .sectionHowMuch .inputHowMuch:checked + .labelHowMuch{line-height: 40px; border: none; background-color: #0f173a; color: #FFFFFF; font-weight: 700;}
+#geekmoneyCharge .sectionHowMuch .areaPayment{position: relative; width: 100%; height: auto; padding: 25px 20px; box-sizing: border-box; background-color: #F2F3F5;}
+#geekmoneyCharge .sectionHowMuch .areaPayment:before{content: ""; position: absolute; top: 22px; bottom: 22px; left: 20px; width: 1.5px; background-color: #D0D2D8;}
+#geekmoneyCharge .sectionHowMuch .dlPayment{position: relative; width: 100%; height: auto; margin-bottom: 20px; padding-right: 120px; box-sizing: border-box;}
+#geekmoneyCharge .sectionHowMuch .dlPayment:last-of-type{margin-bottom: 0;}
+#geekmoneyCharge .sectionHowMuch .dlPayment .dtPayment{position: relative; width: 100%; height: auto; line-height: 1rem; padding-left: 18px; color: #131313; font-size: 1rem; font-weight: 700;}
+#geekmoneyCharge .sectionHowMuch .dlPayment .ddPayment{position: absolute; top: 0; right: 10px; width: 100px; height: auto; line-height: 1rem; color: #131313; font-size: 1rem; font-weight: 700; text-align: right; letter-spacing: -0.3px;}
+#geekmoneyCharge .sectionDeposit{position: fixed; top: 50px; bottom: 70px; z-index: 10; width: 100%; padding: 0 20px; box-sizing: border-box; background-color: #FFFFFF; overflow: hidden;}
+@media screen and (min-width: 480px) {
+    #geekmoneyCharge .sectionDeposit{width: 480px;}
+}
+#geekmoneyCharge .sectionDeposit .areaDeadline{width: 100%; line-height: 1.25rem; padding: 80px 0 40px 0; box-sizing: border-box; color: #131313; font-size: 1.125rem; font-weight: 700; text-align: center;}
+#geekmoneyCharge .sectionDeposit .areaDeadline .noticeDeadline{color: #505050; font-size: 0.75rem; font-weight: 500;}
+#geekmoneyCharge .sectionDeposit .areaDeposit{padding: 22px 20px; box-sizing: border-box; background-color: #F5F5F5;}
+#geekmoneyCharge .sectionDeposit .dlDeposit{position: relative; width: 100%; height: auto; margin-bottom: 20px; padding-left: 80px; box-sizing: border-box;}
+#geekmoneyCharge .sectionDeposit .dlDeposit:last-of-type{margin-bottom: 0;}
+#geekmoneyCharge .sectionDeposit .dlDeposit .dtDeposit{position: absolute; top: 0; left: 0; height: auto; line-height: 1rem; color: #A0A0A0; font-size: 1rem;}
+#geekmoneyCharge .sectionDeposit .dlDeposit .ddDeposit{position: relative; width: 100%; height: auto; line-height: 1rem; color: #131313; font-size: 1rem; font-weight: 700; letter-spacing: -0.3px;}
+#geekmoneyCharge .sectionDeposit .dlDeposit .btnCopy{vertical-align: top; margin-left: 5px; color: #909090; height: 1rem; line-height: 1rem; font-weight: 500;}
+#geekmoneyCharge .sectionDeposit .dlDeposit .iconCopy{vertical-align: top; width: 16px; height: 16px;}
+#geekmoneyCharge .sectionDeposit .dlDeposit .iconCopy rect{fill: none;}
+#geekmoneyCharge .sectionDeposit .dlDeposit .iconCopy path{fill: #A0A0A0;}
+#geekmoneyCharge .sectionDeposit .dlDeposit .bonusPoint{display: inline-block; vertical-align: top; height: 1rem; line-height: 1rem; margin-left: 5px; padding: 0 7px 0 6px; border-radius: 3px; background-color: #F5DFDF; color: #D10000; font-size: 0.75rem; font-weight: 700;}
+#geekmoneyCharge .sectionDeposit .ulNoticeDeposit{width: 100%; height: auto; padding-top: 20px;}
+#geekmoneyCharge .sectionDeposit .liNoticeDeposit{position: relative; width: 100%; height: auto; line-height: 1rem; padding-left: 12px; box-sizing: border-box; color: #A0A0A0; font-size: 0.75rem; word-break: keep-all;}
+#geekmoneyCharge .sectionDeposit .liNoticeDeposit .dash{position: absolute; top: 0; left: 0; color: inherit; font-size: 0.625rem;}
+
+/* 긱머니 환불 */
+#geekmoneyRefund{padding-top: 50px; padding-bottom: 70px;}
+#geekmoneyRefund .bgContent{padding-bottom: 70px;}
+#geekmoneyRefund .sectionAccount{position: relative; width: 100%; margin-bottom: 5px; padding: 30px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#geekmoneyRefund .sectionAccount h3{padding-bottom: 22px;}
+#geekmoneyRefund .sectionAccount .subTitle{margin-top: 3px; color: #909090; font-size: 0.75rem; font-weight: 500;}
+#geekmoneyRefund .sectionAccount fieldset{margin-bottom: 15px;}
+#geekmoneyRefund .sectionAccount fieldset:last-of-type{margin-bottom: 0;}
+#geekmoneyRefund .sectionAccount .setSelect{position: relative; width: 100%; height: auto; box-sizing: border-box;}
+#geekmoneyRefund .sectionAccount .setSelect .textSelect{position: relative; width: 100%; height: 44px; line-height: 42px; padding: 0 30px 0 15px; border: 1px solid #EAEAEA; border-radius: 5px; box-sizing: border-box; font-size: 0.875rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+#geekmoneyRefund .sectionAccount .setSelect .iconUnfold{position: absolute; top: 10px; right: 10px;}
+#geekmoneyRefund .sectionAccount .setSelect .iconFold{position: absolute; top: 10px; right: 10px;}
+#geekmoneyRefund .sectionAccount .setSelect .select{position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; opacity: 0;}
+#geekmoneyRefund .sectionAccount .setReason{position: relative; width: 100%; height: auto;}
+#geekmoneyRefund .sectionAccount .textareaReason{display: block; width:100%; height: 80px; line-height: 1.25rem; padding: 11px 14px; border: 1px solid #EAEAEA; border-radius: 5px; box-sizing: border-box; background: #FFFFFF; color: #505050; font-size: 1rem; outline: none; resize: none;}
+#geekmoneyRefund .sectionAccount .textareaReason:focus {border: 1px solid #131313; outline: none;}
+#geekmoneyRefund .sectionAccount .textareaReason:-webkit-autofill,
+#geekmoneyRefund .sectionAccount .textareaReason:-webkit-autofill:hover,
+#geekmoneyRefund .sectionAccount .textareaReason:-webkit-autofill:focus,
+#geekmoneyRefund .sectionAccount .textareaReason:-webkit-autofill:active,
+#geekmoneyRefund .sectionAccount .textareaReason:autofill,
+#geekmoneyRefund .sectionAccount .textareaReason:autofill:hover,
+#geekmoneyRefund .sectionAccount .textareaReason:autofill:focus,
+#geekmoneyRefund .sectionAccount .textareaReason:autofill:active{-webkit-text-fill-color: #000; -webkit-box-shadow: 0 0 0px 1000px #fff inset; box-shadow: 0 0 0px 1000px #fff inset; transition: background-color 5000s ease-in-out 0s;}
+#geekmoneyRefund .sectionAccount .labelReason{position: absolute; top: 14px; left: 0; height: auto; line-height: 16px; padding: 0 15px; color: #A0A0A0; font-size: 1rem; transition: all 0.25s ease-in-out; pointer-events: none;}
+#geekmoneyRefund .sectionAccount .textareaReason:focus + .labelReason,
+#geekmoneyRefund .sectionAccount .textareaReason:valid + .labelReason,
+#geekmoneyRefund .sectionAccount .textareaReason:-webkit-autofill + .labelReason,
+#geekmoneyRefund .sectionAccount .textareaReason:-webkit-autofill:hover + .labelReason,
+#geekmoneyRefund .sectionAccount .textareaReason:-webkit-autofill:focus + .labelReason,
+#geekmoneyRefund .sectionAccount .textareaReason:-webkit-autofill:active + .labelReason,
+#geekmoneyRefund .sectionAccount .textareaReason:autofill + .labelReason,
+#geekmoneyRefund .sectionAccount .textareaReason:autofill:hover + .labelReason,
+#geekmoneyRefund .sectionAccount .textareaReason:autofill:focus + .labelReason,
+#geekmoneyRefund .sectionAccount .textareaReason:autofill:active + .labelReason,
+#geekmoneyRefund .sectionAccount .textareaReason:focus + .labelReason,
+#geekmoneyRefund .sectionAccount .textareaReason:valid + .labelReason
+{top: -7px; left: 7px; padding: 0 10px; background-color: #FFFFFF; color: #131313; font-size: 0.75rem;}
+#geekmoneyRefund .sectionRefund{position: relative; width: 100%; padding: 30px 20px 10px 20px; box-sizing: border-box;}
+#geekmoneyRefund .sectionRefund .bgRefund{position: relative; width: 100%; padding: 0 20px; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,12%);}
+#geekmoneyRefund .sectionRefund .areaDate{position: relative; width: 100%; height: auto; padding: 22px 0; border-bottom: 1px dashed #DADADA;}
+#geekmoneyRefund .sectionRefund .areaDate h3{margin-bottom: 5px;}
+#geekmoneyRefund .sectionRefund .areaDate .badgeRefund{display: inline-block; vertical-align: top; height: 20px; line-height: 20px; margin-left: 7px; padding: 0 8px; border-radius: 9px; font-size: 0.675rem; text-align: center;}
+#geekmoneyRefund .sectionRefund .areaDate .badgeRefund.receiving{color: #2755AD; background-color: #E9EDF7;}
+#geekmoneyRefund .sectionRefund .areaDate .badgeRefund.proceeding{color: #448935; background-color: #ECF3EA;}
+#geekmoneyRefund .sectionRefund .areaDate .date{color: #A0A0A0; font-size: 0.75rem;}
+#geekmoneyRefund .sectionRefund .areaAccount{position: relative; width: 100%; height: auto; padding: 22px 0; border-bottom: 1px dashed #DADADA;}
+#geekmoneyRefund .sectionRefund .areaAccount .dlAccount{position: relative; width: 100%; height: auto; margin-bottom: 20px; padding-left: 80px; box-sizing: border-box;}
+#geekmoneyRefund .sectionRefund .areaAccount .dlAccount:last-of-type{margin-bottom: 0;}
+#geekmoneyRefund .sectionRefund .areaAccount .dtAccount{position: absolute; top: 0; left: 0; height: auto; line-height: 1rem; color: #A0A0A0; font-size: 1rem;}
+#geekmoneyRefund .sectionRefund .areaAccount .ddAccount{position: relative; width: 100%; height: auto; line-height: 1rem; color: #131313; font-size: 1rem; text-align: right; letter-spacing: -0.3px;}
+#geekmoneyRefund .sectionRefund .areaReason{position: relative; width: 100%; height: auto; padding: 22px 0;}
+#geekmoneyRefund .sectionRefund .areaReason .dlReason{position: relative; width: 100%; height: auto;}
+#geekmoneyRefund .sectionRefund .areaReason .dtReason{position: relative; width: 100%; height: auto; line-height: 1rem; margin-bottom: 12px; color: #A0A0A0; font-size: 1rem;}
+#geekmoneyRefund .sectionRefund .areaReason .ddReason{position: relative; width: 100%; height: auto; line-height: 1.125rem; color: #505050; font-size: 0.875rem; letter-spacing: -0.3px;}
+#geekmoneyRefund .sectionNotice{position: relative; width: 100%; height: auto; padding: 20px; box-sizing: border-box; background-color: #F5F5F5;}
+#geekmoneyRefund .sectionNotice .titleNotice{margin-bottom: 10px; color: #131313; font-size: 0.75rem; font-weight: 700;}
+#geekmoneyRefund .sectionNotice .liNotice{position: relative; line-height: 1.4; margin-bottom: 3px; padding-left: 10px; box-sizing: border-box; color: #909090; font-size: 0.625rem;}
+#geekmoneyRefund .sectionNotice .liNotice .dash{position: absolute; top :0; left: 0; color: inherit; font-size: inherit;}
+
+/* 긱머니 환불 관련사항 */
+#geekmoneyTerms{padding-top: 50px;}
+#geekmoneyTerms .sectionTerms{position: relative; width: 100%; height: auto; padding: 0 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#geekmoneyTerms .sectionTerms .areaTerms{position: relative; width: 100%; height: auto; padding: 20px 0; border-bottom: 1px solid #EAEAEA;}
+#geekmoneyTerms .sectionTerms .areaTerms:last-of-type{border-bottom: 0;}
+#geekmoneyTerms .sectionTerms .titleTerms{margin-bottom: 10px; color: #131313; font-size: 0.875rem; font-weight: 700;}
+#geekmoneyTerms .sectionTerms .liTerms{position: relative; line-height: 1.4; margin-bottom: 5px; padding-left: 12px; box-sizing: border-box; color: #909090; font-size: 0.75rem;}
+#geekmoneyTerms .sectionTerms .liTerms:last-of-type{margin-bottom: 0;}
+#geekmoneyTerms .sectionTerms .liTerms .dash{position: absolute; top :0; left: 0; color: inherit; font-size: inherit;}
+#geekmoneyTerms .sectionTerms .liTerms .subTerms{padding: 3px 0 0 7px; box-sizing: border-box; font-size: inherit;}
+
+/* 긱머니 자주 묻는 질문 */
+#geekmoneyFAQ{padding-top: 50px;}
+#geekmoneyFAQ .sectionFilter{position: relative; width: 100%; height: auto; padding: 20px 20px 10px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#geekmoneyFAQ .sectionFilter:after{content: ""; display: block; clear: both;}
+#geekmoneyFAQ .sectionFilter .setFilter{float: left; position: relative; margin-right: 7px;}
+#geekmoneyFAQ .sectionFilter .setFilter:last-of-type{margin-right: 0;}
+#geekmoneyFAQ .sectionFilter .inputFilter{position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 10; width: 100%; height: 100%;}
+#geekmoneyFAQ .sectionFilter .labelFilter{display: block; width: 65px; height: 34px; line-height: 32px; border: 1px solid #EAEAEA; border-radius: 20px; box-sizing: border-box; color: #909090; text-align: center;}
+#geekmoneyFAQ .sectionFilter .inputFilter:checked + .labelFilter{line-height: 30px; border: 2px solid #0f173a; color: #0f173a; font-weight: 700;}
+#geekmoneyFAQ .sectionQA{position: relative; width: 100%; height: auto; padding: 0 20px 20px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#geekmoneyFAQ .sectionQA .ulQA{position: relative; width: 100%; height: auto;}
+#geekmoneyFAQ .sectionQA .liQA{position: relative; width: 100%; height: auto; border-bottom: 1px solid #EAEAEA;}
+#geekmoneyFAQ .sectionQA .setQuestion{position: relative; width: 100%; height: auto;}
+#geekmoneyFAQ .sectionQA .btnQuestion{display: block; position: relative; width: 100%; height: auto; line-height: 20px; padding: 20px 40px 20px 30px; box-sizing: border-box; text-align: left;}
+#geekmoneyFAQ .sectionQA .btnQuestion .markQA{position: absolute; top: 20px; left: 0; width: 20px; height: 20px; line-height: 20px; border-radius: 100%; background-color: #F5F5F5; color: #0f173a; font-size: 0.75rem; font-weight: 900; text-align: center;}
+#geekmoneyFAQ .sectionQA .btnQuestion .fontMain{margin-right: 3px; font-weight: 700;}
+#geekmoneyFAQ .sectionQA .btnQuestion .iconUnfold{position: absolute; top: 20px; right: 10px;}
+#geekmoneyFAQ .sectionQA .btnQuestion .iconFold{position: absolute; top: 20px; right: 10px;}
+#geekmoneyFAQ .sectionQA .areaAnswer{position: relative; width: 100%; height: auto; line-height: 20px; padding: 15px 15px 15px 40px; border-top: 1px solid #EAEAEA; box-sizing: border-box; background-color: #F5F5F5; font-size: 0.875rem;}
+#geekmoneyFAQ .sectionQA .areaAnswer .markQA{position: absolute; top: 16px; left: 15px; width: 16px; height: 16px; line-height: 16px; border-radius: 100%; background-color: #0f173a; color: #FFFFFF; font-size: 0.625rem; font-weight: 900; text-align: center;}

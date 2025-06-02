@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <!-- 페이지별 css 파일 링크 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/order.css">
+</head>
+<body>
+<main id="basket">
+    <header>
+        <a href="#" class="linkBack">
+            <svg viewBox="0 0 20 20" class="iconBack">
+                <g>
+                    <rect width="20" height="20"/>
+                    <path d="m8.66,4.34l-5.66,5.66,5.66,5.66"/>
+                    <line x1="3" y1="10" x2="17" y2="10"/>
+                </g>
+            </svg>
+        </a>
+        <h1>장바구니</h1>
+    </header>
+    <div class="bgContent bgGray">
+        <div class="areaWebCopy">
+            <div class="copy">배달의 발견, 일상의 변화.</div>
+            <div class="logo"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/textBDG.png" alt="배달긱"></div>
+            <ul class="ulAdvantage">
+                <li class="liAdvantage">배달비 0원</li>
+                <li class="liAdvantage">최소주문금액 0원</li>
+                <li class="liAdvantage">AI 루트시스템 친환경 ESG배달</li>
+                <li class="liAdvantage">비대면 안심배달</li>
+                <li class="liAdvantage">사전예약정시도착</li>
+            </ul>
+            <div class="areaStore">
+                <div class="textStore">앱 다운로드</div>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webAppstore.svg">
+                </a>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webGooglestore.svg">
+                </a>
+            </div>
+        </div>
+        <section class="sectionNone hidden"><!-- 장바구니 내역이 없을 경우 -->
+            <svg viewBox="0 0 55 55" class="iconNone">
+                <g>
+                    <path d="m29.67,32.32h-4.36l-.45-17.35h5.29l-.47,17.35Zm-2.17,7.7c-.51,0-1.01-.13-1.45-.38-.44-.25-.8-.61-1.05-1.05-.26-.44-.38-.94-.37-1.45-.02-.5.11-.99.37-1.42.25-.43.61-.79,1.05-1.03.44-.25.94-.37,1.44-.37.49,0,.98.13,1.41.37.44.25.8.6,1.06,1.04.26.43.4.91.4,1.41,0,.51-.14,1.01-.4,1.45-.25.44-.62.8-1.06,1.05-.43.25-.91.38-1.41.38Z"/>
+                    <circle cx="27.5" cy="27.5" r="26"/>
+                </g>
+            </svg>
+            <div class="textNone">앗..장바구니가 비었어요</div>
+            <fieldset class="setNoneLink">
+                <button class="btnNoneLink borderMain fontMain">
+                    주문하러 가기
+                    <svg viewBox="0 0 20 20" class="iconMore">
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m7.82,14.98l5.3-5.3-5.3-5.31"/>
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+        </section>
+        <section class="sectionOrder">
+            <div class="areaService hidden"><!-- 픽업준비중일 경우 hidden -->
+                <span class="service">
+                    배달
+                    <svg viewBox="0 0 20 20" class="iconSelect"><!-- 배달/픽업 전환조건 충족될 경우 -->
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m15,7.5l-5,5-5-5"/>
+                        </g>
+                    </svg>
+                </span>
+                로 받을게요
+            </div>
+            <div class="areaLocationCheck"><div class="bgLocationCheck"><span>현재 평일에만 운영해요</span></div></div>
+            <div class="areaLocation">
+                <div class="location">
+                    <svg viewBox="0 0 20 20" class="iconPin">
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m9.67,17.59c.18.18.47.18.65,0h.01c2.08-2.12,5.66-6.55,5.66-9.62,0-3.31-2.69-6-6-6s-6,2.69-6,6c0,3.08,3.64,7.56,5.67,9.62"/>
+                            <circle cx="10" cy="7.54" r="1.8"/>
+                        </g>
+                    </svg>
+                    <!--<span class="locationType">수령장소</span>63동 학생회관-->
+                    <span class="locationType robot">로봇배달</span>63동 학생회관
+                    <svg viewBox="0 0 20 20" class="iconUnfold">
+                        <g>
+                            <rect width="20" height="20" />
+                            <path d="m4.69,7.88l5.31,5.3,5.31-5.3" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="spot"><!--스팟배달인 경우 -->
+                    <div class="spotImg">
+                        <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/place/dev/11/building/11W_1672635136.png" />
+                    </div>
+                    <div class="spotMap"></div>
+                </div>
+                <div class="directMap hidden"></div><!--바로배달인 경우 -->
+            </div>
+            <fieldset class="setRobotAble">
+                <button class="btnRobotAble">
+                    <svg viewBox="0 0 16 16" class="iconTooltip">
+                        <g>
+                            <rect width="16" height="16"/>
+                            <path d="m8,0C3.58,0,0,3.58,0,8s3.58,8,8,8,8-3.58,8-8C15.99,3.59,12.41.01,8,0Zm-.08,13.28c-.62,0-1.12-.5-1.12-1.12,0-.62.5-1.12,1.12-1.12s1.12.5,1.12,1.12h0c.01.6-.46,1.11-1.07,1.12-.02,0-.04,0-.05,0Zm2.16-6.24l-.88.96c-.2.18-.32.45-.32.72,0,.53-.43.95-.96.96-.51.02-.94-.38-.96-.89,0-.02,0-.05,0-.07-.02-.55.21-1.09.64-1.44l.72-.88c.31-.3.51-.69.56-1.12.02-.46-.33-.86-.8-.88-.03,0-.06,0-.08,0-.45-.02-.85.28-.96.72-.19.36-.56.57-.96.56-.46.02-.86-.33-.88-.8,0-.03,0-.06,0-.08,0-.14.02-.27.08-.4.43-1.1,1.54-1.79,2.72-1.68,1.43-.11,2.68.95,2.79,2.38,0,.06,0,.12,0,.18-.01.66-.27,1.28-.72,1.76Z"/>
+                        </g>
+                    </svg>
+                    시간별로 주문할 수 있는 수량을 확인하세요
+                    <svg viewBox="0 0 20 20" class="iconUnfold hidden">
+                        <g>
+                            <rect width="20" height="20" />
+                            <path d="m4.69,7.88l5.31,5.3,5.31-5.3" />
+                        </g>
+                    </svg>
+                    <svg viewBox="0 0 20 20" class="iconFold">
+                        <g>
+                            <rect width="20" height="20" />
+                            <path d="m4.69,12.34l5.31-5.3,5.31,5.3" />
+                        </g>
+                    </svg>
+                    <table class="tableRobotAble">
+                        <tr>
+                            <td class="active">
+                                <div class="timebelt">오늘 점심1</div>
+                                <div class="number">2개</div>
+                            </td>
+                            <td class="disable">
+                                <div class="timebelt">오늘 점심2</div>
+                                <div class="number">4개</div>
+                            </td>
+                            <td class="active">
+                                <div class="timebelt">오늘 저녁1</div>
+                                <div class="number">4개</div>
+                            </td>
+                            <td class="disable">
+                                <div class="timebelt">오늘 저녁2</div>
+                                <div class="number">7개</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="disable">
+                                <div class="timebelt">내일 점심1</div>
+                                <div class="number">6개</div>
+                            </td>
+                            <td class="disable">
+                                <div class="timebelt">내일 점심2</div>
+                                <div class="number">8개</div>
+                            </td>
+                            <td class="disable">
+                                <div class="timebelt">내일 저녁1</div>
+                                <div class="number">8개</div>
+                            </td>
+                            <td class="disable">
+                                <div class="timebelt">내일 저녁2</div>
+                                <div class="number">8개</div>
+                            </td>
+                        </tr>
+                    </table>
+                </button>
+            </fieldset>
+        </section>
+        <section class="sectionStore spotDelivery">
+            <fieldset class="setChangeTime">
+                <button class="btnChangeTime">
+                    <span class="timebelt">점심1</span>오늘 12시 20분 도착
+                    <svg viewBox="0 0 20 20" class="iconUnfold">
+                        <g>
+                            <rect width="20" height="20" />
+                            <path d="m4.69,7.88l5.31,5.3,5.31-5.3" />
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+            <div class="areaStoreName">
+                홍콩반점0410
+                <div class="textRight">11시 00분 주문마감</div>
+            </div>
+            <div class="areaAdult">
+                <div class="bgAdult">
+                    <svg viewBox="0 0 16 16" class="iconNoticeAdult">
+                        <g>
+                            <rect width="16" height="16"/>
+                            <path d="m8,14.75c-2.1,0-4.2,0-6.3,0-.96,0-1.73-.8-1.7-1.76.01-.32.12-.62.29-.89,2.07-3.32,4.14-6.64,6.21-9.96.33-.53.78-.85,1.4-.88.66-.04,1.19.24,1.55.8.5.78.99,1.57,1.48,2.36,1.59,2.55,3.18,5.09,4.77,7.64.55.88.33,1.92-.51,2.45-.28.17-.59.25-.92.25-2.09,0-4.17,0-6.26,0Z"/>
+                            <path d="m8.76,12.21c0,.43-.33.76-.76.76s-.76-.33-.76-.76.33-.76.76-.76.76.33.76.76Zm-.06-6.57l-.16,4.58c-.01.41-.27.55-.54.55s-.53-.14-.54-.55l-.16-4.58c-.01-.44.28-.61.7-.61s.71.17.7.61Z"/>
+                        </g>
+                    </svg>
+                    주류는 총 주문금액의 50% 이하로만 주문할 수 있어요
+                </div>
+            </div>
+            <ul class="ulBasketMenu">
+                <li class="liBasketMenu">
+                    <div class="photoMenu">
+                        <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_2622.jpg">
+                    </div>
+                    <div class="quantity">
+                        <fieldset class="setQuantity">
+                            <button class="btnQuantity">
+                                <svg viewBox="0 0 20 20" class="iconMinus">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <line x1="6" y1="10" x2="14" y2="10"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </fieldset>
+                        <span class="fontMain">1</span>
+                        <fieldset class="setQuantity">
+                            <button class="btnQuantity">
+                                <svg viewBox="0 0 20 20" class="iconPlus">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <line x1="10" y1="13.69" x2="10" y2="5.69"/>
+                                        <line x1="14" y1="9.69" x2="6" y2="9.69"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </fieldset>
+                    </div>
+                    <div class="infoMenu">
+                        <div class="name">고추짬뽕</div>
+                        <div class="option">
+                            기본<br />
+                            사이즈업 : 곱배기<br />
+                            추가메뉴 선택 : 공기밥 / 콜라 / 사이다
+                        </div>
+                        <div class="price">
+                            <div class="percent">10%</div>
+                            <div class="original"><span class="line"></span>15,000</div>
+                            <div class="discount">14,100원</div>
+                        </div>
+                    </div>
+                    <fieldset class="setDelete">
+                        <button class="btnDelete">
+                            <svg viewBox="0 0 20 20" class="iconDelete">
+                                <g>
+                                    <rect width="20" height="20"/>
+                                    <line x1="6.07" y1="6.07" x2="13.93" y2="13.93"/>
+                                    <line x1="6.07" y1="13.93" x2="13.93" y2="6.07"/>
+                                </g>
+                            </svg>
+                            <span class="blind">메뉴샥제</span>
+                        </button>
+                    </fieldset>
+                </li>
+                <li class="liBasketMenu">
+                    <div class="photoMenu">
+                        <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_2628.jpg">
+                    </div>
+                    <div class="quantity">
+                        <fieldset class="setQuantity">
+                            <button class="btnQuantity">
+                                <svg viewBox="0 0 20 20" class="iconMinus">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <line x1="6" y1="10" x2="14" y2="10"/>
+                                    </g>
+                                </svg>
+                                <span class="blind">수량빼기</span>
+                            </button>
+                        </fieldset>
+                        <span class="fontMain">1</span>
+                        <fieldset class="setQuantity">
+                            <button class="btnQuantity">
+                                <svg viewBox="0 0 20 20" class="iconPlus">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <line x1="10" y1="13.69" x2="10" y2="5.69"/>
+                                        <line x1="14" y1="9.69" x2="6" y2="9.69"/>
+                                    </g>
+                                </svg>
+                                <span class="blind">수량더하기</span>
+                            </button>
+                        </fieldset>
+                    </div>
+                    <div class="infoMenu">
+                        <div class="name"> 탕수육(1박스)(소스별도포장) </div>
+                        <div class="option">
+                            1박스
+                        </div>
+                        <div class="price">
+                            <div class="percent">10%</div>
+                            <div class="original"><span class="line"></span>16,500</div>
+                            <div class="discount">14,900원</div>
+                        </div>
+                    </div>
+                    <fieldset class="setDelete">
+                        <button class="btnDelete">
+                            <svg viewBox="0 0 20 20" class="iconDelete">
+                                <g>
+                                    <rect width="20" height="20"/>
+                                    <line x1="6.07" y1="6.07" x2="13.93" y2="13.93"/>
+                                    <line x1="6.07" y1="13.93" x2="13.93" y2="6.07"/>
+                                </g>
+                            </svg>
+                            <span class="blind">메뉴샥제</span>
+                        </button>
+                    </fieldset>
+                </li>
+            </ul>
+        </section>
+        <section class="sectionStore spotDelivery">
+            <fieldset class="setChangeTime">
+                <button class="btnChangeTime">
+                    <span class="timebelt">점심1</span>오늘 12시 20분 도착
+                    <svg viewBox="0 0 20 20" class="iconUnfold">
+                        <g>
+                            <rect width="20" height="20" />
+                            <path d="m4.69,7.88l5.31,5.3,5.31-5.3" />
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+            <div class="areaStoreName">
+                잇쇼타코야끼
+                <div class="textRight">10시 50분 주문마감</div>
+            </div>
+            <ul class="ulBasketMenu">
+                <li class="liBasketMenu disable"><!-- 주문불가일 경우 disable 클래스 추가 -->
+                    <div class="photoMenu">
+                        <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_24362.jpeg">
+                    </div>
+                    <div class="quantity">
+                        <fieldset class="setQuantity">
+                            <button class="btnQuantity">
+                                <svg viewBox="0 0 20 20" class="iconMinus">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <line x1="6" y1="10" x2="14" y2="10"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </fieldset>
+                        <span class="fontMain">1</span>
+                        <fieldset class="setQuantity">
+                            <button class="btnQuantity">
+                                <svg viewBox="0 0 20 20" class="iconPlus">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <line x1="10" y1="13.69" x2="10" y2="5.69"/>
+                                        <line x1="14" y1="9.69" x2="6" y2="9.69"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </fieldset>
+                    </div>
+                    <div class="infoMenu">
+                        <div class="name">오리지널 타코야끼</div>
+                        <div class="option">
+                            10알
+                        </div>
+                        <div class="price">8,500원</div>
+                    </div>
+                    <fieldset class="setDelete">
+                        <button class="btnDelete">
+                            <svg viewBox="0 0 20 20" class="iconDelete">
+                                <g>
+                                    <rect width="20" height="20"/>
+                                    <line x1="6.07" y1="6.07" x2="13.93" y2="13.93"/>
+                                    <line x1="6.07" y1="13.93" x2="13.93" y2="6.07"/>
+                                </g>
+                            </svg>
+                            <span class="blind">메뉴샥제</span>
+                        </button>
+                    </fieldset>
+                </li>
+            </ul>
+        </section>
+        <section class="sectionStore spotDelivery">
+            <fieldset class="setChangeTime">
+                <button class="btnChangeTime">
+                    <span class="timebelt">저녁1</span>오늘 18시 20분 도착
+                    <svg viewBox="0 0 20 20" class="iconUnfold">
+                        <g>
+                            <rect width="20" height="20" />
+                            <path d="m4.69,7.88l5.31,5.3,5.31-5.3" />
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+            <div class="areaStoreName">
+                잇쇼타코야끼
+                <div class="textRight">16시 50분 주문마감</div>
+            </div>
+            <ul class="ulBasketMenu">
+                <li class="liBasketMenu">
+                    <div class="photoMenu">
+                        <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_24362.jpeg">
+                    </div>
+                    <div class="quantity">
+                        <fieldset class="setQuantity">
+                            <button class="btnQuantity">
+                                <svg viewBox="0 0 20 20" class="iconMinus">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <line x1="6" y1="10" x2="14" y2="10"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </fieldset>
+                        <span class="fontMain">1</span>
+                        <fieldset class="setQuantity">
+                            <button class="btnQuantity">
+                                <svg viewBox="0 0 20 20" class="iconPlus">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <line x1="10" y1="13.69" x2="10" y2="5.69"/>
+                                        <line x1="14" y1="9.69" x2="6" y2="9.69"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </fieldset>
+                    </div>
+                    <div class="infoMenu">
+                        <div class="name">오리지널 타코야끼</div>
+                        <div class="option">
+                            10알
+                        </div>
+                        <div class="price">8,500원</div>
+                    </div>
+                    <fieldset class="setDelete">
+                        <button class="btnDelete">
+                            <svg viewBox="0 0 20 20" class="iconDelete">
+                                <g>
+                                    <rect width="20" height="20"/>
+                                    <line x1="6.07" y1="6.07" x2="13.93" y2="13.93"/>
+                                    <line x1="6.07" y1="13.93" x2="13.93" y2="6.07"/>
+                                </g>
+                            </svg>
+                            <span class="blind">메뉴샥제</span>
+                        </button>
+                    </fieldset>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div id="bottomFix">
+        <section class="sectionFull">
+            <fieldset class="setFull">
+                <button class="btnFull bgDisable fontDisable">연령 확인 후 주문하기</button>
+            </fieldset>
+        </section>
+    </div>
+
+    <div class="popUp hidden" id="changeType"><!--주문유형 변경 팝업 -->
+        <div class="popCenter">
+            <div class="popBg">
+                <h1 class="left">주문유형을 선택해주세요</h1>
+                <section class="sectionRow">
+                    <fieldset class="setRow">
+                        <input type="radio" name="type" class="inputRow" id="type-1" checked/>
+                        <label for="type-1" class="labelRow">
+                            <svg viewBox="0 0 20 20" class="iconTwoCircles">
+                                <g>
+                                    <rect width="20" height="20"/>
+                                    <path d="m10,1c4.96,0,9,4.04,9,9s-4.04,9-9,9S1,14.96,1,10,5.04,1,10,1m0-1C4.48,0,0,4.48,0,10s4.48,10,10,10,10-4.48,10-10S15.52,0,10,0h0Z"/>
+                                    <circle cx="10" cy="10" r="5"/>
+                                </g>
+                            </svg>
+                            배달
+                        </label>
+                    </fieldset>
+                    <fieldset class="setRow">
+                        <input type="radio" name="type" class="inputRow" id="type-2" />
+                        <label for="type-2" class="labelRow">
+                            <svg viewBox="0 0 20 20" class="iconTwoCircles">
+                                <g>
+                                    <rect width="20" height="20"/>
+                                    <path d="m10,1c4.96,0,9,4.04,9,9s-4.04,9-9,9S1,14.96,1,10,5.04,1,10,1m0-1C4.48,0,0,4.48,0,10s4.48,10,10,10,10-4.48,10-10S15.52,0,10,0h0Z"/>
+                                    <circle cx="10" cy="10" r="5"/>
+                                </g>
+                            </svg>
+                            픽업
+                        </label>
+                    </fieldset>
+                </section>
+                <section class="sectionTypeNotice">
+                    <p>* 픽업에서 배달로 변경시 아래와 같이 적용돼요!</p>
+                    <p>장소 : 홈에서 설정한 배달장소<br />시간 : 가장 빠른 배달시간</p>
+                </section>
+                <section class="sectionFull">
+                    <fieldset class="setFull">
+                        <button class="btnFull bgMain">확인</button>
+                    </fieldset>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="popUp hidden" id="changeTimebelt"><!--타임벨트 변경 팝업 -->
+        <div class="popCenter">
+            <div class="popBg">
+                <h1 class="left">주문은 어떻게 할까요?</h1>
+                <section class="sectionRow">
+                    <fieldset class="setRow hidden"><!-- 픽업준비중일 경우 hidden -->
+                        <input type="radio" name="timebeltType" class="inputRow" id="timebelt-1" checked/>
+                        <label for="timebelt-1" class="labelRow">
+                            <svg viewBox="0 0 20 20" class="iconTwoCircles">
+                                <g>
+                                    <rect width="20" height="20"/>
+                                    <path d="m10,1c4.96,0,9,4.04,9,9s-4.04,9-9,9S1,14.96,1,10,5.04,1,10,1m0-1C4.48,0,0,4.48,0,10s4.48,10,10,10,10-4.48,10-10S15.52,0,10,0h0Z"/>
+                                    <circle cx="10" cy="10" r="5"/>
+                                </g>
+                            </svg>
+                            배달
+                        </label>
+                    </fieldset>
+                    <div class="areaTimebelt swiperTimebelt">
+                        <ul class="ulTimebelt swiper-wrapper">
+                            <li class="liTimebelt swiper-slide">
+                                <fieldset class="setTimebelt">
+                                    <input type="radio" name="timebelt" class="inputTimbelt" id="it-1"  checked="checked">
+                                    <label for="it-1" class="labelTimebelt">
+                                        <div class="timebelt">
+                                            <span class="day">오늘</span>점심1
+                                        </div>
+                                        <div class="arrive">
+                                            12시 도착
+                                        </div>
+                                    </label>
+                                </fieldset>
+                            </li>
+                            <li class="liTimebelt swiper-slide">
+                                <fieldset class="setTimebelt">
+                                    <input type="radio" name="timebelt" class="inputTimbelt" id="it-2" >
+                                    <label for="it-2" class="labelTimebelt">
+                                        <div class="timebelt">
+                                            <span class="day">오늘</span>점심2
+                                        </div>
+                                        <div class="arrive">
+                                            13시 도착
+                                        </div>
+                                    </label>
+                                </fieldset>
+                            </li>
+                            <li class="liTimebelt swiper-slide">
+                                <fieldset class="setTimebelt">
+                                    <input type="radio" name="timebelt" class="inputTimbelt" id="it-4" >
+                                    <label for="it-4" class="labelTimebelt">
+                                        <div class="timebelt">
+                                            <span class="day">오늘</span>저녁1
+                                        </div>
+                                        <div class="arrive">
+                                            18시 도착
+                                        </div>
+                                    </label>
+                                </fieldset>
+                            </li>
+                            <li class="liTimebelt swiper-slide">
+                                <fieldset class="setTimebelt">
+                                    <input type="radio" name="timebelt" class="inputTimbelt" id="it-5" >
+                                    <label for="it-5" class="labelTimebelt">
+                                        <div class="timebelt">
+                                            <span class="day">오늘</span>저녁2
+                                        </div>
+                                        <div class="arrive">
+                                            19시 도착
+                                        </div>
+                                    </label>
+                                </fieldset>
+                            </li>
+                            <li class="liTimebelt swiper-slide">
+                                <fieldset class="setTimebelt">
+                                    <input type="radio" name="timebelt" class="inputTimbelt" id="it-6" >
+                                    <label for="it-6" class="labelTimebelt">
+                                        <div class="timebelt">
+                                            <span class="day">내일</span>점심1
+                                        </div>
+                                        <div class="arrive">
+                                            12시 도착
+                                        </div>
+                                    </label>
+                                </fieldset>
+                            </li>
+                            <li class="liTimebelt swiper-slide">
+                                <fieldset class="setTimebelt">
+                                    <input type="radio" name="timebelt" class="inputTimbelt" id="it-7" >
+                                    <label for="it-7" class="labelTimebelt">
+                                        <div class="timebelt">
+                                            <span class="day">내일</span>점심2
+                                        </div>
+                                        <div class="arrive">
+                                            13시 도착
+                                        </div>
+                                    </label>
+                                </fieldset>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="sectionFull">
+                    <fieldset class="setFull">
+                        <button class="btnFull bgMain">확인</button>
+                    </fieldset>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+    const swiperTimebelt = new Swiper('.swiperTimebelt', {
+        slidesPerView: "auto",
+        spaceBetween: 10,
+    });
+</script>
+</body>
+</html>

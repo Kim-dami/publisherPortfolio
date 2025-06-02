@@ -1,0 +1,472 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : component
+	설　명 : 전역스타일 및 컴포넌트
+---------------------------------------------*/
+/*---------------------------------------------
+	클래스명 : 카멜케이스, 태그역활 + 컨텐츠내용 조합, 넘버링은 하이픈
+	작성순서 : 1. 레이아웃  2.크기/간격  3.박스모양  4.폰트  5.기타
+			position / display / float / width / height / margin / padding / border / background / font / overflow / etc...
+
+	메인컬러 : #0F1838
+	서브컬러 : #F5CC1F
+	폰트컬러 : #131313, #505050, #A0A0A0
+	보더컬러 : #EAEAEA, #E5E5E5, #DADADA
+	배경컬러 : #F5F5F5, #EAEAEA
+
+	글씨크기 : 0.75rem, 0.875rem, 1rem, 1.125rem, 1.25rem, 1.5rem
+	글씨굵기 : 500, 600, 700
+
+	좌우여백 : 20px
+	상하여백 : 7px, 15px, 22px, 30px
+---------------------------------------------*/
+
+/* 전역스타일 */
+html,body{height: 100%; background-color: #FFFFFF; color: #505050; font-family: 'SUIT',sans-serif; font-size: 16px; font-weight: 500; overscroll-behavior: none;}
+.bgWhite{background-color: #FFFFFF;}
+.bgGray{background-color: #F5F5F5;}
+.bgDisable{background-color: #F5F5F5!important;}
+.fontDisable{color: #A0A0A0!important;}
+.bgMain{background-color: #0F1838!important;}
+.bgSub{background-color: #F5CC1F!important;}
+.fontMain{color: #0F1838!important;}
+.fontSub{color: #F5CC1F!important;}
+.borderMain{border-color: #0F1838!important; border-style: solid;}
+
+/* 메인 */
+main{position: relative; width: 100%; height: 100%; box-sizing: border-box; overscroll-behavior: none;}
+main .bgContent{position: relative; width:100%; overscroll-behavior: none; -webkit-overflow-scrolling: touch;}
+main h2{position: relative; width: 100%; height: auto; line-height: 1.5rem; color:#131313; font-size: 1.5rem; font-weight: 700;}
+main h3{position: relative; width: 100%; height: auto; line-height: 1.25rem; color:#131313; font-size: 1.125rem; font-weight: 700;}
+
+/* 헤더 */
+header{position: fixed; top: 0; right: 0; left: 0; z-index: 2000; width: 100%; height: auto; background-color: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,12%);}
+header .linkBack{position: absolute; top: 0; left: 0; z-index: 10; width: 45px; height: 50px; line-height: 50px; text-align: center;}
+header .linkBack:focus{background-color: #F5F5F5;}
+header .linkBasket{position: absolute; top: 0; right: 0; z-index: 10; width: 45px; height: 50px; line-height: 50px; text-align: center;}
+header .linkBasket:focus{background-color: #F5F5F5;}
+header .numberBasket {position: absolute; top: 26px; right: 10px; width: 16px; height: 16px; line-height: 16px; border-radius: 100%; background-color:#E3131B; color:#FFFFFF; font-size:0.65rem; font-weight: 900; text-align: center; letter-spacing: -0.5px;}
+header h1{position: relative; width: 100%; height: 50px; line-height: 50px; padding: 0 45px; box-sizing: border-box; color: #131313; font-size:1.125rem; font-weight: 700; text-align: center;}
+
+/* 하단 고정*/
+#bottomFix{position: fixed; right: 0; bottom: 0; left: 0; z-index: 1000; width: 100%; height: auto;}
+
+/* 하단 고정 네비 */
+nav{position: relative; z-index: 100; width: 100%; height: auto; background-color: #FFFFFF; box-shadow: 0 -1px 4px rgba(0,0,0,12%); overflow: hidden;}
+nav:after{content: ""; display: block; clear: both;}
+nav .linkNav{float: left; position: relative; width:25%; height: 50px; padding-top: 30px; box-sizing: border-box; background-color: #FFFFFF; text-align: center; background-repeat: no-repeat; background-size: 16px 16px; background-position: center 9px;}
+nav .linkNav:hover,
+nav .linkNav:focus{background-color: #F5F5F5;}
+nav .linkNav.home {background-image: url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/iconHome.svg");}
+nav .linkNav.home.active {background-image: url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/iconHomeActive.svg");}
+nav .linkNav.basket {background-image: url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/iconBasket.svg");}
+nav .linkNav.basket.active {background-image: url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/iconBasketActive.svg");}
+nav .linkNav.order {background-image: url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/iconOrder.svg");}
+nav .linkNav.order.active {background-image: url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/iconOrderActive.svg");}
+nav .linkNav.my {background-image: url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/iconMy.svg");}
+nav .linkNav.my.active {background-image: url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/iconMyActive.svg");}
+nav .linkNav.delivery {background-image: url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/iconDelivery.svg");}
+nav .linkNav.delivery.active {background-image: url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/iconDeliveryActive.svg");}
+nav .linkNav.like {background-image: url("https://kim-dami.github.io/carnival/iconLike.svg");}
+nav .linkNav.like.active {background-image: url("https://kim-dami.github.io/carnival/iconLikeActive.svg");}
+nav .linkNav .txtNav{line-height: 0.875rem; color: #505050; font-size: 0.875rem;}
+nav .linkNav.active .txtNav{color: #0F1838; font-weight: 700;}
+
+footer{position: relative; width: 100%; height: auto; padding: 15px 0 22px 0; background-color: #F5F5F5;}
+footer .sectionTerms{position: relative; width: 100%; margin: 0 auto 15px auto;}
+footer .sectionTerms .linkTerms{display: inline-block; vertical-align: top; line-height: 0.75rem; margin: 7px 0; padding: 0 15px; border-right: 1px solid #E5E5E5; color: #505050; font-size: 0.75rem;}
+footer .sectionTerms .linkTerms strong{font-size: inherit;}
+footer .sectionTerms .linkTerms:last-child{border-right: none;}
+footer .sectionFooterInfo{position: relative; width: 100%; margin: 0 auto; padding: 0 15px; box-sizing: border-box;}
+footer .sectionFooterInfo .companyName{position: relative; width: 100%; height:auto; line-height: 1rem; margin-bottom: 7px; color: #505050; font-size: 0.75rem;}
+footer .sectionFooterInfo .companyName .iconUnfold,
+footer .sectionFooterInfo .companyName .iconFold{display: inline-block; vertical-align: top; width: 16px; height: 16px;}
+footer .sectionFooterInfo .companyName .iconUnfold rect,
+footer .sectionFooterInfo .companyName .iconFold rect{fill: none;}
+footer .sectionFooterInfo .companyName .iconUnfold path,
+footer .sectionFooterInfo .companyName .iconFold path{fill: none; stroke: #505050; stroke-width: 1;}
+footer .sectionFooterInfo .companyNotice{position: relative; width: 100%; height:auto; margin-bottom: 15px; line-height: 1rem; color: #A0A0A0; font-size: 0.75rem; word-break: keep-all;}
+footer .sectionFooterInfo .companyInfo{position: relative; width: 100%; height:auto; margin-bottom: 15px; color: #A0A0A0; font-size: 0.75rem;}
+footer .sectionFooterInfo .dlInfo{position: relative; width: 100%; height:auto;}
+footer .sectionFooterInfo .dtInfo{position: absolute; top: 0; left: 0; width: 120px; height:auto; line-height: 1rem; padding: 3px 0; color: #A0A0A0; font-size: 0.75rem;}
+footer .sectionFooterInfo .ddInfo{width: 100%; height:auto; line-height: 16px; padding: 3px 0 3px 120px; box-sizing: border-box; color: #A0A0A0; font-size: 0.75rem; word-break: keep-all;}
+footer .sectionFooterInfo .allRights{width: 100%; height:auto; line-height: 16px; color: #A0A0A0; font-size: 0.75rem;}
+
+/* 바텀시트 */
+.bottomSheet{position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 3000; background: rgba(0,0,0,0.7);}
+.bottomSheet.noModal{top: unset; background: transparent;}
+.bottomSheet .sheetBg{position: fixed; right: 0; bottom: 0; left: 0; width: 100%; padding-top: 25px; box-sizing: border-box; border-radius: 30px 30px 0 0; background-color: #FFFFFF; box-shadow: 0 -1px 4px rgba(0,0,0,12%);}
+.bottomSheet.isFixedSmall .sheetBg{height: 260px;}
+.bottomSheet.isFixedMedium .sheetBg{height: 600px;}
+.bottomSheet.isFixedBig .sheetBg{top: 0; height: 100%;}
+.bottomSheet.isFlexible .sheetBg{height: auto;}
+.bottomSheet.insideHeader .sheetBg{padding-top: 75px;}
+.bottomSheet.insideTab .sheetBg{padding-top: 70px;}
+.bottomSheet.insideBottom .sheetBg{padding-bottom: 70px;}
+.bottomSheet .sheetFold{position: absolute; top: 0; right: 0; left: 0; z-index: 10; width: 100%; height: auto; border-radius: 30px 30px 0 0; background-color: #FFFFFF;}
+.bottomSheet .sheetFold .btnSheetFold{display: block; position: relative; width: 100%; height: 25px;}
+.bottomSheet .sheetFold .btnSheetFold .foldBar{position: absolute; top: 14px; left: 50%; width: 50px; height: 3px; margin-left: -25px; border-radius: 1px; background-color: #EAEAEA;}
+.bottomSheet .sheetHeader{position: absolute; top: 25px; right: 0; left: 0; z-index: 10; width: 100%; height: 50px; line-height: 50px; padding: 0 50px; box-sizing: border-box; background-color: #FFFFFF; color: #131313; font-size: 1.125rem; font-weight: 700; text-align: center;}
+.bottomSheet .sheetHeader.left{padding: 0 20px; text-align: left;}
+.bottomSheet .sheetHeader .linkBack{position: absolute; top: 0; left: 0; width: 50px; height: 50px; line-height: 50px; text-align: center;}
+.bottomSheet .sheetHeader .linkBack:focus{background-color: #F5F5F5;}
+.bottomSheet .sheetHeader.left .linkBack{position: relative; display: inline-block; vertical-align: top; margin-left: -20px;}
+.bottomSheet .sectionTabUnder{position: absolute; top: 75px; right: 0; left: 0; z-index: 10;}
+.bottomSheet .sectionTabUnder .labelTabUnder{height: 45px; line-height: 45px; font-size: 1rem;}
+.bottomSheet .sheetContent{position: relative; width: 100%; height: 100%; overflow-y: auto;}
+.bottomSheet.isFlexible .sheetContent{height: auto; max-height: 350px;}
+.bottomSheet.isFlexible .sheetScroll{width: 100%; height: auto;}
+.bottomSheet .sheetBg .sectionFull,
+.bottomSheet .sheetBg .sectionHalf{box-shadow: none; border-top: 1px solid #EAEAEA;}
+.bottomSheet .sheetBg .setFull .btnFull{height: 45px; line-height: 45px; font-size: 1rem;}
+.bottomSheet .sheetBg .setHalf .btnHalf{height: 45px; line-height: 45px; font-size: 1rem;}
+
+/* 팝업 */
+.popUp{display: table; position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 5000; width: 100%; height: 100%; background: rgba(0,0,0,0.7);}
+.popUp .popCenter{display: table-cell; vertical-align: middle;}
+.popUp .popBg{position: relative; width: 320px; height: auto; margin: 0 auto; background-color: #FFFFFF; border-radius: 5px; overflow: hidden;}
+.popUp .popBg h1{position: relative; width: 100%; height: 60px; line-height: 60px; padding: 0 20px; box-sizing: border-box; color: #131313; font-size: 1.125rem; font-weight: 700;}
+.popUp .popBg h1.center{text-align: center;}
+.popUp .popBg h1.left{text-align: left;}
+.popUp .popBg .sectionText{position: relative; width: 100%; height: auto; line-height: 1.125rem; padding: 37px 20px; box-sizing: border-box; font-size: 0.875rem; text-align: center;}
+.popUp .popBg .sectionRow{position: relative; width: 100%; height: auto; padding: 15px 20px 30px 20px; box-sizing: border-box;}
+.popUp .popBg .sectionRow .setRow{margin-bottom: 22px;}
+.popUp .popBg .sectionRow .setRow:last-of-type{margin-bottom: 0;}
+.popUp .popBg .sectionSelect{position: relative; width: 100%; height: auto; box-sizing: border-box;}
+.popUp .popBg .sectionSelect .textSelect{position: relative; width: 100%; height: 44px; line-height: 42px; padding: 0 30px 0 15px; border: 1px solid #EAEAEA; border-radius: 5px; box-sizing: border-box; font-size: 0.875rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.popUp .popBg .sectionSelect .iconUnfold{position: absolute; top: 10px; right: 10px;}
+.popUp .popBg .sectionSelect .select{position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; opacity: 0;}
+.popUp .popBg .sectionFull,
+.popUp .popBg .sectionHalf{box-shadow: none; border-top: 1px solid #EAEAEA;}
+.popUp .popBg .setFull .btnFull{height: 45px; line-height: 45px; font-size: 1rem;}
+.popUp .popBg .setHalf .btnHalf{height: 45px; line-height: 45px; font-size: 1rem;}
+
+.popUp .popBg .sectionAdultTerms{margin: -12px 20px 25px 20px; padding-top: 15px; border-top: 1px solid #EAEAEA; color: #A0A0A0; font-size: 0.75rem; text-align: center;}
+.popUp .popBg .sectionReusable{margin: -12px 0 20px 0; padding-top: 15px; color: #A0A0A0; font-size: 0.75rem; text-align: center;}
+
+/* 토스트 */
+.toast{visibility: hidden; position: fixed; left: 50%; bottom: 90px; z-index: 7000; width: 300px; height: auto; line-height: 1.25rem; margin-left: -150px; padding: 10px 15px; box-sizing: border-box; border-radius: 10px; background-color: rgba(0,0,0,0.5); color: #FFFFFF; text-align: center;}
+.toast.show{visibility: visible; animation: fade-in 250ms, fade-out 250ms 750ms;}
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fade-out {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+/* 스낵바 */
+.snackbar{visibility: hidden; position: fixed; left: 50%; bottom: 70px; z-index: 7000; width: 320px; height: auto; line-height: 24px; margin-left: -160px; padding: 8px 50px 8px 15px; box-sizing: border-box; border-radius: 20px; background-color: rgba(0,0,0,0.75); color: #FFFFFF; font-size: 0.875rem; text-align: left;}
+.snackbar.show{visibility: visible; animation: fade-in 250ms;}
+.snackbar b{font-size: inherit;}
+.snackbar .btnClosed{position: absolute; top: 0; right: 0; bottom: 0; padding: 8px 15px 8px 5px;}
+.snackbar .iconClosed{width: 24px; height: 24px; vertical-align: top;}
+.snackbar .iconClosed rect{fill: none;}
+.snackbar .iconClosed line{stroke: #FFFFFF; stroke-linecap: round; stroke-miterlimit: 4; stroke-width: 1;}
+.snackbar .imgPoint{vertical-align: top; width: 24px; height: 24px; margin-right: 5px;}
+.snackbar .imgMore{vertical-align: top; height: 14px; margin-top: 4px; margin-left: 5px;}
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.roundSnackbar{visibility: hidden; position: fixed; left: 50%; bottom: 70px; z-index: 7000; width: 300px; height: auto;  margin-left: -150px;}
+.roundSnackbar .bgRoundSnackbar{position: relative; width: 100%; height: 62px; padding: 12px 40px 12px 70px; border-radius: 32px; box-sizing: border-box; background-color: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,12%); transform: translateY(15px); transition: transform 0.5s;}
+.roundSnackbar .areaImage{position: absolute; top: 6px; left: 8px; width: 50px; height: 50px; border-radius: 23px; background-color: #F5F5F5; overflow: hidden;}
+.roundSnackbar .areaImage img{width: 100%; height: 100%; object-fit: cover;}
+.roundSnackbar .areaText{line-height: 1.125rem; font-size: 0.75rem;}
+.roundSnackbar .areaText b{color: #131313; font-size: 1rem; font-weight: 700;}
+.roundSnackbar .btnClosed{position: absolute; top: 10px; right: 10px; padding: 10px 5px;}
+.roundSnackbar .iconClosed{width: 24px; height: 24px; vertical-align: top;}
+.roundSnackbar .iconClosed rect{fill: none;}
+.roundSnackbar .iconClosed line{stroke: #DADADA; stroke-linecap: round; stroke-miterlimit: 4; stroke-width: 1;}
+.roundSnackbar.visible{visibility: visible;}
+.roundSnackbar.visible .bgRoundSnackbar{transform: translateY(0);}
+
+/* 전역 아이콘 */
+.iconBack{width: 20px; height: 20px; margin-top: 15px; vertical-align: top;}
+.iconBack rect{fill: none;}
+.iconBack path{fill: none; stroke: #505050; stroke-width: 1.5px;}
+.iconBack line{fill: none; stroke: #505050; stroke-width: 1.5px;}
+.iconMore{width: 20px; height: 20px; vertical-align: top;}
+.iconMore rect{fill: none;}
+.iconMore path{fill: none; stroke: #505050; stroke-width: 1;}
+.iconUnfold{width: 20px; height: 20px; vertical-align: top;}
+.iconUnfold rect{fill: none;}
+.iconUnfold path{fill: none; stroke: #505050; stroke-width: 1;}
+.iconFold{width: 20px; height: 20px; vertical-align: top;}
+.iconFold rect{fill: none;}
+.iconFold path{fill: none; stroke: #505050; stroke-width: 1;}
+.iconPin{width: 20px; height: 20px; vertical-align: top;}
+.iconPin rect{fill: none;}
+.iconPin path{fill: #0F1838;}
+.iconPin circle{fill: #FFFFFF;}
+.iconSelect {width: 20px; height: 20px; vertical-align: top;}
+.iconSelect rect {fill: none;}
+.iconSelect path {fill: none; stroke: #505050; stroke-miterlimit: 4; stroke-width: 2px;}
+.iconBasket{width: 20px; height: 20px; vertical-align: top; margin-top: 15px;}
+.iconBasket rect{fill: none;}
+.iconBasket path{fill: #131313;}
+.iconBasket{width: 20px; height: 20px; margin-top: 15px; vertical-align: top;}
+.iconBasket rect{fill: none;}
+
+/* 풀 버튼 */
+.sectionFull{position: relative; width: 100%; height: auto; padding: 10px 20px; box-sizing: border-box; background-color: #FFFFFF; box-shadow: 0 -1px 4px rgba(0,0,0,12%);}
+.setFull{position: relative; width: 100%; height: auto;}
+.setFull .btnFull{display: block; width: 100%; height: 50px; line-height: 50px; border-radius: 5px; color: #FFFFFF; font-size:1.125rem; font-weight: 600; text-align: center;}
+
+/* 반 버튼 */
+.sectionHalf{position: relative; width: 100%; height: auto; padding: 10px 20px; box-sizing: border-box; background-color: #FFFFFF; box-shadow: 0 -1px 4px rgba(0,0,0,12%);}
+.sectionHalf:after{content: ""; display: block; clear: both;}
+.setHalf{position: relative; width: 50%; height: auto; box-sizing: border-box;}
+.setHalf:first-of-type{float: left; padding-right: 5px;}
+.setHalf:last-of-type{float: right; padding-left: 5px;}
+.sectionHalf .btnHalf{display: block; width: 100%; height: 50px; border-radius: 5px; font-size: 1.125rem; font-weight: 700; text-align: center;}
+.sectionHalf .borderMain{line-height: 48px; border-width: 1px; background-color: #FFFFFF;}
+.sectionHalf .bgMain{line-height: 50px; color: #FFFFFF;}
+
+/* 라스트 없음 */
+.sectionNone{position: relative; width: 100%; height: auto; padding: 100px 0; text-align: center;}
+.sectionNone .iconNone{width: 55px; height: 55px; margin-bottom: 20px; vertical-align: top; }
+.sectionNone .iconNone path{fill: #DADADA;}
+.sectionNone .iconNone circle{fill: none; stroke: #DADADA; stroke-width: 3px;}
+.sectionNone .textNone{color: #A0A0A0; font-size: 1.125rem;}
+.sectionNone .textNone b{font-size: inherit;}
+.sectionNone .setNoneLink{width: 100%; height: auto; margin-top: 22px; text-align: center;}
+.sectionNone .setNoneLink .btnNoneLink{display: inline-block; height: 34px; line-height: 32px; padding: 0 10px 0 15px; border-width: 1px; border-radius: 18px; box-sizing: border-box; background-color: #FFFFFF; font-size: 0.875rem; font-weight: 600; text-align: center;}
+.sectionNone .setNoneLink .iconMore{margin-top: 6px;}
+
+/* 보더 인풋 */
+.setBorder{position: relative; width: 100%; height: auto;}
+.setBorder .inputBorder{position: relative; width: 100%; height: auto; line-height: 1rem; padding: 11px 14px; box-sizing: border-box; border: 1px solid #EAEAEA; border-radius: 5px; background-color: #FFFFFF; color: #505050; font-size: 1rem; font-weight: 500;}
+.setBorder .inputBorder:focus {border: 1px solid #131313; outline: none;}
+.setBorder .inputBorder:-webkit-autofill,
+.setBorder .inputBorder:-webkit-autofill:hover,
+.setBorder .inputBorder:-webkit-autofill:focus,
+.setBorder .inputBorder:-webkit-autofill:active,
+.setBorder .inputBorder:autofill,
+.setBorder .inputBorder:autofill:hover,
+.setBorder .inputBorder:autofill:focus,
+.setBorder .inputBorder:autofill:active{-webkit-text-fill-color: #000; -webkit-box-shadow: 0 0 0px 1000px #fff inset; box-shadow: 0 0 0px 1000px #fff inset; transition: background-color 5000s ease-in-out 0s;}
+.setBorder .labelBorder{position: absolute; top: 14px; left: 0; height: auto; line-height: 16px; padding: 0 15px; color: #A0A0A0; font-size: 1rem; transition: all 0.25s ease-in-out; pointer-events: none;}
+.setBorder .inputBorder:focus + .labelBorder,
+.setBorder .inputBorder:valid + .labelBorder,
+.setBorder .inputBorder:-webkit-autofill + .labelBorder,
+.setBorder .inputBorder:-webkit-autofill:hover + .labelBorder,
+.setBorder .inputBorder:-webkit-autofill:focus + .labelBorder,
+.setBorder .inputBorder:-webkit-autofill:active + .labelBorder,
+.setBorder .inputBorder:autofill + .labelBorder,
+.setBorder .inputBorder:autofill:hover + .labelBorder,
+.setBorder .inputBorder:autofill:focus + .labelBorder,
+.setBorder .inputBorder:autofill:active + .labelBorder,
+.setBorder .inputBorder:focus + .labelBorder,
+.setBorder .inputBorder:valid + .labelBorder
+{top: -7px; left: 7px; padding: 0 10px; background-color: #FFFFFF; color: #131313; font-size: 0.75rem;}
+.labelBorder.valid{top: -7px; left: 7px; padding: 0 10px; background-color: transparent; color: #131313; font-size: 0.75rem;}
+.setBorder .placeholderBorder{position: absolute; top: 14px; left: 0; height: auto; line-height: 16px; padding: 0 15px; color: #A0A0A0; font-size: 1rem;}
+.setBorder .inputBorder:focus + .labelBorder + .placeholderBorder,
+.setBorder .inputBorder:valid + .labelBorder + .placeholderBorder,
+.setBorder .inputBorder:-webkit-autofill + .placeholderBorder,
+.setBorder .inputBorder:-webkit-autofill:hover + .placeholderBorder,
+.setBorder .inputBorder:-webkit-autofill:focus + .placeholderBorder,
+.setBorder .inputBorder:-webkit-autofill:active + .placeholderBorder,
+.setBorder .inputBorder:autofill + .placeholderBorder,
+.setBorder .inputBorder:autofill:hover + .placeholderBorder,
+.setBorder .inputBorder:autofill:focus + .placeholderBorder,
+.setBorder .inputBorder:autofill:active + .placeholderBorder,
+.setBorder .inputBorder:focus + .placeholderBorder,
+.setBorder .inputBorder:valid + .placeholderBorder{display: none;}
+.setBorder .inputBorder:disabled{background-color: #F5F5F5; color: #A0A0A0;}
+.setBorder .errorMessage{display: none; width: 100%; line-height: 1rem; margin-top: 5px; padding: 0 5px; box-sizing: border-box; color: #D10005; font-size: 0.75rem;}
+.setBorder.error .inputBorder{border-color: #D10005;}
+.setBorder.error .inputBorder:focus {border-color: #D10005; outline: none;}
+.setBorder.error .errorMessage{display: block;}
+
+/* 병렬 체크박스&라디오 */
+.setRow{position: relative; width: 100%; height: auto;}
+.setRow .inputRow{position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 10; width: 100%; height: 100%; opacity: 0;}
+.setRow .labelRow{display: block; width:100%; height: auto; line-height: 20px; padding-left: 35px; box-sizing: border-box;}
+.setRow .labelRow svg{position: absolute; top: 50%; left: 0; width: 20px; height: 20px; margin-top: -10px;}
+
+.setRow .labelRow .iconSquare rect{fill: #FFFFFF; stroke: #E5E5E5; stroke-linejoin: round; stroke-linecap: round; stroke-width: 1.5px;}
+.setRow .labelRow .iconSquare path{fill: #FFFFFF; stroke: none;}
+.setRow .inputRow:checked + .labelRow .iconSquare rect{fill: #0F1838; stroke: #0F1838;}
+.setRow .inputRow:checked + .labelRow .iconSquare path{fill: #FFFFFF;}
+.setRow .inputRow:disabled + .labelRow .iconSquare rect{fill: #EAEAEA; stroke: #EAEAEA;}
+.setRow .inputRow:disabled + .labelRow .iconSquare path{fill: #EAEAEA;}
+
+.setRow .labelRow .iconRadius rect{fill: none;}
+.setRow .labelRow .iconRadius .checkbox{fill: #FFFFFF; stroke: #A0A0A0; stroke-linejoin: round; stroke-linecap: round; stroke-width: 1.5px;}
+.setRow .labelRow .iconRadius .check{fill: none; stroke: #FFFFFF; stroke-linejoin: round; stroke-linecap: round; stroke-width: 1.5px;}
+.setRow .inputRow:checked + .labelRow .iconRadius .checkbox{fill: #0F1838; stroke: #0F1838;}
+
+.setRow .labelRow .iconCircles rect{fill: none;}
+.setRow .labelRow .iconCircles circle{fill: none; stroke: #E5E5E5; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5px;}
+.setRow .labelRow .iconCircles path{fill: none;}
+.setRow .inputRow:checked + .labelRow .iconCircles circle {fill: #0F1838; stroke: none;}
+.setRow .inputRow:checked + .labelRow .iconCircles path{fill: #FFFFFF;}
+
+.setRow .labelRow .iconTwoCircles rect{fill: none;}
+.setRow .labelRow .iconTwoCircles path{fill: #E5E5E5;}
+.setRow .labelRow .iconTwoCircles circle{fill: none;}
+.setRow .inputRow:checked + .labelRow .iconTwoCircles path,
+.setRow .inputRow:checked + .labelRow .iconTwoCircles circle
+{fill: #0F1838;}
+
+/* 언더바 탭 */
+.sectionTabUnder{position: relative; z-index: 10; width: 100%; height: auto; background-color: #FFFFFF;}
+.sectionTabUnder:after{content: ""; display: block; clear: both;}
+.sectionTabUnder .setTabUnder{float: left; position: relative; width: 50%; height: auto;}
+.sectionTabUnder .inputTabUnder{position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; opacity: 0;}
+.sectionTabUnder .labelTabUnder{display: block; position: relative; width: 100%; height: 50px; line-height: 50px; border-bottom: 1px solid #EAEAEA; box-sizing: border-box; color: #A0A0A0; font-size: 1.125rem; font-weight: 700; text-align: center;}
+.sectionTabUnder .setTabUnder:first-of-type .labelTabUnder{padding-left: 15px;}
+.sectionTabUnder .setTabUnder:last-of-type .labelTabUnder{padding-right: 15px;}
+.sectionTabUnder .setTabUnder:first-of-type .labelTabUnder:after{content: ""; position: absolute; right: 0; bottom: 0; left: 15px; height: 2px;}
+.sectionTabUnder .setTabUnder:last-of-type .labelTabUnder:after{content: ""; position: absolute; right: 15px; bottom: 0; left: 0; height: 2px;}
+.sectionTabUnder .inputTabUnder:checked + .labelTabUnder{color: #0F1838;}
+.sectionTabUnder .inputTabUnder:checked + .labelTabUnder:after{background-color: #0F1838;}
+.sectionTabUnder .inputTabUnder:checked + .labelTabUnder:after{background-color: #0F1838;}
+
+/* 배달장소 */
+.areaLocation{position: relative; width: 100%; height: auto;}
+.areaLocation .location{position: relative; width: 100%; height: auto; line-height: 20px; padding-left: 25px; padding-right: 20px; box-sizing: border-box; color: #131313; font-weight: 500;}
+.areaLocation .locationType{margin-right: 7px; color: #131313; font-weight: 700;}
+.areaLocation .locationType.robot{color: #0064EC;}
+.areaLocation .iconPin{position: absolute; top: 0; left: 0;}
+.areaLocation .olStoreLocation{position: relative; width: 100%; height: auto; padding-left: 5px; box-sizing: border-box;}
+.areaLocation .liStoreLocation{position: relative; width: 100%; height: auto; padding-bottom: 22px; padding-left: 15px; border-left: 1px dashed #A0A0A0; box-sizing: border-box;}
+.areaLocation .areaIcon{position: absolute; top: 0; bottom: 0; left: -10px; width: 22px; height: 100%;}
+.areaLocation .top{position: absolute; top: 0; right: 0; left: 0; width: 100%; height: 5px;}
+.areaLocation .bottom{position: absolute; top: 10px; right: 0; bottom: 0; left: 0; width: 100%;}
+.areaLocation .liStoreLocation:first-of-type .top{background-color: #FFFFFF;}
+.areaLocation .liStoreLocation:last-of-type .bottom{background-color: #FFFFFF;}
+.areaLocation .dot{position: absolute; top: 5px; left: 7px; width: 5px; height: 5px; border-radius: 100%;}
+.areaLocation .storeName{width: 100%; line-height: 1.25rem; margin-bottom: 5px; color:#131313; font-size: 1rem; font-weight: 700;}
+.areaLocation .storeLocation{width: 100%; line-height: 1.125rem; color:#505050; font-size: 0.875rem;}
+.areaLocation .pickupTime{width: 100%; line-height: 1rem; margin-top: 7px; color:#A0A0A0; font-size: 0.75rem;}
+.areaLocation .storeMap{width: 100%; height: 160px; background-color: #F5F5F5;}
+.areaLocation .storeMap .storeOverlay{position: relative; width: 120px; height: auto; padding: 7px 10px; border-radius: 5px; background-color: rgba(0,0,0,0.6);}
+.areaLocation .storeMap .storeOverlay:after{content: ""; position: absolute; left: 50%; bottom: -10px; width: 0; height: 0; margin-left: -6px; border-bottom: 5px solid transparent; border-top: 5px solid rgba(0,0,0,0.6); border-left: 6px solid transparent; border-right: 6px solid transparent;}
+.areaLocation .storeMap .storeOverlay .name{line-height: 1rem; color: #FFFFFF; font-size: 0.875rem; font-weight: 700;}
+.areaLocation .storeMap .storeOverlay .btnCopy{display: block; line-height: 0.75rem; padding: 4px 0 2px 0; color: #F5CC1F; font-size: 0.75rem; font-weight: 700;}
+
+/* 타임벨트 */
+.ulTimebelt{position: relative; width: 100%; height: auto;}
+.liTimebelt{position: relative; display: flex; justify-content: center; width: 110px; height: auto; padding-right: 10px;}
+.liTimebelt.rightNow{width: 150px;}
+.liTimebelt .setTimebelt{position: relative; width: 100%; height: auto;}
+.liTimebelt .inputTimbelt{position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 10; width: 100%; height: auto; opacity: 0;}
+.liTimebelt .labelTimebelt{display: block; width: 100%; height: auto;}
+.liTimebelt .labelTimebelt .timebelt{width: 100%; height: 38px; line-height: 36px; border: 1px solid #EAEAEA; box-sizing: border-box; background-color: #FFFFFF; color: #505050; font-size: 1rem; font-weight: 700; text-align: center;}
+.liTimebelt .labelTimebelt .day{margin-right: 3px; font-size: 0.875rem; font-weight: 500;}
+.liTimebelt .labelTimebelt .arrive{width: 100%; height: 12px; line-height: 12px; margin-top: 7px; color: #A0A0A0; font-size: 0.75rem; text-align: center; letter-spacing: -0.5px;}
+.liTimebelt .inputTimbelt:checked + .labelTimebelt .timebelt{border: 1px solid #0F1838; background-color: #0F1838; color: #FFFFFF;}
+.liTimebelt .inputTimbelt:checked + .labelTimebelt .iconRobot path{fill: #FFFFFF;}
+.liTimebelt .inputTimbelt:disabled + .labelTimebelt .timebelt{background-color: #EAEAEA; color: #A0A0A0;}
+
+/* 수량버튼 */
+.quantity{width: 135px; height: 40px; border: 1px solid #E5E5E5; box-sizing: border-box;}
+.quantity:after{content: ""; display: block; clear: both;}
+.quantity .setQuantity{float: left; width: 40px; height: 38px;}
+.quantity .btnQuantity{display: block; width: 100%; height: 100%; line-height: 38px; text-align: center;}
+.quantity .btnQuantity svg{width: 20px; height: 20px; vertical-align: top; margin-top: 9px;}
+.quantity .btnQuantity rect{fill:none;}
+.quantity .btnQuantity line{fill:none; stroke: #505050; stroke-linejoin: round; stroke-linecap: round; stroke-width: 1.5px;}
+.quantity .fontMain{float: left; width: 52px; height: 38px; line-height: 38px; text-align: center; border-left: 1px solid #EAEAEA; border-right: 1px solid #EAEAEA; box-sizing: border-box; font-size: 1.125rem; font-weight: 700;}
+
+/* 할인 */
+.price .percent{display: inline-block; vertical-align: top; line-height: inherit; color: #E3131B; font-weight: 600;}
+.price .original{display: inline-block; vertical-align: top; position: relative; line-height: inherit; padding: 0 3px 0 2px; color: #A0A0A0; font-size: 0.75rem; letter-spacing: -0.5px; text-align: center;}
+.price .line{position: absolute; top: 50%; left: 0; right: 0; width: 100%; height: 1px; background-color: #A0A0A0;}
+.price .discount{display: inline-block; vertical-align: top; line-height: inherit; font-weight: 600;}
+
+/* 약관 */
+#termsDetail h1{font-size: 1rem; letter-spacing: -0.5px;}
+#termsDetail .sectionTermsDetail{padding: 5px 20px 20px 20px; max-height: 400px; overflow-y: auto;}
+
+.sectionTermsDetail {width: 100%; height: auto; padding: 20px; box-sizing: border-box;}
+.sectionTermsDetail .tit {margin-bottom: 22px; color: #131313; font-size: 0.875rem; font-weight: 600;}
+.sectionTermsDetail .chptTit {margin: 15px 0; color: #131313; font-size: 0.75rem; font-weight: 600;}
+.sectionTermsDetail .termsContents {line-height: 1rem; margin-bottom: 15px; font-size: 0.75rem; font-weight: 400;}
+.sectionTermsDetail .termsContents li{line-height: inherit; margin-bottom: 15px; font-size: inherit; font-weight: inherit;}
+.sectionTermsDetail .subTit {line-height: 1rem; margin-bottom: 7px; color: #131313; font-size: 0.75rem; font-weight: 600;}
+.sectionTermsDetail .item {padding-left: 12px; box-sizing: border-box; font-size: 0.75rem; font-weight: 400; text-align: justify; letter-spacing: -0.3px;}
+.sectionTermsDetail .numList,
+.sectionTermsDetail .subList,
+.sectionTermsDetail .parenList
+{counter-reset: num; padding-left: 12px; text-indent: -12px;}
+.sectionTermsDetail .numList > li,
+.sectionTermsDetail .subList > li,
+.sectionTermsDetail .parenList > li
+{line-height: 1rem; margin-bottom: 5px; font-size: 0.75rem; font-weight: 400;}
+.sectionTermsDetail :is(.numList, .subList, .parenList) > li {counter-increment: num;}
+.sectionTermsDetail .numList > li::before {content: counter(num, decimal) ". ";}
+.sectionTermsDetail .subList > li::before {content: counter(num, decimal) "\0029" "\00A0";}
+.sectionTermsDetail .parenList > li::before {content: "\0028" counter(num, decimal) "\0029" "\00A0";}
+.sectionTermsDetail .kList > li {line-height: 1rem; margin-bottom: 5px; padding-left: 15px; text-indent: -15px; font-size: 0.75rem; font-weight: 400;}
+.sectionTermsDetail .dotList {list-style-type: disc; padding-left: 12px;}
+.sectionTermsDetail .dotList > li {line-height: 1rem; margin-bottom: 5px; text-indent: 0; font-size: 0.75rem; font-weight: 400;}
+.sectionTermsDetail .dashList > li {line-height: 1rem; margin-bottom: 5px; padding-left: 12px; text-indent: -5px; font-size: 0.75rem; font-weight: 400;}
+.sectionTermsDetail .dashList > li::before {content: "-" "\00A0";}
+.sectionTermsDetail .dashList > li.noneLi {text-indent: -12px}
+.sectionTermsDetail .dashList > li.noneLi::before {content: "";}
+.sectionTermsDetail .indent0 {text-indent: 0;}
+.sectionTermsDetail table {font-size: 0.625rem; border: 1px solid #505050; border-collapse: collapse; margin-top: 7px; width: 100%; line-height: 1rem; text-indent: 0;}
+.sectionTermsDetail th,.sectionTermsDetail td {border: 1px solid #505050; padding: 2px; vertical-align: top; font-size: 0.625rem;}
+.sectionTermsDetail th {font-weight: 400; text-align: center; background-color: #EAEAEA; vertical-align: middle;}
+.sectionTermsDetail td {text-align: left; background-color: #ffffff;}
+.sectionTermsDetail caption {padding-bottom: 7px; text-align: left; font-size: 0.75rem;}
+.sectionTermsDetail strong {font-size: 0.875rem; font-weight: 600;}
+.sectionTermsDetail .blueLink{color: #354fdb!important;}
+.sectionTermsDetail p{line-height: inherit; font-size: inherit; font-weight: inherit;}
+.sectionTermsDetail .blueLink{display: inline; line-height: inherit; color: #354fdb!important; font-size: inherit; font-weight: inherit;}
+.sectionTermsDetail .selectVersion{display: block; position:  relative; width: 180px; height: 32px; line-height: 30px; margin-top: 15px; padding-left: 7px; box-sizing: border-box; background: #fff; border: 1px solid #E5E5E5; color: #505050; vertical-align: middle; font-size: 0.75rem;}
+.sectionTermsDetail .selectVersion:hover, .selectVersion:focus{border: 1px solid #505050; outline: none; color: #505050;}
+.sectionTermsDetail .em_b_orange{line-height: 0.75rem; margin: 5px 0; color: #ff6600; font-size: 0.75rem; font-weight: 700;}
+.sectionTermsDetail .clearfix input[type="text"]{display: inline-block; vertical-align: top; height: 32px; line-height: 0.875rem; padding: 8px 10px; border: 1px solid #DADADA; box-sizing: border-box; font-size: 0.875rem;}
+.sectionTermsDetail .clearfix input[type="text"]:focus {border: 1px solid #131313; outline: none;}
+.sectionTermsDetail .clearfix .staff_btn2{display: inline-block; vertical-align: top;}
+.sectionTermsDetail .clearfix input[type="button"]{display: inline-block; vertical-align: top; height: 32px; line-height: 30px; padding: 0 10px; border: 1px solid #DADADA; font-size: 0.875rem;}
+.sectionTermsDetail .clearfix input[type="button"]:focus{background-color: #F5F5F5;}
+.sectionTermsDetail .businessCheck caption{font-size: 0.75rem;}
+.sectionTermsDetail .businessNotice{margin-top: 15px; padding: 20px; box-sizing: border-box; background-color: #F5F5F5; font-size: 0.75rem;}
+.sectionTermsDetail .businessNotice strong{color: #131313; font-size: inherit; font-weight: 700;}
+.sectionTermsDetail .businessNotice .em_blue{color: #354fdb; font-size: inherit; font-weight: 700; font-style: normal;}
+
+/* 휴대폰번호 인증 */
+.sectionCertification .setBorder{margin-bottom: 10px;}
+.sectionCertification .setBorder:first-of-type{padding-right: 110px; box-sizing: border-box;}
+.sectionCertification .setBorder:last-of-type{margin-bottom: 0;}
+.sectionCertification .btnCertification{position: absolute; top: 0; right: 0; width: 100px; height: 44px; line-height: 42px; border-width: 1px; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF; font-size: 0.875rem; font-weight: 700; text-align: center;}
+.sectionCertification .btnCertification:disabled{border-color: #DADADA!important; color: #A0A0A0!important;}
+
+/* 웹사이즈 카피 */
+.areaWebCopy{display: none;}
+
+@media screen and (min-width: 480px) {
+    html,body{background-color: #F5F5F5; overflow-y: auto;}
+    main{left: 50%; right: unset; width: 480px!important; margin-left: -240px;}
+    header, #bottomFix, .bottomSheet, .bottomSheet .sheetBg, .popUp{position: fixed; left: unset; right: unset; width: 480px}
+    #toastLayer, #alertLayer, #confirmLayer, #snackbarLayer{position: relative; left: 50%; right: unset; width: 480px; margin-left: -240px;}
+    main .bgContent{height: auto; overflow-y: unset;}
+    main .bgContent:before{content: ""; position: fixed; top: 0; bottom: 0; width: 480px; box-shadow: 0 1px 4px rgba(0,0,0,12%); pointer-events: none;}
+}
+@media screen and (min-width: 1024px) {
+    main{margin-left: -30px;}
+    #toastLayer, #alertLayer, #confirmLayer{margin-left: -30px;}
+    .toast{left: unset; margin-left: 90px;}
+    .snackbar{left: unset; margin-left: 90px;}
+    .roundSnackbar{left: unset; margin-left: 90px;}
+    .areaWebCopy{display: block; position: fixed; left: 50%; top: 50%; width: 512px; margin-left: -512px; margin-top: -250px; padding: 0 15px; box-sizing: border-box;}
+    .areaWebCopy .copy{line-height: 1.125rem; margin-bottom: 12px; color: #131313; font-size: 1.125rem; font-weight: 600;}
+    .areaWebCopy .logo{height: 60px; margin-bottom: 50px;}
+    .areaWebCopy .logo img{height: 60px;}
+    .areaWebCopy .ulAdvantage{margin-bottom: 50px;}
+    .areaWebCopy .liAdvantage{display: inline-block; height: 32px; line-height: 32px; margin: 0 7px 12px 0; padding: 0 20px; border-radius: 15px; background-color: #FFFFFF; box-shadow: 1px 1px 1px rgba(0,0,0,12%); font-weight: 600;}
+    .areaWebCopy .areaStore:after{content: ""; display: block; clear: both;}
+    .areaWebCopy .textStore{margin-bottom: 10px; clear: both;}
+    .areaWebCopy .linkStore{float: left; height: 45px;}
+    .areaWebCopy .linkStore:first-of-type{margin-right: 5px;}
+    .areaWebCopy .linkStore img{height: 45px;}
+}

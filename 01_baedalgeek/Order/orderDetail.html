@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>주문상세</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <!-- 페이지별 css 파일 링크 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/order.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/review.css">
+</head>
+<body>
+<main id="orderDetail">
+    <header>
+        <a href="#" class="linkBack">
+            <svg viewBox="0 0 20 20" class="iconBack">
+                <g>
+                    <rect width="20" height="20"/>
+                    <path d="m8.66,4.34l-5.66,5.66,5.66,5.66"/>
+                    <line x1="3" y1="10" x2="17" y2="10"/>
+                </g>
+            </svg>
+        </a>
+        <h1>주문상세</h1>
+    </header>
+    <div class="bgContent bgGray">
+        <div class="areaWebCopy">
+            <div class="copy">배달의 발견, 일상의 변화.</div>
+            <div class="logo"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/textBDG.png" alt="배달긱"></div>
+            <ul class="ulAdvantage">
+                <li class="liAdvantage">배달비 0원</li>
+                <li class="liAdvantage">최소주문금액 0원</li>
+                <li class="liAdvantage">AI 루트시스템 친환경 ESG배달</li>
+                <li class="liAdvantage">비대면 안심배달</li>
+                <li class="liAdvantage">사전예약정시도착</li>
+            </ul>
+            <div class="areaStore">
+                <div class="textStore">앱 다운로드</div>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webAppstore.svg">
+                </a>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webGooglestore.svg">
+                </a>
+            </div>
+        </div>
+        <section class="sectionRobot">
+            <div class="areaRobot bgMain"><!-- 로봇배달일 경우 -->
+                <div class="store">상점명 외 1건</div>
+                <div class="robotInfo hidden"><!-- 로봇배차완료일 경우 -->
+                    <span class="state">로봇배차완료</span>
+                    <svg viewBox="0 0 16 16" class="iconRobotDispatch">
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m12.34,3.96l-5.86,5.86-2.81-2.81-1.12,1.12,3.71,3.71h0s.21.2.21.2l6.97-6.96-1.11-1.11Z"/>
+                        </g>
+                    </svg>
+                    13:15 도착예정
+                    <span class="bar"></span>
+                    A202
+                </div>
+                <div class="robotInfo"><!-- 로봇배달중일 경우 -->
+                    <span class="state">로봇배달중</span>
+                    <span class="on"></span>
+                    13:15 도착예정
+                    <span class="bar"></span>
+                    A202
+                </div>
+                <div class="robotMap hidden"></div>
+                <fieldset class="setRobotOpen">
+                    <button class="btnRobotOpen">해치열기</button>
+                </fieldset>
+            </div>
+        </section>
+        <section class="sectionWho">
+            <h3>주문정보</h3>
+            <dl class="dlWho">
+                <dt class="dtWho">주문자명</dt>
+                <dd class="ddWho">배달긱</dd>
+            </dl>
+            <dl class="dlWho">
+                <dt class="dtWho">연락처</dt>
+                <dd class="ddWho">010-1234-5678<br/>
+                    0504-1365-5790(안심번호)</dd>
+            </dl>
+        </section>
+        <section class="sectionOrderCard">
+            <div class="areaLocation">
+                <div class="location">
+                    <svg viewBox="0 0 20 20" class="iconPin">
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m9.67,17.59c.18.18.47.18.65,0h.01c2.08-2.12,5.66-6.55,5.66-9.62,0-3.31-2.69-6-6-6s-6,2.69-6,6c0,3.08,3.64,7.56,5.67,9.62"/>
+                            <circle cx="10" cy="7.54" r="1.8"/>
+                        </g>
+                    </svg>
+                    <span class="locationType robot">로봇배달</span>63동 학생회관<!-- 로봇배달일 경우 -->
+                </div>
+                <ol class="olStoreLocation hidden"><!--픽업인 경우 -->
+                    <li class="liStoreLocation">
+                        <div class="areaIcon">
+                            <div class="top"></div>
+                            <div class="bottom"></div>
+                            <div class="dot bgMain"></div>
+                        </div>
+                        <p class="storeName">한솥도시락</p>
+                        <p class="storeLocation">광주 광산구 임방울대로 727-6</p>
+                        <p class="pickupTime">픽업시간 : 20분 예상</p>
+                    </li>
+                    <li class="liStoreLocation">
+                        <div class="areaIcon">
+                            <div class="top"></div>
+                            <div class="bottom"></div>
+                            <div class="dot bgMain"></div>
+                        </div>
+                        <p class="storeName">오늘하루가</p>
+                        <p class="storeLocation">광주 광산구 임방울대로 123</p>
+                        <p class="pickupTime">픽업시간 : 20분 예상</p>
+                    </li>
+                </ol>
+                <div class="storeMap hidden"></div><!--픽업인 경우 -->
+            </div>
+            <div class="areaOrderCard">
+                <div class="areaTime">
+                    <span class="timebelt">점심1</span>23.04.20 (목)
+                </div>
+                <ul class="ulOrder">
+                    <li class="liOrder">
+                        <div class="orderStore">
+                            <div class="orderState receipt">주문접수</div>
+                            홍콩반점0410
+                            <a href="tel:02" class="linkStoreTel">
+                                <span class="blind">상점 문의전화</span>
+                                <svg viewBox="0 0 20 20" class="iconOrderCancel">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <path d="m17.54,14.53c-.85-.74-1.8-1.37-2.81-1.88-.84-.4-1.15-.4-1.74.03-.5.36-.82.69-1.39.57-1.06-.48-2.01-1.19-2.78-2.06-.88-.77-1.58-1.72-2.06-2.79-.12-.57.21-.89.57-1.39.43-.6.44-.9.03-1.74-.5-1.01-1.14-1.95-1.88-2.8-.61-.61-.75-.48-1.09-.36-.35.15-.68.33-1,.53-.52.29-.93.73-1.2,1.26-.24.51-.51,1.47.89,3.96,1.03,1.91,2.34,3.65,3.88,5.18h0c1.53,1.54,3.28,2.85,5.19,3.88,2.49,1.4,3.44,1.12,3.96.89.53-.26.97-.68,1.26-1.2.21-.31.39-.65.53-1,.11-.33.25-.47-.36-1.08Z" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="orderMenu">
+                            <div class="photo">
+                                <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_2622.jpg">
+                            </div>
+                            <div class="name">고추짬뽕</div>
+                            <div class="option">기본<br />사이즈업 : 곱배기<br />추가메뉴 선택 : 공기밥 / 콜라 / 사이다</div>
+                            <div class="price">15,500원</div>
+                        </div>
+                    </li>
+                    <li class="liOrder">
+                        <div class="orderStore">
+                            <div class="orderState waiting">접수대기</div>
+                            버텍스
+                            <button class="btnOrderCancel">
+                                <span class="blind">주문취소</span>
+                                <svg viewBox="0 0 20 20" class="iconOrderCancel">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <circle cx="10" cy="10.24" r="8.33"/>
+                                        <line x1="6.57" y1="6.59" x2="13.28" y2="13.44"/>
+                                        <line x1="6.57" y1="13.44" x2="13.28" y2="6.56"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="orderMenu">
+                            <div class="photo">
+                                <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_14772.jpeg">
+                            </div>
+                            <div class="name">미국식 닭고기 덮밥 (CHICKEN BOWL) 도시락</div>
+                            <div class="option">기본</div>
+                            <div class="price">15,500원</div>
+                        </div>
+                    </li>
+                    <li class="liOrder">
+                        <div class="orderStore">
+                            <div class="orderState waiting">접수대기</div>
+                            고피자
+                            <button class="btnOrderCancel">
+                                <span class="blind">주문취소</span>
+                                <svg viewBox="0 0 20 20" class="iconOrderCancel">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <circle cx="10" cy="10.24" r="8.33"/>
+                                        <line x1="6.57" y1="6.59" x2="13.28" y2="13.44"/>
+                                        <line x1="6.57" y1="13.44" x2="13.28" y2="6.56"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="orderMenu">
+                            <div class="photo">
+                                <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_13703.jpeg">
+                            </div>
+                            <div class="name">미트 치즈 파스타</div>
+                            <div class="option">기본</div>
+                            <div class="price">15,500원</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="areaOrderCard">
+                <div class="areaTime">
+                    <span class="timebelt">저녁1</span>23.04.20 (목)
+                </div>
+                <ul class="ulOrder">
+                    <li class="liOrder">
+                        <div class="orderStore">
+                            <div class="orderState cancel">취소완료</div>
+                            홍콩반점0410
+                        </div>
+                        <div class="orderMenu">
+                            <div class="photo">
+                                <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_2622.jpg">
+                            </div>
+                            <div class="name">고추짬뽕</div>
+                            <div class="option">기본<br />사이즈업 : 곱배기</div>
+                            <div class="price">15,500원</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="areaOrderCard">
+                <div class="areaTime">
+                    <span class="timebelt">저녁1</span>23.04.21 (금)
+                </div>
+                <ul class="ulOrder">
+                    <li class="liOrder">
+                        <div class="orderStore">
+                            <div class="orderState delivery">배달완료</div>
+                            홍콩반점0410
+                            <button class="btnWriteReview borderMain fontMain">리뷰쓰기</button>
+                        </div>
+                        <div class="orderMenu">
+                            <div class="photo">
+                                <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_2622.jpg">
+                            </div>
+                            <div class="name">고추짬뽕</div>
+                            <div class="option">기본<br />사이즈업 : 곱배기</div>
+                            <div class="price">15,500원</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="sectionDelivery">
+            <h3>배달정보</h3>
+            <ul class="ulDelivery">
+                <li class="liDelivery">A201 • 23.04.04 15:15 도착</li>
+                <li class="liDelivery">A202 • 23.04.04 16:10 도착</li>
+            </ul>
+        </section>
+        <section class="sectionPay">
+            <h3>최초 결제정보</h3>
+            <div class="areaDetail">
+                <dl class="dlDetail">
+                    <dt class="dtDetail">주문금액</dt>
+                    <dd class="ddDetail">45,000원</dd>
+                </dl>
+                <dl class="dlDetail">
+                    <dt class="dtDetail">배달비</dt>
+                    <dd class="ddDetail">9,000원</dd>
+                </dl>
+                <dl class="dlDetail minus">
+                    <dt class="dtDetail">배달비할인</dt>
+                    <dd class="ddDetail">- 9,000원</dd>
+                </dl>
+                <dl class="dlDetail minus">
+                    <dt class="dtDetail">상점명 상점할인</dt>
+                    <dd class="ddDetail">- 5,000원</dd>
+                </dl>
+            </div>
+            <div class="areaTotal">
+                <dl class="dlTotal">
+                    <dt class="dtTotal">총 결제금액</dt>
+                    <dd class="ddTotal">40,000원</dd>
+                </dl>
+            </div>
+            <div class="areaPayment">
+                <dl class="dlPayment">
+                    <dt class="dtPayment">카드 결제</dt>
+                    <dd class="ddPayment">30,000원</dd>
+                </dl>
+                <dl class="dlPayment">
+                    <dt class="dtPayment">포인트 사용</dt>
+                    <dd class="ddPayment">10,000원</dd>
+                </dl>
+            </div>
+        </section>
+        <section class="sectionRefund">
+            <h3>
+                총 환불금액
+                <div class="amountRefund">10,000원</div>
+                <div class="noticeRefund">※ 카드의 경우 환불은 영업일 기준 3~5일 소요 (카드사마다 상이)</div>
+            </h3>
+            <div class="areaPayment">
+                <dl class="dlPayment">
+                    <dt class="dtPayment">카드 결제</dt>
+                    <dd class="ddPayment">30,000원</dd>
+                </dl>
+                <dl class="dlPayment">
+                    <dt class="dtPayment">포인트 사용</dt>
+                    <dd class="ddPayment">10,000원</dd>
+                </dl>
+            </div>
+        </section>
+    </div>
+</main>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=07ab4926694236a9f0d4da97734ad8cd"></script>
+
+</body>
+</html>

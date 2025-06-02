@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>긱머니 환불</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/location.css">
+    <!-- 페이지별 css 파일 링크 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/geekmoney.css">
+</head>
+<body>
+<main id="geekmoneyRefund">
+    <header>
+        <a href="#" class="linkBack">
+            <svg viewBox="0 0 20 20" class="iconBack">
+                <g>
+                    <rect width="20" height="20"/>
+                    <path d="m8.66,4.34l-5.66,5.66,5.66,5.66"/>
+                    <line x1="3" y1="10" x2="17" y2="10"/>
+                </g>
+            </svg>
+        </a>
+        <h1>긱머니 환불</h1>
+    </header>
+    <div class="bgContent bgGray">
+        <div class="areaWebCopy">
+            <div class="copy">배달의 발견, 일상의 변화.</div>
+            <div class="logo"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/textBDG.png" alt="배달긱"></div>
+            <ul class="ulAdvantage">
+                <li class="liAdvantage">배달비 0원</li>
+                <li class="liAdvantage">최소주문금액 0원</li>
+                <li class="liAdvantage">AI 루트시스템 친환경 ESG배달</li>
+                <li class="liAdvantage">비대면 안심배달</li>
+                <li class="liAdvantage">사전예약정시도착</li>
+            </ul>
+            <div class="areaStore">
+                <div class="textStore">앱 다운로드</div>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webAppstore.svg">
+                </a>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webGooglestore.svg">
+                </a>
+            </div>
+        </div>
+        <section class="sectionMyGeekmoney">
+            <div class="subTitle">마이긱머니</div>
+            0G
+        </section>
+        <section class="sectionAccount">
+            <h3>
+                환불 받을 계좌
+                <div class="subTitle">본인 명의의 계좌만 신청할 수 있어요</div>
+            </h3>
+            <fieldset class="setBorder">
+                <input type="number" class="inputBorder" id="refundAmount" autocomplete="off" required="required" />
+                <label for="refundAmount" class="labelBorder">환불금액</label>
+                <div class="errorMessage">보유 긱머니 이상 금액은 불가능합니다</div>
+            </fieldset>
+            <fieldset class="setSelect">
+                <div class="textSelect">
+                    은행
+                    <svg viewBox="0 0 20 20" class="iconUnfold">
+                        <g>
+                            <rect width="20" height="20" />
+                            <path d="m4.69,7.88l5.31,5.3,5.31-5.3" />
+                        </g>
+                    </svg>
+                </div>
+                <select class="select">
+                    <option disabled>은행</option>
+                    <option>KB국민은행</option>
+                </select>
+            </fieldset>
+            <fieldset class="setBorder">
+                <input type="number" class="inputBorder" id="accountNumber" autocomplete="off" required="required" />
+                <label for="accountNumber" class="labelBorder">계좌번호</label>
+            </fieldset>
+            <fieldset class="setBorder">
+                <input type="text" class="inputBorder" id="accountName" autocomplete="off" required="required" />
+                <label for="accountName" class="labelBorder">예금주명</label>
+            </fieldset>
+            <fieldset class="setReason">
+                <textarea class="textareaReason" id="refundReason" autocomplete="off" required="required" ></textarea>
+                <label for="refundReason" class="labelReason">환불사유</label>
+            </fieldset>
+        </section>
+        <section class="sectionTerms ">
+            <fieldset class="setTerms">
+                <button class="btnTerms">전자금융거래이용약관</button>
+                <button class="btnTerms">긱머니 환불 관련사항</button>
+            </fieldset>
+            <div class="noticeTerms">
+                <fieldset class="setRow">
+                    <input type="checkbox" class="inputRow" id="agree" checked="checked"/>
+                    <label for="agree" class="labelRow">
+                        <svg viewBox="0 0 16 16" class="iconRadius">
+                            <g>
+                                <rect width="16" height="16"/>
+                                <rect class="checkbox" x="1" y="1" width="14" height="14" rx="5" ry="5"/>
+                                <path class="check" d="m4.46,7.21l2.83,2.83,4.21-4.28"/>
+                            </g>
+                        </svg>
+                        위 내용을 확인했으며 결제에 동의합니다
+                    </label>
+                </fieldset>
+            </div>
+        </section>
+        <section class="sectionRefund hidden"><!-- 환불신청 후 -->
+            <div class="bgRefund">
+                <div class="areaDate">
+                    <h3>환불 신청서<spna class="badgeRefund receiving">환불 접수중</spna><spna class="badgeRefund proceeding">환불 진행중</spna></h3>
+                    <div class="date">2023.07.17 09:27</div>
+                </div>
+                <div class="areaAccount">
+                    <dl class="dlAccount">
+                        <dt class="dtAccount">환불금액</dt>
+                        <dd class="ddAccount">50,000</dd>
+                    </dl>
+                    <dl class="dlAccount">
+                        <dt class="dtAccount">은&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;행</dt>
+                        <dd class="ddAccount">KB국민은행</dd>
+                    </dl>
+                    <dl class="dlAccount">
+                        <dt class="dtAccount">계좌번호</dt>
+                        <dd class="ddAccount">74050200123456</dd>
+                    </dl>
+                    <dl class="dlAccount">
+                        <dt class="dtAccount">예금주명</dt>
+                        <dd class="ddAccount">배달긱</dd>
+                    </dl>
+                </div>
+                <div class="areaReason">
+                    <dl class="dlReason">
+                        <dt class="dtReason">환불사유</dt>
+                        <dd class="ddReason">6시 배달 예정인데 5시 52분 주문한지 3시간 다 되어서 배달 취소, 서비스 이용하고 싶지 않음</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+        <section class="sectionNotice">
+            <div class="titleNotice">긱머니 환불 유의사항</div>
+            <ul class="ulNotice">
+                <li class="liNotice"><span class="dash">-</span>충전한 긱머니 금액만 환불가능 (충전으로 적립된 보너스 포인트 제외)</li>
+                <li class="liNotice"><span class="dash">-</span>환불 요청시 긱머니 충전으로 적립된 보너스 포인트는 ‘포인트’에서 차감되며, 보너스 포인트를 사용한 경우는 긱머니 사용 비율을 계산하여 ‘환불금액’에서 차감함</li>
+                <li class="liNotice"><span class="dash">-</span>보너스 포인트 사용으로 차감될 ‘긱머니 금액’이 차감될 ‘보너스 포인트’ 보다 많은 경우에만 환불가능</li>
+                <li class="liNotice"><span class="dash">-</span>환불 신청 직후, 긱머니 및 포인트는 바로 차감되나 실제 환불금액 지급은 환불신청일 포함하여 영업일 기준 3~5일 정도 소요됨</li>
+                <li class="liNotice"><span class="dash">-</span>최종 환불금액은 보너스 포인트 사용여부에 따라 환불 신청금액과 상이할 수 있음</li>
+                <li class="liNotice"><span class="dash">-</span>환불신청 계좌의 예금주가 회원 본명과 정확히 일치하지 않는 경우, 환불이 진행되지 않을 수 있음</li>
+                <li class="liNotice"><span class="dash">-</span>긱머니 충전일로부터 5년 경과시 사용기한 소멸로 인해 긱머니 환불 및 잔액 반환을 요청할 수 없음</li>
+            </ul>
+        </section>
+    </div>
+    <div id="bottomFix">
+        <section class="sectionFull">
+            <fieldset class="setFull">
+                <button class="btnFull bgMain">환불하기</button>
+            </fieldset>
+        </section>
+    </div>
+</main>
+</body>
+</html>

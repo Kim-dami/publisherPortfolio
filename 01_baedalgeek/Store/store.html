@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>상점</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <!-- 페이지별 css 파일 링크 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/store.css">
+</head>
+<body>
+<main id="store" class="storeDisable"><!-- 상점마감, 상점휴무, 준비중, 매진일 경우 menuDisable 클래스추가 -->
+    <header class="default">
+        <a href="#" class="linkBack">
+            <svg viewBox="0 0 20 20" class="iconBack">
+                <g>
+                    <rect width="20" height="20"/>
+                    <path d="m8.66,4.34l-5.66,5.66,5.66,5.66"/>
+                    <line x1="3" y1="10" x2="17" y2="10"/>
+                    <line x1="3" y1="10" x2="17" y2="10"/>
+                </g>
+            </svg>
+        </a>
+        <h1>홍콩반점0410</h1>
+        <a href="#" class="linkBasket">
+            <svg viewBox="0 0 20 20" class="iconBasket">
+                <g>
+                    <rect width="20" height="20"/>
+                    <path d="m19.95,17.78l-2.36-10.04c-.2-.83-.95-1.42-1.81-1.41h-1.12v-1.78C14.59,1.97,12.46-.06,9.89,0c-2.49.06-4.49,2.06-4.55,4.55v1.77h-1.13c-.86,0-1.6.58-1.81,1.41L.05,17.78c-.13.54,0,1.11.36,1.54.36.44.89.69,1.46.68h16.28c.56,0,1.1-.25,1.46-.69.35-.43.49-1,.36-1.54M7.21,4.54c.03-1.54,1.31-2.77,2.85-2.73,1.5.03,2.7,1.24,2.73,2.73v1.77h-5.58v-1.77Zm-2.98,3.59h6.9l2.36,10.04H1.86l2.36-10.04Zm11.17,10.04l-2.36-10.04h2.74l2.36,10.04h-2.74Z" />
+                </g>
+            </svg>
+            <div class="numberBasket">10</div>
+        </a>
+    </header>
+    <div class="bgContent bgGray" onscroll="scrollHeader();">
+        <div class="areaWebCopy">
+            <div class="copy">배달의 발견, 일상의 변화.</div>
+            <div class="logo"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/textBDG.png" alt="배달긱"></div>
+            <ul class="ulAdvantage">
+                <li class="liAdvantage">배달비 0원</li>
+                <li class="liAdvantage">최소주문금액 0원</li>
+                <li class="liAdvantage">AI 루트시스템 친환경 ESG배달</li>
+                <li class="liAdvantage">비대면 안심배달</li>
+                <li class="liAdvantage">사전예약정시도착</li>
+            </ul>
+            <div class="areaStore">
+                <div class="textStore">앱 다운로드</div>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webAppstore.svg">
+                </a>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webGooglestore.svg">
+                </a>
+            </div>
+        </div>
+        <section class="sectionTopImg">
+            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/store/11/hongkongbanjum0410_b.png" />
+        </section>
+        <section class="sectionTopInfo">
+            <h2>홍콩반점0410</h2>
+            <div class="areaStoreInfo">
+                <a href="#" class="linkStoreInfo">상점 · 원산지 정보</a>
+            </div>
+            <div class="areaReview">
+                <div class="halfReview">
+                    <a href="#" class="linkReview">
+                        <img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/maskStar.svg" class="iconStar" />
+                        <span class="score">4.9</span>
+                        <span class="review">(리뷰 : 999+)</span>
+                    </a>
+                </div>
+                <div class="halfReview">
+                    <a href="#" class="linkReview">
+                        <svg viewBox="0 0 20 20" class="iconLike active">
+                            <g>
+                                <rect width="20" height="20"/>
+                                <path class="plane" d="m13.79,3.2c-2.93,0-3.79,3.15-3.79,3.15,0,0-.85-3.15-3.79-3.15-2.18,0-4.49,1.48-4.49,4.49s3.85,6.17,3.85,6.17c0,0,2.76,2.28,4.43,2.94,1.67-.66,4.43-2.94,4.43-2.94,0,0,3.85-3.16,3.85-6.17s-2.31-4.49-4.49-4.49Z"/>
+                                <path class="line" d="m13.79,3.2c2.18,0,4.49,1.48,4.49,4.49s-3.85,6.17-3.85,6.17c0,0-2.76,2.28-4.43,2.94-1.67-.66-4.43-2.94-4.43-2.94,0,0-3.85-3.16-3.85-6.17S4.04,3.2,6.21,3.2c2.93,0,3.79,3.15,3.79,3.15,0,0,.85-3.15,3.79-3.15m0-1.7c-1.65,0-2.9.7-3.79,1.58-.89-.89-2.13-1.58-3.79-1.58C3.2,1.5,0,3.67,0,7.69c0,3.7,4.01,7.1,4.46,7.47.3.25,3.02,2.48,4.89,3.21.21.08.42.12.64.12s.44-.04.64-.12c1.87-.74,4.59-2.96,4.9-3.22.45-.37,4.46-3.77,4.46-7.47,0-4.02-3.2-6.19-6.21-6.19h0Z"/>
+                            </g>
+                        </svg>
+                        <span class="like">찜</span>
+                    </a>
+                </div>
+            </div>
+            <div class="areaPartnerSay">
+                <div class="titleSay">사장님 한마디</div>
+                <div class="contentSay">안녕하세요? 항상 믿고 주문할 수 있도록 최선을 다하겠습니다.</div>
+                <svg viewBox="0 0 20 20" class="iconMore">
+                    <g>
+                        <rect width="20" height="20"/>
+                        <path d="m7.82,14.98l5.3-5.3-5.3-5.31"/>
+                    </g>
+                </svg>
+            </div>
+        </section>
+        <section class="sectionTabUnder hidden"><!-- 픽업준비중일 경우 hidden -->
+            <fieldset class="setTabUnder">
+                <input type="radio" name="service" class="inputTabUnder" id="service-1" checked="checked">
+                <label for="service-1" class="labelTabUnder">배달</label>
+            </fieldset>
+            <fieldset class="setTabUnder">
+                <input type="radio" name="service" class="inputTabUnder" id="service-2" >
+                <label for="service-2" class="labelTabUnder">픽업</label>
+            </fieldset>
+        </section>
+        <section class="sectionRewards">
+            <div class="titleRewards">
+                REWARDS
+                <div class="subTitle">주문할수록 쌓이는 리워드 포인트</div>
+            </div>
+            <div class="areaStamp">
+                <ul class="ulStamp">
+                    <li class="liStamp">
+                        <img src="https://kim-dami.github.io/carnival/imgStampOn.png" />
+                    </li>
+                    <li class="liStamp">
+                        <img src="https://kim-dami.github.io/carnival/imgStampOff.png" />
+                    </li>
+                    <li class="liStamp">
+                        <img src="https://kim-dami.github.io/carnival/imgLastStamp.png" />
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="sectionServiceInfo"><!-- 배달인 경우-->
+            <div class="areaLocation">
+                <div class="location">
+                    <svg viewBox="0 0 20 20" class="iconPin">
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m9.67,17.59c.18.18.47.18.65,0h.01c2.08-2.12,5.66-6.55,5.66-9.62,0-3.31-2.69-6-6-6s-6,2.69-6,6c0,3.08,3.64,7.56,5.67,9.62"/>
+                            <circle cx="10" cy="7.54" r="1.8"/>
+                        </g>
+                    </svg>
+                    <span class="locationType">수령장소</span>63동 학생회관
+                </div>
+            </div>
+            <ul class="ulStoreOrder">
+                <li class="liStoreOrder">
+                    <div class="titleStoreOrder">주문마감</div>
+                    <div class="contentStoreOrder timer">
+                        <svg viewBox="0 0 16 16" class="iconTimer">
+                            <g>
+                                <rect width="16" height="16"/>
+                                <path d="m7.22,16c-.27-.04-.55-.07-.82-.12-1.14-.2-2.21-.7-3.1-1.45-1.3-1.04-2.15-2.54-2.38-4.19-.37-2.19.38-4.43,2-5.95,1.08-1.07,2.49-1.73,4-1.88h.09v-1.16h-.51c-.34.02-.64-.24-.66-.58,0-.01,0-.03,0-.04C5.84.29,6.11,0,6.45,0c.02,0,.04,0,.06,0h2.28c.35-.02.65.24.67.59,0,.01,0,.02,0,.04,0,.35-.29.63-.64.63-.01,0-.02,0-.03,0h-.5v1.15c.68.07,1.34.23,1.97.49.62.26,1.2.61,1.72,1.03l.83-.83c-.1-.09-.22-.2-.34-.32-.26-.23-.29-.62-.06-.88.23-.26.62-.29.88-.06.02.02.04.04.06.06.53.53,1.07,1.07,1.6,1.6.27.22.3.62.08.88-.22.27-.62.3-.88.08-.03-.02-.06-.05-.08-.08-.11-.11-.21-.23-.31-.33l-.81.81c.17.25.38.52.55.81,1.95,3.22.91,7.41-2.31,9.36-.67.4-1.4.69-2.16.84-.3.06-.6.09-.91.14h-.88Zm5.99-6.81c0-3.07-2.48-5.56-5.56-5.57s-5.56,2.48-5.57,5.56c0,3.07,2.48,5.56,5.55,5.57,3.07,0,5.56-2.48,5.57-5.56"/>
+                                <path d="m8.4,8.77h1.99c.34,0,.62.28.62.62s-.28.62-.62.62h-2.58c-.34.02-.63-.23-.66-.57,0-.03,0-.05,0-.08v-3.61c-.02-.34.24-.64.58-.66.01,0,.02,0,.04,0,.35,0,.63.29.63.64,0,.01,0,.02,0,.04v3.01"/>
+                            </g>
+                        </svg>
+                        41분 29초 남음
+                    </div>
+                </li>
+                <li class="liStoreOrder">
+                    <div class="titleStoreOrder">도착시간</div>
+                    <div class="contentStoreOrder strong">12시 30분</div>
+                </li>
+                <li class="liStoreOrder">
+                    <div class="titleStoreOrder">최소주문금액</div>
+                    <div class="contentStoreOrder">
+                        <span class="original">
+                            13,000
+                            <span class="line"></span>
+                            <span class="triangle"></span>
+                        </span>
+                        <span class="discount">0원</span>
+                    </div>
+                </li>
+                <li class="liStoreOrder">
+                    <div class="titleStoreOrder">배달비</div>
+                    <div class="contentStoreOrder">
+                        <span class="original">
+                            2,000
+                            <span class="line"></span>
+                            <span class="triangle"></span>
+                        </span>
+                        <span class="discount">0원</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section class="sectionServiceInfo hidden"><!-- 픽업인 경우-->
+            <div class="areaLocation">
+                <div class="storeMap" id="storeMap"></div>
+            </div>
+            <ul class="ulStoreOrder">
+                <li class="liStoreOrder">
+                    <div class="titleStoreOrder">상점위치</div>
+                    <div class="contentStoreOrder">서울 관악구 호암로24길 66 2층</div>
+                </li>
+                <li class="liStoreOrder">
+                    <div class="titleStoreOrder">위치안내</div>
+                    <div class="contentStoreOrder">배달장소로부터 약 518m, 도보 11분</div>
+                </li>
+                <li class="liStoreOrder">
+                    <div class="titleStoreOrder">픽업시간</div>
+                    <div class="contentStoreOrder">10분~15분 소요예상</div>
+                </li>
+            </ul>
+        </section>
+        <section class="sectionMenuList bestMenu"><!-- 대표메뉴일 경우 bestMenu 클래스추가 -->
+            <fieldset class="setMenuGroup">
+                <button class="btnMenuGroup">
+                    대표메뉴<span class="numberMenu">(4개)</span>
+                    <svg viewBox="0 0 20 20" class="iconFold">
+                        <g>
+                            <rect width="20" height="20" />
+                            <path d="m4.69,12.34l5.31-5.3,5.31,5.3" />
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+            <ul class="ulMenuList">
+                <li class="liMenuList">
+                    <a href="#" class="linkMenu">
+                        <div class="photoMenu">
+                            <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_5476.jpeg">
+                        </div>
+                        <div class="infoMenu">
+                            <div class="name">식사2인 + 탕수육</div>
+                            <div class="price">
+                                <div class="percent">10%</div>
+                                <div class="discount">27,900원</div>
+                                <div class="remain"><span class="number">10개</span> 남음</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="liMenuList">
+                    <a href="#" class="linkMenu">
+                        <div class="photoMenu">
+                            <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_2622.jpg">
+                        </div>
+                        <div class="infoMenu">
+                            <div class="name">고추짬뽕</div>
+                            <div class="price">
+                                <div class="percent">10%</div>
+                                <div class="discount">7,200원~8,100원</div>
+                                <div class="remain"><span class="number">10개</span> 남음</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="liMenuList">
+                    <a href="#" class="linkMenu">
+                        <div class="photoMenu">
+                            <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_2624.jpg">
+                        </div>
+                        <div class="infoMenu">
+                            <div class="name">고추짜장</div>
+                            <div class="price">
+                                <div class="percent">10%</div>
+                                <div class="discount">87,200원~88,100원</div>
+                                <div class="remain"><span class="number">10개</span> 남음</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="liMenuList menuSoldOut">
+                    <a href="#" class="linkMenu">
+                        <div class="photoMenu">
+                            <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_2628.jpg">
+                            <div class="photoSoldOut">품절</div>
+                        </div>
+                        <div class="infoMenu">
+                            <div class="name">탕수육(1박스)(소스별도포장)</div>
+                            <div class="price">
+                                <div class="percent">10%</div>
+                                <div class="discount">14,900원</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="sectionMenuList">
+            <fieldset class="setMenuGroup">
+                <button class="btnMenuGroup">
+                    세트류<span class="numberMenu">(2개)</span>
+                    <svg viewBox="0 0 20 20" class="iconFold">
+                        <g>
+                            <rect width="20" height="20" />
+                            <path d="m4.69,12.34l5.31-5.3,5.31,5.3" />
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+            <ul class="ulMenuList">
+                <li class="liMenuList">
+                    <a href="#" class="linkMenu">
+                        <div class="infoMenu">
+                            <div class="name">쟁반짜장 2인 + 탕수육</div>
+                            <div class="price">
+                                <div class="percent">10%</div>
+                                <div class="discount">29,400원</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="liMenuList">
+                    <a href="#" class="linkMenu">
+                        <div class="infoMenu">
+                            <div class="name">쟁반짜장 2인 + 식사 1인 + 탕수육</div>
+                            <div class="price">
+                                <div class="percent">10%</div>
+                                <div class="discount">39,200원</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="sectionMenuList">
+            <fieldset class="setMenuGroup">
+                <button class="btnMenuGroup">
+                    주류메뉴<span class="numberMenu">(2개)</span>
+                    <svg viewBox="0 0 20 20" class="iconUnfold">
+                        <g>
+                            <rect width="20" height="20" />
+                            <path d="m4.69,7.88l5.31,5.3,5.31-5.3" />
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+            <ul class="ulMenuList">
+                <li class="liMenuList">
+                    <a href="#" class="linkMenu">
+                        <div class="infoMenu">
+                            <div class="name">별빛청하<img src="https://kim-dami.github.io/carnival/imgBadgeAdult.png" class="badgeAdult" /></div>
+                            <div class="price">
+                                <div class="discount">6,000원</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="liMenuList">
+                    <a href="#" class="linkMenu">
+                        <div class="infoMenu">
+                            <div class="name">진로<img src="https://kim-dami.github.io/carnival/imgBadgeAdult.png" class="badgeAdult" /></div>
+                            <div class="price">
+                                <div class="discount">3,000원</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="sectionNoticeImg">
+            메뉴이미지는 이미지컷이며 실제 배달되는 음식과 다를 수 있습니다.
+        </section>
+    </div>
+    <div id="bottomFix">
+        <section class="sectionFull">
+            <fieldset class="setFull">
+                <button class="btnFull bgDisable fontDisable">
+                    다른 시간으로 주문해주세요
+                </button>
+            </fieldset>
+        </section>
+    </div>
+</main>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=07ab4926694236a9f0d4da97734ad8cd"></script>
+<script>
+    function scrollHeader(){
+        const bgContent = document.querySelector('.bgContent');
+        const header = document.querySelector('header');
+        if(bgContent.scrollTop < 180){
+            header.classList.add('default');
+            header.classList.remove('scroll');
+        } else {
+            header.classList.add('scroll');
+            header.classList.remove('default');
+        }
+    }
+
+    function storeMap(){
+        let container = document.getElementById('storeMap'); // 지도를 표시할 div
+        let options = { //지도를 생성할 때 필요한 기본 옵션
+            center: new kakao.maps.LatLng(37.45954782879497, 126.95321743281724), //지도의 중심좌표
+            level: 4 // 지도의 확대 레벨
+        };
+
+        let map = new kakao.maps.Map(container, options);
+
+        // 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+        let content = '<div class="storeOverlay"><p class="name">홍콩반점0410</p><button class="btnCopy">주소복사</button></div>';
+
+        // 커스텀 오버레이가 표시될 위치입니다
+        let position = new kakao.maps.LatLng(37.45954782879497, 126.95321743281724);
+
+        // 커스텀 오버레이를 생성합니다
+        let customOverlay = new kakao.maps.CustomOverlay({
+            map: map,
+            position: position,
+            content: content,
+            yAnchor: 1
+        });
+
+
+
+    }
+
+    window.onload = function() {
+        scrollHeader();
+        storeMap();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>주문내역</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <!-- 페이지별 css 파일 링크 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/order.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/review.css">
+</head>
+<body>
+<main id="orderHistory">
+    <header>
+        <h1>주문내역</h1>
+        <a href="#" class="linkBasket">
+            <svg viewBox="0 0 20 20" class="iconBasket">
+                <g>
+                    <rect width="20" height="20"/>
+                    <path d="m19.95,17.78l-2.36-10.04c-.2-.83-.95-1.42-1.81-1.41h-1.12v-1.78C14.59,1.97,12.46-.06,9.89,0c-2.49.06-4.49,2.06-4.55,4.55v1.77h-1.13c-.86,0-1.6.58-1.81,1.41L.05,17.78c-.13.54,0,1.11.36,1.54.36.44.89.69,1.46.68h16.28c.56,0,1.1-.25,1.46-.69.35-.43.49-1,.36-1.54M7.21,4.54c.03-1.54,1.31-2.77,2.85-2.73,1.5.03,2.7,1.24,2.73,2.73v1.77h-5.58v-1.77Zm-2.98,3.59h6.9l2.36,10.04H1.86l2.36-10.04Zm11.17,10.04l-2.36-10.04h2.74l2.36,10.04h-2.74Z" />
+                </g>
+            </svg>
+            <div class="numberBasket">10</div>
+        </a>
+    </header>
+    <div class="bgContent bgGray">
+        <div class="areaWebCopy">
+            <div class="copy">배달의 발견, 일상의 변화.</div>
+            <div class="logo"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/textBDG.png" alt="배달긱"></div>
+            <ul class="ulAdvantage">
+                <li class="liAdvantage">배달비 0원</li>
+                <li class="liAdvantage">최소주문금액 0원</li>
+                <li class="liAdvantage">AI 루트시스템 친환경 ESG배달</li>
+                <li class="liAdvantage">비대면 안심배달</li>
+                <li class="liAdvantage">사전예약정시도착</li>
+            </ul>
+            <div class="areaStore">
+                <div class="textStore">앱 다운로드</div>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webAppstore.svg">
+                </a>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webGooglestore.svg">
+                </a>
+            </div>
+        </div>
+        <section class="sectionNone hidden"><!-- 주문내역이 없을 경우 -->
+            <svg viewBox="0 0 55 55" class="iconNone">
+                <g>
+                    <path d="m29.67,32.32h-4.36l-.45-17.35h5.29l-.47,17.35Zm-2.17,7.7c-.51,0-1.01-.13-1.45-.38-.44-.25-.8-.61-1.05-1.05-.26-.44-.38-.94-.37-1.45-.02-.5.11-.99.37-1.42.25-.43.61-.79,1.05-1.03.44-.25.94-.37,1.44-.37.49,0,.98.13,1.41.37.44.25.8.6,1.06,1.04.26.43.4.91.4,1.41,0,.51-.14,1.01-.4,1.45-.25.44-.62.8-1.06,1.05-.43.25-.91.38-1.41.38Z"/>
+                    <circle cx="27.5" cy="27.5" r="26"/>
+                </g>
+            </svg>
+            <div class="textNone">주문내역이 없어요</div>
+            <fieldset class="setNoneLink">
+                <button class="btnNoneLink borderMain fontMain">
+                    배달 주문하러 가기
+                    <svg viewBox="0 0 20 20" class="iconMore">
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m7.82,14.98l5.3-5.3-5.3-5.31"/>
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+        </section>
+        <section class="sectionTabUnder hidden">
+            <fieldset class="setTabUnder">
+                <input type="radio" name="service" class="inputTabUnder" id="itu-1" checked="checked">
+                <label for="itu-1" class="labelTabUnder">배달<span class="nodeRobot"></span></label>
+            </fieldset>
+            <fieldset class="setTabUnder">
+                <input type="radio" name="service" class="inputTabUnder" id="itu-2">
+                <label for="itu-2" class="labelTabUnder">픽업</label>
+            </fieldset>
+        </section>
+        <section class="sectionCertification hidden"><!-- 비로그인일 경우 -->
+            <h3>비회원 주문조회</h3>
+            <fieldset class="setBorder">
+                <input type="tel" class="inputBorder" id="phoneNumber" autocomplete="off" required="required" />
+                <label for="phoneNumber" class="placeholderBorder">숫자만 입력</label>
+                <button class="btnCertification borderMain fontMain">인증번호 발송</button>
+            </fieldset>
+            <fieldset class="setBorder">
+                <input type="number" class="inputBorder" id="certificationNumber" autocomplete="off" required="required" />
+                <label for="certificationNumber" class="placeholderBorder">인증번호 입력</label>
+            </fieldset>
+            <fieldset class="setFull hidden"><!-- 조회하기 버튼이 disable인 경우 -->
+                <button class="btnFull bgDisable fontDisable">조회하기</button>
+            </fieldset>
+            <fieldset class="setFull">
+                <button class="btnFull bgMain">조회하기</button>
+            </fieldset>
+            <div class="areaNonMemberNotice">
+                ※ 비회원의 경우, 최근 1개월 주문내역만 조회가능
+            </div>
+        </section>
+        <section class="sectionOrderCard">
+            <div class="areaLocation">
+                <div class="location">
+                    <svg viewBox="0 0 20 20" class="iconPin">
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m9.67,17.59c.18.18.47.18.65,0h.01c2.08-2.12,5.66-6.55,5.66-9.62,0-3.31-2.69-6-6-6s-6,2.69-6,6c0,3.08,3.64,7.56,5.67,9.62"/>
+                            <circle cx="10" cy="7.54" r="1.8"/>
+                        </g>
+                    </svg>
+                    <span class="locationType robot">로봇배달</span>63동 학생회관<!-- 로봇배달일 경우 -->
+                    <div class="textRight">주문상세</div>
+                </div>
+            </div>
+            <div class="areaOrderCard">
+                <div class="areaTime">
+                    <span class="timebelt">점심1</span>23.04.20 (목)
+                    <div class="textRight hidden">주문상세</div><!-- 픽업일 경우 -->
+                </div>
+                <ul class="ulOrder">
+                    <li class="liOrder">
+                        <div class="orderStore">
+                            <div class="orderState receipt">주문접수</div>
+                            홍콩반점0410
+                            <a href="tel:02" class="linkStoreTel">
+                                <span class="blind">상점 문의전화</span>
+                                <svg viewBox="0 0 20 20" class="iconOrderCancel">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <path d="m17.54,14.53c-.85-.74-1.8-1.37-2.81-1.88-.84-.4-1.15-.4-1.74.03-.5.36-.82.69-1.39.57-1.06-.48-2.01-1.19-2.78-2.06-.88-.77-1.58-1.72-2.06-2.79-.12-.57.21-.89.57-1.39.43-.6.44-.9.03-1.74-.5-1.01-1.14-1.95-1.88-2.8-.61-.61-.75-.48-1.09-.36-.35.15-.68.33-1,.53-.52.29-.93.73-1.2,1.26-.24.51-.51,1.47.89,3.96,1.03,1.91,2.34,3.65,3.88,5.18h0c1.53,1.54,3.28,2.85,5.19,3.88,2.49,1.4,3.44,1.12,3.96.89.53-.26.97-.68,1.26-1.2.21-.31.39-.65.53-1,.11-.33.25-.47-.36-1.08Z" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="orderMenu">
+                            <div class="name">고추짬뽕</div>
+                        </div>
+                    </li>
+                    <li class="liOrder">
+                        <div class="orderStore">
+                            <div class="orderState waiting">접수대기</div>
+                            버텍스
+                            <button class="btnOrderCancel">
+                                <span class="blind">주문취소</span>
+                                <svg viewBox="0 0 20 20" class="iconOrderCancel">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <circle cx="10" cy="10.24" r="8.33"/>
+                                        <line x1="6.57" y1="6.59" x2="13.28" y2="13.44"/>
+                                        <line x1="6.57" y1="13.44" x2="13.28" y2="6.56"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="orderMenu">
+                            <div class="name">미국식 닭고기 덮밥 (CHICKEN BOWL) 도시락</div>
+                        </div>
+                    </li>
+                    <li class="liOrder">
+                        <div class="orderStore">
+                            <div class="orderState waiting">접수대기</div>
+                            고피자
+                            <button class="btnOrderCancel">
+                                <span class="blind">주문취소</span>
+                                <svg viewBox="0 0 20 20" class="iconOrderCancel">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <circle cx="10" cy="10.24" r="8.33"/>
+                                        <line x1="6.57" y1="6.59" x2="13.28" y2="13.44"/>
+                                        <line x1="6.57" y1="13.44" x2="13.28" y2="6.56"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="orderMenu">
+                            <div class="name">미트 치즈 파스타</div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="areaRobot bgMain"><!-- 로봇배달일 경우 -->
+                    <div class="robotInfo hidden"><!-- 로봇배차완료일 경우 -->
+                        <span class="state">로봇배차완료</span>
+                        <svg viewBox="0 0 16 16" class="iconRobotDispatch">
+                            <g>
+                                <rect width="20" height="20"/>
+                                <path d="m12.34,3.96l-5.86,5.86-2.81-2.81-1.12,1.12,3.71,3.71h0s.21.2.21.2l6.97-6.96-1.11-1.11Z"/>
+                            </g>
+                        </svg>
+                        13:15 도착예정
+                        <span class="bar"></span>
+                        A202
+                    </div>
+                    <div class="robotInfo"><!-- 로봇배달중일 경우 -->
+                        <span class="state">로봇배달중</span>
+                        <span class="on"></span>
+                        13:15 도착예정
+                        <span class="bar"></span>
+                        A202
+                    </div>
+                    <div class="robotMap hidden"></div>
+                    <fieldset class="setRobotOpen">
+                        <button class="btnRobotOpen">해치열기</button>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="areaOrderCard">
+                <div class="areaTime">
+                    <span class="timebelt">저녁1</span>23.04.20 (목)
+                </div>
+                <ul class="ulOrder">
+                    <li class="liOrder">
+                        <div class="orderStore">
+                            <div class="orderState cancel">취소완료</div>
+                            홍콩반점0410
+                        </div>
+                        <div class="orderMenu">
+                            <div class="name">고추짬뽕</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="areaOrderCard">
+                <div class="areaTime">
+                    <span class="timebelt">저녁1</span>23.04.21 (금)
+                </div>
+                <ul class="ulOrder">
+                    <li class="liOrder">
+                        <div class="orderStore">
+                            <div class="orderState delivery">배달완료</div>
+                            홍콩반점0410
+                            <button class="btnWriteReview borderMain fontMain">리뷰쓰기</button>
+                        </div>
+                        <div class="orderMenu">
+                            <div class="name">고추짬뽕</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="sectionOrderCard">
+            <div class="areaLocation">
+                <div class="location">
+                    <svg viewBox="0 0 20 20" class="iconPin">
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m9.67,17.59c.18.18.47.18.65,0h.01c2.08-2.12,5.66-6.55,5.66-9.62,0-3.31-2.69-6-6-6s-6,2.69-6,6c0,3.08,3.64,7.56,5.67,9.62"/>
+                            <circle cx="10" cy="7.54" r="1.8"/>
+                        </g>
+                    </svg>
+                    서울 관악구 관악로1
+                    <div class="textRight">주문상세</div>
+                </div>
+            </div>
+            <div class="areaOrderCard">
+                <div class="areaTime">
+                    23.04.20 (목)
+                </div>
+                <ul class="ulOrder">
+                    <li class="liOrder">
+                        <div class="orderStore">
+                            <div class="orderState waiting">접수대기</div>
+                            홍콩반점0410
+                            <button class="btnOrderCancel">
+                                <span class="blind">주문취소</span>
+                                <svg viewBox="0 0 20 20" class="iconOrderCancel">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <circle cx="10" cy="10.24" r="8.33"/>
+                                        <line x1="6.57" y1="6.59" x2="13.28" y2="13.44"/>
+                                        <line x1="6.57" y1="13.44" x2="13.28" y2="6.56"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="orderMenu">
+                            <div class="name">고추짬뽕</div>
+                        </div>
+                    </li>
+                    <li class="liOrder">
+                        <div class="orderStore">
+                            <div class="orderState waiting">접수대기</div>
+                            버텍스
+                            <button class="btnOrderCancel">
+                                <span class="blind">주문취소</span>
+                                <svg viewBox="0 0 20 20" class="iconOrderCancel">
+                                    <g>
+                                        <rect width="20" height="20"/>
+                                        <circle cx="10" cy="10.24" r="8.33"/>
+                                        <line x1="6.57" y1="6.59" x2="13.28" y2="13.44"/>
+                                        <line x1="6.57" y1="13.44" x2="13.28" y2="6.56"/>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="orderMenu">
+                            <div class="name">미국식 닭고기 덮밥 (CHICKEN BOWL) 도시락</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div id="bottomFix">
+        <nav>
+            <a href="#" class="linkNav home">
+                <div class="txtNav">배달 홈</div>
+            </a>
+            <a href="#" class="linkNav like">
+                <div class="txtNav">찜</div>
+            </a>
+            <a href="#" class="linkNav order active">
+                <div class="txtNav">주문내역</div>
+            </a>
+            <a href="#" class="linkNav my">
+                <div class="txtNav">MY</div>
+            </a>
+        </nav>
+    </div>
+    <div class="popUp hidden" id="orderCancel"><!--주문취소 팝업 -->
+        <div class="popCenter">
+            <div class="popBg">
+                <h1 class="left">주문취소</h1>
+                <section class="sectionSelect">
+                    <div class="textSelect">
+                        취소사유를 선택해주세요(필수)
+                        <svg viewBox="0 0 20 20" class="iconUnfold">
+                            <g>
+                                <rect width="20" height="20" />
+                                <path d="m4.69,7.88l5.31,5.3,5.31-5.3" />
+                            </g>
+                        </svg>
+                    </div>
+                    <select class="select">
+                        <option>취소사유를 선택해주세요(필수)</option>
+                        <option>메뉴가 마음에 들지 않음</option>
+                        <option>다른 약속이 생김</option>
+                        <option>급하게 돈이 필요함</option>
+                        <option>기타</option>
+                    </select>
+                </section>
+                <section class="sectionCancel">
+                    <h3>주문내역</h3>
+                    <div class="orderStore">홍콩반점0410</div>
+                    <div class="orderMenu">고추짬뽕</div>
+                </section>
+                <section class="sectionPay">
+                    <h3>총 환불금액</h3>
+                    <div class="areaPayment">
+                        <dl class="dlPayment">
+                            <dt class="dtPayment">포인트</dt>
+                            <dd class="ddPayment">3,000원</dd>
+                        </dl>
+                        <dl class="dlPayment">
+                            <dt class="dtPayment">카드</dt>
+                            <dd class="ddPayment">10,000원</dd>
+                        </dl>
+                    </div>
+                </section>
+                <section class="sectionHalf">
+                    <fieldset class="setHalf">
+                        <button class="btnHalf borderMain fontMain">닫기</button>
+                    </fieldset>
+                    <fieldset class="setHalf">
+                        <button class="btnHalf bgMain">주문취소</button>
+                    </fieldset>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="popUp hidden" id="myReview"><!--리뷰보기 팝업 -->
+        <div class="popCenter">
+            <div class="popBg">
+                <ul class="ulReview">
+                    <li class="liReview">
+                        <div class="areaScore">
+                            <svg viewBox="0 0 20 20" class="iconStar">
+                                <g>
+                                    <rect width="20" height="20"></rect>
+                                    <path d="m9.97.48l3.11,6.29,6.92.95-5.02,4.89,1.21,6.92-6.22-3.3-6.16,3.3,1.14-6.92L0,7.71l6.86-.95L9.97.48Z"/>
+                                </g>
+                            </svg>
+                            <div class="score">1.3</div>
+                            <div class="detailScore">
+                                <span class="detail">맛 2점</span>
+                                <span class="detail">양 1점</span>
+                                <span class="detail">상태 1점</span>
+                            </div>
+                        </div>
+                        <button class="btnEdit borderMain fontMain">수정</button>
+                        <div class="areaUser">
+                            <span class="dateReview">2022-11-10</span>
+                        </div>
+                        <ul class="ulOrder">
+                            <li class="liOrder">
+                                <div class="titleOrder">주문메뉴</div>
+                                <div class="bodyOrder">휠렛버거</div>
+                            </li>
+                            <li class="liOrder">
+                                <div class="titleOrder">옵션</div>
+                                <div class="bodyOrder">메뉴[단품]</div>
+                            </li>
+                        </ul>
+                        <div class="textReview">
+                            한입 먹고 발견했는데 웬 털이….그냥 머리카락이었으면 빼서 먹을텐데 하…기분 나빠서 남은 것 버리고 조금 먹은것도 다 토해냈습니
+                            다 위생 상태가 참…<br />
+                            +) 사장님 말씀 들어보니 조리과정에서 불상사가 발생하긴 힘들다는 것 이해했습니다. 제가 이걸 보게된 것도 먹기 편한 부분으로 돌
+                            리다가 햄버거 겉에 붙어 있는걸 발견한거니  포장지에 문제가 있었던 걸지도 모르겠네요. 그리고 당시에 저걸 발견하고 너무 놀라서
+                            제대로 확인하지 않았는데 어쩌면 체모가 아니라 실이 그렇게 보인걸수도 있구요. 어찌됐든 다음에는 좀 더 신경 써주셨으면 합니다.
+                            이 리뷰를 계속 두면 사장님께도 피해가 될테니 추신 확인하시면 직접 지우셔도 되고 아니면 제가 내일 지우겠습니다.
+                        </div>
+                        <ul class="ulPhoto">
+                            <li class="liPhoto">
+                                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAzMjRfMjk0%2FMDAxNjQ4MDk5NTQ5NTU0.QqiEiloznfFvvr-8tuXyD0H1Ugvy8GP0dRBkHE-F9NUg.MEcBRayIClRU3qjKqY78LUp16auuEh_OZW3Aq8zVxdUg.JPEG.happymode%2FKakaoTalk_20220324_135820587_02.jpg&type=a340">
+                            </li>
+                        </ul>
+                        <div class="areaReply">
+                            <div class="partnerReply">
+                                <svg class="iconReply">
+                                    <g transform="translate(-425 -987)">
+                                        <rect class="cls-1" width="1" height="8" transform="translate(425 987)"/>
+                                        <rect class="cls-1" width="1" height="8" transform="translate(433 994) rotate(90)"/>
+                                    </g>
+                                </svg>
+                                사장님
+                            </div>
+                            <div class="textReply">
+                                안녕하세요 맘스터치입니다. 먼저 사과말씀부터 드릴게요. 가게로 전화주셨다면 조치를 취해드렸을텐데 아쉽고 죄송합니다.
+                                더욱더 신경써서 조리하겠습니다만, 저희 주방은 모두 여성분들이고 가게에 있는 유일한 남자인 저는 버거를 싸는 일이 단체
+                                주문이외엔 없고 그 마저도 불상사의 확률 자체를 없애기 위해 한여름에도 긴팔만 착용하고 있습니다. 저정도의 털이 있다면
+                                주방에서 확인이 안될수가 없는 조리방법인데… 저도 참 의아합니다. 버거빵 위에 버거소스를 짜고 그 위에 피클을 올리고 그
+                                위에 양상추를 올리는데 그 모든 과정이 위치를 확인하지 않으면 진행이 안되는 과정들입니다.. 가게로 전화주시면 조치 취해
+                                드리겠습니다. 불편 드려 죄송합니다<br /><br />
+                                추가로 가게에서 고객님들의 리뷰를 삭제하는 기능은 없습니다.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <section class="sectionFull">
+                    <fieldset class="setFull">
+                        <button class="btnFull bgMain">확인</button>
+                    </fieldset>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=07ab4926694236a9f0d4da97734ad8cd"></script>
+<script type="text/javascript" src="../js/order.js"></script>
+<script type="text/javascript">
+    window.onload = function() {
+        robotMap();
+    }
+</script>
+</body>
+</html>

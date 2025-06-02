@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>포인트</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/location.css">
+    <!-- 페이지별 css 파일 링크 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/my.css">
+</head>
+<body>
+<main id="point">
+    <header>
+        <a href="#" class="linkBack">
+            <svg viewBox="0 0 20 20" class="iconBack">
+                <g>
+                    <rect width="20" height="20"/>
+                    <path d="m8.66,4.34l-5.66,5.66,5.66,5.66"/>
+                    <line x1="3" y1="10" x2="17" y2="10"/>
+                </g>
+            </svg>
+        </a>
+        <h1>포인트</h1>
+    </header>
+    <div class="bgContent bgGray">
+        <div class="areaWebCopy">
+            <div class="copy">배달의 발견, 일상의 변화.</div>
+            <div class="logo"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/textBDG.png" alt="배달긱"></div>
+            <ul class="ulAdvantage">
+                <li class="liAdvantage">배달비 0원</li>
+                <li class="liAdvantage">최소주문금액 0원</li>
+                <li class="liAdvantage">AI 루트시스템 친환경 ESG배달</li>
+                <li class="liAdvantage">비대면 안심배달</li>
+                <li class="liAdvantage">사전예약정시도착</li>
+            </ul>
+            <div class="areaStore">
+                <div class="textStore">앱 다운로드</div>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webAppstore.svg">
+                </a>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webGooglestore.svg">
+                </a>
+            </div>
+        </div>
+        <section class="sectionMyPoint">
+            <h3>
+                보유 포인트
+                <div class="subTitle">1원 이상 1원 단위로 사용이 가능해요</div>
+            </h3>
+            <div class="myPoint">
+                555,480P
+            </div>
+            <div class="myScheduledPoint">
+                <div class="scheduledPoint hidden">
+                    <div class="leftPoint">
+                        <fieldset class="setTooltip">
+                            적립 예정 포인트
+                            <button class="btnTooltip">
+                                <svg viewBox="0 0 16 16" class="iconTooltip">
+                                    <g>
+                                        <rect width="16" height="16"/>
+                                        <path d="m8,0C3.58,0,0,3.58,0,8s3.58,8,8,8,8-3.58,8-8C15.99,3.59,12.41.01,8,0Zm-.08,13.28c-.62,0-1.12-.5-1.12-1.12,0-.62.5-1.12,1.12-1.12s1.12.5,1.12,1.12h0c.01.6-.46,1.11-1.07,1.12-.02,0-.04,0-.05,0Zm2.16-6.24l-.88.96c-.2.18-.32.45-.32.72,0,.53-.43.95-.96.96-.51.02-.94-.38-.96-.89,0-.02,0-.05,0-.07-.02-.55.21-1.09.64-1.44l.72-.88c.31-.3.51-.69.56-1.12.02-.46-.33-.86-.8-.88-.03,0-.06,0-.08,0-.45-.02-.85.28-.96.72-.19.36-.56.57-.96.56-.46.02-.86-.33-.88-.8,0-.03,0-.06,0-.08,0-.14.02-.27.08-.4.43-1.1,1.54-1.79,2.72-1.68,1.43-.11,2.68.95,2.79,2.38,0,.06,0,.12,0,.18-.01.66-.27,1.28-.72,1.76Z"/>
+                                    </g>
+                                </svg>
+                            </button>
+                            <div class="tooltip"><!-- 툴팁버튼 클릭시 툴팁 노출 -->
+                                <div class="contentTooltip">
+                                    긱머니 주문감사 포인트는 주문 당일 적립<br />
+                                    앱 내 이벤트 포인트(친구추천, 룰렛 등)는 즉시 적립<br />
+                                    리워드 포인트는 배달 완료일 기준으로 7일 이내 적립
+                                </div>
+                                <img src="https://kim-dami.github.io/carnival/triangleTooltip.png" class="triangleTooltip" />
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="rightPoint">540P</div>
+                </div>
+                <div class="scheduledPoint">
+                    <div class="leftPoint">소멸 예정 포인트(이번달)</div>
+                    <div class="rightPoint">50P</div>
+                </div>
+            </div>
+        </section>
+        <section class="sectionUsageHistory">
+            <div class="areaFilter">
+                <fieldset class="setFilter">
+                    <input type="radio" name="filter" class="inputFilter" id="filter-1" checked />
+                    <label for="filter-1" class="labelFilter">전체</label>
+                </fieldset>
+                <fieldset class="setFilter">
+                    <input type="radio" name="filter" class="inputFilter" id="filter-2" />
+                    <label for="filter-2" class="labelFilter">충전</label>
+                </fieldset>
+                <fieldset class="setFilter">
+                    <input type="radio" name="filter" class="inputFilter" id="filter-3" />
+                    <label for="filter-3" class="labelFilter">사용</label>
+                </fieldset>
+                <fieldset class="setFilter">
+                    <input type="radio" name="filter" class="inputFilter" id="filter-4" />
+                    <label for="filter-4" class="labelFilter">환불</label>
+                </fieldset>
+            </div>
+            <div class="areaHistory">
+                <div class="resultHistory">
+                    <div class="result">총 5건</div>
+                    <div class="areaPeriodSelect">
+                        <div class="textSelect">
+                            1개월
+                            <svg viewBox="0 0 20 20" class="iconUnfold">
+                                <g>
+                                    <rect width="20" height="20" />
+                                    <path d="m4.69,7.88l5.31,5.3,5.31-5.3" />
+                                </g>
+                            </svg>
+                        </div>
+                        <select class="select">
+                            <option>1개월</option>
+                            <option>3개월</option>
+                            <option>6개월</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="sectionNone hidden">
+                    <svg viewBox="0 0 55 55" class="iconNone">
+                        <g>
+                            <path d="m29.67,32.32h-4.36l-.45-17.35h5.29l-.47,17.35Zm-2.17,7.7c-.51,0-1.01-.13-1.45-.38-.44-.25-.8-.61-1.05-1.05-.26-.44-.38-.94-.37-1.45-.02-.5.11-.99.37-1.42.25-.43.61-.79,1.05-1.03.44-.25.94-.37,1.44-.37.49,0,.98.13,1.41.37.44.25.8.6,1.06,1.04.26.43.4.91.4,1.41,0,.51-.14,1.01-.4,1.45-.25.44-.62.8-1.06,1.05-.43.25-.91.38-1.41.38Z"/>
+                            <circle cx="27.5" cy="27.5" r="26"/>
+                        </g>
+                    </svg>
+                    <div class="textNone">포인트 상세내역이 없어요</div>
+                </div>
+                <ul class="ulHistory">
+                    <li class="liHistory">
+                        <div class="detailHistory">주문취소</div>
+                        <div class="timeHistory">일자 : 2023.07.17 09:47</div>
+                        <div class="amountHistory">+ 5,000원</div>
+                    </li>
+                    <li class="liHistory">
+                        <div class="detailHistory">(도스마스) 주문사용</div>
+                        <div class="timeHistory">일자 : 2023.07.17 09:47</div>
+                        <div class="amountHistory">- 5,000원</div>
+                    </li>
+                    <li class="liHistory">
+                        <div class="detailHistory">룰렛 당첨포인트</div>
+                        <div class="timeHistory">일자 : 2023.07.17 09:47<br />
+                            유효기간 : 2023.07.31</div>
+                        <div class="amountHistory">+ 100원</div>
+                    </li>
+                    <li class="liHistory">
+                        <div class="detailHistory">룰렛 당첨포인트</div>
+                        <div class="timeHistory">일자 : 2023.07.17 09:47<br />
+                            유효기간 : 2023.07.31</div>
+                        <div class="amountHistory">+ 10원</div>
+                    </li>
+                    <li class="liHistory">
+                        <div class="detailHistory">룰렛 당첨포인트</div>
+                        <div class="timeHistory">일자 : 2023.07.17 09:47<br />
+                            유효기간 : 2023.07.31</div>
+                        <div class="amountHistory">+ 10원</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</main>
+</body>
+</html>

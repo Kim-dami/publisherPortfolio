@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>서비스장소</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/location.css">
+    <!-- 페이지별 css 파일 링크 -->
+</head>
+<body>
+    <main id="selectPlace">
+        <header>
+            <h1>서비스장소</h1>
+            <div class="areaSearch">
+                <fieldset class="setSearch">
+                    <input type="search" id="inputSearch" class="inputSearch" required="required" autocomplete="off">
+                    <label for="inputSearch" class="labelSearch">서비스장소명을 검색해주세요</label>
+                    <button class="btnDelete hidden">
+                        <span class="blind">검색어 삭제</span>
+                        <svg class="iconDelete">
+                            <rect width="16" height="16"/>
+                            <circle cx="8" cy="8" r="8"/>
+                            <line x1="5.42" y1="5.42" x2="10.58" y2="10.58"/>
+                            <line x1="5.42" y1="10.58" x2="10.58" y2="5.42"/>
+                        </svg>
+                    </button>
+                    <button type="submit" class="btnSubmit">
+                        <span class="blind">검색</span>
+                        <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/img/icon_search-1.svg" alt="검색" class="iconSubmit"/>
+                    </button>
+                </fieldset>
+            </div>
+        </header>
+        <div class="bgContent bgGray">
+            <div class="areaWebCopy">
+                <div class="copy">배달의 발견, 일상의 변화.</div>
+                <div class="logo"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/textBDG.png" alt="배달긱"></div>
+                <ul class="ulAdvantage">
+                    <li class="liAdvantage">배달비 0원</li>
+                    <li class="liAdvantage">최소주문금액 0원</li>
+                    <li class="liAdvantage">AI 루트시스템 친환경 ESG배달</li>
+                    <li class="liAdvantage">비대면 안심배달</li>
+                    <li class="liAdvantage">사전예약정시도착</li>
+                </ul>
+                <div class="areaStore">
+                    <div class="textStore">앱 다운로드</div>
+                    <a href="#" target="_blank" class="linkStore">
+                        <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webAppstore.svg">
+                    </a>
+                    <a href="#" target="_blank" class="linkStore">
+                        <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webGooglestore.svg">
+                    </a>
+                </div>
+            </div>
+            <section class="sectionSort">
+                <fieldset class="setSort">
+                    <div class="areaRadio">
+                        <input type="radio" name="sort" class="radioSort" id="consonant" value="consonant" onclick="sortChange()" checked>
+                        <label for="consonant" class="labelSort">가나다 순</label>
+                    </div>
+                    <div class="areaRadio">
+                        <input type="radio" name="sort" class="radioSort" id="distance" value="distance" onclick="sortChange()">
+                        <label for="distance" class="labelSort">가까운 순</label>
+                    </div>
+                </fieldset>
+                <a href="#" class="linkPlaceMap">
+                    지도로 찾기
+                    <svg class="iconMyLocation">
+                        <rect width="16" height="16"/>
+                        <circle cx="8" cy="8" r="1.5"/>
+                        <circle cx="8" cy="8" r="4.5"/>
+                        <line x1="11" y1="8" x2="14" y2="8"/>
+                        <line x1="2" y1="8" x2="5" y2="8"/>
+                        <line x1="8" y1="2" x2="8" y2="5"/>
+                        <line x1="8" y1="14" x2="8" y2="11"/>
+                    </svg>
+                </a>
+            </section>
+            <section class="sectionPlace consonant"><!-- 라디오 value값에 따라 클래스명 변경 -->
+                <ul class="ulPlace">
+                    <li class="liPlace">
+                        <div class="firstLetter">ㄱ</div>
+                        <a href="#" class="place">
+                            건국대학교
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            경희대학교
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            광주과학기술원
+                            <div class="distance">9.4km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <div class="firstLetter">ㅁ</div>
+                        <a href="#" class="place">
+                            마포구공유오피스
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            명지대학교(인문캠퍼스)
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <div class="firstLetter">ㅅ</div>
+                        <a href="#" class="place">
+                            서강대학교
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            서울교육대학교
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            서울대학교
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            서울대학교(연건캠퍼스)
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            서울시립대학교
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            서울여자대학교
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            성균관대학교
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            송도 글로벌 캠퍼스
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <div class="firstLetter">ㅇ</div>
+                        <a href="#" class="place">
+                            연세대학교
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            연세대학교(송도)
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            이화여자대학교
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <div class="firstLetter">ㅈ</div>
+                        <a href="#" class="place">
+                            전남대학교
+                            <div class="distance">3.1km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            전남대학교(화순)
+                            <div class="distance">12.9km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <div class="firstLetter">ㅎ</div>
+                        <a href="#" class="place">
+                            한국외국어대학교
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            한성대학교
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            한양대학교
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place">
+                            힐스테이트 신촌
+                            <div class="distance">246km</div>
+                        </a>
+                    </li>
+                </ul>
+                <h3 class="titleOpen">오픈예정</h3>
+                <ul class="ulPlace">
+                    <li class="liPlace">
+                        <a href="#" class="place disable">수원과학대학교</a>
+                    </li>
+                    <li class="liPlace">
+                        <a href="#" class="place disable">수원대학교</a>
+                    </li>
+                </ul>
+                <ul class="ulIndex">
+                    <li class="liIndex">ㄱ</li>
+                    <li class="liIndex">ㅁ</li>
+                    <li class="liIndex">ㅅ</li>
+                    <li class="liIndex">ㅇ</li>
+                    <li class="liIndex">ㅈ</li>
+                    <li class="liIndex">ㅎ</li>
+                </ul>
+                <div class="bigIndex hidden">ㅅ</div>
+            </section>
+        </div>
+    </main>
+    <script>
+        function sortChange(){
+            let sortArray = ['consonant','distance']
+            let sortValue = document.querySelector('input[name="sort"]:checked').value;
+            let list = document.querySelector('.sectionPlace');
+
+            for (let i = 0; i < sortArray.length; i ++) {
+                if(sortArray[i] === sortValue){
+                    list.classList.add(sortArray[i]);
+                } else {
+                    list.classList.remove(sortArray[i]);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

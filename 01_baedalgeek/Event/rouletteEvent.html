@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>룰렛이벤트</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/location.css">
+    <!-- 페이지별 css 파일 링크 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/event.css">
+</head>
+<body>
+<main id="rouletteEventV2">
+    <header>
+        <a href="#" class="linkBack">
+            <svg viewBox="0 0 20 20" class="iconBack">
+                <g>
+                    <rect width="20" height="20"/>
+                    <path d="m8.66,4.34l-5.66,5.66,5.66,5.66"/>
+                    <line x1="3" y1="10" x2="17" y2="10"/>
+                </g>
+            </svg>
+        </a>
+        <h1>룰렛이벤트</h1>
+    </header>
+    <div class="bgContent bgGray">
+        <div class="areaWebCopy">
+            <div class="copy">배달의 발견, 일상의 변화.</div>
+            <div class="logo"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/textBDG.png" alt="배달긱"></div>
+            <ul class="ulAdvantage">
+                <li class="liAdvantage">배달비 0원</li>
+                <li class="liAdvantage">최소주문금액 0원</li>
+                <li class="liAdvantage">AI 루트시스템 친환경 ESG배달</li>
+                <li class="liAdvantage">비대면 안심배달</li>
+                <li class="liAdvantage">사전예약정시도착</li>
+            </ul>
+            <div class="areaStore">
+                <div class="textStore">앱 다운로드</div>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webAppstore.svg">
+                </a>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webGooglestore.svg">
+                </a>
+            </div>
+        </div>
+        <div id="rouletteEvent">
+            <div class="areaRoulette">
+                <img src="https://kim-dami.github.io/carnival/bgRoulette-3.png" alt="매일매일 꽝없는 룰렛" class="bgRoulette">
+                <div class="txtRestChance">
+                    <img src="https://kim-dami.github.io/carnival/txtRest.png" class="txtRest" alt="오늘의 남은 횟수" />
+                    <img src="https://kim-dami.github.io/carnival/txtChance-1.png" class="txtChance" alt="01" />
+                </div>
+                <button class="btnRoulette">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/imgRoulettePanel.png" alt="룰렛판" class="imgPanel">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/imgRouletteArrow.svg" alt="룰렛화살표" class="imgArrow">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/imgRouletteStart.png" alt="룰렛START" class="imgStart">
+                </button>
+                <div class="txtRoulette">
+                    당첨포인트 : 10P / 100P / 10,000P
+                </div>
+            </div>
+            <div class="areaHow">
+                <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/txtHow.svg" alt="참여방법" class="titleHow">
+                <ul class="ulHow">
+                    <li class="liHow">
+                        <span class="stepHow">
+                            <img src="https://kim-dami.github.io/carnival/txtStep-1.png" alt="STEP1 1일 3회 룰렛 참여하기" >
+                        </span>
+                        START 버튼을 눌러 당첨포인트를 확인해요
+                    </li>
+                    <li class="liHow">
+                        <span class="stepHow">
+                            <img src="https://kim-dami.github.io/carnival/txtStep-2.png" alt="STEP2 룰렛 종료 or 룰렛 한번 더" >
+                        </span>
+                        이제 두 가지 선택이 가능해요<br> <span class="choiceHow"><img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/iconStepOne.png" class="imgStep">룰렛종료</span> : 당첨된 포인트만 득템<br> <span class="choiceHow"><img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/iconStepTwo.png" class="imgStep">룰렛 한번 더</span> : 더 많은 포인트 도전
+                    </li>
+                    <li class="liHow">
+                        <span class="stepHow">
+                            <img src="https://kim-dami.github.io/carnival/txtStep-3.png" alt="STEP3 도전! 최대 10,000P까지" >
+                        </span>
+                        흑..도전실패시 최초 포인트로 돌아갈 수 있어요 <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/iconStepTear.png" class="imgStep">)
+                    </li>
+                    <li class="liHow">
+                        <span class="stepHow">
+                            <img src="https://kim-dami.github.io/carnival/txtStep-4.png" alt="STEP4 오늘의 룰렛결과를 친구에게 공유" >
+                        </span>
+                        내 룰렛결과를 친구에게 공유해보세요<br>+ 하는김에 <span class="txtBold">친추이벤트</span>까지 한다면 둘다 1,500P 드림
+                    </li>
+                    <li class="liHow">
+                        <span class="stepHow">
+                            <img src="https://kim-dami.github.io/carnival/txtStep-5.png" alt="STEP5 배달긱 즐기기" >
+                        </span>
+                        이제 친구와 함께 배달긱을 즐겨볼까요?
+                    </li>
+                </ul>
+            </div>
+            <div class="areaNotice">
+                <div class="titleNotice">유의사항</div>
+                <ul class="ulNotice">
+                    <li class="liNotice">배달긱 회원이라면, ID당 1일 3회 참여가능</li>
+                    <li class="liNotice">매일 00:00 ~ 23:50까지 이벤트 참여가능</li>
+                    <li class="liNotice">이벤트 참여 전 회원탈퇴 및 재가입을 진행한 경우, 당일 이벤트 참여가능</li>
+                    <li class="liNotice">이벤트 참여 후 회원탈퇴 및 재가입을 진행한 경우, 다음날부터 이벤트 참여가능</li>
+                    <li class="liNotice">이벤트 참여 도중 페이지 이탈한 경우,<br>당일 이벤트 참여시간 내 페이지 재접속하면 이벤트를 이어서 참여가능</li>
+                    <li class="liNotice">이벤트 참여 도중 이벤트 참여 불가능한 시간이 되어 게임을 끝마치지 못한 경우,<br>고객센터로 문의시 회원의 당첨포인트를 확인하여
+                        최종포인트로 지급함
+                    </li>
+                    <li class="liNotice">적립된 포인트 내역은 마이배달긱 &gt; 포인트 내역에서<br>‘룰렛 당첨포인트’라는 이름으로 확인가능함</li>
+                    <li class="liNotice">룰렛 당첨포인트 유효기간은 지급일로부터 14일 23 : 59 : 59 까지에 한함</li>
+                    <li class="liNotice">포인트 미사용시 자동 소멸됨</li>
+                    <li class="liNotice">본 이벤트는 당사 사정에 의해 고지없이 변경 또는 종료될 수 있음</li>
+                    <li class="liNotice">본 이벤트 관련 문제가 생겼다면 배달긱 고객센터(1668-1757)로 문의 바람</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="bottomFix">
+        <button class="btnBotFix hidden">
+            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/iconKakaoShare.svg" class="iconKakao" />룰렛이벤트 공유하기
+        </button>
+        <button class="btnBotFix">
+            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/iconFriendShare.png" class="iconFriend" />친구추천하고 1,500P 또 받기
+        </button>
+    </div>
+    <!-- 당첨팝업 -->
+    <div class="popUp hidden" id="rouletteResult">
+        <div class="popCenter">
+            <div class="popRst">
+                <div class="rstWin"><!-- 당첨팝업 div 클래스 rstWin -->
+                    <div class="titlePoint">당첨 포인트</div>
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/imgRstWin.png" class="imgWin"/>
+                    <div class="txtPoint">100P</div><!-- 당첨 포인트 변수값 -->
+                </div>
+                <div class="areaBotBtn"><!-- areaBotBtn 안에 btnStop, btnMore 두 개의 버튼 -->
+                    <button class="btnStop">
+                        <div class="txtSmall">오늘은 STOP</div>
+                        100원만 받기<!-- 당첨 포인트 변수값 -->
+                    </button>
+                    <button class="btnMore">
+                        <div class="txtSmall">룰렛 한번 더</div>
+                        <span class="txtBoldRed">1,000원</span> 도전!<!-- 도전 포인트 변수값 -->
+                    </button>
+                    <div class="illuNextPbb">
+                        <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/imgProbability.svg" class="imgNextPbb"/>
+                        <div class="txtNextPbb"><div class="txtSmall">당첨</div>20%</div><!-- 다음 룰렛 확률 변수값 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 룰렛종료 팝업 -->
+    <div class="popUp hidden" id="rouletteResult">
+        <div class="popCenter">
+            <div class="popRst">
+                <button class="btnRstClose"><!-- 팝업 닫기 버튼 -->
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/btnRstClose.svg" alt="결과팝업 닫기" />
+                </button>
+                <div class="rstToday"><!-- 룰렛종료 팝업 div 클래스 rstToday -->
+                    <div class="titleRst">오늘의 득템!</div>
+                    <div class="titlePoint">최종 포인트</div>
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/imgRstToday.svg" class="imgToday"/>
+                    <div class="txtPoint">10,000P</div><!-- 최종 포인트 변수값 -->
+                    <div class="txtValid">(유효기간 14일)</div>
+                </div>
+                <div class="bannerShare">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/txtStopWin.png" alt="내 룰렛결과를 친구에게 공유해보세요" />
+                    <div class="txtFriend">친구가 친추이벤트도 참여한다면</div>
+                    <div class="txtFriend">친구도 나도 <span class="txtBold">1,500P</span> 바로 득템</div>
+                </div>
+                <div class="areaBotBtn "><!-- areaBotBtn 안에 btnShare 한 개의 버튼 -->
+                    <button class="btnShare"><img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/iconFriendShare.png" />친구에게 선물포인트 쏘기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 도전실패 팝업 -->
+    <div class="popUp hidden" id="rouletteResult">
+        <div class="popCenter">
+            <div class="popRst">
+                <div class="reviewbanner">
+                    아쉬운 포인트는 리뷰로 채워보세요<br />
+                    <div class="txtreview">내가 쓴 리뷰가 당첨된다면, 다음날 500P 지급!</div>
+                </div>
+                <button class="btnRstClose"><!-- 팝업 닫기 버튼 -->
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/btnRstClose.svg" alt="결과팝업 닫기" />
+                </button>
+                <div class="rstLose"><!-- 도전실패 팝업 div 클래스 rstLose -->
+                    <div class="titleRst">아쉬워요..ㅠㅠ</div>
+                    <div class="titlePoint">최종 포인트</div>
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/imgRstLose.svg" class="imgLose"/>
+                    <div class="txtPoint">10P</div><!-- 최종 포인트 변수값 -->
+                    <div class="txtValid">(유효기간 14일)</div>
+                </div>
+                <div class="bannerChance">
+                    <span class="nickname">닉네임글자수최대열개</span>님의 남은 횟수<span class="number">2회</span>
+                </div>
+                <div class="bannerShare hidden">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/txtStopLose.png" alt="내 룰렛결과를 친구에게 공유해보세요" />
+                    <div class="txtFriend">친구가 친추이벤트도 참여한다면</div>
+                    <div class="txtFriend">친구도 나도 <span class="txtBold">2,000P</span> 바로 득템</div>
+                </div>
+                <div class="areaBotBtn "><!-- areaBotBtn 안에 btnShare 한 개의 버튼 -->
+                    <button class="btnShare hidden"><img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/roulette/iconFriendShare.png" />친구추천하고 2,000P 또 받기</button>
+                    <button class="btnChance">한번 더 참여하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

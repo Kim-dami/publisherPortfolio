@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>찜</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/location.css">
+    <!-- 페이지별 css 파일 링크 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/my.css">
+</head>
+<body>
+<main id="like">
+    <header>
+        <a href="#" class="linkBack">
+            <svg viewBox="0 0 20 20" class="iconBack">
+                <g>
+                    <rect width="20" height="20"/>
+                    <path d="m8.66,4.34l-5.66,5.66,5.66,5.66"/>
+                    <line x1="3" y1="10" x2="17" y2="10"/>
+                </g>
+            </svg>
+        </a>
+        <h1>찜</h1>
+    </header>
+    <div class="bgContent bgWhite">
+        <div class="areaWebCopy">
+            <div class="copy">배달의 발견, 일상의 변화.</div>
+            <div class="logo"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/textBDG.png" alt="배달긱"></div>
+            <ul class="ulAdvantage">
+                <li class="liAdvantage">배달비 0원</li>
+                <li class="liAdvantage">최소주문금액 0원</li>
+                <li class="liAdvantage">AI 루트시스템 친환경 ESG배달</li>
+                <li class="liAdvantage">비대면 안심배달</li>
+                <li class="liAdvantage">사전예약정시도착</li>
+            </ul>
+            <div class="areaStore">
+                <div class="textStore">앱 다운로드</div>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webAppstore.svg">
+                </a>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webGooglestore.svg">
+                </a>
+            </div>
+        </div>
+        <section class="sectionGroup swiperGroup">
+            <ul class="ulGroup swiper-wrapper">
+                <li class="liGroup swiper-slide">
+                    <fieldset class="setGroup check">
+                        <input type="radio" name="group" class="inputGroup" id="group-1" checked="checked">
+                        <label for="group-1" class="labelGroup">
+                            기본<span class="number">(12)</span>
+                        </label>
+                    </fieldset>
+                </li>
+                <li class="liGroup swiper-slide">
+                    <fieldset class="setGroup">
+                        <input type="radio" name="group" class="inputGroup" id="group-2">
+                        <label for="group-2" class="labelGroup">
+                            일이삼사오육칠팔구십일이<span class="number">(999+)</span>
+                        </label>
+                        <button class="btnGroupEdit">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </button>
+                        <ul class="ulGroupEdit">
+                           <li class="liGroupEdit">
+                               <button class="btnNameChange">
+                                   <svg viewBox="0 0 16 16" class="iconNameChange">
+                                       <g>
+                                           <rect width="16" height="16"/>
+                                           <path d="m0,4.37c.09-.53.39-1,.83-1.32.32-.24.72-.37,1.12-.38,1.79,0,3.57,0,5.36,0,.38-.02.7.28.71.65.01.3-.17.58-.46.68-.1.03-.2.04-.31.04H2.1c-.29-.03-.58.13-.69.41-.04.09-.05.18-.05.27v9.28c-.02.35.24.66.6.68.03,0,.05,0,.08,0h9.28c.36.02.67-.27.68-.63,0-.03,0-.06,0-.08v-5.22c-.03-.37.23-.69.6-.72.03,0,.06,0,.08,0,.37,0,.68.29.69.67,0,.02,0,.04,0,.06v5.22c.03.92-.58,1.75-1.47,2-.03,0-.05.02-.07.03H1.53c-.24-.07-.47-.17-.68-.31C.41,15.37.11,14.9,0,14.37V4.37Z" />
+                                           <path d="m16,1.99c-.1.42-.34.8-.67,1.08-.23.2-.43.42-.64.64-.08.08-.13.08-.2,0-.72-.73-1.45-1.45-2.18-2.18-.08-.08-.08-.13,0-.2.28-.28.56-.56.84-.84.66-.66,1.72-.66,2.38,0,.21.21.37.48.44.78.01.04.02.08.03.12v.59Z" />
+                                           <path d="m6.06,10.35c-.19.03-.36-.1-.39-.29,0-.05,0-.11.01-.16.11-.6.26-1.19.34-1.79.07-.43.28-.81.6-1.1,1.59-1.57,3.16-3.15,4.74-4.73q.16-.16.31,0c.7.7,1.39,1.39,2.09,2.08.11.11.11.18,0,.29-.95.94-1.89,1.88-2.83,2.82-.71.71-1.43,1.43-2.14,2.15-.15.16-.35.27-.57.32-.68.13-1.37.27-2.05.41-.05,0-.09.01-.12.01" />
+                                       </g>
+                                   </svg>
+                                   이름 바꾸기
+                               </button>
+                           </li>
+                            <li class="liGroupEdit">
+                                <button class="btnDelete">
+                                    <svg viewBox="0 0 16 16" class="iconDelete">
+                                        <g>
+                                            <rect width="16" height="16"/>
+                                            <path d="m1.88,9.2v-4.06c-.02-.41.31-.76.74-.78.13,0,.26.02.37.07.29.13.47.41.44.72v7.85c0,.1,0,.2.02.3.08.7.7,1.22,1.44,1.21,2.06,0,4.13,0,6.19,0,.8,0,1.45-.6,1.46-1.36,0-.03,0-.06,0-.09v-7.9c0-.19.05-.37.17-.52.2-.24.53-.34.83-.24.31.09.53.35.55.66v8.02c.04,1.58-1.28,2.89-2.93,2.92-.05,0-.09,0-.14,0h-6.1c-1.46.02-2.73-.97-3-2.34-.04-.18-.05-.36-.05-.54v-3.93" />
+                                            <path d="m8,3.66H1.91c-.42.02-.78-.3-.79-.7,0-.12.02-.24.08-.35.12-.27.42-.45.73-.43h2.75c.24,0,.24,0,.24-.24V.84c-.04-.42.28-.8.73-.83.05,0,.1,0,.15,0h4.39c.44-.04.83.27.87.69,0,.04,0,.09,0,.13,0,.39,0,.78,0,1.17,0,.14.05.19.2.19.94,0,1.88,0,2.82,0,.31-.01.59.16.71.43.14.26.1.57-.1.78-.16.18-.4.28-.64.27h-6.05m-.01-1.49h.98c.56,0,.56,0,.54-.54,0-.12-.05-.16-.17-.16h-2.66c-.12,0-.18.04-.17.16,0,.12,0,.24,0,.36,0,.14.05.19.2.18.43,0,.86,0,1.28,0" />
+                                            <path d="m10.3,9.09v2.49c.03.4-.29.75-.71.78-.02,0-.04,0-.07,0-.43,0-.78-.32-.78-.72,0-.02,0-.04,0-.05v-5.01c-.01-.41.33-.75.76-.77.3,0,.58.15.72.4.06.12.09.25.08.38v2.49" />
+                                            <path d="m5.7,9.09c0-.83,0-1.66,0-2.49-.03-.4.29-.75.71-.77.02,0,.04,0,.06,0,.43,0,.78.32.78.72,0,.02,0,.04,0,.06v5c.02.41-.31.76-.74.78-.35.02-.66-.19-.78-.5-.03-.09-.04-.19-.04-.28,0-.83,0-1.66,0-2.49" />
+                                        </g>
+                                    </svg>
+                                    삭제
+                                </button>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </li>
+                <li class="liGroup swiper-slide">
+                    <fieldset class="setGroup">
+                        <input type="radio" name="group" class="inputGroup" id="group-3">
+                        <label for="group-3" class="labelGroup">
+                            제육볶음 맛집<span class="number">(2)</span>
+                        </label>
+                        <button class="btnGroupEdit">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </button>
+                        <ul class="ulGroupEdit hidden">
+                            <li class="liGroupEdit">
+                                <button class="btnNameChange">
+                                    <svg viewBox="0 0 16 16" class="iconNameChange">
+                                        <g>
+                                            <rect width="16" height="16"/>
+                                            <path d="m0,4.37c.09-.53.39-1,.83-1.32.32-.24.72-.37,1.12-.38,1.79,0,3.57,0,5.36,0,.38-.02.7.28.71.65.01.3-.17.58-.46.68-.1.03-.2.04-.31.04H2.1c-.29-.03-.58.13-.69.41-.04.09-.05.18-.05.27v9.28c-.02.35.24.66.6.68.03,0,.05,0,.08,0h9.28c.36.02.67-.27.68-.63,0-.03,0-.06,0-.08v-5.22c-.03-.37.23-.69.6-.72.03,0,.06,0,.08,0,.37,0,.68.29.69.67,0,.02,0,.04,0,.06v5.22c.03.92-.58,1.75-1.47,2-.03,0-.05.02-.07.03H1.53c-.24-.07-.47-.17-.68-.31C.41,15.37.11,14.9,0,14.37V4.37Z" />
+                                            <path d="m16,1.99c-.1.42-.34.8-.67,1.08-.23.2-.43.42-.64.64-.08.08-.13.08-.2,0-.72-.73-1.45-1.45-2.18-2.18-.08-.08-.08-.13,0-.2.28-.28.56-.56.84-.84.66-.66,1.72-.66,2.38,0,.21.21.37.48.44.78.01.04.02.08.03.12v.59Z" />
+                                            <path d="m6.06,10.35c-.19.03-.36-.1-.39-.29,0-.05,0-.11.01-.16.11-.6.26-1.19.34-1.79.07-.43.28-.81.6-1.1,1.59-1.57,3.16-3.15,4.74-4.73q.16-.16.31,0c.7.7,1.39,1.39,2.09,2.08.11.11.11.18,0,.29-.95.94-1.89,1.88-2.83,2.82-.71.71-1.43,1.43-2.14,2.15-.15.16-.35.27-.57.32-.68.13-1.37.27-2.05.41-.05,0-.09.01-.12.01" />
+                                        </g>
+                                    </svg>
+                                    이름 바꾸기
+                                </button>
+                            </li>
+                            <li class="liGroupEdit">
+                                <button class="btnDelete">
+                                    <svg viewBox="0 0 16 16" class="iconDelete">
+                                        <g>
+                                            <rect width="16" height="16"/>
+                                            <path d="m1.88,9.2v-4.06c-.02-.41.31-.76.74-.78.13,0,.26.02.37.07.29.13.47.41.44.72v7.85c0,.1,0,.2.02.3.08.7.7,1.22,1.44,1.21,2.06,0,4.13,0,6.19,0,.8,0,1.45-.6,1.46-1.36,0-.03,0-.06,0-.09v-7.9c0-.19.05-.37.17-.52.2-.24.53-.34.83-.24.31.09.53.35.55.66v8.02c.04,1.58-1.28,2.89-2.93,2.92-.05,0-.09,0-.14,0h-6.1c-1.46.02-2.73-.97-3-2.34-.04-.18-.05-.36-.05-.54v-3.93" />
+                                            <path d="m8,3.66H1.91c-.42.02-.78-.3-.79-.7,0-.12.02-.24.08-.35.12-.27.42-.45.73-.43h2.75c.24,0,.24,0,.24-.24V.84c-.04-.42.28-.8.73-.83.05,0,.1,0,.15,0h4.39c.44-.04.83.27.87.69,0,.04,0,.09,0,.13,0,.39,0,.78,0,1.17,0,.14.05.19.2.19.94,0,1.88,0,2.82,0,.31-.01.59.16.71.43.14.26.1.57-.1.78-.16.18-.4.28-.64.27h-6.05m-.01-1.49h.98c.56,0,.56,0,.54-.54,0-.12-.05-.16-.17-.16h-2.66c-.12,0-.18.04-.17.16,0,.12,0,.24,0,.36,0,.14.05.19.2.18.43,0,.86,0,1.28,0" />
+                                            <path d="m10.3,9.09v2.49c.03.4-.29.75-.71.78-.02,0-.04,0-.07,0-.43,0-.78-.32-.78-.72,0-.02,0-.04,0-.05v-5.01c-.01-.41.33-.75.76-.77.3,0,.58.15.72.4.06.12.09.25.08.38v2.49" />
+                                            <path d="m5.7,9.09c0-.83,0-1.66,0-2.49-.03-.4.29-.75.71-.77.02,0,.04,0,.06,0,.43,0,.78.32.78.72,0,.02,0,.04,0,.06v5c.02.41-.31.76-.74.78-.35.02-.66-.19-.78-.5-.03-.09-.04-.19-.04-.28,0-.83,0-1.66,0-2.49" />
+                                        </g>
+                                    </svg>
+                                    삭제
+                                </button>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </li>
+            </ul>
+            <fieldset class="setFolderAdd">
+                <button class="btnFolderAdd">
+                    <span class="blind">폴더추가</span>
+                    <svg viewBox="0 0 20 20" class="iconFolderAdd">
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m17.91,6.48c-.1-.12-.26-.18-.5-.18-.24,0-.47,0-.71,0-.13,0-.25,0-.38,0-.08,0-.17,0-.18-.01-.01-.02-.01-.1-.01-.18,0-.16,0-.32,0-.49,0-.33,0-.67,0-1,0-.4-.19-.58-.59-.59-.05,0-.1,0-.15,0h-.06s-1.46,0-1.46,0c-2.4,0-4.88,0-7.32,0h0c-.14,0-.24-.04-.33-.14-.21-.21-.42-.43-.63-.64-.18-.17-.36-.36-.53-.53-.14-.14-.3-.21-.51-.21h0c-.86,0-1.74,0-2.59,0-.46,0-.92,0-1.37,0-.4,0-.57.17-.57.58,0,.74,0,7.64,0,11.35v.78c0,.06,0,.12,0,.18,0,.17-.01.35.03.53.23.96,1.03,1.58,2.02,1.58,1.83,0,3.75,0,5.84,0,1.88,0,3.89,0,6.1,0,.67,0,1.23-.29,1.6-.77.14-.19,0-.38-.2-.56-.15-.11-.42-.11-.65.09-.14.13-.3.23-.5.27-.17.03-.33.03-.51.03-.04,0-.09,0-.13,0h0c-1.62,0-3.24,0-4.86,0-2.22,0-4.44,0-6.66,0h0c-.34,0-.61-.1-.82-.3-.29-.28-.37-.64-.27-1.12.55-2.46,1.14-5.1,1.7-7.69.04-.16.08-.2.25-.2h0c.48,0,12.65,0,13.81,0,.07,0,.15,0,.17,0,0,.03-.02.1-.03.18-.1.46-.19.84-.28,1.23v.03c-.02.08-.04.16-.02.25.05.22.24.38.46.38h0c.23,0,.41-.16.47-.42.12-.53.24-1.06.35-1.58l.07-.33c.05-.23.03-.4-.07-.52Zm-2.76-.21s-.05.02-.11.02c-.53,0-5.45,0-9.41,0h-3.07c-.48,0-.59.09-.7.56-.22,1-.44,1.99-.66,2.99l-.26,1.17v-.9c0-2.14,0-4.36,0-6.54,0-.05,0-.09.02-.1.01-.01.05-.02.11-.02h0c1.05,0,2.13,0,3.23,0h0c.1,0,.17.03.25.11.15.15.31.31.46.46.23.23.46.46.69.7.18.19.38.27.65.27h0c2.07,0,4.17,0,6.2,0h1.7c.08,0,.15,0,.23,0,.18,0,.36,0,.54,0,.05,0,.09,0,.11.02.02.02.02.05.02.1,0,.36,0,.71,0,1.07,0,.05,0,.09-.02.1Z" />
+                            <path d="m16,10c-2.21,0-4,1.79-4,4s1.79,4,4,4,4-1.79,4-4-1.79-4-4-4Zm1.59,4.5h-1.09v1.09c0,.28-.22.5-.5.5s-.5-.22-.5-.5v-1.09h-1.09c-.28,0-.5-.22-.5-.5s.22-.5.5-.5h1.09v-1.09c0-.28.22-.5.5-.5s.5.22.5.5v1.09h1.09c.28,0,.5.22.5.5s-.22.5-.5.5Z" />
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+        </section>
+        <div class="sectionStore">
+            <div class="areaEdit">
+                <div class="areaCheck">찜한 상점 <span class="fontMain">12</span>개</div>
+                <div class="areaButton">
+                    <button class="btnEdit">폴더 이동</button>
+                    <button class="btnEdit">삭제</button>
+                    <button class="btnCancel">취소</button>
+                </div>
+            </div>
+
+            <div class="sectionNone hidden">
+                <svg viewBox="0 0 55 55" class="iconNone">
+                    <g>
+                        <path d="m29.67,32.32h-4.36l-.45-17.35h5.29l-.47,17.35Zm-2.17,7.7c-.51,0-1.01-.13-1.45-.38-.44-.25-.8-.61-1.05-1.05-.26-.44-.38-.94-.37-1.45-.02-.5.11-.99.37-1.42.25-.43.61-.79,1.05-1.03.44-.25.94-.37,1.44-.37.49,0,.98.13,1.41.37.44.25.8.6,1.06,1.04.26.43.4.91.4,1.41,0,.51-.14,1.01-.4,1.45-.25.44-.62.8-1.06,1.05-.43.25-.91.38-1.41.38Z"/>
+                        <circle cx="27.5" cy="27.5" r="26"/>
+                    </g>
+                </svg>
+                <div class="textNone">찜한 상점이 없어요</div>
+            </div>
+
+            <ul class="ulStore">
+                <li class="liStore checkbox"><!-- 편집시 checkbox 클래스 추가 -->
+                    <fieldset class="setRow">
+                        <input type="checkbox" class="inputRow" id="like-1">
+                        <label for="like-1" class="labelRow">
+                            <svg viewBox="0 0 16 16" class="iconRadius">
+                                <g>
+                                    <rect width="16" height="16"/>
+                                    <rect class="checkbox" x="1" y="1" width="14" height="14" rx="5" ry="5"/>
+                                    <path class="check" d="m4.46,7.21l2.83,2.83,4.21-4.28"/>
+                                </g>
+                            </svg>
+                        </label>
+                    </fieldset>
+                    <a href="#" class="linkStore">
+                        <div class="storePhoto">
+                            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/store/11/hongkongbanjum0410.png" />
+                        </div>
+                        <div class="storeInfo">
+                            <div class="name">
+                                <span class="store">홍콩반점0410</span>
+                                <span class="new">NEW</span>
+                                <img class="medal" src="https://kim-dami.github.io/carnival/imgMedal-1.png" />
+                            </div>
+                            <div class="scoreAndReview">
+                                <svg viewBox="0 0 16 16" class="iconStar">
+                                    <g>
+                                        <rect width="16" height="16"></rect>
+                                        <path d="m7.98,2.29l1.87,3.77,4.15.57-3.01,2.93.72,4.15-3.73-1.98-3.7,1.98.69-4.15-2.97-2.93,4.11-.57,1.87-3.77Z"/>
+                                    </g>
+                                </svg>
+                                <span class="score">4.9</span><span class="review">(999+)</span>
+                            </div>
+                            <div class="menu">식사2인 + 탕수육, 고추짬뽕, 고추짜장, 탕수육(1박스)(소스별도포장)</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="liStore checkbox"><!-- 편집시 checkbox 클래스 추가 -->
+                    <fieldset class="setRow">
+                        <input type="checkbox" class="inputRow" id="like-2">
+                        <label for="like-2" class="labelRow">
+                            <svg viewBox="0 0 16 16" class="iconRadius">
+                                <g>
+                                    <rect width="16" height="16"/>
+                                    <rect class="checkbox" x="1" y="1" width="14" height="14" rx="5" ry="5"/>
+                                    <path class="check" d="m4.46,7.21l2.83,2.83,4.21-4.28"/>
+                                </g>
+                            </svg>
+                        </label>
+                    </fieldset>
+                    <a href="#" class="linkStore">
+                        <div class="storePhoto">
+                            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/store/11/고피자.png" />
+                        </div>
+                        <div class="storeInfo">
+                            <div class="name">
+                                <span class="store">고피자</span>
+                                <span class="discount">10%</span>
+                                <img class="medal" src="https://kim-dami.github.io/carnival/imgMedal-3.png" />
+                            </div>
+                            <div class="scoreAndReview">
+                                <svg viewBox="0 0 16 16" class="iconStar">
+                                    <g>
+                                        <rect width="16" height="16"></rect>
+                                        <path d="m7.98,2.29l1.87,3.77,4.15.57-3.01,2.93.72,4.15-3.73-1.98-3.7,1.98.69-4.15-2.97-2.93,4.11-.57,1.87-3.77Z"/>
+                                    </g>
+                                </svg>
+                                <span class="score">4.9</span><span class="review">(119)</span>
+                            </div>
+                            <div class="menu">미트 치즈 파스타, 1인 피자 세트, 1.5인 피파 세트, 피자 2판 세트), 1인 파스타 세트</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="liStore checkbox"><!-- 편집시 checkbox 클래스 추가 -->
+                    <fieldset class="setRow">
+                        <input type="checkbox" class="inputRow" id="like-3">
+                        <label for="like-3" class="labelRow">
+                            <svg viewBox="0 0 16 16" class="iconRadius">
+                                <g>
+                                    <rect width="16" height="16"/>
+                                    <rect class="checkbox" x="1" y="1" width="14" height="14" rx="5" ry="5"/>
+                                    <path class="check" d="m4.46,7.21l2.83,2.83,4.21-4.28"/>
+                                </g>
+                            </svg>
+                        </label>
+                    </fieldset>
+                    <a href="#" class="linkStore">
+                        <div class="storePhoto">
+                            <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/store/11/버택스-봉천점.png" />
+                        </div>
+                        <div class="storeInfo">
+                            <div class="name">
+                                <span class="store">버텍스 봉천점</span>
+                                <span class="new">NEW</span>
+                                <span class="discount">10%</span>
+                                <img class="medal" src="https://kim-dami.github.io/carnival/imgMedal-1.png" />
+                            </div>
+                            <div class="scoreAndReview">
+                                <svg viewBox="0 0 16 16" class="iconStar">
+                                    <g>
+                                        <rect width="16" height="16"></rect>
+                                        <path d="m7.98,2.29l1.87,3.77,4.15.57-3.01,2.93.72,4.15-3.73-1.98-3.7,1.98.69-4.15-2.97-2.93,4.11-.57,1.87-3.77Z"/>
+                                    </g>
+                                </svg>
+                                <span class="score">4.9</span><span class="review">(147)</span>
+                            </div>
+                            <div class="menu">식사2인 + 탕수육, 고추짬뽕, 고추짜장, 탕수육(1박스)(소스별도포장)</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div id="bottomFix">
+        <nav>
+            <a href="#" class="linkNav home">
+                <div class="txtNav">배달 홈</div>
+            </a>
+            <a href="#" class="linkNav like active">
+                <div class="txtNav">찜</div>
+            </a>
+            <a href="#" class="linkNav order">
+                <div class="txtNav">주문내역</div>
+            </a>
+            <a href="#" class="linkNav my">
+                <div class="txtNav">MY</div>
+            </a>
+        </nav>
+    </div>
+    <div class="popUp hidden" id="likeGroupList">
+        <div class="popCenter">
+            <div class="popBg">
+                <h1 class="center">폴더 목록</h1>
+                <section class="sectionNewGroup">
+                    <button class="btnNewGroup">
+                        <svg viewBox="0 0 20 20" class="iconPlus">
+                            <g>
+                                <rect width="20" height="20"/>
+                                <line x1="10" y1="13.69" x2="10" y2="5.69"/>
+                                <line x1="14" y1="9.69" x2="6" y2="9.69"/>
+                            </g>
+                        </svg>
+                        폴더 추가
+                    </button>
+                </section>
+                <section class="sectionRow">
+                    <fieldset class="setRow">
+                        <input type="radio" name="likeGroup" class="inputRow" id="likeGroup-1" disabled />
+                        <label for="likeGroup-1" class="labelRow">
+                            <svg viewBox="0 0 20 20" class="iconTwoCircles">
+                                <g>
+                                    <rect width="20" height="20"/>
+                                    <path d="m10,1c4.96,0,9,4.04,9,9s-4.04,9-9,9S1,14.96,1,10,5.04,1,10,1m0-1C4.48,0,0,4.48,0,10s4.48,10,10,10,10-4.48,10-10S15.52,0,10,0h0Z"/>
+                                    <circle cx="10" cy="10" r="5"/>
+                                </g>
+                            </svg>
+                            기본<span class="number">12</span>
+                        </label>
+                    </fieldset>
+                    <fieldset class="setRow">
+                        <input type="radio" name="likeGroup" class="inputRow" id="likeGroup-2" />
+                        <label for="likeGroup-2" class="labelRow">
+                            <svg viewBox="0 0 20 20" class="iconTwoCircles">
+                                <g>
+                                    <rect width="20" height="20"/>
+                                    <path d="m10,1c4.96,0,9,4.04,9,9s-4.04,9-9,9S1,14.96,1,10,5.04,1,10,1m0-1C4.48,0,0,4.48,0,10s4.48,10,10,10,10-4.48,10-10S15.52,0,10,0h0Z"/>
+                                    <circle cx="10" cy="10" r="5"/>
+                                </g>
+                            </svg>
+                            일이삼사오육칠팔구십일이<span class="number">999+</span>
+                        </label>
+                    </fieldset>
+                    <fieldset class="setRow">
+                        <input type="radio" name="likeGroup" class="inputRow" id="likeGroup-3" />
+                        <label for="likeGroup-3" class="labelRow">
+                            <svg viewBox="0 0 20 20" class="iconTwoCircles">
+                                <g>
+                                    <rect width="20" height="20"/>
+                                    <path d="m10,1c4.96,0,9,4.04,9,9s-4.04,9-9,9S1,14.96,1,10,5.04,1,10,1m0-1C4.48,0,0,4.48,0,10s4.48,10,10,10,10-4.48,10-10S15.52,0,10,0h0Z"/>
+                                    <circle cx="10" cy="10" r="5"/>
+                                </g>
+                            </svg>
+                            제육볶음 맛집<span class="number">12</span>
+                        </label>
+                    </fieldset>
+                </section>
+                <section class="sectionHalf">
+                    <fieldset class="setHalf">
+                        <button class="btnHalf borderMain fontMain">취소</button>
+                    </fieldset>
+                    <fieldset class="setHalf">
+                        <button class="btnHalf bgMain">이동</button>
+                    </fieldset>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="popUp hidden" id="likeGroupList">
+        <div class="popCenter">
+            <div class="popBg">
+                <h1 class="center">폴더 추가</h1>
+                <section class="sectionNewGroup">
+                    <fieldset class="setBorder">
+                        <input type="text" class="inputBorder" id="likeListName" required="required" />
+                        <label for="likeListName" class="placeholderBorder">폴더명 입력 (최대 12자)</label>
+                    </fieldset>
+                </section>
+                <section class="sectionHalf">
+                    <fieldset class="setHalf">
+                        <button class="btnHalf borderMain fontMain">취소</button>
+                    </fieldset>
+                    <fieldset class="setHalf">
+                        <button class="btnHalf bgMain">확인</button>
+                    </fieldset>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="popUp hidden" id="likeGroupList">
+        <div class="popCenter">
+            <div class="popBg">
+                <h1 class="center">이름바꾸기</h1>
+                <section class="sectionNewGroup">
+                    <fieldset class="setBorder error">
+                        <input type="text" class="inputBorder" id="likeListName" required="required" value="일이삼사오육칠팔구십일이" />
+                        <label for="likeListName" class="placeholderBorder">폴더명 입력 (최대 12자)</label>
+                        <div class="errorMessage">폴더명을 최대 12자까지 입력해주세요</div>
+                    </fieldset>
+                </section>
+                <section class="sectionHalf">
+                    <fieldset class="setHalf">
+                        <button class="btnHalf borderMain fontMain">취소</button>
+                    </fieldset>
+                    <fieldset class="setHalf">
+                        <button class="btnHalf bgMain">확인</button>
+                    </fieldset>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+    const swiperTimebelt = new Swiper('.swiperGroup', {
+        slidesPerView: "auto",
+    });
+</script>
+</body>
+</html>

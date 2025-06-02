@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>주문하기</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <!-- 페이지별 css 파일 링크 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/order.css">
+</head>
+<body>
+<main id="order" class="menuAdult">
+    <!-- 주류메뉴인 경우 menuAdult 클래스추가 -->
+    <header>
+        <a href="#" class="linkBack">
+            <svg viewBox="0 0 20 20" class="iconBack">
+                <g>
+                    <rect width="20" height="20"/>
+                    <path d="m8.66,4.34l-5.66,5.66,5.66,5.66"/>
+                    <line x1="3" y1="10" x2="17" y2="10"/>
+                </g>
+            </svg>
+        </a>
+        <h1>주문하기</h1>
+    </header>
+    <div class="bgContent bgGray">
+        <div class="areaWebCopy">
+            <div class="copy">배달의 발견, 일상의 변화.</div>
+            <div class="logo"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/textBDG.png" alt="배달긱"></div>
+            <ul class="ulAdvantage">
+                <li class="liAdvantage">배달비 0원</li>
+                <li class="liAdvantage">최소주문금액 0원</li>
+                <li class="liAdvantage">AI 루트시스템 친환경 ESG배달</li>
+                <li class="liAdvantage">비대면 안심배달</li>
+                <li class="liAdvantage">사전예약정시도착</li>
+            </ul>
+            <div class="areaStore">
+                <div class="textStore">앱 다운로드</div>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webAppstore.svg">
+                </a>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webGooglestore.svg">
+                </a>
+            </div>
+        </div>
+        <section class="sectionNonMemberOrder hidden"><!-- 비로그인일 경우 -->
+            <div class="areaNonMemberNotice">
+                앗, 비회원으로 주문하실건가요?
+                <p>로그인하고 특별한 혜택을 만나보세요!</p>
+            </div>
+            <fieldset class="setMemberLogin">
+                <button class="btnMemberLogin borderMain fontMain">로그인/회원가입</button>
+            </fieldset>
+        </section>
+        <section class="sectionOrder">
+            <div class="areaService hidden"><!-- 픽업준비중일 경우 hidden -->
+                <span class="service">바로배달</span>로 받을게요
+            </div>
+            <div class="areaLocation">
+                <div class="location">
+                    <svg viewBox="0 0 20 20" class="iconPin">
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m9.67,17.59c.18.18.47.18.65,0h.01c2.08-2.12,5.66-6.55,5.66-9.62,0-3.31-2.69-6-6-6s-6,2.69-6,6c0,3.08,3.64,7.56,5.67,9.62"/>
+                            <circle cx="10" cy="7.54" r="1.8"/>
+                        </g>
+                    </svg>
+                    <!--<span class="locationType">수령장소</span>63동 학생회관-->
+                    <span class="locationType robot">로봇배달</span>63동 학생회관
+                </div>
+                <div class="spot"><!--스팟배달인 경우 -->
+                    <div class="spotImg">
+                        <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/place/dev/11/building/11W_1672635136.png"/>
+                    </div>
+                    <div class="spotMap"></div>
+                </div>
+                <div class="directMap hidden"></div><!--바로배달인 경우 -->
+                <ol class="olStoreLocation hidden"><!--픽업인 경우 -->
+                    <li class="liStoreLocation">
+                        <div class="areaIcon">
+                            <div class="top"></div>
+                            <div class="bottom"></div>
+                            <div class="dot bgMain"></div>
+                        </div>
+                        <p class="storeName">한솥도시락</p>
+                        <p class="storeLocation">광주 광산구 임방울대로 727-6</p>
+                    </li>
+                    <li class="liStoreLocation">
+                        <div class="areaIcon">
+                            <div class="top"></div>
+                            <div class="bottom"></div>
+                            <div class="dot bgMain"></div>
+                        </div>
+                        <p class="storeName">오늘하루가</p>
+                        <p class="storeLocation">광주 광산구 임방울대로 123</p>
+                    </li>
+                </ol>
+                <div class="storeMap hidden"></div><!--픽업인 경우 -->
+            </div>
+        </section>
+        <section class="sectionWho">
+            <h3>
+                주문자 정보
+                <span class="titleNotice">주류는 연령확인이 완료된 정보로만 주문할 수 있어요</span>
+            </h3>
+            <fieldset class="setBorder">
+                <input type="text" class="inputBorder" id="userName" autocomplete="off" required="required"
+                       value="김민준" disabled="disabled" />
+                <label for="userName" class="labelBorder valid">주문자명</label>
+            </fieldset>
+            <fieldset class="setBorder">
+                <input type="tel" class="inputBorder" id="userPhone" autocomplete="off" required="required"
+                       value="01012345678" disabled="disabled" />
+                <label for="userPhone" class="labelBorder valid">연락처</label>
+            </fieldset>
+            <fieldset class="setRow">
+                <input type="checkbox" class="inputRow" id="safeNumber" checked="checked"/>
+                <label for="safeNumber" class="labelRow">
+                    <svg viewBox="0 0 16 16" class="iconRadius">
+                        <g>
+                            <rect width="16" height="16"/>
+                            <rect class="checkbox" x="1" y="1" width="14" height="14" rx="5" ry="5"/>
+                            <path class="check" d="m4.46,7.21l2.83,2.83,4.21-4.28"/>
+                        </g>
+                    </svg>
+                    안심번호 사용
+                </label>
+                <button class="btnTooltip">
+                    <svg viewBox="0 0 16 16" class="iconTooltip">
+                        <g>
+                            <rect width="16" height="16"/>
+                            <path d="m8,0C3.58,0,0,3.58,0,8s3.58,8,8,8,8-3.58,8-8C15.99,3.59,12.41.01,8,0Zm-.08,13.28c-.62,0-1.12-.5-1.12-1.12,0-.62.5-1.12,1.12-1.12s1.12.5,1.12,1.12h0c.01.6-.46,1.11-1.07,1.12-.02,0-.04,0-.05,0Zm2.16-6.24l-.88.96c-.2.18-.32.45-.32.72,0,.53-.43.95-.96.96-.51.02-.94-.38-.96-.89,0-.02,0-.05,0-.07-.02-.55.21-1.09.64-1.44l.72-.88c.31-.3.51-.69.56-1.12.02-.46-.33-.86-.8-.88-.03,0-.06,0-.08,0-.45-.02-.85.28-.96.72-.19.36-.56.57-.96.56-.46.02-.86-.33-.88-.8,0-.03,0-.06,0-.08,0-.14.02-.27.08-.4.43-1.1,1.54-1.79,2.72-1.68,1.43-.11,2.68.95,2.79,2.38,0,.06,0,.12,0,.18-.01.66-.27,1.28-.72,1.76Z"/>
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+            <div class="contentTooltip hidden">
+                <img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/triangleTooltip.png" class="triangleTooltip"/>
+                안심번호는 고객님의 개인정보를 보호하기 위해<br/>
+                주문시 실제 연락처 정보 대신 일회성 임시번호를<br/>
+                발급하는 서비스입니다.<br/><br/>
+                이는 전화를 받을 때만 유효하며,<br/>
+                상점이나 드라이버에게 전화를 거실 때는<br/>
+                고객님의 실제 번호가 노출되니 주의해주세요!
+            </div>
+        </section>
+        <section class="sectionPoint">
+            <h3>
+                포인트
+                <div class="textRight">보유 포인트 : <span class="havePoint">1,500P</span></div>
+            </h3>
+            <fieldset class="setBorder disable"><!-- 비회원 주문시 disable 클래스 추가 -->
+                <input type="number" class="inputBorder" value="0" disabled/><!-- 비회원 주문시 disabled 속성 추가 -->
+                <span class="unitPoint">P</span>
+                <button class="useAll" disabled>전액사용</button><!-- 비회원 주문시 disabled 속성 추가 -->
+            </fieldset>
+            <div class="noticePoint">포인트 결제시, 포인트 비율에 따라 <span class="fontMain">할인 및 적립</span>이 달라져요!</div>
+        </section>
+        <section class="sectionPayment">
+            <h3>결제수단</h3>
+            <fieldset class="setRow">
+                <input type="radio" name="type" class="inputRow" id="type-1" checked/>
+                <label for="type-1" class="labelRow">
+                    <svg viewBox="0 0 20 20" class="iconTwoCircles">
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m10,1c4.96,0,9,4.04,9,9s-4.04,9-9,9S1,14.96,1,10,5.04,1,10,1m0-1C4.48,0,0,4.48,0,10s4.48,10,10,10,10-4.48,10-10S15.52,0,10,0h0Z"/>
+                            <circle cx="10" cy="10" r="5"/>
+                        </g>
+                    </svg>
+                    카드결제
+                </label>
+            </fieldset>
+            <fieldset class="setRow">
+                <input type="radio" name="type" class="inputRow" id="type-2"/>
+                <label for="type-2" class="labelRow">
+                    <svg viewBox="0 0 20 20" class="iconTwoCircles">
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m10,1c4.96,0,9,4.04,9,9s-4.04,9-9,9S1,14.96,1,10,5.04,1,10,1m0-1C4.48,0,0,4.48,0,10s4.48,10,10,10,10-4.48,10-10S15.52,0,10,0h0Z"/>
+                            <circle cx="10" cy="10" r="5"/>
+                        </g>
+                    </svg>
+                    긱머니결제
+                </label>
+                <button class="btnChargeGeek">
+                    <span class="haveGeek">(0G)</span>
+                    <span class="badgeGeek">
+                        포인트 추가 적립
+                        <svg viewBox="0 0 16 16" class="iconTooltip">
+                            <g>
+                                <rect width="16" height="16"/>
+                                <path d="m8,0C3.58,0,0,3.58,0,8s3.58,8,8,8,8-3.58,8-8C15.99,3.59,12.41.01,8,0Zm-.08,13.28c-.62,0-1.12-.5-1.12-1.12,0-.62.5-1.12,1.12-1.12s1.12.5,1.12,1.12h0c.01.6-.46,1.11-1.07,1.12-.02,0-.04,0-.05,0Zm2.16-6.24l-.88.96c-.2.18-.32.45-.32.72,0,.53-.43.95-.96.96-.51.02-.94-.38-.96-.89,0-.02,0-.05,0-.07-.02-.55.21-1.09.64-1.44l.72-.88c.31-.3.51-.69.56-1.12.02-.46-.33-.86-.8-.88-.03,0-.06,0-.08,0-.45-.02-.85.28-.96.72-.19.36-.56.57-.96.56-.46.02-.86-.33-.88-.8,0-.03,0-.06,0-.08,0-.14.02-.27.08-.4.43-1.1,1.54-1.79,2.72-1.68,1.43-.11,2.68.95,2.79,2.38,0,.06,0,.12,0,.18-.01.66-.27,1.28-.72,1.76Z"/>
+                            </g>
+                        </svg>
+                    </span>
+                    <div class="tooltip hidden"><!-- 클릭시 툴팁 노출 -->
+                        <div class="contentTooltip">
+                            결제시 포인트 2% 적립<br/>
+                            충전시 최대 2% 보너스 포인트 적립
+                        </div>
+                        <img src="https://kim-dami.github.io/carnival/triangleTooltip.png" class="triangleTooltip" />
+                    </div>
+                </button>
+            </fieldset>
+            <fieldset class="setRow">
+                <input type="radio" name="type" class="inputRow" id="type-3"/>
+                <label for="type-3" class="labelRow">
+                    <svg viewBox="0 0 20 20" class="iconTwoCircles">
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m10,1c4.96,0,9,4.04,9,9s-4.04,9-9,9S1,14.96,1,10,5.04,1,10,1m0-1C4.48,0,0,4.48,0,10s4.48,10,10,10,10-4.48,10-10S15.52,0,10,0h0Z"/>
+                            <circle cx="10" cy="10" r="5"/>
+                        </g>
+                    </svg>
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/payco_logo.svg" alt="페이코"
+                         class="payco"/>결제
+                </label>
+                <button class="btnPayco">
+                    <span class="badgePayco">
+                        리워드 혜택
+                        <svg viewBox="0 0 16 16" class="iconTooltip">
+                            <g>
+                                <rect width="16" height="16"/>
+                                <path d="m8,0C3.58,0,0,3.58,0,8s3.58,8,8,8,8-3.58,8-8C15.99,3.59,12.41.01,8,0Zm-.08,13.28c-.62,0-1.12-.5-1.12-1.12,0-.62.5-1.12,1.12-1.12s1.12.5,1.12,1.12h0c.01.6-.46,1.11-1.07,1.12-.02,0-.04,0-.05,0Zm2.16-6.24l-.88.96c-.2.18-.32.45-.32.72,0,.53-.43.95-.96.96-.51.02-.94-.38-.96-.89,0-.02,0-.05,0-.07-.02-.55.21-1.09.64-1.44l.72-.88c.31-.3.51-.69.56-1.12.02-.46-.33-.86-.8-.88-.03,0-.06,0-.08,0-.45-.02-.85.28-.96.72-.19.36-.56.57-.96.56-.46.02-.86-.33-.88-.8,0-.03,0-.06,0-.08,0-.14.02-.27.08-.4.43-1.1,1.54-1.79,2.72-1.68,1.43-.11,2.68.95,2.79,2.38,0,.06,0,.12,0,.18-.01.66-.27,1.28-.72,1.76Z"/>
+                            </g>
+                        </svg>
+                    </span>
+                    <div class="tooltip "><!-- 클릭시 툴팁 노출 -->
+                        <div class="contentTooltip">
+                            PAYCO 포인트 결제시<br/>
+                            캠퍼스 리워드 5% 적립
+                        </div>
+                        <img src="https://kim-dami.github.io/carnival/triangleTooltip.png" class="triangleTooltip" />
+                    </div>
+                </button>
+            </fieldset>
+        </section>
+
+        <section class="sectionCash">
+            <h3>현금영수증</h3>
+            <div class="areaPublish">
+                <fieldset class="setRow">
+                    <input type="radio" name="type" class="inputRow" id="type-1" checked/>
+                    <label for="type-1" class="labelRow">
+                        <svg viewBox="0 0 20 20" class="iconTwoCircles">
+                            <g>
+                                <rect width="20" height="20"/>
+                                <path d="m10,1c4.96,0,9,4.04,9,9s-4.04,9-9,9S1,14.96,1,10,5.04,1,10,1m0-1C4.48,0,0,4.48,0,10s4.48,10,10,10,10-4.48,10-10S15.52,0,10,0h0Z"/>
+                                <circle cx="10" cy="10" r="5"/>
+                            </g>
+                        </svg>
+                        신청
+                    </label>
+                </fieldset>
+                <fieldset class="setRow">
+                    <input type="radio" name="type" class="inputRow" id="type-1" checked/>
+                    <label for="type-1" class="labelRow">
+                        <svg viewBox="0 0 20 20" class="iconTwoCircles">
+                            <g>
+                                <rect width="20" height="20"/>
+                                <path d="m10,1c4.96,0,9,4.04,9,9s-4.04,9-9,9S1,14.96,1,10,5.04,1,10,1m0-1C4.48,0,0,4.48,0,10s4.48,10,10,10,10-4.48,10-10S15.52,0,10,0h0Z"/>
+                                <circle cx="10" cy="10" r="5"/>
+                            </g>
+                        </svg>
+                        미신청
+                    </label>
+                </fieldset>
+            </div>
+            <div class="areaTypeSelect">
+                <div class="textSelect">
+                    개인
+                    <svg viewBox="0 0 20 20" class="iconUnfold">
+                        <g>
+                            <rect width="20" height="20" />
+                            <path d="m4.69,7.88l5.31,5.3,5.31-5.3" />
+                        </g>
+                    </svg>
+                </div>
+                <select class="select">
+                    <option>개인</option>
+                    <option>법인</option>
+                </select>
+            </div>
+            <fieldset class="setBorder">
+                <input type="number" class="inputBorder" placeholder="휴대폰번호를 입력해주세요">
+            </fieldset>
+        </section>
+        <section class="sectionOrderList">
+            <fieldset class="setOrderList hidden"><!-- 주문내역 펼치기 전(디폴트) -->
+                <button class="btnCOrderList">
+                    주문내역
+                    <span class="orderNumber fontMain">4개</span>
+                    <svg viewBox="0 0 20 20" class="iconUnfold">
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m4.69,7.88l5.31,5.3,5.31-5.3"/>
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+            <fieldset class="setOrderList"><!-- 주문내역 펼치기 후 -->
+                <button class="btnCOrderList">
+                    주문내역
+                    <svg viewBox="0 0 20 20" class="iconFold">
+                        <g>
+                            <rect width="20" height="20"/>
+                            <path d="m4.69,12.34l5.31-5.3,5.31,5.3"/>
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+            <div class="areaOrderList">
+                <div class="storeName">홍콩반점0410</div>
+                <ul class="ulMenu">
+                    <li class="liMenu">
+                        <div class="name">고추짬뽕</div>
+                        <div class="option">기본<br/>
+                            사이즈업 : 곱배기<br/>
+                            추가메뉴 선택 : 공기밥 / 콜라 / 사이다
+                        </div>
+                        <div class="price">15,000원</div>
+                    </li>
+                    <li class="liMenu">
+                        <div class="name">고추짜장</div>
+                        <div class="option">기본</div>
+                        <div class="price">8,500원</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="areaOrderList">
+                <div class="storeName">고피자</div>
+                <ul class="ulMenu">
+                    <li class="liMenu">
+                        <div class="name">미트 치즈 파스타</div>
+                        <div class="option">기본</div>
+                        <div class="price">8,500원</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="sectionPay">
+            <h3>결제</h3>
+            <div class="areaDetail">
+                <dl class="dlDetail">
+                    <dt class="dtDetail">주문금액</dt>
+                    <dd class="ddDetail">24,000원</dd>
+                </dl>
+                <dl class="dlDetail">
+                    <dt class="dtDetail">배달비</dt>
+                    <dd class="ddDetail">9,000원</dd>
+                </dl>
+                <dl class="dlDetail minus">
+                    <dt class="dtDetail">배달비할인</dt>
+                    <dd class="ddDetail">- 9,000원</dd>
+                </dl>
+            </div>
+            <div class="areaTotal">
+                <dl class="dlTotal">
+                    <dt class="dtTotal">총 결제금액</dt>
+                    <dd class="ddTotal">24,000원</dd>
+                </dl>
+            </div>
+            <div class="areaPayment">
+                <dl class="dlPayment">
+                    <dt class="dtPayment">카드</dt>
+                    <dd class="ddPayment">24,000원</dd>
+                </dl>
+            </div>
+        </section>
+        <section class="sectionTerms">
+            <fieldset class="setRow setTermsAll"><!-- 비회원인 경우 -->
+                <input type="checkbox" class="inputRow" id="termsAll-1" checked="checked"/>
+                <label for="termsAll-1" class="labelRow">
+                    <svg viewBox="0 0 16 16" class="iconRadius">
+                        <g>
+                            <rect width="16" height="16"/>
+                            <rect class="checkbox" x="1" y="1" width="14" height="14" rx="5" ry="5"/>
+                            <path class="check" d="m4.46,7.21l2.83,2.83,4.21-4.28"/>
+                        </g>
+                    </svg>
+                    전체동의
+                </label>
+            </fieldset>
+            <fieldset class="setRow setTermsDetail"><!-- 비회원인 경우 -->
+                <input type="checkbox" class="inputRow" id="terms-1" checked="checked"/>
+                <label for="terms-1" class="labelRow">
+                    <svg viewBox="0 0 16 16" class="iconRadius">
+                        <g>
+                            <rect width="16" height="16"/>
+                            <rect class="checkbox" x="1" y="1" width="14" height="14" rx="5" ry="5"/>
+                            <path class="check" d="m4.46,7.21l2.83,2.83,4.21-4.28"/>
+                        </g>
+                    </svg>
+                    이용약관
+                </label>
+                <button class="btnMore">
+                    <svg viewBox="0 0 16 16" class="iconMore">
+                        <g>
+                            <rect width="16" height="16"></rect>
+                            <path d="M6.26,11.98l4.24-4.24L6.26,3.5"></path>
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+            <fieldset class="setRow setTermsDetail">
+                <input type="checkbox" class="inputRow" id="terms-2" checked="checked"/>
+                <label for="terms-2" class="labelRow">
+                    <svg viewBox="0 0 16 16" class="iconRadius">
+                        <g>
+                            <rect width="16" height="16"/>
+                            <rect class="checkbox" x="1" y="1" width="14" height="14" rx="5" ry="5"/>
+                            <path class="check" d="m4.46,7.21l2.83,2.83,4.21-4.28"/>
+                        </g>
+                    </svg>
+                    전자금융거래 이용약관
+                </label>
+                <button class="btnMore">
+                    <svg viewBox="0 0 16 16" class="iconMore">
+                        <g>
+                            <rect width="16" height="16"></rect>
+                            <path d="M6.26,11.98l4.24-4.24L6.26,3.5"></path>
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+            <fieldset class="setRow setTermsDetail">
+                <input type="checkbox" class="inputRow" id="terms-3" checked="checked"/>
+                <label for="terms-3" class="labelRow">
+                    <svg viewBox="0 0 16 16" class="iconRadius">
+                        <g>
+                            <rect width="16" height="16"/>
+                            <rect class="checkbox" x="1" y="1" width="14" height="14" rx="5" ry="5"/>
+                            <path class="check" d="m4.46,7.21l2.83,2.83,4.21-4.28"/>
+                        </g>
+                    </svg>
+                    개인정보 제3자 제공동의
+                </label>
+                <button class="btnMore">
+                    <svg viewBox="0 0 16 16" class="iconMore">
+                        <g>
+                            <rect width="16" height="16"></rect>
+                            <path d="M6.26,11.98l4.24-4.24L6.26,3.5"></path>
+                        </g>
+                    </svg>
+                </button>
+            </fieldset>
+            <fieldset class="setTerms hidden"><!-- 회원인 경우 -->
+                <button class="btnTerms">상품 주의사항</button>
+                <button class="btnTerms">개인정보 제3자 제공</button>
+            </fieldset>
+            <div class="noticeTerms">위 내용을 확인했으며 결제에 동의합니다</div>
+        </section>
+    </div>
+    <div id="bottomFix">
+        <section class="sectionFull">
+            <div class="noticeAdult">주류 주문! 반드시 본인이 음식을 수령해주세요</div>
+            <fieldset class="setFull">
+                <button class="btnFull bgMain">결제하기</button>
+            </fieldset>
+        </section>
+        <section class="sectionFull hidden">
+            <fieldset class="setFull">
+                <button class="btnFull bgMain">결제하기</button>
+            </fieldset>
+        </section>
+    </div>
+    <div class="popUp hidden" id="termsDetail"><!--상품 주의사항 팝업 -->
+        <div class="popCenter">
+            <div class="popBg">
+                <h1 class="center">
+                    상품 주의사항
+                </h1>
+                <section class="sectionTermsDetail">
+                    <div class="termsContents">
+                        <ol class="numList">
+                            <li>고객님의 주문에 따라 개별적으로 생산 또는 조리된 음식은 업주에게 회복할 수 없는 손해가 발생하므로 단순 변심에 의한 청약철회는 할 수 없습니다.</li>
+                            <li>고객님과 수차례 연락을 시도한 후 연락이 되지 않는 경우 제조음식이 변질되거나 부패될 우려로 식품위생법상 위반될 여지가 있어 별도로 보관하지 않으며, 재조리 또는
+                                환불처리가 어려울 수 있습니다.
+                            </li>
+                            <li>상품의 주문계약은 구매조건(상품의 내용 및 종류, 가격, 결제수단, 포인트/할인쿠폰 적용여부 등)에 동의하고 주문함으로써 성립합니다. 구매조건에 대한 동의는
+                                고객님께서 과실없이 상품을 주문했다는 입증자료로 활용되며, 주문취소 또는 보상이 어려울 수 있으니, 사전에 면밀한 확인 부탁드립니다.
+                            </li>
+                            <li>고객님은 다음 각호의 귀책사유로 조리된 음식을 수령하지 못하더라도 고객님은 대금지급의무 또는 손해배상금을 부담합니다.
+                                <ol class="subList">
+                                    <li>배달주소지를 고객님의 과실로 잘못 등록하거나 작성한 경우 (단, 배달주소지 오류는 재배달 하지 않음)</li>
+                                    <li>고객님과 수차례 연락을 시도하였으나 연락이 되지 않는 경우)</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+                <section class="sectionFull">
+                    <fieldset class="setFull">
+                        <button class="btnFull bgMain">확인</button>
+                    </fieldset>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="popUp hidden" id="termsDetail"><!--개인정보 제3자 제공 팝업 -->
+        <div class="popCenter">
+            <div class="popBg">
+                <h1 class="center">
+                    개인정보 제3자 제공
+                </h1>
+                <section class="sectionTermsDetail">
+                    <div class="termsContents">
+                        배달긱(주식회사 클라우드스톤)은 원활한 주문 및 배송서비스 제공을 위해 최소한의 범위 내에서 아래와 같이 개인정보를 수집 ・이용합니다.<br />
+                        개인정보 제3자 제공 동의를 거부할 권리가 있으나, 다만 동의 거부시 주문 및 배달서비스 이용이 제한될 수 있습니다.<br />
+                        <ol class="kList">
+                            <li>① 음식판매업체
+                                <table>
+                                    <colgroup>
+                                        <col width="21%">
+                                        <col width="29%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>제공받는 자</th>
+                                        <th>제공받는 자의 <br>개인정보 이용 목적</th>
+                                        <th>제공하는 <br>개인정보의 항목</th>
+                                        <th>개인정보<br>보유· 이용기간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            상점1, 상점2<!-- 주문내역에 있는 상점명을 ,로 구분하여 나열 -->
+                                        </td>
+                                        <td>수령인 확인(이름, 아이디, 휴대전화번호 또는 안심번호, 수령장소), 배달정보 확인(주문상점
+                                            및 메뉴), 주문관리(결제/취소/환불 포함
+                                        </td>
+                                        <td>로그인 기록, 접속자 정보 등</td>
+                                        <td><strong>서비스 제공완료 후 파기 또는 관련법령에 따른 기간까지</strong></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li>② 배달대행업체(배달긱 드라이버 포함)
+                                <table>
+                                    <colgroup>
+                                        <col width="21%">
+                                        <col width="29%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>제공받는 자</th>
+                                        <th>제공받는 자의 <br>개인정보 이용 목적</th>
+                                        <th>제공하는 <br>개인정보의 항목</th>
+                                        <th>개인정보<br>보유· 이용기간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>배달긱<br>드라이버<br>및<br>배달대행업체</td>
+                                        <td>배달서비스 이행 및 민원 응대</td>
+                                        <td>수령인 확인(이름, 아이디, 휴대전화번호 또는 안심번호, 수령장소), 배달정보 확인(주문상점
+                                            및 메뉴), 주문관리(결제/취소/환불 포함
+                                        </td>
+                                        <td><strong>서비스 제공완료 후 파기 또는 관련법령에 따른 기간까지</strong></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                        </ol>
+                        개인정보 제3자 제공 동의를 거부할 권리가 있으나, 다만 동의 거부시 주문 및 배달서비스 이용이 제한될 수 있습니다.
+                    </div>
+                </section>
+                <section class="sectionFull">
+                    <fieldset class="setFull">
+                        <button class="btnFull bgMain">확인</button>
+                    </fieldset>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="popUp hidden" id="geekMoneyPay"><!--긱머니결제시립 결제적립 팝업  -->
+        <div class="popCenter">
+            <div class="popBg">
+                <section class="sectionText">
+                    주문완료!<br />
+                    주문 상황은 주문내역에서 확인할 수 있어요
+                </section>
+                <section class="sectionGivePoint">
+                    <div class="howMuch">긱머니 결제적립 180P</div>
+                    <div class="periodOfUse">적립 : 2023년 05월 25일(목) 12:48<br />
+                        소멸 : 2023년 05월 31일(수) 23:59</div>
+                </section>
+                <section class="sectionFull">
+                    <fieldset class="setFull">
+                        <button class="btnFull bgMain">확인</button>
+                    </fieldset>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="popUp hidden" id="adultYourself"><!--주류 본인수령 팝업  -->
+        <div class="popCenter">
+            <div class="popBg">
+                <section class="sectionText">
+                    주류가 포함된 주문은 반드시 연령확인이 완료된<br />
+                    주문자 본인이 수령해야 합니다
+                </section>
+                <section class="sectionAdultTerms">청소년보호법 제 28조에 따라 성인 여부 확인이 필요해요</section>
+                <section class="sectionHalf">
+                    <fieldset class="setHalf">
+                        <button class="btnHalf borderMain fontMain">취소</button>
+                    </fieldset>
+                    <fieldset class="setHalf">
+                        <button class="btnHalf bgMain">동의 후 결제</button>
+                    </fieldset>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+<div id="toastLayer">
+    <div class="toast" id="toast">주문이 완료됐어요</div>
+</div>
+</body>
+</html>

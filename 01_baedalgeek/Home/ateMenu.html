@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>내가 먹은 메뉴</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/location.css">
+    <!-- 페이지별 css 파일 링크 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/home.css">
+</head>
+<body>
+<main id="ateMenu">
+    <header>
+        <a href="#" class="linkBack">
+            <svg viewBox="0 0 20 20" class="iconBack">
+                <g>
+                    <rect width="20" height="20"/>
+                    <path d="m8.66,4.34l-5.66,5.66,5.66,5.66"/>
+                    <line x1="3" y1="10" x2="17" y2="10"/>
+                </g>
+            </svg>
+        </a>
+        <h1>내가 먹은 메뉴</h1>
+    </header>
+    <div class="bgContent bgWhite">
+        <div class="areaWebCopy">
+            <div class="copy">배달의 발견, 일상의 변화.</div>
+            <div class="logo"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/textBDG.png" alt="배달긱"></div>
+            <ul class="ulAdvantage">
+                <li class="liAdvantage">배달비 0원</li>
+                <li class="liAdvantage">최소주문금액 0원</li>
+                <li class="liAdvantage">AI 루트시스템 친환경 ESG배달</li>
+                <li class="liAdvantage">비대면 안심배달</li>
+                <li class="liAdvantage">사전예약정시도착</li>
+            </ul>
+            <div class="areaStore">
+                <div class="textStore">앱 다운로드</div>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webAppstore.svg">
+                </a>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webGooglestore.svg">
+                </a>
+            </div>
+        </div>
+        <section class="sectionPageInfo">
+            <div class="subPageInfo">오늘 한끼도 배달긱에서</div>
+            <div class="pageInfo">
+                <span class="nickname">오늘이</span>님의 히스토리
+                <fieldset class="setTooltip">
+                    <span class="blind">히스토리란?</span>
+                    <button class="btnTooltip">
+                        <svg viewBox="0 0 16 16" class="iconTooltip">
+                            <g>
+                                <rect width="16" height="16"/>
+                                <path d="m8,0C3.58,0,0,3.58,0,8s3.58,8,8,8,8-3.58,8-8C15.99,3.59,12.41.01,8,0Zm-.08,13.28c-.62,0-1.12-.5-1.12-1.12,0-.62.5-1.12,1.12-1.12s1.12.5,1.12,1.12h0c.01.6-.46,1.11-1.07,1.12-.02,0-.04,0-.05,0Zm2.16-6.24l-.88.96c-.2.18-.32.45-.32.72,0,.53-.43.95-.96.96-.51.02-.94-.38-.96-.89,0-.02,0-.05,0-.07-.02-.55.21-1.09.64-1.44l.72-.88c.31-.3.51-.69.56-1.12.02-.46-.33-.86-.8-.88-.03,0-.06,0-.08,0-.45-.02-.85.28-.96.72-.19.36-.56.57-.96.56-.46.02-.86-.33-.88-.8,0-.03,0-.06,0-.08,0-.14.02-.27.08-.4.43-1.1,1.54-1.79,2.72-1.68,1.43-.11,2.68.95,2.79,2.38,0,.06,0,.12,0,.18-.01.66-.27,1.28-.72,1.76Z"/>
+                            </g>
+                        </svg>
+                    </button>
+                    <div class="tooltip"><!-- 툴팁버튼 클릭시 툴팁 노출 -->
+                        <div class="contentTooltip">
+                            최근 6개월 이내 주문했던<br />
+                            메뉴를 볼 수 있어요
+                        </div>
+                        <img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/triangleTooltip.png" class="triangleTooltip" />
+                    </div>
+                </fieldset>
+            </div>
+        </section>
+        <section class="sectionAteMenu">
+            <div class="areaAteMenu">
+                <ul class="ulAteMenu">
+                    <li class="liAteMenu">
+                        <a href="#" class="linkMenu">
+                            <div class="menuPhoto">
+                                <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_1070.jpg" />
+                            </div>
+                            <div class="menuInfo">
+                                <div class="name">돈가스도시락</div>
+                                <div class="price">8,100원</div>
+                            </div>
+                            <div class="menuHistory">1일전</div>
+                        </a>
+                    </li>
+                    <li class="liAteMenu">
+                        <a href="#" class="linkMenu">
+                            <div class="menuPhoto">
+                                <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_4060.jpg" />
+                            </div>
+                            <div class="menuInfo">
+                                <div class="name">마라탕</div>
+                                <div class="price">
+                                    <div class="percent">10%</div>
+                                    <div class="discount">13,100원</div>
+                                </div>
+                            </div>
+                            <div class="menuHistory">1일전</div>
+                        </a>
+                    </li>
+                    <li class="liAteMenu">
+                        <a href="#" class="linkMenu">
+                            <div class="menuPhoto">
+                                <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_45658.jpeg" />
+                            </div>
+                            <div class="menuInfo">
+                                <div class="name">오레오 컵스테라</div>
+                                <div class="price">3,900원</div>
+                            </div>
+                            <div class="menuHistory">2주전</div>
+                        </a>
+                    </li>
+                    <li class="liAteMenu">
+                        <a href="#" class="linkMenu">
+                            <div class="menuPhoto">
+                                <img src="https://s3.ap-northeast-2.amazonaws.com/geekapp/food_23859.jpeg" />
+                            </div>
+                            <div class="menuInfo">
+                                <div class="name">모둠국밥</div>
+                                <div class="price">
+                                    <div class="percent">10%</div>
+                                    <div class="discount">9,500원</div>
+                                </div>
+                            </div>
+                            <div class="menuHistory">1달전</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</main>
+</body>
+</html>

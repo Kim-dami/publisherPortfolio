@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>긱머니 충전</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/location.css">
+    <!-- 페이지별 css 파일 링크 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/geekmoney.css">
+</head>
+<body>
+<main id="geekmoneyCharge">
+    <header>
+        <a href="#" class="linkBack">
+            <svg viewBox="0 0 20 20" class="iconBack">
+                <g>
+                    <rect width="20" height="20"/>
+                    <path d="m8.66,4.34l-5.66,5.66,5.66,5.66"/>
+                    <line x1="3" y1="10" x2="17" y2="10"/>
+                </g>
+            </svg>
+        </a>
+        <h1>긱머니 충전</h1>
+    </header>
+    <div class="bgContent bgGray">
+        <div class="areaWebCopy">
+            <div class="copy">배달의 발견, 일상의 변화.</div>
+            <div class="logo"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/textBDG.png" alt="배달긱"></div>
+            <ul class="ulAdvantage">
+                <li class="liAdvantage">배달비 0원</li>
+                <li class="liAdvantage">최소주문금액 0원</li>
+                <li class="liAdvantage">AI 루트시스템 친환경 ESG배달</li>
+                <li class="liAdvantage">비대면 안심배달</li>
+                <li class="liAdvantage">사전예약정시도착</li>
+            </ul>
+            <div class="areaStore">
+                <div class="textStore">앱 다운로드</div>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webAppstore.svg">
+                </a>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webGooglestore.svg">
+                </a>
+            </div>
+        </div>
+        <section class="sectionMyGeekmoney">
+            <div class="subTitle">마이긱머니</div>
+            0G
+        </section>
+        <section class="sectionHowCharge">
+            <h3>충전수단</h3>
+            <div class="areaHowCharge">
+                <fieldset class="setRow">
+                    <input type="radio" name="howCharge" class="inputRow" id="howCharge-1" checked />
+                    <label for="howCharge-1" class="labelRow">
+                        <svg viewBox="0 0 20 20" class="iconTwoCircles">
+                            <g>
+                                <rect width="20" height="20"/>
+                                <path d="m10,1c4.96,0,9,4.04,9,9s-4.04,9-9,9S1,14.96,1,10,5.04,1,10,1m0-1C4.48,0,0,4.48,0,10s4.48,10,10,10,10-4.48,10-10S15.52,0,10,0h0Z"/>
+                                <circle cx="10" cy="10" r="5"/>
+                            </g>
+                        </svg>
+                        가상계좌
+                    </label>
+                </fieldset>
+                <fieldset class="setRow">
+                    <input type="radio" name="howCharge" class="inputRow" id="howCharge-2" disabled />
+                    <label for="howCharge-2" class="labelRow">
+                        <svg viewBox="0 0 20 20" class="iconTwoCircles">
+                            <g>
+                                <rect width="20" height="20"/>
+                                <circle cx="10" cy="10" r="10"/>
+                            </g>
+                        </svg>
+                        카드
+                    </label>
+                </fieldset>
+                <fieldset class="setRow">
+                    <input type="radio" name="howCharge" class="inputRow" id="howCharge-3" disabled />
+                    <label for="howCharge-3" class="labelRow">
+                        <svg viewBox="0 0 20 20" class="iconTwoCircles">
+                            <g>
+                                <rect width="20" height="20"/>
+                                <circle cx="10" cy="10" r="10"/>
+                            </g>
+                        </svg>
+                        핸드폰
+                    </label>
+                </fieldset>
+            </div>
+        </section>
+        <section class="sectionHowMuch">
+            <h3>충전금액<span class="bonusPoint">보너스 포인트 1% 적립!</span></h3>
+            <div class="areaHowMuch">
+                <fieldset class="setHowMuch">
+                    <input type="radio" name="howMuch" class="inputHowMuch" id="howMuch-1" />
+                    <label for="howMuch-1" class="labelHowMuch">5만원</label>
+                </fieldset>
+                <fieldset class="setHowMuch">
+                    <input type="radio" name="howMuch" class="inputHowMuch" id="howMuch-2" checked />
+                    <label for="howMuch-2" class="labelHowMuch">10만원</label>
+                </fieldset>
+                <fieldset class="setHowMuch">
+                    <input type="radio" name="howMuch" class="inputHowMuch" id="howMuch-3" />
+                    <label for="howMuch-3" class="labelHowMuch">15만원</label>
+                </fieldset>
+                <fieldset class="setHowMuch">
+                    <input type="radio" name="howMuch" class="inputHowMuch" id="howMuch-4" />
+                    <label for="howMuch-4" class="labelHowMuch">20만원</label>
+                </fieldset>
+            </div>
+            <div class="areaPayment">
+                <dl class="dlPayment">
+                    <dt class="dtPayment">충전 후 예상 총 긱머니</dt>
+                    <dd class="ddPayment">100,000원</dd>
+                </dl>
+                <dl class="dlPayment">
+                    <dt class="dtPayment">보너스 포인트</dt>
+                    <dd class="ddPayment">1,000원</dd>
+                </dl>
+            </div>
+        </section>
+        <section class="sectionTerms">
+            <fieldset class="setTerms">
+                <button class="btnTerms">상품 주의사항</button>
+                <button class="btnTerms">개인정보 제3자 제공</button>
+            </fieldset>
+            <div class="noticeTerms">
+                <fieldset class="setRow">
+                    <input type="checkbox" class="inputRow" id="agree" checked="checked"/>
+                    <label for="agree" class="labelRow">
+                        <svg viewBox="0 0 16 16" class="iconRadius">
+                            <g>
+                                <rect width="16" height="16"/>
+                                <rect class="checkbox" x="1" y="1" width="14" height="14" rx="5" ry="5"/>
+                                <path class="check" d="m4.46,7.21l2.83,2.83,4.21-4.28"/>
+                            </g>
+                        </svg>
+                        위 내용을 확인했으며 결제에 동의합니다
+                    </label>
+                </fieldset>
+            </div>
+        </section>
+        <section class="sectionDeposit hidden">
+            <div class="areaDeadline">
+                07.16(일) 09:00까지 입금을 완료해주세요<br />
+                <span class="noticeDeadline">기한 내 미입금 시 긱머니 신청 자동취소</span>
+            </div>
+            <div class="areaDeposit">
+                <dl class="dlDeposit">
+                    <dt class="dtDeposit">은&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;행</dt>
+                    <dd class="ddDeposit">케이뱅크</dd>
+                </dl>
+                <dl class="dlDeposit">
+                    <dt class="dtDeposit">계좌번호</dt>
+                    <dd class="ddDeposit">
+                        70102005487153
+                        <button class="btnCopy">
+                            <svg viewBox="0 0 16 16" class="iconCopy">
+                                <g>
+                                    <rect width="16" height="16"/>
+                                    <path d="m11.32,0H2.47c-.81,0-1.47.65-1.47,1.45v10.18h1.47V1.46h8.84V0Zm2.21,2.91H5.42c-.81,0-1.47.65-1.47,1.45v10.18c0,.81.67,1.46,1.47,1.45h8.1c.81,0,1.47-.65,1.47-1.45V4.36c0-.81-.67-1.46-1.47-1.45h0Zm0,11.64H5.42V4.36h8.1v10.18Z"/>
+                                </g>
+                            </svg>
+                            복사
+                        </button>
+                    </dd>
+                </dl>
+                <dl class="dlDeposit">
+                    <dt class="dtDeposit">예&nbsp;&nbsp;금&nbsp;&nbsp;주</dt>
+                    <dd class="ddDeposit">(주)클라우드스톤</dd>
+                </dl>
+                <dl class="dlDeposit">
+                    <dt class="dtDeposit">신청금액</dt>
+                    <dd class="ddDeposit">
+                        50,000원
+                        <span class="bonusPoint">+ 250P 적립</span>
+                    </dd>
+                </dl>
+            </div>
+            <ul class="ulNoticeDeposit">
+                <li class="liNoticeDeposit"><span class="dash">-</span>가상계좌로 금액이 정확하면 입금자명이 다르더라도 입금 확인 가능</li>
+                <li class="liNoticeDeposit"><span class="dash">-</span>입금 유효 기간 내 미입금시 긱머니 충전신청은 자동 취소됨</li>
+                <li class="liNoticeDeposit"><span class="dash">-</span>입금 완료시 입금 확인 및 긱머니 충전완료 메시지가 1~5분 이내 발송됨</li>
+                <li class="liNoticeDeposit"><span class="dash">-</span>카톡/문자/푸시로 긱머니 충전완료 메시지를 수신 받지 못한 경우, 고객센터로 문의 바람</li>
+            </ul>
+        </section>
+    </div>
+    <div id="bottomFix">
+        <section class="sectionFull">
+            <fieldset class="setFull">
+                <button class="btnFull bgMain">주문하기</button>
+            </fieldset>
+        </section>
+    </div>
+</main>
+</body>
+</html>

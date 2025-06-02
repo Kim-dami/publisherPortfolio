@@ -1,0 +1,216 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : review
+	설　명 : 리뷰리스트 및 리뷰쓰기
+---------------------------------------------*/
+/* 공통UI */
+.sectionRating .ulStar{position: relative; width: 133px;}
+.sectionRating .ulStar:after{content: ""; display: block; clear: both;}
+.sectionRating .ulStar .liStar{float: left; position: relative; width: 25px; height: 25px; margin-right: 2px; background-color: #E8E8E8; -webkit-mask-image: url("/assets/img/maskStar.svg"); -webkit-mask-repeat: no-repeat; -webkit-mask-size: 25px 25px; mask-image: url("/assets/img/maskStar.svg"); mask-repeat: no-repeat; mask-size: 25px 25px;}
+.sectionRating .ulStar .liStar:last-of-type{margin-right: 0;}
+.sectionRating .ulStar .star{position: absolute; top: 0; bottom: 0; left: 0; height: 100%; background-color: #FFC611;}
+
+.ulReview{position: relative; width: 100%; height: auto; padding: 20px; box-sizing: border-box;}
+.ulReview .liReview{position: relative; width: 100%; height: auto; margin-bottom: 15px; padding: 22px 15px; background-color: #FFFFFF; border: 1px solid #EAEAEA; border-radius: 5px; box-sizing: border-box; box-shadow: 0 1px 4px rgba(0,0,0,12%);}
+.ulReview .liReview:last-of-type{margin-bottom: 0;}
+.ulReview .areaScore{position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 15px;}
+.ulReview .iconStar{width: 18px; height: 18px;}
+.ulReview .iconStar rect{fill: none;}
+.ulReview .iconStar path{fill: #F5CC1F;}
+.ulReview .score{margin-left: 5px; margin-right: 15px; line-height: 18px; color: #131313; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.5px;}
+.ulReview .detailScore{color: #505050; font-size: 0.875rem;}
+.ulReview .detailScore .detail{margin-right: 7px; font-size: inherit;}
+.ulReview .detailScore .detail:last-of-type{margin-right: 0;}
+.ulReview .btnReport{position: absolute; top: 22px; right: 22px; line-height: 18px; border: none; background-color: transparent; color: #A0A0A0; font-size: 0.75rem;}
+.ulReview .areaUser{position: relative; width: 100%; height: auto;  margin-bottom: 10px;}
+.ulReview .areaUser:after{content: ""; display: block; clear: both;}
+.ulReview .userName{float: left; position: relative; line-height: 0.875rem; padding-right: 8px; font-size: 0.875rem; word-break: break-all;}
+.ulReview .userName:after{content: ""; position: absolute; top: 50%; right: 0; width: 1px; height: 8px; margin-top: -4px; background-color: #DADADA;}
+.ulReview .dateReview{float: left; line-height: 0.875rem; padding-left: 7px; color: #A0A0A0; font-size: 0.75rem;}
+.ulReview .ulOrder{position: relative; width: 100%; height: auto; padding-bottom: 15px; border-bottom: 1px solid #EAEAEA;}
+.ulReview .liOrder{position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start; width: 100%; height: auto; line-height: 1rem; margin-bottom: 3px;}
+.ulReview .liOrder:last-of-type{margin-bottom: 0;}
+.ulReview .titleOrder{flex-shrink: 0; width: 55px; color: #A0A0A0; font-size: 0.75rem;}
+.ulReview .bodyOrder{color: #A0A0A0; font-size: 0.75rem;}
+.ulReview .textReview{line-height: 1.375rem; margin-top: 15px;}
+.ulReview .ulPhoto{position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start; width: 100%; height: auto; margin-top: 15px;}
+.ulReview .liPhoto{width: 90px; height: 90px; margin-right: 10px; overflow: hidden;}
+.ulReview .liPhoto img{display: block; width: 100%; height: 100%; object-fit: cover;}
+.ulReview .areaReviewBtn{position: relative; width: 100%; height: auto; margin-top: 15px;}
+.ulReview .textLike{height: 32px; line-height: 32px; color: #A0A0A0; font-size: 0.75rem;}
+.ulReview .btnLike{position: absolute; top: 0; right: 0; width: 70px; height: 32px; line-height: 32px; padding-right: 3px; border-radius: 20px; background-color: #F5F5F5; color: #505050; font-size: 0.75rem; font-weight: 700; text-align: center;}
+.ulReview .iconLike{width: 16px; height: 16px; vertical-align: top; margin: 7px 3px 0 0;}
+.ulReview .iconLike rect{fill: none;}
+.ulReview .iconLike .fill{fill: #FFFFFF;}
+.ulReview .iconLike .stroke{fill: #DADADA;}
+.ulReview .btnLike.like{background-color: #0F1838; color: #FFFFFF;}
+.ulReview .btnLike.like .iconLike{width: 13px; height: 13px; margin-top: 9px;}
+.ulReview .btnLike.like .fill{fill: #FFFFFF}
+.ulReview .btnLike.like .stroke{fill: transparent}
+.ulReview .areaReply{width:100%; height: auto; margin-top: 15px; padding: 12px 15px 12px 12px; box-sizing: border-box; background: #EAEAEA;}
+.ulReview .partnerReply{line-height: 14px; margin-bottom: 7px; font-size: 0.875rem;}
+.ulReview .iconReply{display: inline-block; vertical-align: top; width: 8px; height: 8px; margin-right: 2px;}
+.ulReview .iconReply .cls-1{fill: #707070;}
+.ulReview .textReply{line-height: 1.25rem; padding-left:15px; box-sizing: border-box; color: #707070; font-size: 0.875rem;}
+
+/* 상점 리뷰 */
+#storeReview {padding-top: 50px;}
+#storeReview .sectionRating{position: relative; width: 100%; margin-bottom: 5px; background-color: #FFFFFF;}
+#storeReview .sectionRating .leftRating{position: absolute; top: 37px; left: 20px; width: 133px;}
+#storeReview .sectionRating .leftRating .textRating{width: 100%; height: auto; line-height: 1.5rem; margin-bottom: 3px; text-align: center;}
+#storeReview .sectionRating .leftRating .title{margin-right: 15px; color: #131313; font-size: 1.125rem;}
+#storeReview .sectionRating .leftRating .score{color: #131313; font-size: 1.675rem; font-weight: 700;}
+#storeReview .sectionRating .rightRating{position: relative; padding: 30px 20px 30px 180px; box-sizing: border-box;}
+#storeReview .sectionRating .rightRating .textDetailRating{width: 100%; height: auto; margin-bottom: 10px;}
+#storeReview .sectionRating .rightRating .textDetailRating:last-of-type{margin-bottom: 0;}
+#storeReview .sectionRating .rightRating .title{display: inline-block; vertical-align: top; width: 50px; line-height: 1.125rem; font-size: 0.875rem; text-align: center;}
+#storeReview .sectionRating .rightRating .score{display: inline-block; vertical-align: top; width: 35px; line-height: 1.125rem; padding-left: 10px; font-size: 1.125rem; font-weight: 700; text-align: center;}
+#storeReview .sectionRating .rightRating .unit{display: inline-block; vertical-align: top; width: 25px; line-height: 1.125rem; font-size: 0.875rem; text-align: center;}
+
+#storeReview .sectionPhotoCollect{position: relative; width: 100%; margin-bottom: 5px; background-color: #FFFFFF;}
+#storeReview .sectionPhotoCollect .titlePhotoCollect{clear: both; position: relative; width: 100%; height: auto; line-height: 1rem; padding: 25px 20px 20px 20px; box-sizing: border-box; background-color: #FFFFFF; color: #131313; font-weight: 600;}
+#storeReview .sectionPhotoCollect .titlePhotoCollect .number{font-size: 0.875rem; color: #A0A0A0;}
+#storeReview .sectionPhotoCollect .ulPhotoCollect{position: relative; width: 100%; height: auto; padding: 0 20px 25px 20px; box-sizing: border-box;}
+#storeReview .sectionPhotoCollect .ulPhotoCollect:after{content: ""; display: block; clear: both;}
+#storeReview .sectionPhotoCollect .liPhotoCollect{float: left; position: relative; width: 20%; height: 0; padding-bottom: 18%; overflow: hidden;}
+#storeReview .sectionPhotoCollect .linkPhotoCollect{position: absolute; top: 0; right: 3px; bottom: 0; left: 3px; border-radius: 5px; overflow: hidden;}
+#storeReview .sectionPhotoCollect .linkPhotoCollect img{width: 100%; height: 100%; object-fit: cover;}
+#storeReview .sectionPhotoCollect .photoNumber{position: absolute; right: 0; bottom: 0; z-index: 10; width: 20px; height: 20px; line-height: 20px; border-radius: 0 0 5px 0; background-color: rgba(0,0,0,0.5); color: #FFFFFF; font-size: 0.75rem; font-weight: 700; text-align: center;}
+#storeReview .sectionPhotoCollect .lastMore{background-color: #000000;}
+#storeReview .sectionPhotoCollect .lastMore img{opacity: 0.5;}
+#storeReview .sectionPhotoCollect .textLastMore{position: absolute; top: 50%; left: 0; right: 0; z-index: 10; width: 100%; line-height: 1.2; margin-top: -14px; color: #FFFFFF; font-size: 0.75rem; text-align: center; }
+
+#storeReview .sectionReview{position: relative; width: 100%; height: auto;}
+#storeReview .sectionReview .areaTotal{clear: both; position: relative; width: 100%; height: auto; line-height: 30px; padding: 15px 20px; border-bottom: 1px solid #EAEAEA; box-sizing: border-box; background-color: #FFFFFF; color: #131313; font-weight: 600;}
+#storeReview .sectionReview .areaTotal .textRight{position: absolute; top: 15px; right: 20px; height: 30px; line-height: 30px; color: #505050; font-size: 0.875rem; font-weight: 500;}
+#storeReview .sectionReview .areaTotal .textRight .iconUnfold{margin-top: 5px;}
+#storeReview .sectionReview .areaTotal .selectSort{position: absolute; top: 15px; right: 20px; z-index: 10; width: 100px; height: 30px; opacity: 0;}
+
+/* 리뷰사진 확대보기 */
+#reviewPhotoZoom{background-color: #000000;}
+#reviewPhotoZoom .sectionReviewPhoto{position: fixed; top: 0; bottom: 0; width: 100%; overflow: hidden;}
+@media screen and (min-width: 480px) {
+    #reviewPhotoZoom .sectionReviewPhoto{width: 480px;}
+}
+#reviewPhotoZoom .ulReviewPhoto{position: relative; width: 100%; height: 100%;}
+#reviewPhotoZoom .liReviewPhoto{position: relative; display: flex; justify-content: center; width: 100%; height: auto;}
+#reviewPhotoZoom .liReviewPhoto img{display: block; width: 100%; height: 100%; object-fit: contain; object-position: center center;}
+#reviewPhotoZoom .paginationReviewPhoto{left: unset; top: 0; bottom: unset; width: 100%; height: 50px; line-height: 50px; background-color: #000000; color: #FFFFFF; font-size: 1rem; font-weight: 700; text-align: center;}
+#reviewPhotoZoom .paginationReviewPhoto span{color: inherit; font-size: inherit; font-weight: inherit;}
+#reviewPhotoZoom .btnPopClose{position: absolute; top: 0; left: 0; z-index: 10; width: 50px; height: 50px; line-height: 50px; text-align: center;}
+#reviewPhotoZoom .btnPopClose .iconDelete{width: 20px; height: 20px; vertical-align: top; margin-top: 15px;}
+#reviewPhotoZoom .btnPopClose .iconDelete rect{fill: none;}
+#reviewPhotoZoom .btnPopClose .iconDelete line{stroke: #FFFFFF; stroke-linecap: round; stroke-miterlimit: 4; stroke-width: 2px;}
+
+/* 리뷰 신고팝업 */
+#reviewReport .sectionText{padding: 0 20px 22px 20px; text-align: left;}
+#reviewReport .sectionText .areaReportNotice{margin-top: 3px; color: #A0A0A0; font-size: 0.75rem; letter-spacing: -0.5px; word-break: keep-all;}
+#reviewReport .sectionRow{padding: 0 20px 22px 20px;}
+
+/* 내 리뷰 */
+#myReview .popBg{padding-bottom: 66px;}
+#myReview .ulReview{padding: 0; max-height: 450px; overflow-y: auto;}
+#myReview .ulReview .liReview{padding-top: 26px;}
+#myReview .ulReview .btnEdit{position: absolute; top: 20px; right: 15px; width: 70px; height: 32px; line-height: 30px; padding-right: 3px; border-radius: 20px; border-width: 1px; font-size: 0.875rem; font-weight: 700; text-align: center;}
+#myReview .ulReview .areaUser .dateReview{padding-left: 0;}
+#myReview .sectionFull{position: absolute; right: 0; bottom: 0; left: 0;}
+
+/* 리뷰 쓰기 */
+#writeReview {padding-top: 50px; padding-bottom: 70px;}
+#writeReview .bgContent{padding-bottom: 70px;}
+#writeReview .sectionMenu{position: relative; height: auto; margin: 0 20px; padding: 30px 0 30px 130px; border-bottom: 1px dashed #E5E5E5; box-sizing: border-box;}
+#writeReview .sectionMenu .photoMenu{position: absolute; top: 50%; left: 0; width: 120px; height: 72px; margin-top: -36px; border-radius: 5px; background-color: #FFFFFF; overflow: hidden;}
+#writeReview .sectionMenu .photoMenu img{width:100%; height:100%; object-fit: cover;}
+#writeReview .sectionMenu .nameStore{line-height: 1.25rem; margin-bottom: 5px; padding-top: 13px; color: #131313; font-weight: 700;}
+#writeReview .sectionMenu .nameMenu{line-height: 1.25rem; padding-bottom: 13px; color: #131313;}
+
+#writeReview .sectionRating{position: relative; z-index: 10; height: auto; margin: 0 20px; padding: 30px 0; border-bottom: 1px dashed #E5E5E5; box-sizing: border-box;}
+#writeReview .sectionRating h3{margin-bottom: 22px;}
+#writeReview .sectionRating .areaStar{position: relative; width: 100%; height: auto; margin-bottom: 15px;}
+#writeReview .sectionRating .areaStar:last-of-type{margin-bottom: 0;}
+#writeReview .sectionRating .areaStar:after{content: ""; display: block; clear: both;}
+#writeReview .sectionRating .titleStar{float: left; width: 65px; line-height: 25px;}
+#writeReview .sectionRating .setTooltip{position: relative; width: 100%; height: 100%;}
+#writeReview .sectionRating .btnTooltip{display: block; width: 100%; height: 100%; line-height: inherit; padding: 0; border: none; background-color: transparent; text-align: left;}
+#writeReview .sectionRating .iconTooltip{width: 16px; height: 16px; vertical-align: top; margin-top: 5px;}
+#writeReview .sectionRating .iconTooltip rect{fill: none;}
+#writeReview .sectionRating .iconTooltip path{fill: #EAEAEA;}
+#writeReview .sectionRating .tooltip{position: absolute; bottom: -120px; left: 10px; z-index: 10;}
+#writeReview .sectionRating .contentTooltip{position: relative; line-height: 1rem; padding: 15px; border-radius: 5px; background-color: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,12%); font-size: 0.75rem;}
+#writeReview .sectionRating .triangleTooltip{position: absolute; z-index: -1; left: 4px; top: -18px;}
+#writeReview .sectionRating .ulStar{float: left;}
+#writeReview .sectionRating .reaction{float: left; line-height: 25px; margin-left: 10px; font-size: 0.75rem;}
+
+#writeReview .sectionWrite{position: relative; width: 100%; height: auto; padding: 25px 20px; box-sizing: border-box;}
+#writeReview .sectionWrite .textareaReview{display: block; width:100%; height: 120px; line-height: 1.25rem; margin-bottom: 10px; border: none; box-sizing: border-box; background: #FFFFFF; color: #505050; font-size: 0.875rem; outline: none; resize: none;}
+#writeReview .sectionWrite .areaCount{width: 100%; height: auto; margin-bottom: 22px; padding-right: 5px; box-sizing: border-box; color: #A0A0A0; font-size: 0.875rem; text-align: right;}
+#writeReview .sectionWrite .areaCount .fontMain{font-size: inherit; font-weight: 600;}
+#writeReview .sectionWrite .setReviewPhoto{width: 100%; height: auto; margin-bottom: 15px;}
+#writeReview .sectionWrite .btnReviewPhoto{display: block; width: 100%; height: 47px; line-height: 45px; border: 1px solid #E5E5E5; border-radius: 5px; text-align: center;}
+#writeReview .sectionWrite .iconReviewPhoto{width: 20px; height: 20px; margin-top: 12px; margin-right: 5px; vertical-align: top;}
+#writeReview .sectionWrite .iconReviewPhoto rect{fill: none;}
+#writeReview .sectionWrite .iconReviewPhoto path{fill: #0F1838;}
+#writeReview .sectionWrite .iconReviewPhoto line{stroke: #FFFFFF; stroke-linecap: round;}
+#writeReview .sectionWrite .iconReviewPhoto circle{stroke: #FFFFFF; stroke-linecap: round;}
+#writeReview .sectionWrite .ulPhoto{position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start; width: 100%; height: auto;}
+#writeReview .sectionWrite .liPhoto{position: relative; width: 90px; height: 90px; margin-right: 15px; overflow: hidden;}
+#writeReview .sectionWrite .liPhoto:last-of-type{margin-right: 0;}
+#writeReview .sectionWrite .liPhoto img{display: block; width: 100%; height: 100%; object-fit: cover;}
+#writeReview .sectionWrite .setDelete{position: absolute; top: 0; right: 0; z-index: 20;}
+#writeReview .sectionWrite .btnDelete{display: block; padding: 0 0 10px 10px;}
+#writeReview .sectionWrite .iconDelete{width: 20px; height: 20px; vertical-align: top;}
+#writeReview .sectionWrite .iconDelete rect{fill: rgba(0,0,0,0.6);}
+#writeReview .sectionWrite .iconDelete line{stroke: #FFFFFF; stroke-linecap: round; stroke-miterlimit: 4; stroke-width: 1px;}
+#writeReview .sectionWrite .areaReviewNotice{width: 100%; height: auto; line-height: 1rem; margin-top: 22px; color: #A0A0A0; font-size: 0.75rem; letter-spacing: -0.5px; word-break: keep-all;}
+
+/* 사진리뷰 모아보기 */
+#photoCollect {padding-top: 50px;}
+#photoCollect .sectionPhotoCollect{position: relative; width: 100%;}
+#photoCollect .sectionPhotoCollect .ulPhotoCollect{position: relative; width: 100%; height: auto; padding: 5px; box-sizing: border-box;}
+#photoCollect .sectionPhotoCollect .ulPhotoCollect:after{content: ""; display: block; clear: both;}
+#photoCollect .sectionPhotoCollect .liPhotoCollect{float: left; position: relative; width: 33.33%; height: 0; padding-bottom: 33.33%; overflow: hidden;}
+#photoCollect .sectionPhotoCollect .linkPhotoCollect{position: absolute; top: 5px; right: 5px; bottom: 5px; left: 5px; overflow: hidden;}
+#photoCollect .sectionPhotoCollect .linkPhotoCollect img{width: 100%; height: 100%; object-fit: cover;}
+#photoCollect .sectionPhotoCollect .linkPhotoCollect .photoNumber{position: absolute; right: 0; bottom: 0; z-index: 10; width: 25px; height: 25px; line-height: 25px; background-color: rgba(0,0,0,0.5); color: #FFFFFF; font-size: 0.875rem; font-weight: 700; text-align: center;}
+
+/* 사진리뷰 스와이프 */
+#reviewPhotoCollect{background: transparent; z-index: 2000;}
+#reviewPhotoCollect .headerReviewPhoto .allNumber{color: #909090; font-size: inherit; font-weight: 500;}
+#reviewPhotoCollect .btnPopClose{position: absolute; top: 0; left: 0; z-index: 10; width: 50px; height: 50px; line-height: 50px; text-align: center;}
+#reviewPhotoCollect .btnPopClose .iconDelete{width: 20px; height: 20px; vertical-align: top; margin-top: 15px;}
+#reviewPhotoCollect .btnPopClose .iconDelete rect{fill: none;}
+#reviewPhotoCollect .btnPopClose .iconDelete line{stroke: #505050; stroke-linecap: round; stroke-miterlimit: 4; stroke-width: 2px;}
+#reviewPhotoCollect .swiperPhotoReviews{position: fixed; top: 50px; right: 0; bottom: 0; left: 0; background: #F5F5F5; overflow-y: auto; overflow-x: hidden;}
+@media screen and (min-width: 480px) {
+    #reviewPhotoCollect .sectionReviewPhoto{width: 480px; left: unset; right: unset;}
+}
+
+#reviewPhotoCollect .ulReview {height: 100%; padding: 0;}
+#reviewPhotoCollect .ulReview .liReview {margin: 0; padding: 20px 15px; background: transparent; border: none; border-radius: 0; box-shadow: none;}
+#reviewPhotoCollect .ulReview .bgReview {position: relative; width: 100%; height: auto; margin-bottom: 15px; padding: 22px 15px; background-color: #FFFFFF; border: 1px solid #EAEAEA; border-radius: 5px; box-sizing: border-box; box-shadow: 0 1px 4px rgba(0,0,0,12%);}
+#reviewPhotoCollect .ulReview .ulPhoto{flex-direction: column;}
+#reviewPhotoCollect .ulReview .liPhoto{width: 100%; height: auto; margin-top: 15px;}
+#reviewPhotoCollect .ulReview .btnPhotoCollect{width: 100%; height: 50px; line-height: 48px; margin-top: 25px; border: 1px solid #EAEAEA; border-radius: 5px; color: #505050; text-align: center;}
+#reviewPhotoCollect .ulReview .btnPhotoCollect .allNumber{color: #131313; font-weight: 700;}
+#reviewPhotoCollect .ulReview .overflowScrollY {overflow-y: scroll; overflow-x: hidden;}
+
+#reviewPhotoCollect .btnNext,
+#reviewPhotoCollect .btnPrev{position: fixed; top: 50%; z-index: 10; width: 30px; height: 60px; margin-top: -30px; background: rgba(0,0,0,25%);}
+#reviewPhotoCollect .btnNext{right: 0;}
+#reviewPhotoCollect .btnPrev{left: 0;}
+@media screen and (min-width: 480px) {
+    #reviewPhotoCollect .btnNext{left: 50%; margin-left: 210px;}
+    #reviewPhotoCollect .btnPrev{left: 50%; margin-left: -240px;}
+}
+@media screen and (min-width: 1024px) {
+    #reviewPhotoCollect .btnNext{left: 50%; margin-left: 420px;}
+    #reviewPhotoCollect .btnPrev{left: 50%; margin-left: -30px;}
+}
+#reviewPhotoCollect .btnNext:after,
+#reviewPhotoCollect .btnPrev:after{display: none;}
+#reviewPhotoCollect .btnNext svg,
+#reviewPhotoCollect .btnPrev svg {width: 20px; height: 20px;}
+#reviewPhotoCollect .btnNext svg rect,
+#reviewPhotoCollect .btnPrev svg rect {fill: none;}
+#reviewPhotoCollect .btnNext svg path,
+#reviewPhotoCollect .btnPrev svg path {fill: none; stroke: #FFFFFF; stroke-width: 2;}

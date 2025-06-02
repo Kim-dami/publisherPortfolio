@@ -1,0 +1,239 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : store
+	설　명 : 상점 및 메뉴
+---------------------------------------------*/
+
+/* 헤더 스크롤 이벤트 */
+header.default{background: -moz-linear-gradient(top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%); background: -webkit-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%); background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CCCCCC00', endColorstr='#00000000',GradientType=0 ); box-shadow: none;}
+header.scroll{background: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,12%);}
+header.default h1{color: transparent;}
+header.scroll h1{color: #131313;}
+header.default .iconBack path{stroke: #FFFFFF;}
+header.scroll .iconBack path{stroke: #505050;}
+header.default .iconBack line{stroke: #FFFFFF;}
+header.scroll .iconBack line{stroke: #505050;}
+header.default .iconBasket path{fill: #FFFFFF;}
+header.scroll .iconBasket path{fill: #505050;}
+header h1{overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+
+/* 공통 UI */
+.sectionTopImg{position: relative; width: 100%; height: 220px;}
+.sectionTopImg:after{content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: -moz-linear-gradient(top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%); background: -webkit-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%); background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CCCCCC00', endColorstr='#00000000',GradientType=0 );}
+.sectionTopImg img{width: 100%; height: 100%; object-fit: cover;}
+
+.sectionTopInfo{position: relative; width: 100%; height: auto; margin-top: -20px; padding: 30px 20px 20px 20px; border-radius: 20px 20px 0 0; box-sizing: border-box; background-color: #FFFFFF; box-shadow: 0 -1px 4px rgba(0,0,0,12%);}
+
+.sectionNoticeImg{position: relative; width: 100%; height: auto; padding: 10px 20px 15px 20px; box-sizing: border-box; color: #A0A0A0; font-size: 0.75rem; letter-spacing: -0.5px; text-align: center;}
+
+/* 상점 */
+#store.storeDisable{padding-bottom: 70px;}
+#store.storeDisable .bgContent{padding-bottom: 70px;}
+
+#store .sectionTopInfo{padding-bottom: 15px;}
+#store .sectionTopInfo h2{margin-bottom: 10px;}
+#store .sectionTopInfo .areaStoreInfo{margin-bottom: 20px;}
+#store .sectionTopInfo .areaStoreInfo:after{content: ""; display: block; clear: both;}
+#store .sectionTopInfo .linkStoreInfo{line-height: 0.875rem; color: #909090; font-size: 0.875rem; letter-spacing: -0.5px;}
+#store .sectionTopInfo .areaReview{position: relative; width: 100%; height: auto; margin-bottom: 8px;}
+#store .sectionTopInfo .areaReview:after{content: ""; display: block; clear: both;}
+#store .sectionTopInfo .halfReview{width: 50%; box-sizing: border-box;}
+#store .sectionTopInfo .halfReview:first-of-type{float: left; padding-right: 4px;}
+#store .sectionTopInfo .halfReview:last-of-type{float: right; padding-left: 4px;}
+#store .sectionTopInfo .linkReview{display: block; width: 100%; height: 50px; line-height: 48px; border: 1px solid #EAEAEA; box-sizing: border-box; border-radius: 5px; text-align: center;}
+#store .sectionTopInfo .iconStar{vertical-align: top; width: 20px; margin-top: 14px;}
+#store .sectionTopInfo .score{margin-right: 2px; color: #131313; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.5px;}
+#store .sectionTopInfo .review{font-size: 0.875rem; letter-spacing: -0.5px;}
+#store .sectionTopInfo .iconLike{width: 16px; height: 16px; vertical-align: top; margin-top: 16px; margin-right: 2px;}
+#store .sectionTopInfo .iconLike rect{fill: none;}
+#store .sectionTopInfo .iconLike .line{fill: #505050; stroke-width: 0;}
+#store .sectionTopInfo .iconLike .plane{fill: none; stroke-width: 0;}
+#store .sectionTopInfo .iconLike.active .line{fill: #FF5555;}
+#store .sectionTopInfo .iconLike.active .plane{fill: #FF5555;}
+#store .sectionTopInfo .areaPartnerSay{position: relative; width: 100%; height:auto; padding-left: 101px; padding-right: 30px; box-sizing: border-box; background-color: #F5F5F5;}
+#store .sectionTopInfo .areaPartnerSay .titleSay{position: absolute; top: 0; left: 15px; height: 32px; line-height: 32px; font-size: 0.875rem; font-weight: 600;}
+#store .sectionTopInfo .areaPartnerSay .contentSay{width: 100%; height: 32px; line-height: 32px; font-size: 0.86rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+#store .sectionTopInfo .areaPartnerSay .iconMore{position: absolute; top: 50%; right: 10px; margin-top: -10px;}
+
+#store .sectionRewards{position: relative; width: 100%; height: auto; padding: 20px 20px 20px 20px; box-sizing: border-box; background-color: #F8F9FD;}
+#store .sectionRewards .titleRewards{color: #131313; font-weight: 800;}
+#store .sectionRewards .titleRewards .subTitle{margin-top: 5px; color: #505050; font-size: 0.75rem; font-weight: 500;}
+#store .sectionRewards .areaStamp{position: absolute; top: 50%; right: 20px; width: 132px; height: auto; margin-top: -34px; padding-top: 22px; box-sizing: border-box; background: url("https://kim-dami.github.io/carnival/imgStampBook.png") no-repeat top center; background-size: 100%;}
+#store .sectionRewards .areaStamp .ulStamp{width: 100%; padding: 5px 0 6px 0; border: 1px solid #4065f4; border-radius: 0 0 10px 10px; box-sizing: border-box; background-color: #FFFFFF;}
+#store .sectionRewards .areaStamp .ulStamp:after{content: ""; display: block; clear: both;}
+#store .sectionRewards .areaStamp .liStamp{float: left; width: 33.3333%; height: 30px; text-align: center; border-right: 1px dotted #DADADA; box-sizing: border-box;}
+#store .sectionRewards .areaStamp .liStamp img{height: 100%;}
+#store .sectionRewards .bgLoginRewards{position: absolute; top: 0; right: 0; bottom: 0; height: 100%;}
+
+#store .sectionServiceInfo{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding: 22px 20px; box-sizing: border-box; background-color: #FFFFFF; overflow: hidden;}
+#store .sectionServiceInfo .areaLocation{ margin-bottom: 25px;}
+#store .sectionServiceInfo .ulStoreOrder{position: relative; width: 100%; height: auto;}
+#store .sectionServiceInfo .liStoreOrder{position: relative; width: 100%; height: auto; margin-bottom: 15px; padding-left: 100px; box-sizing: border-box;}
+#store .sectionServiceInfo .liStoreOrder:last-of-type{margin-bottom: 7px;}
+#store .sectionServiceInfo .titleStoreOrder{position: absolute; top: 0; left: 0; line-height: 1rem; color: #505050;}
+#store .sectionServiceInfo .contentStoreOrder{position: relative; width: 100%; height: auto; line-height: 1rem; color: #131313;}
+#store .sectionServiceInfo .contentStoreOrder.strong{font-weight: 600;}
+#store .sectionServiceInfo .contentStoreOrder.timer{color: #E3131B; font-weight: 600;}
+#store .sectionServiceInfo .contentStoreOrder .iconTimer{width: 16px; height: 16px; vertical-align: top;}
+#store .sectionServiceInfo .contentStoreOrder .iconTimer rect{fill: none;}
+#store .sectionServiceInfo .contentStoreOrder .iconTimer path{fill: #E3131B;}
+#store .sectionServiceInfo .contentStoreOrder .original{position: relative; display: inline-block; vertical-align: top; width: 60px; margin-right: 5px; color: #A0A0A0; font-weight: 500; text-align: center;}
+#store .sectionServiceInfo .contentStoreOrder .line{position: absolute; top: 50%; left: 0; right: 0; width: 100%; height: 1.5px; background-color: #E3131B;}
+#store .sectionServiceInfo .contentStoreOrder .triangle{position: absolute; top: 50%; right: -10px; width: 0; height: 0; margin-top: -4.5px; border-bottom: 5px solid transparent; border-top: 5px solid transparent; border-left: 6px solid #E3131B; border-right: 6px solid transparent;}
+#store .sectionServiceInfo .contentStoreOrder .discount{display: inline-block; vertical-align: top; color: #131313; font-weight: 500;}
+
+#store .sectionMenuList{position: relative; width: 100%; height: auto; margin-bottom: 5px; background-color: #FFFFFF;}
+#store .sectionMenuList .setMenuGroup{position: relative; width: 100%; height: auto;}
+#store .sectionMenuList .btnMenuGroup{position: relative; display: block; width: 100%; height: 50px; line-height: 20px; padding: 15Px 50px 15px 20px; border-bottom: 1px solid #EAEAEA; box-sizing: border-box; font-size: 1rem; text-align: left;}
+#store .sectionMenuList .btnMenuGroup .numberMenu{margin-left: 3px; color: #A0A0A0; font-size: 0.875rem;}
+#store .sectionMenuList .btnMenuGroup .iconUnfold,
+#store .sectionMenuList .btnMenuGroup .iconFold
+{position: absolute; top: 50%; right: 20px; margin-top: -10px;}
+#store .sectionMenuList .ulMenuList{position: relative; width: 100%; height: auto;}
+#store .sectionMenuList .liMenuList{position: relative; width: 100%; height: auto; border-bottom: 1px solid #EAEAEA;}
+#store .sectionMenuList .linkMenu{position: relative; width: 100%; height: auto; padding: 20px; box-sizing: border-box;}
+#store .sectionMenuList.bestMenu .linkMenu{padding: 20px 130px 20px 20px;}
+#store .sectionMenuList .photoMenu{position: absolute; top: 50%; right: 20px; width: 100px; height: 60px; margin-top: -30px; border: 1px solid #EAEAEA; border-radius: 5px; box-sizing: border-box; overflow: hidden;}
+#store .sectionMenuList .photoMenu img{width:100%; height:100%; object-fit: cover;}
+#store .sectionMenuList .menuSoldOut .photoSoldOut{position: absolute; right: 0; bottom: 0; left: 0; width: 100%; height: 22px; line-height: 22px; border-radius: 0 0 5px 5px; background-color: rgba(0,0,0,0.6); color: #FFFFFF; font-size: 0.75rem; font-weight: 600; text-align: center;}
+#store .sectionMenuList .infoMenu{position: relative; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; width: 100%; height: auto;}
+#store .sectionMenuList .menuSoldOut .infoMenu{opacity: 0.4;}
+#store .sectionMenuList.bestMenu .infoMenu{min-height: 60px;}
+#store .sectionMenuList .infoMenu .name{display: block; line-height: 1rem; margin-bottom: 10px; color: #131313; font-weight: 600;}
+#store .sectionMenuList .infoMenu .badgeAdult{vertical-align: top; margin-left: 5px; width: 16px; height: 16px;}
+#store .sectionMenuList .infoMenu .price{line-height: 0.875rem; color: #505050; font-size: 0.875rem; font-weight: 600; letter-spacing: -0.5px;}
+#store .sectionMenuList .infoMenu .percent{display: inline-block; font-size: 0.875rem;}
+#store .sectionMenuList .infoMenu .discount{display: inline-block; color: #505050; font-size: 0.875rem;}
+#store .sectionMenuList .infoMenu .remain{display: inline-block; position: relative; margin-left: 6px; padding-left: 7px; font-size: 0.875rem; font-weight: 500;}
+#store .sectionMenuList .infoMenu .remain:before{content: ""; position: absolute; top: 50%; left: 0; width: 1px; height: 10px; margin-top: -5px; background-color: #DADADA;}
+#store .sectionMenuList .infoMenu .number{font-size: 0.875rem; font-weight: 700;}
+
+/* 상점정보 */
+#storeInfo {padding-top: 50px;}
+#storeInfo .sectionPartnerSay{line-height: 1.5rem; margin: 15px; padding: 15px; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,12%);}
+#storeInfo .sectionPartnerSay h3{width: 100%; height: 40px; line-height: 40px; margin-bottom: 15px; border-radius: 5px;}
+#storeInfo .sectionPartnerSay .iconSay{width: 20px; height: 20px; vertical-align: top; margin: 10px 5px 0 0;}
+#storeInfo .sectionPartnerSay .iconSay rect{fill: transparent;}
+#storeInfo .sectionPartnerSay .iconSay .say{fill: #ffd62c;}
+#storeInfo .sectionPartnerSay .iconSay .shadow{fill: #f1cc2b;}
+#storeInfo .sectionPartnerSay .iconSay circle{fill: #ffffff;}
+#storeInfo .sectionPartnerSay h3 .textRight{position: absolute; top: 0; right: 0; line-height: 40px; color: #A0A0A0; font-size: 0.75rem; font-weight: 500;}
+#storeInfo .sectionPartnerSay img{width: 100%; margin-bottom: 15px;}
+#storeInfo .sectionStoreInfo{position: relative; width: 100%; margin-bottom: 5px; padding: 0 20px 22px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#storeInfo .sectionStoreInfo:last-of-type{margin-bottom: 0;}
+#storeInfo .sectionStoreInfo h3{padding: 22px 0;}
+#storeInfo .sectionStoreInfo h3 .btnTooltip{display: inline-block; vertical-align: top; height: 16px; padding: 2px 5px 2px 3px;}
+#storeInfo .sectionStoreInfo h3 .iconTooltip {width: 16px; height: 16px; vertical-align: top;}
+#storeInfo .sectionStoreInfo h3 .iconTooltip rect {fill: none;}
+#storeInfo .sectionStoreInfo h3 .iconTooltip path {fill: #EAEAEA;}
+#storeInfo .sectionStoreInfo h3 .tooltip{position: absolute; top: 55px; left: 50px; z-index: 10;}
+#storeInfo .sectionStoreInfo h3 .contentTooltip {position: relative; width: 250px; line-height: 1rem; padding: 10px; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF; color: #505050; box-shadow: 0 1px 4px rgba(0,0,0,12%); text-shadow: none; font-size: 0.75rem; font-weight: 500;}
+#storeInfo .sectionStoreInfo h3 .triangleTooltip {position: absolute; z-index: -1; left: 6px; top: -18px;}
+
+#storeInfo .sectionStoreInfo hr{color: #DADADA;}
+#storeInfo .sectionStoreInfo .ulStoreInfo{position: relative; width: 100%; height: auto; padding: 12px 0;}
+#storeInfo .sectionStoreInfo .liStoreInfo{position: relative; width: 100%; height: auto; padding: 15px 0 15px 110px; box-sizing: border-box;}
+#storeInfo .sectionStoreInfo .liStoreInfo .title{position: absolute; top: 15px; left: 0; line-height: 1.25rem; color: #131313; font-weight: 600;}
+#storeInfo .sectionStoreInfo .liStoreInfo .body{line-height: 1.25rem;}
+#storeInfo .sectionStoreInfo .liStoreInfo .body a{line-height: inherit; border: none; background-color: transparent; color: inherit; font-size: inherit; text-decoration: underline;}
+#storeInfo .sectionStoreInfo .liStoreInfo table{width: 100%;}
+#storeInfo .sectionStoreInfo .liStoreInfo tr{width: 100%; border-bottom: 1px solid #EAEAEA;}
+#storeInfo .sectionStoreInfo .liStoreInfo tr:last-of-type{border-bottom: none;}
+#storeInfo .sectionStoreInfo .liStoreInfo th,
+#storeInfo .sectionStoreInfo .liStoreInfo td{border-right: 1px solid #EAEAEA; font-size: 0.875rem; text-align: center;}
+#storeInfo .sectionStoreInfo .liStoreInfo th:last-of-type,
+#storeInfo .sectionStoreInfo .liStoreInfo td:last-of-type{border-right: none;}
+#storeInfo .sectionStoreInfo .liStoreInfo th{height: 35px; line-height: 35px; background-color: #F5F5F5;}
+#storeInfo .sectionStoreInfo .liStoreInfo td{height: 40px; line-height: 40px;}
+#storeInfo .sectionStoreInfo .infoNone{line-height: inherit; color: #A0A0A0; font-size: inherit; font-weight: 500;}
+#storeInfo .sectionStoreInfo .textOrigin{line-height: 1.25rem; padding: 20px 0; color: #707070; font-size: 0.875rem;}
+
+/* 메뉴상세 */
+#menu{padding-bottom: 130px;}
+#menu .bgContent{padding-bottom: 130px;}
+#menu.menuSoldOut,
+#menu.storeDisable{padding-bottom: 70px;}
+#menu.menuNone{padding-bottom: 0px; padding-top: 50px;}
+#menu.menuSoldOut,
+#menu.storeDisable .bgContent{padding-bottom: 70px;}
+#menu.menuNone{padding-bottom: 0px;}
+#menu .menuPhotoCollect {padding-bottom: 0;}
+#menu .sectionTopInfo .linkMenuStore{width: 100%; line-height: 1rem; margin-bottom: 20px; color: #909090; font-size: 0.875rem; font-weight: 700;}
+#menu .sectionTopInfo .linkMenuStore .iconMore{width: 16px; height: 16px; margin-left: -2px;}
+#menu .sectionTopInfo .linkMenuStore .iconMore path{stroke: #909090; stroke-width: 2px;}
+#menu .sectionTopInfo .reusableInfo{margin-left: 10px; padding: 3px 8px; border-radius: 5vw; background-color: #EAEAEA; font-size: 0.75rem; font-weight: 400; vertical-align: middle;}
+#menu .sectionTopInfo .areaMenuIntro{width: 100%; line-height: 1.28rem; margin-top: 8px;}
+#menu .sectionTopInfo .badgeAdult{vertical-align: top; margin-top: 2px; margin-left: 5px; width: 20px; height: 20px;}
+
+#menu .sectionPhotoCollectMenuSoldOut{margin-bottom: 5px;}
+#menu .sectionTopInfo .menuReviewNone{position: relative; width: 100%; height: 30px; margin-top: 30px; background-color: #F5F5F5;}
+#menu .sectionTopInfo .menuReviewNone img:nth-of-type(1){position: absolute; top: 0; left: 0; bottom: 0; height: 30px;}
+#menu .sectionTopInfo .menuReviewNone img:nth-of-type(2){position: absolute; top: 0; right: 0; bottom: 0; height: 30px;}
+#menu .sectionTopInfo .ulPhotoCollect{position: relative; width: 100%; height: auto; margin-top: 30px;}
+#menu .sectionTopInfo .ulPhotoCollect:after{content: ""; display: block; clear: both;}
+#menu .sectionTopInfo .liPhotoCollect{float: left; position: relative; width: 20%; height: 0; padding-bottom: 18%; overflow: hidden;}
+#menu .sectionTopInfo .linkPhotoCollect{position: absolute; top: 0; right: 3px; bottom: 0; left: 3px; border-radius: 5px; overflow: hidden;}
+#menu .sectionTopInfo .linkPhotoCollect img{width: 100%; height: 100%; object-fit: cover;}
+#menu .sectionTopInfo .lastMore{background-color: #000000;}
+#menu .sectionTopInfo .lastMore img{opacity: 0.5;}
+#menu .sectionTopInfo .textLastMore{position: absolute; top: 50%; left: 0; right: 0; z-index: 10; width: 100%; line-height: 1.2; margin-top: -14px; color: #FFFFFF; font-size: 0.75rem; text-align: center; }
+
+#menu .sectionQuantity{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding: 0 20px 20px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#menu.storeDisable .sectionQuantity{display: none;}
+#menu .sectionQuantity h3{line-height: 40px;}
+#menu .sectionQuantity .quantity{position: absolute; top: 0; right: 20px;}
+
+#menu .sectionDefault{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding: 30px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#menu .sectionDefault .setRow{margin-bottom: 20px;}
+#menu .sectionDefault .setRow:last-of-type{margin-bottom: 0;}
+#menu .sectionDefault .labelRow{padding-right: 65px;}
+#menu .sectionDefault .labelRow.storeDiscount{padding-right: 142px;}
+#menu .sectionDefault .price{position: absolute; top: 50%; right: 0; line-height: 20px; margin-top: -10px; color: #131313; font-weight: 600; text-align: right;}
+#menu .sectionDefault .price .percent{font-size: 0.75rem;}
+#menu .sectionDefault .price .original{margin-right: 3px;}
+#menu .sectionDefault .price .discount{color: #131313;}
+#menu.storeDisable .sectionDefault .labelRow{padding-left: 0;}
+#menu.storeDisable .sectionDefault .labelRow .iconTwoCircles{display: none;}
+#menu.menuSoldOut .sectionDefault .labelRow{padding-left: 0;}
+#menu.menuSoldOut .sectionDefault .labelRow .iconTwoCircles{display: none;}
+
+#menu .sectionOption{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding: 30px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#menu .sectionOption h3{margin-bottom: 30px;}
+#menu .sectionOption .badgeMust{position: absolute; top: -1px; right: 0; height: 22px; line-height: 22px; padding: 0 10px; border-radius: 14px; background-color: #EAF3FE; color: #0064EC; font-size: 0.75rem; font-weight: 700; text-align: center;}
+#menu .sectionOption .badgeCan{position: absolute; top: -1px; right: 0; height: 22px; line-height: 22px; padding: 0 10px; border-radius: 14px; background-color: #F5F5F5; color: #A0A0A0; font-size: 0.75rem; font-weight: 700; text-align: center;}
+#menu .sectionOption .optionLimit{line-height: 12px; margin-top: 6px; color: #909090; font-size: 12px; font-weight: 500;}
+#menu .sectionOption .setRow{margin-bottom: 22px;}
+#menu .sectionOption .setRow:last-of-type{margin-bottom: 0;}
+#menu .sectionOption .labelRow{padding-right: 65px;}
+#menu .sectionOption .inputRow:disabled + .labelRow{color: #A0A0A0;}
+#menu .sectionOption .inputRow:disabled + .labelRow .iconSquare rect{fill: #FFFFFF; stroke: #E5E5E5;}
+#menu .sectionOption .inputRow:disabled + .labelRow .iconSquare path{fill: #FFFFFF; stroke: none;}
+#menu .sectionOption .inputRow:disabled + .labelRow .iconTwoCircles circle{fill: none;}
+#menu .sectionOption .labelRow .badgeOptionSoldOut{display: inline-block; vertical-align: top; height: 20px; line-height: 20px; margin-left: 6px; padding: 0 8px; border-radius: 14px; background-color: #DADADA; color: #FFFFFF; font-size: 0.75rem; font-weight: 700; text-align: center;}
+#menu .sectionOption .price{position: absolute; top: 50%; right: 0; line-height: 20px; margin-top: -10px; color: #131313; font-weight: 600; text-align: right;}
+#menu.storeDisable .sectionOption .labelRow{padding-left: 0;}
+#menu.storeDisable .sectionOption .labelRow .iconSquare{display: none;}
+#menu.menuSoldOut .sectionOption .labelRow{padding-left: 0;}
+#menu.menuSoldOut .sectionOption .labelRow .iconTwoCircles{display: none;}
+#menu.menuSoldOut .sectionOption .labelRow{padding-left: 0;}
+#menu.menuSoldOut .sectionOption .labelRow .iconSquare{display: none;}
+
+#menu #bottomFix .sectionMenuAmount{position: relative; width: 100%; height: auto; padding: 20px 20px; box-sizing: border-box; background-color: #F5F5F5; box-shadow: 0 -1px 4px rgba(0,0,0,12%);}
+#menu #bottomFix.storeDisable .sectionMenuAmount{display: none;}
+#menu #bottomFix.menuSoldOut .sectionMenuAmount{display: none;}
+#menu #bottomFix .sectionMenuAmount .amount{position: absolute; top: 0; right: 0; text-align: right; font-size: inherit;}
+
+#menu.storeDisable #bottomFix .sectionFull,
+#menu.storeDisable #bottomFix .sectionHalf{display: none;}
+
+#menu.menuImgNone header.default{background: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,12%);}
+#menu.menuImgNone header.default h1{color: #131313;}
+#menu.menuImgNone header.default .iconBack path{stroke: #505050;}
+#menu.menuImgNone header.default .iconBack line{stroke: #505050;}
+#menu.menuImgNone header.default .iconBasket path{fill: #505050;}
+#menu.menuImgNone .sectionTopImg{display: none;}
+#menu.menuImgNone .sectionTopInfo{margin-top: 50px; border-radius: 0; box-shadow: none;}
+
+#menu.menuAdult{padding-bottom: 156px;}
+#menu.menuAdult .bgContent{padding-bottom: 156px;}
+#menu.menuAdult #bottomFix .noticeAdult{line-height: 0.75rem; padding-top: 2px; padding-bottom: 12px; font-size: 0.75rem; text-align: center;}

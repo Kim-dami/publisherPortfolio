@@ -1,0 +1,34 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : notifications.css
+	설　명 : 알림 히스토리 (id: notificationHistory)
+---------------------------------------------*/
+
+#notificationHistory {padding-top: 50px; background-color: #FFFFFF;}
+
+#notificationHistory header .linkReminder {position: absolute; top: 0; right: 0; z-index: 10; width: 45px; height: 50px; line-height: 50px; text-align: center;}
+#notificationHistory header .linkReminder:focus {background-color: #F5F5F5;}
+#notificationHistory header .linkReminder .iconReminder {width: 24px; height: 24px; vertical-align: top; margin-top: 15px;}
+#notificationHistory header .linkReminder .iconReminder rect {fill: none;}
+#notificationHistory header .linkReminder .iconReminder path,
+#notificationHistory header .linkReminder .iconReminder line {fill: none; stroke: #000; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round;}
+
+#notificationHistory .sectionOff {position: relative; width: 100%; height: auto; padding: 30px 20px; box-sizing: border-box; background-color: #FFFFFF; margin-bottom: 5px;}
+#notificationHistory .sectionOff .textSystem {line-height: 1rem; margin-top: 7px; margin-bottom: 20px; font-size: 0.875rem;}
+#notificationHistory .sectionOff .btnSystemSet {width: 150px; height: 45px; line-height: 45px; border-radius: 5px; color: #FFFFFF; font-weight: 700;}
+
+#notificationHistory .sectionNone {position: relative; background-color: #FFFFFF; padding-top: 40vh;}
+
+#notificationHistory .sectionNotifications {position: relative; width: 100%; height: auto; box-sizing: border-box; background-color: #FFFFFF;}
+#notificationHistory .sectionNotifications .notificationItem {padding: 30px 20px 20px 20px;}
+#notificationHistory .sectionNotifications .notificationItem.newItem {background-color: rgba(231, 236, 255, 0.4);}
+#notificationHistory .sectionNotifications .notificationItem .title {font-size: 16px; font-weight: 600; margin-bottom: 4px;}
+#notificationHistory .sectionNotifications .notificationItem .content {font-size: 14px; margin-bottom: 4px;}
+#notificationHistory .sectionNotifications .notificationItem .time {font-size: 12px; color: #999999;}
+
+#notificationHistory .sectionLine {position: relative; background-color: #FFFFFF; padding-top: 15px; padding-bottom: 20px;}
+#notificationHistory .sectionLine .text {font-size: 12px; color: #999999; display: flex; flex-direction: row; justify-content: center; align-items: center;}
+#notificationHistory .sectionLine .text::before {content: ""; flex-grow: 1; margin: 0px 16px; background: #999999; height: 1px; font-size: 0px; line-height: 0px;}
+#notificationHistory .sectionLine .text::after {content: ""; flex-grow: 1; margin: 0px 16px; background: #999999; height: 1px; font-size: 0px; line-height: 0px;}
+
+#notificationHistory .sectionIntersection {position: absolute; width: 100%; height: 30vh; bottom: 0px; left: 0px; z-index: -1;}

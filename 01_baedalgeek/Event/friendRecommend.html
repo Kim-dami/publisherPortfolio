@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>친구추천 이벤트</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/default.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/component.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/location.css">
+    <!-- 페이지별 css 파일 링크 -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/event.css">
+</head>
+<body>
+<main id="friendRecommend">
+    <header>
+        <a href="#" class="linkBack">
+            <svg viewBox="0 0 20 20" class="iconBack">
+                <g>
+                    <rect width="20" height="20"/>
+                    <path d="m8.66,4.34l-5.66,5.66,5.66,5.66"/>
+                    <line x1="3" y1="10" x2="17" y2="10"/>
+                </g>
+            </svg>
+        </a>
+        <h1>친구추천</h1>
+    </header>
+    <div class="bgContent bgGray">
+        <div class="areaWebCopy">
+            <div class="copy">배달의 발견, 일상의 변화.</div>
+            <div class="logo"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/textBDG.png" alt="배달긱"></div>
+            <ul class="ulAdvantage">
+                <li class="liAdvantage">배달비 0원</li>
+                <li class="liAdvantage">최소주문금액 0원</li>
+                <li class="liAdvantage">AI 루트시스템 친환경 ESG배달</li>
+                <li class="liAdvantage">비대면 안심배달</li>
+                <li class="liAdvantage">사전예약정시도착</li>
+            </ul>
+            <div class="areaStore">
+                <div class="textStore">앱 다운로드</div>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webAppstore.svg">
+                </a>
+                <a href="#" target="_blank" class="linkStore">
+                    <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/landing/webLanding/wSvg/webGooglestore.svg">
+                </a>
+            </div>
+        </div>
+        <section class="sectionWelcome">
+            <img src="https://kim-dami.github.io/carnival/textRecommendWelcome-2.png" class="textRecommend" />
+            <div class="areaRecommendID">
+                <div class="titleRecommendID">추천인 ID 입력</div>
+                <fieldset class="setRecommendID">
+                    <input type="text" class="inputRecommendID" placeholder="가입일 포함 3일 이내 입력" />
+                    <button class="btnRecommendID">확인</button>
+                </fieldset>
+            </div>
+        </section>
+        <section class="sectionEvent">
+            <img src="https://kim-dami.github.io/carnival/textRecommendEvent-2.png" class="textRecommend" />
+            <div class="areaRecommendEvent">
+                <div class="titleRecommendEvent">내 아이디를 쓰고 가입한 친구가<br />
+                    있다면 친구와 나 모두에게 1,500원을 드려요</div>
+                <img src="https://kim-dami.github.io/carnival/imgRecommendCoupon-2.png" class="imgRecommendCoupon" />
+                <button class="btnKakao">카카오톡으로 친추하기</button>
+                <button class="btnMyID">내 아이디 복사하기</button>
+                <button class="btnMyRecommend zero"><!-- 0원일 경우 zero 클래스 추가 -->
+                    <div class="imgMyRecommend"></div>
+                    <div class="titileMyRecommend">누적 적립포인트</div>
+                    <div class="potionMyRecommend">0원</div>
+                    <div class="moreMyRecommend">자세히보기</div>
+                </button>
+            </div>
+        </section>
+        <section class="sectionRanking">
+            <img src="https://kim-dami.github.io/carnival/textRecommendMonth.png" class="textRecommendRanking" /><!-- 월간 랭킹일 경우 -->
+            <img src="https://kim-dami.github.io/carnival/textRecommendAll.png" class="textRecommendRanking" /><!-- 누적 랭킹일 경우 -->
+            <div class="areaRecommendRanking">
+                <div class="filterRanking">
+                    <fieldset class="setRanking">
+                        <input type="radio" name="filterRanking" class="inputRanking" id="allRanking" >
+                        <label for="allRanking" class="labelRanking">전체</label>
+                    </fieldset>
+                    <fieldset class="setRanking">
+                        <input type="radio" name="filterRanking" class="inputRanking" id="monthRanking" checked="checked">
+                        <label for="monthRanking" class="labelRanking">월간</label>
+                    </fieldset>
+                </div>
+                <div class="filterNotice">* 서울대학교(관악)</div>
+                <table class="tableRanking">
+                    <tr>
+                        <th>순위</th>
+                        <th>닉네임</th>
+                        <th>친추수</th>
+                        <th>적립포인트</th>
+                    </tr>
+                    <tr><!-- 월간 랭킹일 경우 -->
+                        <td>1</td>
+                        <td><span class="nickname">미므메모</span></td>
+                        <td>10</td>
+                        <td>30,000원</td>
+                    </tr>
+                    <tr><!-- 누적 랭킹일 경우 -->
+                        <td>1</td>
+                        <td><span class="nickname"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/image/bdgReport/imgSchoolLogo_5A.png" class="imgSchoolLogo">오늘이</span></td><!-- 이미지주소의 campusCode 변경시 해당 학교로고로 변경 -->
+                        <td>66</td>
+                        <td>198,000원</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><span class="nickname"><img src="https://d28cs9jl94n3og.cloudfront.net/baedalgeek/image/bdgReport/imgSchoolLogo_5A.png" class="imgSchoolLogo">일이삼사오육칠팔구십</span></td><!-- 이미지주소의 campusCode 변경시 해당 학교로고로 변경 -->
+                        <td>66</td>
+                        <td>198,000원</td>
+                    </tr>
+                    <tr><!-- 랭킹이 없을 경우 -->
+                        <td colspan="4" class="sectionNone">
+                            <svg viewBox="0 0 55 55" class="iconNone">
+                            <g>
+                                <path d="m29.67,32.32h-4.36l-.45-17.35h5.29l-.47,17.35Zm-2.17,7.7c-.51,0-1.01-.13-1.45-.38-.44-.25-.8-.61-1.05-1.05-.26-.44-.38-.94-.37-1.45-.02-.5.11-.99.37-1.42.25-.43.61-.79,1.05-1.03.44-.25.94-.37,1.44-.37.49,0,.98.13,1.41.37.44.25.8.6,1.06,1.04.26.43.4.91.4,1.41,0,.51-.14,1.01-.4,1.45-.25.44-.62.8-1.06,1.05-.43.25-.91.38-1.41.38Z"/>
+                                <circle cx="27.5" cy="27.5" r="26"/>
+                            </g>
+                        </svg>
+                            <div class="textNone">아직 친구추천이 없어요</div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="areaPagination">
+                    <button class="btnPagination prePage" disabled><!-- 1 페이지일때 disabled -->
+                        <svg>
+                            <g id="iconPrePage" transform="translate(-555.9 -2921.8)">
+                                <path d="M6.7,8.1,2,3.4,3.4,2,6.7,5.3,10,2l1.4,1.4Z" transform="translate(564 2919.8) rotate(90)"/>
+                            </g>
+                        </svg>
+                    </button>
+                    <div class="numberOfPage">
+                        <button class="btnNumber active">1</button>
+                        <button class="btnNumber">2</button>
+                        <button class="btnNumber">3</button>
+                        <button class="btnNumber">4</button>
+                        <button class="btnNumber">5</button>
+                    </div>
+                    <button class="btnPagination nextPage"><!-- 마지막 페이지일때 disabled -->
+                        <svg>
+                            <g id="iconNextPage" transform="translate(-631.9 -2921.8)">
+                                <path d="M6.7,8.1,2,3.4,3.4,2,6.7,5.3,10,2l1.4,1.4Z" transform="translate(629.9 2933.2) rotate(-90)"/>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="sectionNotice">
+            <div class="titleNotice">유의사항</div>
+            <ul class="ulNotice">
+                <li class="liNotice">친구추천 할 수 있는 친구의 수는 제한이 없으며, 무제한 참여가능</li>
+                <li class="liNotice">친구추천 포인트는 추천인과 친구 모두에게 지급됨</li>
+                <li class="liNotice">친구추천 포인트 안내
+                    <div class="subNotice">
+                        - 친구가 친구추천 페이지에서 추천인 ID를 입력 완료 즉시 포인트가 적립됨<br />
+                        - 친구추천 포인트는 지급일로부터 1년간 유효하며, 이후 소멸됨<br />
+                        - 적립된 포인트는 마이배달긱 > 포인트에서 아래와 같은 이름으로 확인가능함
+                        <div class="nameNotice">
+                            ➀ 추천인 : 친추 감사포인트<br />
+                            ➁ 친구 : 친추 가입포인트
+                        </div>
+                    </div>
+                </li>
+                <li class="liNotice"> 친구는 회원가입 포함 3일 이내 친구추천 페이지에서 추천인 ID를 입력해야 함
+                    <div class="subNotice">
+                    - ID는 대소문자 및 띄어쓰기를 구분해 정확히 입력<br />
+                    - 추천인 ID 입력 가능일 이후 추천인 입력 불가
+                    </div>
+                </li>
+                <li class="liNotice">혜택을 위해 동일인이 중복 가입할 경우 포인트는 지급되지 않을 수 있음</li>
+                <li class="liNotice">기존에 친구추천으로 가입한 친구가 해지/탈퇴 후 다시 친구추천 이벤트를 통해 재가입할 경우, 포인트는 지급되지 않음</li>
+                <li class="liNotice">금리적인 이득을 위해 비정상적인 방법으로 이벤트를 참여할 경우 포인트가 지급되지 않거나 회수될 수 있음</li>
+                <li class="liNotice">본 이벤트는 당사 정책에 따라 사전고지 없이 변경 또는 종료될 수 있음</li>
+            </ul>
+        </section>
+    </div>
+    <div class="popUp hidden" id="alertReferral"><!--추천인 입력 후 팝업 -->
+        <div class="popCenter">
+            <div class="popBg">
+                <h1 class="left">3,000P 적립성공</h1>
+                <section class="sectionText">
+                    추천인 : 나선배 (Sunbae@naver.com)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;나 : 신입생 (newface@daum.net)<br /><br />친구가 내 ID 친추하면, 나도 무제한 3,000P 적립!
+                </section>
+                <section class="sectionFull">
+                    <fieldset class="setFull">
+                        <button class="btnFull bgMain">확인</button>
+                    </fieldset>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="popUp hidden" id="myReferral"><!-- 친구추천 적립포인트 팝업 -->
+        <div class="popCenter">
+            <div class="popBg">
+                <section class="sectionMyReferral">
+                    <h1 class="center">친구추천</h1>
+                    <div class="areaMyReferral">
+                        <dl class="dlMyReferral">
+                            <dt class="dtMyReferral">
+                                <img src="https://kim-dami.github.io/carnival/imgMyReferral.png" />내가 친추한 친구</dt>
+                            <dd class="ddMyReferral">5명</dd>
+                        </dl>
+                        <dl class="dlMyReferral">
+                            <dt class="dtMyReferral">
+                                <img src="https://kim-dami.github.io/carnival/imgMyReferralPoint.png" />지금까지 받은 적립금</dt>
+                            <dd class="ddMyReferral">12,000원</dd>
+                        </dl>
+                    </div>
+                    <h1 class="center">포인트 적립 상세내역</h1>
+                    <div class="areaTable">
+                        <table>
+                            <tr>
+                                <th>포인트명</th>
+                                <th>친추 이름</th>
+                                <th>적립일</th>
+                            </tr>
+                            <tr>
+                                <td>친추 감사포인트(3,000P)</td>
+                                <td>유*정</td>
+                                <td>23.12.30</td>
+                            </tr>
+                            <tr>
+                                <td>친추 감사포인트(3,000P)</td>
+                                <td>유*정</td>
+                                <td>23.12.30</td>
+                            </tr>
+                            <tr>
+                                <td>친추 감사포인트(2,000P)</td>
+                                <td>QUAN XIAOMEI</td>
+                                <td>22.03.19</td>
+                            </tr>
+                            <tr>
+                                <td>친추 감사포인트(2,000P)</td>
+                                <td>유*정</td>
+                                <td>22.03.19</td>
+                            </tr>
+                            <tr>
+                                <td>친추 감사포인트(2,000P)</td>
+                                <td>유*정</td>
+                                <td>22.03.19</td>
+                            </tr>
+                            <tr>
+                                <td>친추 가입포인트(2,000P)</td>
+                                <td>박*지</td>
+                                <td>22.03.10</td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+                <section class="sectionFull">
+                    <fieldset class="setFull">
+                        <button class="btnFull bgMain">확인</button>
+                    </fieldset>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

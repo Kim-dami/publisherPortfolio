@@ -1,0 +1,371 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : home
+	설　명 : 서비스장소 선택, 수령장소 선택, 홈
+	클래스명 : 카멜케이스, 태그역활 + 컨텐츠내용 조합, 넘버링은 하이픈
+	작성순서 : 1. 레이아웃  2.크기/간격  3.박스모양  4.폰트  5.기타
+			position / display / float / width / height / margin / padding / border / background / font / overflow / etc...
+---------------------------------------------*/
+/* 공통 UI */
+header .areaLocation{height: 50px; line-height: 50px; box-sizing: border-box; font-size: 1rem; letter-spacing: -0.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+header .areaLocation .iconUnfold{margin-top: 15px; transform: scale(0.8);}
+header .areaLocationCheck{position: absolute; top: 48px; left: 100px; z-index: 10; text-align: center; opacity: 0; visibility: hidden; transition: opacity 0.5s, visibility 0.5s;}
+header .areaLocationCheck .bgLocationCheck{position: relative; height: 36px; line-height: 36px; padding: 0 20px; border-radius: 17px; color: #FFFFFF; background-color: rgba(0,0,0,0.8); font-size: 0.875rem; font-weight: 700; transform: translateY(-7px); transition: transform 0.5s;}
+header .areaLocationCheck .bgLocationCheck:after{content: ""; position: absolute; left: 25px; top: -12px; width: 0; height: 0; border-bottom: 6px solid rgba(0,0,0,0.8); border-top: 6px solid transparent; border-left: 5px solid transparent; border-right: 5px solid transparent;}
+header .areaLocationCheck .imgLocationCheck{vertical-align: top; width: 25px; margin-top: 3px;}
+header .areaLocationCheck .stop{margin-left: -3px; margin-right: 5px; font-size: 1rem;}
+header .areaLocationCheck.visible{opacity: 1; visibility: visible;}
+header .areaLocationCheck.visible .bgLocationCheck{transform: translateY(0);}
+
+.areaMenuRanking{position: relative; width: 100%; height: auto;}
+.areaMenuRanking.swiperMenuRanking{height: 65px; overflow: hidden;}
+.areaMenuRanking .ulMenuRanking{position: relative; width: 100%; height: auto;}
+.areaMenuRanking .liMenuRanking{position: relative; width: 100%; height: 65px; margin-bottom: 22px; overflow: hidden;}
+.areaMenuRanking .liMenuRanking:last-of-type{margin-bottom: 0;}
+.areaMenuRanking.swiperMenuRanking .liMenuRanking{margin-bottom: 0;}
+.areaMenuRanking .linkMenu{position: relative; width: 100%; height: 100%; padding: 12px 26px 12px 122px; box-sizing: border-box;}
+.areaMenuRanking .menuRanking{position: absolute; top: 0; left: 0; bottom: 0; width: 35px; line-height: 65px; color: #131313; font-size: 1.125rem; font-weight: 700; text-align: center}
+.areaMenuRanking .menuPhoto{position: absolute; top: 0; left: 45px; bottom: 0; width: 65px; border: 1px solid #F0F0F0; border-radius: 5px; box-sizing: border-box; overflow: hidden;}
+.areaMenuRanking .menuPhoto img{width: 100%; height: 100%; object-fit: cover; object-position: center center;}
+.areaMenuRanking .menuInfo{width: 100%; height: auto;}
+.areaMenuRanking .menuInfo .name{width: 100%; line-height: 1rem; margin-bottom: 6px; color: #131313; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.areaMenuRanking .menuInfo .price{letter-spacing: -0.5px;}
+.areaMenuRanking .menuInfo .discount{font-weight: 500;}
+.areaMenuRanking .menuTrend{position: absolute; top: 0; right: 0; bottom: 0; line-height: 65px; color: #A0A0A0; font-size: 0.75rem; font-weight: 700; text-align: center;}
+.areaMenuRanking .menuTrend .triangle{display: inline-block; vertical-align: top; width: 0; height: 0; margin-right: 5px; border-right: 5px solid transparent; border-left: 5px solid transparent;}
+.areaMenuRanking .menuTrend.up{color: #E3131B;}
+.areaMenuRanking .menuTrend.up .triangle{margin-top: 25px; border-top: 5px solid transparent; border-bottom: 5px solid #E3131B;}
+.areaMenuRanking .menuTrend.down{color: #0064EC;}
+.areaMenuRanking .menuTrend.down .triangle{margin-top: 30px; border-top: 5px solid #0064EC; border-bottom: 5px solid transparent;}
+
+.areaAteMenu{position: relative; width: 100%; height: auto; padding: 0 8px; box-sizing: border-box; overflow: hidden;}
+.areaAteMenu.swiperAteMenu{padding: 0 20px; }
+.areaAteMenu .ulAteMenu{position: relative; width: 100%; height: auto;}
+.areaAteMenu .ulAteMenu:after{content: ""; display: block; clear: both;}
+.areaAteMenu .liAteMenu{float: left; position: relative; width: 50%; height: auto; padding: 12px; box-sizing: border-box;}
+.areaAteMenu.swiperAteMenu .liAteMenu{float: unset; width: 100px; padding: 0 15px 0 0; box-sizing: content-box; overflow: hidden;}
+.areaAteMenu .linkMenu{position: relative; width: 100%; height: auto;}
+.areaAteMenu .menuPhoto{width: 100%; height: 80px; margin-bottom: 10px; border: 1px solid #F0F0F0; border-radius: 5px; box-sizing: border-box; overflow: hidden;}
+.areaAteMenu.swiperAteMenu .menuPhoto{height: 60px;}
+.areaAteMenu .menuPhoto img{width: 100%; height: 100%; object-fit: cover; object-position: center center;}
+.areaAteMenu .menuInfo{width: 100%; height: auto; margin-bottom: 6px;}
+.areaAteMenu .menuInfo .name{width: 100%; line-height: 1rem; margin-bottom: 2px; color: #131313; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.areaAteMenu .menuInfo .price{letter-spacing: -0.5px;}
+.areaAteMenu .menuInfo .discount{font-weight: 500;}
+.areaAteMenu .menuHistory{line-height: 0.75rem; color: #A0A0A0; font-size: 0.75rem;}
+
+
+.sectionPageInfo{position: relative; width: 100%; height: 100px; padding: 30px 20px; box-sizing: border-box;}
+.sectionPageInfo .subPageInfo{line-height: 0.75rem; margin-bottom: 7px; font-size: 0.75rem;}
+.sectionPageInfo .pageInfo{line-height: 1.125rem; font-size: 1.125rem; font-weight: 700;}
+
+/* 서비스모아보기 */
+#serviceHome{padding-top: 50px;}
+
+#serviceHome header .areaLocation{padding: 0 130px 0 20px;}
+
+#serviceHome header .linkMy{position: absolute; top: 0; right: 45px; z-index: 10; width: 40px; height: 50px; line-height: 50px; text-align: center;}
+#serviceHome header .linkMy:focus{background-color: #F5F5F5;}
+#serviceHome header .linkMy .iconMy{width: 24px; height: 24px; vertical-align: top; margin-top: 14px;}
+#serviceHome header .linkMy .iconMy rect{fill: none;}
+#serviceHome header .linkMy .iconMy circle{fill: none; stroke: #131313; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5px;}
+#serviceHome header .linkMy .iconMy path{fill: #131313;}
+
+#serviceHome header .linkNotification { position: absolute; top: 0; right: 88px; z-index: 10; width: 40px; height: 50px; line-height: 50px; text-align: center; }
+#serviceHome header .linkNotification .iconNotification { width: 22px; height: 22px; vertical-align: top; margin-top: 15px; }
+#serviceHome header .linkNotification .iconNotification rect { fill: none; }
+#serviceHome header .linkNotification .iconNotification path,
+#serviceHome header .linkNotification .iconNotification line { fill: none; stroke: #131313; stroke-width: 1.5px; stroke-linecap: round; stroke-linejoin: round; }
+#serviceHome header .badgeNotification { position: absolute; top: 12px; right: 8px; width: 5px; height: 5px; line-height: 16px; border-radius: 100%; background-color:#E3131B; color:#FFFFFF; }
+
+#serviceHome h3{margin-bottom: 22px;}
+#serviceHome .textRight{position: absolute; top: 0; right: 20px; line-height: 1.25rem; color: #A0A0A0; font-size: 0.875rem; font-weight: 500;}
+#serviceHome .textRight .iconMore{margin-left: -5px; margin-right: -5px;}
+#serviceHome .textRight .iconMore path{stroke: #A0A0A0;}
+
+#serviceHome .sectionService{position: relative; width: 100%; height: auto; padding: 35px 20px 35px 22px; box-sizing: border-box; background: #FFF url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/image/home/bgServiceHomeOpacity.png") no-repeat 195px bottom; background-size: contain;}
+#serviceHome .sectionService h2{line-height: 1.625rem; margin-bottom: 16px; font-size: 1.25rem;}
+#serviceHome .sectionService .linkDeliveryHome{position: relative; width: 210px; height: 48px; line-height: 48px; padding: 0 15px; border-radius: 24px; box-sizing: border-box; color: #FFFFFF; font-weight: 700;}
+#serviceHome .sectionService .linkDeliveryHome .imgDeliveryHome{width: 16px; height: 16px; vertical-align: top; margin-top: 16px; margin-right: 3px;}
+#serviceHome .sectionService .linkDeliveryHome .iconMore{position: absolute; top: 50%; right: 10px; margin-top: -10px;}
+#serviceHome .sectionService .linkDeliveryHome .iconMore path{stroke: #FFFFFF;}
+
+#serviceHome .sectionBanner{position: relative; width: 100%; height: auto; padding: 20px 20px 30px 20px; box-sizing: border-box; overflow: hidden; background: #FFFFFF;}
+#serviceHome .sectionBanner.supportNone{padding: 10px 20px;}
+#serviceHome .sectionBanner .areaBanner{position: relative; width: 100%; height: auto; background-color: #F5F5F5; overflow: hidden;}
+#serviceHome .sectionBanner .ulBanner{position: relative; width: 100%; height: auto;}
+#serviceHome .sectionBanner .liBanner{position: relative; display: flex; justify-content: center; width: 100%; height: 0; padding-bottom: 25%;}
+#serviceHome .sectionBanner .liBanner img{position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; border-radius: 10px;}
+#serviceHome .sectionBanner .paginationBanner{left: unset; right: 5px; bottom: 5px; width: 45px; height: 20px; line-height: 20px; border-radius: 10px; background-color: rgba(0,0,0,0.6); color: #FFFFFF; font-size: 0.625rem; font-weight: 700;}
+#serviceHome .sectionBanner .paginationBanner span{color: inherit; font-size: inherit; font-weight: inherit;}
+
+#serviceHome .sectionQuick{position: relative; width: 100%; height: auto; padding: 20px; box-sizing: border-box; background-color: #F5F5F5;}
+#serviceHome .sectionQuick .ulQuick{position: relative; width: 100%; height: auto; border: 1px solid #eaeaea; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF;}
+#serviceHome .sectionQuick .ulQuick:after{content: ""; display: block; clear: both;}
+#serviceHome .sectionQuick .liQuick{float: left; position: relative; width: 25%;}
+#serviceHome .sectionQuick .liQuick:after{content: ""; position: absolute; top: 20px; right: 0; bottom: 20px; width: 1px; background-color: #eaeaea;}
+#serviceHome .sectionQuick .liQuick:last-of-type:after{background-color: transparent}
+#serviceHome .sectionQuick .linkQuick{position: relative; padding: 10px 0; box-sizing: border-box; text-align: center;}
+#serviceHome .sectionQuick .iconQuick{width: 16px; height: 16px; margin-bottom: 4px;}
+#serviceHome .sectionQuick .iconQuick rect{fill: none;}
+#serviceHome .sectionQuick .iconQuick path{fill: #131313;}
+#serviceHome .sectionQuick .iconOrder{width: 16px; height: 16px; vertical-align: top;}
+#serviceHome .sectionQuick .textQuick{line-height: 14px; color: #131313; font-size: 14px; text-align: center;}
+
+#serviceHome .sectionStoreRanking{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding: 30px 0; box-sizing: border-box; background-color: #FFFFFF;}
+#serviceHome .sectionStoreRanking h3{padding: 0 20px; box-sizing: border-box;}
+#serviceHome .sectionStoreRanking .place{line-height: 1.25rem; margin-left: 7px; color: #505050; font-size: 0.875rem; font-weight: 500;}
+#serviceHome .sectionStoreRanking .areaStoreRanking{position: relative; width: 100%; height: auto; padding: 0 20px; box-sizing: border-box; overflow: hidden;}
+#serviceHome .sectionStoreRanking .ulStoreRanking{position: relative; width: 100%; height: auto;}
+#serviceHome .sectionStoreRanking .liStoreRanking{position: relative; width: 85px; height: auto; padding-right: 15px; overflow: hidden;}
+#serviceHome .sectionStoreRanking .linkStore{position: relative; width: 100%; height: auto;}
+#serviceHome .sectionStoreRanking .storePhoto{width: 100%; height: 85px; margin-bottom: 10px; border: 1px solid #EAEAEA; border-radius: 100%; box-sizing: border-box; overflow: hidden;}
+#serviceHome .sectionStoreRanking .storePhoto img{width: 100%; height: 100%; object-fit: cover; object-position: center center;}
+#serviceHome .sectionStoreRanking .storeBadge{position: absolute; top: 0; right: 0; width: 22px; height: 22px; line-height: 22px; border-radius: 100%; color: #FFFFFF; font-size: 0.75rem; font-weight: 700; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,12%);}
+#serviceHome .sectionStoreRanking .storeBadge.new{background-color: #FFC110;}
+#serviceHome .sectionStoreRanking .storeInfo{width: 100%; height: auto; background-color: #FFFFFF;}
+#serviceHome .sectionStoreRanking .storeInfo .name{width: 100%; color: #131313; margin-bottom: 1px; font-weight: 700; text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+#serviceHome .sectionStoreRanking .storeInfo .scoreAndReview{width: 100%; height: auto; line-height: 16px; text-align: center;}
+#serviceHome .sectionStoreRanking .storeInfo .iconStar{width: 16px; height: 16px; vertical-align: top; margin-left: -3px; margin-right: -3px; vertical-align: top;}
+#serviceHome .sectionStoreRanking .storeInfo .iconStar rect{fill: none;}
+#serviceHome .sectionStoreRanking .storeInfo .iconStar path{fill: #F5CC1F;}
+#serviceHome .sectionStoreRanking .storeInfo .score{line-height: 16px; margin-right: 2px; font-size: 0.875rem; letter-spacing: -0.5px;}
+#serviceHome .sectionStoreRanking .storeInfo .review{line-height: 16px; font-size: 0.875rem; letter-spacing: -0.5px;}
+#serviceHome .sectionStoreRanking .linkMore{position: relative; width: 100%; height: auto; line-height: 125px; text-align: center; color: #A0A0A0; font-size: 0.875rem;}
+#serviceHome .sectionStoreRanking .linkMore .iconMore{margin-top: 52px; margin-left: -5px;}
+#serviceHome .sectionStoreRanking .linkMore .iconMore path{stroke: #A0A0A0;}
+
+#serviceHome .sectionSupport{position: relative; width: 100%; height: auto; margin-top: 5px;  background: #FFFFFF;}
+#serviceHome .sectionSupport .linkSupport {display: block; position: relative; width: 100%; padding: 30px 20px 22px 20px; box-sizing: border-box; color: #131313; font-size: 1.125rem;font-weight: 700;text-decoration: none;}
+#serviceHome .sectionSupport .linkSupport .iconMore {display: inline-block; margin-top: 2px;}
+#serviceHome .sectionSupport .linkSupport .subCopy {line-height: 0.75rem; margin-top: 5px; margin-bottom: -5px; color: #A0A0A0; font-size: 0.75em; font-weight: 500;}
+#serviceHome .sectionSupport .linkSupport .highlight{color: #131313; font-size: inherit; font-weight: 700;}
+#serviceHome .sectionSupport .ulSupportStore{position: relative; width: 100%; height: auto; padding: 0 20px; box-sizing: border-box; overflow: hidden;}
+#serviceHome .sectionSupport .liSupportStore{position: relative; width: 100%; height: auto; margin-bottom: 7px;}
+#serviceHome .sectionSupport .liSupportStore:last-of-type{margin-bottom: 0;}
+#serviceHome .sectionSupport .linkSupportStore{position: relative; width: 100%; height: auto; padding: 10px 15px 10px 58px; border: 1px solid #EAEAEA; box-sizing: border-box; border-radius: 5px; background-color: #FFFFFF; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,12%);}
+#serviceHome .sectionSupport .storePhoto{position: absolute; top: 50%; left: 15px; z-index: 10; width: 32px; height: 32px; margin-top: -16px; border-radius: 5px; overflow: hidden;}
+#serviceHome .sectionSupport .storePhoto img{display: block; width: 100%; height: 100%; object-fit: cover; object-position: center center;}
+#serviceHome .sectionSupport .storeInfo{position: relative; z-index: 10;}
+#serviceHome .sectionSupport .storeInfo .name{line-height: 32px; color: #131313; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+#serviceHome .sectionSupport .storeInfo .medal{position: absolute; top: 5px; right: 0; width: 16px; height: 23px;}
+#serviceHome .sectionSupport .liInquiry{position: relative; width: 100%; height: auto;}
+#serviceHome .sectionSupport .liInquiry .linkInquiry{position: relative; width: 100%; height: 30px; line-height: 30px; padding: 0 12px; box-sizing: border-box; background-color: #F5F5F5; color: #909090; font-size: 0.75rem;}
+
+#serviceHome .sectionMenuRanking{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding: 30px 20px 30px 15px; box-sizing: border-box; background-color: #FFFFFF;}
+#serviceHome .sectionMenuRanking h3{padding-left: 5px; box-sizing: border-box;}
+#serviceHome .sectionMenuRanking .textRight{right: 0;}
+#serviceHome .sectionAteMenu{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding: 30px 0; box-sizing: border-box; background-color: #FFFFFF;}
+#serviceHome .sectionAteMenu h3{padding: 0 20px; box-sizing: border-box;}
+
+/* 명예의 전당 */
+#supportStore{padding-top: 50px;}
+#supportStore .linkMyRewards{position: absolute; top: 12px; right: 15px; width: 70px; height: 26px; line-height: 24px; border-radius: 13px; border: 1px solid #DADADA; box-sizing: border-box; text-align: center; font-size: 0.75rem;}
+#supportStore .bgGray{background: #131313 url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/image/donationAd/bgSupport.png") repeat top left; background-size: 5px 2px;}
+#supportStore .sectionSupport{display: block; position: relative; width: 100%; line-height: 1.125rem; padding: 35px 20px; box-sizing: border-box; color: #FFFFFF; font-size: 1.125rem; font-weight: 700; background-image: url("https://kim-dami.github.io/carnival/imgSupportStar.png"),url("https://kim-dami.github.io/carnival/imgSupport.png"); background-repeat: no-repeat; background-position: 20px 25px, right 28px; background-size: 15px 7px, 145px 50px;}
+#supportStore .sectionSupport .subCopy{line-height: 0.75rem; margin-top: 7px; color: #CACACA; font-size: 0.75em; font-weight: 500;}
+#supportStore .sectionNone{padding-bottom: 150px; height: 100vh;}
+#supportStore .sectionNone .iconNone path{fill: #A0A0A0;}
+#supportStore .sectionNone .iconNone circle{stroke: #A0A0A0;}
+#supportStore .sectionNone .textNone{line-height: 1.5; color: #A0A0A0;}
+#supportStore .sectionTotal{position: relative; width: 100%; height: auto; padding: 25px 20px 30px 20px; box-sizing: border-box;}
+#supportStore .sectionTotal h3{color: #FFFFFF; text-align: center;}
+#supportStore .sectionTotal .subCopy{width: 260px; line-height: 0.75rem; margin: 12px auto 0 auto; padding-top: 12px; border-top: 1px solid #303030; color: #CACACA; font-size: 0.75em; font-weight: 500;}
+#supportStore .sectionStore{position: relative; width: 100%; height: auto; padding: 0 20px 30px 20px; box-sizing: border-box;}
+#supportStore .sectionStore h4{padding-top: 10px; color: #FFFFFF; background-image: url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/image/donationAd/imgSupportStar.png"); background-repeat: no-repeat; background-position: left top; background-size: 15px 7px;}
+#supportStore .sectionStore .ulStore{position: relative; width: 100%; height: auto;}
+#supportStore .sectionStore .liStore{position: relative; width: 100%; height: auto; padding: 20px 0; border-bottom: 1px solid #404040;}
+#supportStore .sectionStore .liStore:last-of-type{border-bottom: none;}
+#supportStore .sectionStore .linkStore{position: relative; width: 100%; height: auto; padding-left: 87px; box-sizing: border-box;}
+#supportStore .sectionStore .storePhoto{position: absolute; top: 50%; left: 0; width: 72px; height: 72px; margin-top: -36px; border: 1px solid #F5F5F5; border-radius: 5px; box-sizing: border-box; overflow: hidden;}
+#supportStore .sectionStore .storePhoto img{width: 100%; height: 100%; object-fit: cover;}
+#supportStore .sectionStore .storePhoto .medal{position: absolute; top: 5px; right: 5px; width: 14px; height: 20px;}
+#supportStore .sectionStore .storeInfo{display: flex; flex-direction: column; justify-content: center; align-items: flex-start; width: 100%; height: auto; min-height: 72px;}
+#supportStore .sectionStore .name{width: 100%; line-height: 16px; color: #FFFFFF; margin-bottom: 8px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+#supportStore .sectionStore .scoreAndReview{width: 100%; height: auto; line-height: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+#supportStore .sectionStore .scoreAndReview .iconStar{width: 16px; height: 16px; vertical-align: top; margin-left: -2px; margin-right: -3px;}
+#supportStore .sectionStore .scoreAndReview .iconStar rect{fill: none;}
+#supportStore .sectionStore .scoreAndReview .iconStar path{fill: #F5CC1F;}
+#supportStore .sectionStore .scoreAndReview .score{line-height: 16px; margin-right: 2px; color: #FFFFFF; font-size: 0.875rem; font-weight: 700; letter-spacing: -0.5px;}
+#supportStore .sectionStore .scoreAndReview .review{line-height: 16px; margin-right: 5px; color: #CACACA; font-size: 0.875rem; letter-spacing: -0.5px;}
+#supportStore .sectionStore .scoreAndReview .menu{color: #A0A0A0; font-size: 0.875rem;}
+#supportStore .sectionStore .rewards{position: relative; width: 90px; height: 20px; line-height: 20px; margin-top: 8px; border-radius: 5px; color: #FFFFFF; background: rgb(94,119,247); background: -moz-linear-gradient(left, rgba(94,119,247,1) 0%, rgba(64,101,244,1) 100%); background: -webkit-linear-gradient(left, rgba(94,119,247,1) 0%, rgba(64,101,244,1) 100%); background: linear-gradient(to right, rgba(94,119,247,1) 0%, rgba(64,101,244,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5e77f7', endColorstr='#4065f4',GradientType=1 ); font-size: 0.75rem; text-align: center;}
+#supportStore .sectionStore .rewards .number{line-height: inherit; margin-left: 7px; font-size: inherit; font-weight: 700;}
+#supportStore .sectionNotice{position: relative; width: 100%; height: auto; padding: 20px; box-sizing: border-box; background-color: #F5F5F5;}
+#supportStore .sectionNotice .titleNotice{margin-bottom: 10px; color: #131313; font-size: 0.75rem; font-weight: 700;}
+#supportStore .sectionNotice .liNotice{position: relative; line-height: 1.4; margin-bottom: 3px; padding-left: 10px; box-sizing: border-box; color: #909090; font-size: 0.625rem;}
+#supportStore .sectionNotice .liNotice .dash{position: absolute; top :0; left: 0; color: inherit; font-size: inherit;}
+#supportStore .sectionNotice .liNotice .ex{line-height: 1.6; margin: 3px 0 5px 8px; color: #A0A0A0; font-size: inherit;}
+
+/* 이번주 인기메뉴 */
+#menuRanking{padding-top: 50px;}
+#menuRanking .sectionPageInfo{color: #FFFFFF; background: url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/bgRankingMenu.png") no-repeat center center; background-size: cover; text-shadow: 0 1px 4px rgba(0,0,0,16%);}
+#menuRanking .sectionPageInfo .pageInfo .place{font-size: inherit; font-weight: inherit;}
+#menuRanking .sectionMenuRanking{position: relative; width: 100%; height: auto; padding: 22px 20px 22px 15px; box-sizing: border-box; background-color: #FFFFFF;}
+@media screen and (min-width: 480px) {
+    #serviceHome .sectionMenuRanking .popUp{margin-left: -15px;}
+    #menuRanking .sectionMenuRanking .popUp{margin-left: -15px;}
+}
+
+/* 내가 먹은 메뉴 */
+#ateMenu{padding-top: 50px;}
+#ateMenu .sectionPageInfo{color: #FFFFFF; background: url("https://d28cs9jl94n3og.cloudfront.net/baedalgeek/icon/bgAteMenu.png") no-repeat center center; background-size: cover; text-shadow: 0 1px 4px rgba(0,0,0,16%); z-index: 10;}
+#ateMenu .sectionPageInfo .pageInfo .nickname{font-size: inherit; font-weight: inherit;}
+#ateMenu .sectionPageInfo .pageInfo .setTooltip{display: inline-block; vertical-align: top; position: relative; height: 20px;}
+#ateMenu .sectionPageInfo .pageInfo .btnTooltip{display: inline-block; vertical-align: top; height: 20px; padding: 0 20px 0 3px;}
+#ateMenu .sectionPageInfo .pageInfo .iconTooltip{width: 16px; height: 16px; vertical-align: top; margin-top: 1px;}
+#ateMenu .sectionPageInfo .pageInfo rect{fill: none;}
+#ateMenu .sectionPageInfo .pageInfo path{fill: #FFFFFF;}
+#ateMenu .sectionPageInfo .pageInfo .tooltip{position: absolute; top: 30px; left: -30px; z-index: 10;}
+#ateMenu .sectionPageInfo .pageInfo .contentTooltip{position: relative; width: 145px; line-height: 1rem; padding: 10px; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF; color: #505050; box-shadow: 0 1px 4px rgba(0,0,0,12%); text-shadow: none; font-size: 0.75rem; font-weight: 500;}
+#ateMenu .sectionPageInfo .pageInfo .triangleTooltip{position: absolute; z-index: -1; left: 15px; top: -18px;}
+#ateMenu .sectionAteMenu .areaAteMenu{padding: 10px 8px;}
+
+/* 배달홈 */
+#deliveryHome{padding-top: 169px; padding-bottom: 50px;}
+@media screen and (min-width: 480px) {
+    #deliveryHome .bgContent{padding-bottom: 50px;}
+}
+
+#deliveryHome header .areaLocation{padding: 0 45px 0 45px;}
+
+#deliveryHome header .linkServiceHome{position: absolute; top: 0; right: 0; z-index: 10; width: 50px; height: 50px; line-height: 50px; text-align: center;}
+#deliveryHome header .linkServiceHome:focus{background-color: #F5F5F5;}
+#deliveryHome header .linkServiceHome .iconServiceHome{width: 20px; height: 20px; vertical-align: top; margin-top: 15px;}
+#deliveryHome header .linkServiceHome .iconServiceHome rect{fill: none; stroke: #131313; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.2;}
+#deliveryHome header .areaTimebelt{position: relative; width: 100%; height: auto; padding: 5px 20px 5px 20px; box-sizing: border-box; overflow: hidden;}
+
+#deliveryHome header .areaFilter{position: relative; width: 100%; height: auto; border-top: 1px solid #F0F0F0; padding: 10px 20px; box-sizing: border-box; overflow: hidden;}
+#deliveryHome header .ulFilter{position: relative; width: 100%; height: auto;}
+#deliveryHome header .liFilter{position: relative; display: flex; justify-content: center; width: fit-content; height: auto; padding-right: 8px;}
+#deliveryHome header .liFilter:last-of-type{padding-right: 0;}
+#deliveryHome header .liFilter .textSort{width: fit-content; height: 28px; line-height: 28px; padding: 0 10px 0 12px; border-radius: 14px; background-color: #F8F8F8; font-size: 0.75rem;}
+#deliveryHome header .liFilter .iconSort{width: 16px; height: 16px; vertical-align: top; margin-top: 6px;}
+#deliveryHome header .liFilter .iconSort rect{fill: none;}
+#deliveryHome header .liFilter .iconSort path{fill: #505050;}
+#deliveryHome header .liFilter .iconUnfold{width: 16px; height: 16px; margin-top: 6px;}
+#deliveryHome header .liFilter .btnReset{width: fit-content; height: 28px; line-height: 28px; padding: 0 10px 0 12px; border-radius: 14px; background-color: #F8F8F8; font-size: 0.75rem;}
+#deliveryHome header .liFilter .iconReset{width: 16px; height: 16px; vertical-align: top; margin-top: 5px;}
+#deliveryHome header .liFilter .iconReset rect{fill: none;}
+#deliveryHome header .liFilter .iconReset path{fill: #505050;}
+#deliveryHome header .liFilter .selectSort{position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0;}
+#deliveryHome header .liFilter .setFilter{position: relative; width: 100%; height: auto;}
+#deliveryHome header .liFilter .inputFilter{position: absolute; top: 0; right: 0; bottom: 0; left: 0; opacity: 0;}
+#deliveryHome header .liFilter .labelFilter{display: block; width: fit-content; height: 28px; line-height: 26px; padding: 0 12px 0 10px; border-width: 1px; border-style: solid; border-color: #F8F8F8; border-radius: 14px; box-sizing: border-box; background-color: #F8F8F8; font-size: 0.75rem;}
+#deliveryHome header .liFilter .clickedLabelFilter{display: block; width: fit-content; height: 28px; line-height: 26px; padding: 0 12px 0 10px; border-width: 1px; border-style: solid; border-radius: 14px; box-sizing: border-box; font-size: 0.75rem; border-color: #DDEAFF; background-color: #edf4ff;}
+#deliveryHome header .liFilter .iconFilter{width: 16px; height: 16px; vertical-align: top; margin-top: 5px;}
+#deliveryHome header .liFilter .iconFilter rect{fill: none;}
+#deliveryHome header .liFilter .iconFilter path{fill: #505050;}
+
+#deliveryHome .sectionNotice{position: relative; width: 100%; height: auto; z-index: 10; margin-bottom: -2px; padding: 20px 20px 0 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#deliveryHome .bgNotice{position: relative; width: 100%; height: 35px; line-height: 35px; padding: 0 15px; box-sizing: border-box; border: none; border-radius: 5px; background-color: #edf4ff; color: #131313; font-size: 0.75rem;}
+#deliveryHome .bgNotice b{font-size: inherit;}
+#deliveryHome .sectionNotice .iconEmoticon{vertical-align: top; width: 17px; margin-top: 6px; margin-right: 5px;}
+#deliveryHome .sectionNotice .iconMore{position: absolute; top: 10px; right: 15px; width: 16px; height: 16px;}
+#deliveryHome .sectionNotice .iconMore path{stroke: #FFFFFF;}
+
+#deliveryHome .sectionDiscount{position: relative; width: 100%; height: auto; padding: 22px 0 15px 0; background-color: #FFFFFF;}
+#deliveryHome .sectionDiscount h3{margin-bottom: 22px; padding: 0 20px; box-sizing: border-box;}
+#deliveryHome .sectionDiscount h3 .member{margin-left: 7px; color: #505050; font-size: 0.875rem; font-weight: 500;}
+#deliveryHome .sectionDiscount .areaDiscount{position: relative; width: 100%; height: auto; overflow: hidden;}
+#deliveryHome .sectionDiscount .ulDiscount{position: relative; width: 100%; height: auto;}
+#deliveryHome .sectionDiscount .liDiscount{position: relative; width: 100%; height: 150px; overflow: hidden;}
+#deliveryHome .sectionDiscount .liDiscount:after{content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: -moz-linear-gradient(left, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%); background: -webkit-linear-gradient(left, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%); background: linear-gradient(to right, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#00000000',GradientType=1 );}
+#deliveryHome .sectionDiscount .liDiscount img{width: 100%; height: 100%; object-fit: cover;}
+#deliveryHome .sectionDiscount .liDiscount .storeName{position: absolute; bottom: 70px; left: 15px; z-index: 10; line-height: 1rem; color: #ffdf5c; font-weight: 700; text-shadow: 0 1px 4px rgba(0,0,0,12%);}
+#deliveryHome .sectionDiscount .liDiscount .discountContent{position: absolute; bottom: 40px; left: 15px; z-index: 10; line-height: 1.5rem; color: #FFFFFF; font-size: 1.375rem; font-weight: 700; text-shadow: 0 1px 4px rgba(0,0,0,12%);}
+#deliveryHome .sectionDiscount .liDiscount .discountDeadline{position: absolute; bottom: 18px; left: 15px; z-index: 10; line-height: 0.75rem; color: #FFFFFF; font-size: 0.75rem; font-weight: 600; text-shadow: 0 1px 4px rgba(0,0,0,12%);}
+#deliveryHome .sectionDiscount .liDiscount .storeDeadline{position: absolute; bottom: 15px; right: 15px; z-index: 10; line-height: 0.75rem; background: #FFFFFF; border: 1px solid #EAEAEA; padding: 3px 5px; border-radius: 5px; color: #131313; font-size: 0.75rem; letter-spacing: -0.5px;}
+#deliveryHome .sectionDiscount .liDiscount .countdown{position: absolute; bottom: 15px; right: 15px; z-index: 10; line-height: 0.875rem; padding: 3px 5px; border: 1px solid #E3131B; box-sizing: border-box; border-radius: 5px; background-color: #FFFFFF; color: #E3131B; font-size: 0.75rem; font-weight: 600; text-align: center; letter-spacing: -0.5px;}
+#deliveryHome .sectionDiscount .liDiscount .iconTimer{width: 14px; height: 14px; vertical-align: top; margin-left: -1px;}
+#deliveryHome .sectionDiscount .liDiscount .iconTimer rect{fill: none;}
+#deliveryHome .sectionDiscount .liDiscount .iconTimer path{fill: #E3131B;}
+
+#deliveryHome .sectionStore{position: relative; width: 100%; height: auto; margin-bottom: 5px; padding: 10px 20px 10px 20px; box-sizing: border-box; background-color: #FFFFFF;}
+#deliveryHome .sectionStore:last-of-type{margin-bottom: 0;}
+#deliveryHome .sectionStore:last-of-type{padding-bottom: 50px;}
+#deliveryHome .sectionStore h3{line-height: 1rem; font-size: 0.875rem; padding-top: 20px;}
+#deliveryHome .sectionStore h3 .subSupport{line-height: 16px; margin-top: 4px; color: #505050; font-size: 0.75rem; font-weight: 500;}
+#deliveryHome .sectionStore h3 .btnTooltip{display: inline-block; vertical-align: top; height: 16px; padding: 0 5px 0 2px;}
+#deliveryHome .sectionStore h3 .iconTooltip{width: 16px; height: 16px; vertical-align: top;}
+#deliveryHome .sectionStore h3 .iconTooltip rect{fill: none;}
+#deliveryHome .sectionStore h3 .iconTooltip path{fill: #EAEAEA;}
+#deliveryHome .sectionStore h3 .tooltip{position: absolute; top: 50px; z-index: 100;}
+#deliveryHome .sectionStore h3 .contentTooltip{position: relative; width: 250px; line-height: 1rem; padding: 10px; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF; color: #505050; box-shadow: 0 1px 4px rgba(0,0,0,12%); text-shadow: none; font-size: 0.75rem; font-weight: 500;}
+#deliveryHome .sectionStore h3 .triangleTooltip{position: absolute; z-index: -1; left: 39px; top: -18px;}
+#deliveryHome .sectionStore .textSort{position: relative; line-height: 16px; color: #505050; font-size: 0.75rem; font-weight: 500;}
+#deliveryHome .sectionStore .textSort .iconUnfold{width: 16px; height: 16px; vertical-align: top;}
+#deliveryHome .sectionStore .selectSort{position: absolute; top: 0; left: 0; z-index: 10; width: 100px; height: 16px; opacity: 0;}
+#deliveryHome .sectionStore .btnReminder{position: absolute; top: 15px; right: 0; height: 26px; padding: 0 16px 0 15px; border-radius: 13px; border: 1px solid #0F1838; box-sizing: border-box; background-color: #0F1838; color: #FFFFFF; font-size: 0.75rem; font-weight: 700; text-align: center;}
+#deliveryHome .sectionStore .iconReminder{width: 16px; height: 16px; vertical-align: top; margin-left: -3px;}
+#deliveryHome .sectionStore .iconReminder rect{fill: none;}
+#deliveryHome .sectionStore .iconReminder path{fill: #f5cc1f;}
+#deliveryHome .sectionStore .btnReminder.disabled{border: 1px solid #DADADA; background-color: #FFFFFF; color: #505050;}
+#deliveryHome .sectionStore .btnReminder.disabled .iconReminder path{fill: #505050;}
+#deliveryHome .sectionStore .ulStore{position: relative; width: 100%; height: auto;}
+#deliveryHome .sectionStore .liStore{position: relative; width: 100%; height: auto; padding: 20px 0; border-bottom: 1px solid #EAEAEA;}
+#deliveryHome .sectionStore .liStore:last-of-type{border-bottom: 0;}
+#deliveryHome .sectionStore .linkStore{position: relative; width: 100%; height: auto; padding-left: 87px; box-sizing: border-box;}
+#deliveryHome .sectionStore .storePhoto{position: absolute; top: 50%; left: 0; width: 72px; height: 72px; margin-top: -36px; border: 1px solid #F5F5F5; border-radius: 5px; box-sizing: border-box; overflow: hidden;}
+#deliveryHome .sectionStore .storePhoto img{width: 100%; height: 100%; object-fit: cover;}
+#deliveryHome .sectionStore .btnLike{position: absolute; top: 0; right: 0; padding: 5px 5px 10px 10px;}
+#deliveryHome .sectionStore .iconLike{width: 16px; height: 16px; vertical-align: top; }
+#deliveryHome .sectionStore .iconLike rect{fill: none;}
+#deliveryHome .sectionStore .iconLike .line{fill: #FFFFFF; stroke-width: 0;}
+#deliveryHome .sectionStore .iconLike .plane{fill: #000000; stroke-width: 0; opacity: 0.5;}
+#deliveryHome .sectionStore .active .iconLike .line{fill: #FFFFFF; stroke-width: 0;}
+#deliveryHome .sectionStore .active .iconLike .plane{fill: #FF5555; stroke-width: 0; opacity: 1;}
+#deliveryHome .sectionStore .storePhoto .photoSoldOut{position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 10; width: 100%; height: 100%; line-height: 70px; border-radius: 5px; background-color: rgba(0,0,0,0.6); color: #FFFFFF; font-size: 0.75rem; font-weight: 700; text-align: center; overflow: hidden;}
+#deliveryHome .sectionStore .storeInfo{display: flex; flex-direction: column; justify-content: center; align-items: flex-start; max-width: 100%; height: auto; min-height: 72px;}
+#deliveryHome .sectionStore .name{display: flex; flex-direction: row; justify-content: flex-start; align-items: center; width: 100%; height: 20px; margin-bottom: 8px;}
+#deliveryHome .sectionStore .name .store{line-height: 20px; color: #131313; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+#deliveryHome .sectionStore .name .new{flex: none; width: 34px; height: 16px; line-height: 16px; margin-left: 5px; border-radius: 3px; background-color: #FFC110; color: #FFFFFF; font-size: 0.625rem; font-weight: 700; text-align: center;}
+#deliveryHome .sectionStore .name .discount{flex: none; width: 34px; height: 16px; line-height: 16px; margin-left: 5px; border-radius: 3px; background-color: #E3131B; color: #FFFFFF; font-size: 0.75rem; font-weight: 700; text-align: center;}
+#deliveryHome .sectionStore .name .medal{flex: none; width: 14px; height: 20px; margin-left: 5px;}
+#deliveryHome .sectionStore .deadline{position: relative; line-height: 0.875rem; margin-bottom: 5px; font-size: 0.875rem;}
+#deliveryHome .sectionStore .deadline.countdown{color: #D10000; letter-spacing: -0.5px;}
+#deliveryHome .sectionStore .deadline .rest{position: absolute; left: 48px; color: inherit; width: 50px; font-size: inherit;}
+#deliveryHome .sectionStore .scoreAndReview{width: 100%; height: auto; line-height: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+#deliveryHome .sectionStore .scoreAndReview .iconStar{width: 16px; height: 16px; vertical-align: top; margin-left: -2px; margin-right: -3px;}
+#deliveryHome .sectionStore .scoreAndReview .iconStar rect{fill: none;}
+#deliveryHome .sectionStore .scoreAndReview .iconStar path{fill: #F5CC1F;}
+#deliveryHome .sectionStore .scoreAndReview .score{line-height: 16px; margin-right: 2px; color: #131313; font-size: 0.875rem; font-weight: 700; letter-spacing: -0.5px;}
+#deliveryHome .sectionStore .scoreAndReview .review{line-height: 16px; margin-right: 5px; font-size: 0.875rem; letter-spacing: -0.5px;}
+#deliveryHome .sectionStore .scoreAndReview .menu{color: #A0A0A0; font-size: 0.875rem;}
+
+#deliveryHome .sectionDiscoverReview{position: relative; width: 100%; height: auto; padding: 20px; box-sizing: border-box;}
+#deliveryHome .sectionDiscoverReview h3{line-height: 1rem; margin-bottom: 15px; padding: 0 5px; box-sizing: border-box; font-size: 1rem;}
+#deliveryHome .sectionDiscoverReview .btnClosed{position: absolute; top: -5px; right: 0;}
+#deliveryHome .sectionDiscoverReview .iconClosed{width: 26px; height: 26px; vertical-align: top;}
+#deliveryHome .sectionDiscoverReview .iconClosed rect{fill: none;}
+#deliveryHome .sectionDiscoverReview .iconClosed line{stroke: #505050; stroke-linecap: round; stroke-miterlimit: 4; stroke-width: 1;}
+#deliveryHome .sectionDiscoverReview .linkReview{position: relative; width: 100%; height: auto; padding: 0 18px; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF;}
+#deliveryHome .sectionDiscoverReview .areaReview{position: relative; width: 100%; height: auto; padding: 15px 65px 15px 0; box-sizing: border-box; border-bottom: 1px solid #EAEAEA;}
+#deliveryHome .sectionDiscoverReview .areaText{position: relative; width: 100%; height: 60px; line-height: 20px; font-size: 0.875rem; text-overflow: ellipsis; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;}
+#deliveryHome .sectionDiscoverReview .areaImage{position: absolute; top: 15px; right: 0; width: 60px; height: 60px; border-radius: 5px; overflow: hidden;}
+#deliveryHome .sectionDiscoverReview .areaImage img{width: 100%; height: 100%; object-fit: cover;}
+#deliveryHome .sectionDiscoverReview .areaMenu{position: relative; width: 100%; height: auto; padding: 12px 0 15px 44px; box-sizing: border-box;}
+#deliveryHome .sectionDiscoverReview .areaStore{position: absolute; top: 12px; left: 0; width: 34px; height: 34px; border: 1px solid #F5F5F5; border-radius: 5px; box-sizing: border-box; overflow: hidden;}
+#deliveryHome .sectionDiscoverReview .areaStore img{width: 100%; height: 100%; object-fit: cover;}
+#deliveryHome .sectionDiscoverReview .areaInfo{width: 100%; height: auto;}
+#deliveryHome .sectionDiscoverReview .areaInfo .menu{line-height: 1rem; font-size: 0.75rem;}
+#deliveryHome .sectionDiscoverReview .areaInfo .price{line-height: 1rem; color: #131313; font-size: 0.75rem; font-weight: 700;}
+
+/* 앱 진입 */
+#popupModal {position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 30000; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); display: flex; justify-content: center;}
+#popupModal .content {display: flex; flex-direction: column; justify-content: center; align-items: center;}
+#popupModal .content .pagination {display: flex; justify-content: center; align-items: center;}
+.swiper-pagination-bullet {width: 10px; height: 10px; border-radius: 50%; margin: 4px; opacity: 1; background-color: #BBBBBB;}
+.swiper-pagination-bullet-active {background-color: #FFFFFF;}
+#popupModal .content .swiper-container {width: 320px; height: 320px; overflow: hidden; margin: 20px 0;}
+#popupModal .content .swiper-container .swiper-wrapper {width: max-content; height: 100%;}
+#popupModal .content .swiper-container .swiper-wrapper .swiper-slide {width: 320px; height: 320px;}
+#popupModal .content .swiper-container .swiper-wrapper .swiper-slide img {width: 100%; height: 100%;}
+#popupModal .content .closeWrap {width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center;}
+#popupModal .content .closeWrap .leftBtn,
+#popupModal .content .closeWrap .rightBtn{line-height: 1rem; color: #FFFFFF; font-size: 1rem; text-align: center;}
+#popupModal .content .closeWrap .leftBtn {width: 62%}
+#popupModal .content .closeWrap .rightBtn {width: 37%;border-left: solid 1px #fff;}
+@media screen and (min-width: 480px) {
+    #popupModal {position: fixed; left: unset; right: unset;width: 480px}
+}
