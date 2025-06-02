@@ -1,0 +1,156 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : partnerAd
+	설　명 : 광고관리
+	클래스명 : 카멜케이스, 태그역활 + 컨텐츠내용 조합, 넘버링은 하이픈
+	작성순서 : 1. 레이아웃  2.크기/간격  3.박스모양  4.폰트  5.기타
+			position / display / float / width / height / margin / padding / border / background / font / overflow / etc...
+	메인컬러 : #0F1838
+	폰트컬러 : #131313, #505050, #707070, #909090
+	보더컬러 : #E8E8E8
+	배경컬러 : #F8F8F8, #F0F0F0
+---------------------------------------------*/
+/* 후원리스트 */
+.sectionSupport{position: relative; width: 100%; height: 1220px; background: url("../img/bgPCSupport.png") no-repeat top center; background-size: 1920px 1220px;}
+.sectionSupport .btnApplyAd{position: absolute; top: 200px; left: 50%; z-index: 10; width: 220px; height: 50px; line-height: 50px; margin-left: -345px; border-radius: 25px; background-color: #F5CC1F; color: #131313; font-size: 20px; font-weight: 700;}
+.sectionSupport .typeAd{position: absolute; top: 770px; left: 50%; z-index: 10; width: 680px; height: auto; margin-left: -340px; padding: 40px 20px; box-sizing: border-box; border-radius: 20px; background-color: #F7F9FF; color: #131313;}
+.sectionSupport .typeAd .nameAd{margin-bottom: 20px; font-size: 20px; font-weight: 700; text-align: center;}
+.sectionSupport .typeAd .nameAd .badgeAd{display: inline-block; vertical-align: top; line-height: 12px; margin-top: 1px; margin-left: 10px; padding: 5px 14px 5px 12px; border-radius: 20px; background-color:#E4EAFE; color: #3B61F6; font-size: 12px; font-weight: 700;}
+.sectionSupport .typeAd .contentAd{line-height: 22px; color: #505050; font-size: 16px; text-align: center;}
+.sectionSupport .typeAd .mobileBr{display: none;}
+@media all and (max-width: 1023px) {
+    .sectionSupport{height: auto; padding-top: 900px; background: url("../img/bgMobileSupport.png") no-repeat top center; background-size: 1040px 850px;}
+    .sectionSupport .btnApplyAd{top: 160px; margin-left: -150px; width: 200px; height: 45px; line-height: 45px; font-size: 18px;}
+    .sectionSupport .typeAd{position: relative; top: 0; left: 0; margin-left: 0; width: 100%; border-radius: 0; padding: 40px 0;}
+    .sectionSupport .contentAd{line-height: 18px; font-size: 14px;}
+    .sectionSupport .typeAd .mobileBr{display: block;}
+}
+
+/* 광고 신청 */
+.sectionApplyAd{position: relative; width: 680px; margin: -150px auto 75px auto;}
+.sectionApplyAd .copyApply{display: block; width: 300px; margin: 0 auto 45px;}
+.sectionApplyAd .areaButton{position: relative; width: 100%; height: auto;}
+.sectionApplyAd .areaButton:after{content: ""; display: block; clear: both;}
+.sectionApplyAd .areaButton .btnApply{width: 48%; padding: 25px 40px 20px 40px; box-sizing: border-box; border-radius: 20px; background-color: #3B61F6; text-align: left;}
+.sectionApplyAd .areaButton .btnApply:first-of-type{float: left;}
+.sectionApplyAd .areaButton .btnApply:last-of-type{float: right;}
+.sectionApplyAd .areaButton .nameApply{margin-bottom: 12px; color: #FFFFFF; font-size: 20px; font-weight: 700;}
+.sectionApplyAd .areaButton .contentApply{margin-bottom: 20px; line-height: 22px; color: #FFFFFF; font-size: 16px;}
+.sectionApplyAd .areaButton .goApply{width: 100%; height: 48px; line-height: 48px; border-radius: 24px; background-color: #FFFFFF; color: #0F1838; font-size: 18px; font-weight: 700; text-align: center;}
+.sectionApplyAd .areaButton .iconGoApply{width: 20px; height: 20px; vertical-align: top; margin-top: 14px;}
+.sectionApplyAd .areaButton .iconGoApply rect{fill: none; stroke-width: 0;}
+.sectionApplyAd .areaButton .iconGoApply path{fill: #0f1838; stroke-width: 0;}
+
+@media all and (max-width: 1023px) {
+    .sectionApplyAd{width: 100%; margin: 60px auto; padding: 0 20px; box-sizing: border-box;}
+    .sectionApplyAd .copyApply{width: 240px; margin: 0 auto 45px auto;}
+    .sectionApplyAd .areaButton .btnApply{width: 100%; padding: 25px 25px 20px 25px;}
+    .sectionApplyAd .areaButton .btnApply:first-of-type{float: unset; margin-bottom: 15px;}
+    .sectionApplyAd .areaButton .btnApply:last-of-type{float: unset;}
+    .sectionApplyAd .areaButton .contentApply{line-height: 22px; font-size: 16px;}
+    .sectionApplyAd .areaButton .goApply{font-size: 20px;}
+}
+
+/* 자주 묻는 질물 */
+.sectionFAQ{position: relative; width: 1080px; margin: 0 auto 150px auto; padding: 60px 120px; box-sizing: border-box; background: #F5F5F5 url("../img/bgFAQ.png") repeat left top; background-size: 995px 580px;}
+.sectionFAQ .titleFAQ{width: 100%; height: auto; margin-bottom: 40px;}
+.sectionFAQ .titleFAQ .ko{position: relative; z-index: 10; line-height: 30px; color: #131313; font-size: 30px; font-weight: 700; text-align: center;}
+.sectionFAQ .titleFAQ .en{position: relative; z-index: 0; line-height: 35px; margin-top: -22px; color: #131313; font-size: 35px; font-weight: 700; text-align: center; opacity: 5%;}
+.sectionFAQ .ulFAQ{position: relative; width: 100%; height: auto;}
+.sectionFAQ .liFAQ{position: relative; width: 100%; height: auto; margin-bottom: 15px; padding: 0 40px; box-sizing: border-box; background: #FFFFFF; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,10%);}
+.sectionFAQ .liFAQ:last-of-type{margin-bottom: 0;}
+.sectionFAQ .liFAQ .areaQuestions{position: relative; width: 100%; height: auto; line-height: 26px; padding: 30px 30px 30px 0; box-sizing: border-box; color: #131313; font-size: 20px; font-weight: 700; text-align: left; cursor: pointer;}
+.sectionFAQ .liFAQ .areaQuestions .badgeQuestions{display: inline-block; vertical-align: top; width: 24px; height: 24px; line-height: 24px; margin-top: 1px; margin-right: 12px; border-radius: 100%; background-color: #0F1838; color: #FFFFFF; font-size: 16px; text-align: center;}
+.sectionFAQ .liFAQ .iconUnfold, .sectionFAQ .liFAQ .iconFold{position: absolute; top: 50%; right: 0; width: 20px; height: 20px; margin-top: -10px;}
+.sectionFAQ .liFAQ .iconUnfold rect, .iconFold rect{fill: none;}
+.sectionFAQ .liFAQ .iconUnfold path, .iconFold path{fill: none; stroke: #505050; stroke-width: 2;}
+.sectionFAQ .liFAQ .areaAnswer{position: relative; width: 100%; height: auto; line-height: 22px; padding: 30px 0 35px 0; border-top: 1px solid #EAEAEA; color: #505050; font-size: 16px; word-break: keep-all;}
+@media all and (max-width: 1023px) {
+    .sectionFAQ{width: 100%; margin-bottom: 60px; padding: 60px 20px;}
+    .sectionFAQ .titleFAQ .ko{font-size: 28px;}
+    .sectionFAQ .titleFAQ .en{line-height: 28px; margin-top: -20px; font-size: 32px;}
+    .sectionFAQ .liFAQ{padding: 0 20px;}
+    .sectionFAQ .liFAQ .areaQuestions{line-height: 26px; padding: 25px 35px 25px 0; font-size: 20px;}
+    .sectionFAQ .liFAQ .areaQuestions .badgeQuestions{width: 20px; height: 20px; line-height: 20px; margin-top: 3px; margin-right: 10px; font-size: 14px;}
+    .sectionFAQ .liFAQ .areaAnswer{line-height: 22px; padding: 25px 0 30px 0; font-size: 16px;}
+}
+
+/* 광고 관리 */
+.managementAd{position: relative; width: 1080px; margin: 0 auto;}
+.managementAd h1{margin: 40px 0;}
+.managementAd .selectBox{margin-bottom: 20px;}
+
+.managementAd .sectionManagementPC{position: relative; width: 1080px; margin: 0 auto 60px auto;}
+.managementAd .sectionManagementPC:after{content: ""; display: block; clear: both;}
+.managementAd .sectionManagementPC .areaManagementAd{width: 49%; height: 585px; background: #F5F5F5;}
+.managementAd .sectionManagementPC .progressAd{float: left; border-top: 3px solid #0F1838;}
+.managementAd .sectionManagementPC .endAd{float: right; border-top: 3px solid #A0A0A0;}
+.managementAd .sectionManagementPC .textManagementAd{line-height: 14px; padding: 25px 30px; box-sizing: border-box; font-size: 14px;}
+.managementAd .ulManagementAd{width: 100%; height: auto; max-height: 518px; padding: 0 30px 25px 30px; box-sizing: border-box; overflow-y: auto;}
+.managementAd .ulManagementAd .liManagementAd{width: 100%; height: auto; background: #FFFFFF; margin-bottom: 15px; padding: 20px 25px; box-sizing: border-box; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,10%);}
+.managementAd .ulManagementAd .liManagementAd:last-of-type{margin-bottom: 0;}
+.managementAd .ulManagementAd .place{margin-bottom: 20px; color: #131313; font-size: 20px; font-weight: 700;}
+.managementAd .ulManagementAd .badgeAd{display: inline-block; vertical-align: top; line-height: 12px; margin-top: 1px; margin-left: 10px; padding: 5px 14px 5px 12px; border-radius: 20px; background-color:#E4EAFE; color: #3B61F6; font-size: 12px; font-weight: 700;}
+.managementAd .ulManagementAd .dlAd{position: relative; width: 100%; height: auto; margin-bottom: 10px; padding-left: 120px; box-sizing: border-box;}
+.managementAd .ulManagementAd .dlAd:last-of-type{margin-bottom: 0;}
+.managementAd .ulManagementAd .dlAd .dtAd{position: absolute; top: 0; left: 0; color: #909090; font-size: 14px;}
+.managementAd .ulManagementAd .dlAd .dtAd{position: absolute; top: 0; left: 0; font-size: 14px;}
+.managementAd .ulManagementAd .againAd{padding-top: 22px; font-size: 14px; text-align: center;}
+.managementAd .ulManagementAd .btnAgainAd{display: block; width: 240px; height: 37px; line-height: 35px; margin: 10px auto 4px auto; border: 1px solid #0F1838; border-radius: 20px; box-sizing: border-box; font-weight: 700;}
+.managementAd .ulManagementAd .sub{color: #A0A0A0; font-size: 12px;}
+.managementAd .areaApply{position: relative; width: 100%; padding: 0 30px 20px 30px; box-sizing: border-box;}
+.managementAd .areaApply .btnApply{display: block; width: 100%; height: 50px; line-height: 50px; background-color: #EAEAEA; font-size: 16px; font-weight: 700; text-align: center;}
+.managementAd .areaApply .circleApply{display: inline-block; vertical-align: top; position: relative; width: 20px; height: 20px; margin-top: 15px; margin-right: 5px; border-radius: 100%; background-color: #A0A0A0;}
+.managementAd .areaApply .iconApply{position: absolute; top: 0; left: 0; width: 20px; height: 20px;}
+.managementAd .areaApply .iconApply rect{fill: none;}
+.managementAd .areaApply .iconApply line{fill: none; stroke: #FFFFFF; stroke-linecap: round; stroke-width: 2px;}
+.managementAd .noneEndAd{margin-top: 200px; color: #A0A0A0; font-size: 14px; text-align: center;}
+
+.managementAd .sectionManagementMobile{display: none;}
+
+.managementAd .sectionNotice{position: relative; width: 1080px; margin: 0 auto 60px auto;}
+.managementAd .sectionNotice .areaLocation{width: 100%; height: auto; margin-bottom: 30px;}
+.managementAd .sectionNotice .titleLocation{line-height: 14px; margin-bottom: 12px; color: #131313; font-size: 14px; font-weight: 700;}
+.managementAd .sectionNotice .WhereInGeek{line-height: 12px; font-size: 12px;}
+.managementAd .sectionNotice .WhereInGeek .location{margin-right: 20px;}
+.managementAd .sectionNotice .areaNotice{width: 100%; height: auto;}
+.managementAd .sectionNotice .titleNotice{line-height: 14px; margin-bottom: 12px; color: #131313; font-size: 14px; font-weight: 700;}
+.managementAd .sectionNotice .ulNotice{width: 100%; height: auto;}
+.managementAd .sectionNotice .liNotice{position: relative; width: 100%; height: auto; line-height: 12px; margin-bottom: 5px; padding-left: 12px; box-sizing: border-box; color: #A0A0A0; font-size: 12px;}
+.managementAd .sectionNotice .liNotice:last-of-type{margin-bottom: 0;}
+.managementAd .sectionNotice .liNotice .dot{position: absolute; top: 0; left: 0; line-height: 12px;}
+.managementAd .sectionNotice .liNotice .black{color: #131313;}
+@media all and (max-width: 1023px) {
+    .managementAd{width: 100%;}
+    .managementAd h1{margin-bottom: 20px; padding: 0 20px; box-sizing: border-box;}
+    .managementAd .selectBox{padding: 0 20px; box-sizing: border-box;}
+    .managementAd .sectionManagementPC{display: none;}
+    .managementAd .sectionManagementMobile{display: block; width: 100%; padding: 10px 20px 20px 20px; box-sizing: border-box;  background: #F5F5F5; margin-bottom: 40px;}
+    .managementAd .sectionManagementMobile .typeAdBox{position: relative;}
+    .managementAd .sectionManagementMobile .typeAdBox .optionSelected{position: relative; width: 100%; height: auto; line-height: 20px; padding: 20px 0; color: #131313; font-size: 14px;}
+    .managementAd .sectionManagementMobile .typeAdBox .iconSelected{display: inline-block; vertical-align: top; width: 20px; height: 20px;}
+    .managementAd .sectionManagementMobile .typeAdBox select{position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; font-size: 20px; opacity: 0;}
+    .managementAd .sectionManagementMobile .typeAdBox option{font-size: 20px;}
+    .managementAd .ulManagementAd{width: 100%; max-height: none; padding: 0 0 20px 0; overflow-y: unset;}
+    .managementAd .ulManagementAd .liManagementAd{padding: 20px;}
+    .managementAd .ulManagementAd .place{font-size: 16px;}
+    .managementAd .ulManagementAd .badgeAd{line-height: 10px; margin-top: 0; margin-left: 7px; padding: 4px 10px 4px 8px; font-size: 10px;}
+    .managementAd .ulManagementAd .dlAd .dtAd{font-size: 12px;}
+    .managementAd .ulManagementAd .dlAd .ddAd{font-size: 14px;}
+    .managementAd .ulManagementAd .againAd{font-size: 12px;}
+    .managementAd .ulManagementAd .btnAgainAd{font-size: 14px;}
+    .managementAd .ulManagementAd .sub{font-size: 10px;}
+    .managementAd .areaApply{padding: 0 0 20px 0;}
+    .managementAd .areaApply .circleApply{width: 18px; height: 18px; margin-top: 16px;}
+    .managementAd .areaApply .iconApply{width: 18px; height: 18px;}
+    .managementAd .areaApply .btnApply{font-size: 14px;}
+    .managementAd .noneEndAd{margin: 100px 0;}
+    .managementAd .sectionNotice{width: 100%; margin-bottom: 40px; padding: 0 20px; box-sizing: border-box;}
+    .managementAd .sectionNotice .areaLocation{margin-bottom: 20px;}
+    .managementAd .sectionNotice .WhereInGeek{line-height: 16px;}
+    .managementAd .sectionNotice .liNotice{line-height: 16px;}
+    .managementAd .sectionNotice .liNotice .dot{line-height: 16px;}
+}
+
+
+/* 광고 관리 */

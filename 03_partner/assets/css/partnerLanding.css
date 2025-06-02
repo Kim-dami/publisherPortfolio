@@ -1,0 +1,162 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : partnerLanding
+	설　명 : 리뷰관리
+	클래스명 : 카멜케이스, 태그역활 + 컨텐츠내용 조합, 넘버링은 하이픈
+	작성순서 : 1. 레이아웃  2.크기/간격  3.박스모양  4.폰트  5.기타
+			position / display / float / width / height / margin / padding / border / background / font / overflow / etc...
+	메인컬러 : #0F1838
+	폰트컬러 : #131313, #505050, #707070, #909090
+	보더컬러 : #E8E8E8
+	배경컬러 : #F8F8F8, #F0F0F0
+---------------------------------------------*/
+/* 배너 */
+.sectionBanner{position: relative; width: 100%; height: 320px; margin-bottom: 50px; overflow: hidden;}
+.swiperBanner{position: relative; width: 100%; height: 100%;}
+.swiperBanner .sb{position: relative; width: 100%; height: 100%;}
+.swiperBanner .sb-1{background-color: #16779F;}
+.swiperBanner .sb-2{background-color: #FF795A;}
+.swiperBanner .sb-3{background-color: #F85353;}
+.swiperBanner .sbLayout{position: relative; width: 1080px; height: 100%; margin: 0 auto; padding-left: 16px; box-sizing: border-box;}
+.swiperBanner .sbCopy{position: absolute; top: 50px; left: 0px; line-height: 50px; color: #fff; font-size: 40px; font-weight: 600; letter-spacing: -0.5px;}
+.swiperBanner .sbSubCopy{position: absolute; top: 165px; left: 0px; line-height: 23px; color: #fff; font-size: 16px;}
+.swiperBanner .sbSubCopy .small{color:#fff; font-size: 12px;}
+
+.layoutBanner{position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 2; width: 1080px; height: 320px; margin: 0 auto;}
+
+.imageBanner{position: absolute; top:0; left: 325px; width: 420px; height: 100%; overflow: hidden;}
+.imageBanner .ib{position: absolute; width: 100%; height: 100%; opacity: 0; transition:0.5s ease all; -moz-transition:0.5s ease all; -webkit-transition:0.2s ease all;}
+.imageBanner .ib.active{opacity: 1;}
+.imageBanner .ibImage{width: 100%; height: 100%; object-fit: cover;}
+
+.navBanner{position: absolute; bottom: 60px; left: 0; display: flex; align-content: center; justify-content: flex-start; height: auto; margin: 0 auto; padding-left: 16px; box-sizing: border-box;}
+.navBanner .nbPagination{display: flex; line-height: 30px; margin-right: 10px; color: #fff; font-size: 16px;}
+.navBanner .nbPagination .swiper-pagination-current{margin-right: 3px; color: #fff; font-weight: 600;}
+.navBanner .nbPagination .swiper-pagination-total{margin-left: 3px; color: #fff; opacity: 0.75;}
+.navBanner .btnPrevBanner{display: flex; width: 30px; height: 30px; margin-right: 4px; border-radius: 5px; background: rgba(0,0,0,0.15) url("https://cloudstone-partnercenter.s3.ap-northeast-2.amazonaws.com/landing/btnPrevBanner.svg") no-repeat center center; background-size: 100%;}
+.navBanner .btnNextBanner{display: flex; width: 30px; height: 30px; border-radius: 5px; background: rgba(0,0,0,0.15) url("https://cloudstone-partnercenter.s3.ap-northeast-2.amazonaws.com/landing/btnNextBanner.svg") no-repeat center center; background-size: 100%;}
+@media all and (max-width: 1023px) {
+    .sectionBanner{height: 630px; margin-bottom: 30px;}
+    .swiperBanner .sb{padding-top: 280px;}
+    .swiperBanner .sbLayout{width: 100%; padding-left: 20px; padding-right: 20px;}
+    .swiperBanner .sbCopy{position: relative; top: 0; line-height: 36px; margin-bottom: 10px; font-size: 30px; font-weight: 700;}
+    .swiperBanner .sbSubCopy{position: relative; top: 0; line-height: 18px; font-size: 14px;}
+    .layoutBanner{width: 100%; height: auto;}
+    .imageBanner{top: unset; bottom: 0; left: 0; width: 100%; height: 250px;}
+    .imageBanner .ibImage{object-fit: contain; object-position: center;}
+    .imageBanner .ib-2 .ibImage{margin-left: 18px;}
+    .navBanner{top : 280px; right: 20px; bottom: unset; left: unset; padding-left: 0;}
+}
+
+/* 로그인 */
+.areaLogin{position: absolute; top: 50%; right: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 320px; height: 270px; margin-top:-135px; padding: 25px; border-radius: 5px; box-sizing: border-box; background: #fff;}
+.areaLogin .inputLogin{position: relative; width:100%; height: auto; margin-bottom: 10px; padding-top: 9px;}
+.areaLogin .inputLogin input{position: relative; display: block; width:100%; line-height: 14px; padding: 13px 15px; border: 1px solid #D8D8D8; border-radius: 5px; box-sizing: border-box; background: transparent; color: #505050; font-size: 14px;}
+.areaLogin .inputLogin input:focus, .areaLogin .inputLogin input:valid{border-color: #0F1838; outline: none;}
+.areaLogin .inputLogin label{position: absolute; top: 0px; left: 8px; line-height: 12px; padding:3px 8px; background:#FFFFFF; color: #909090; font-size: 12px; pointer-events:none;}
+.areaLogin .inputLogin input:focus + label, .areaLogin .inputLogin input:valid + label{color:#0F1838; font-weight: 500;}
+.areaLogin .errorMassage{width:100%; height:auto; line-height: 16px; margin: 3px 0 5px 0; padding:0 14px 0 28px; box-sizing: border-box; background: url("https://cloudstone-partnercenter.s3.ap-northeast-2.amazonaws.com/landing/iconError.svg") no-repeat 5px 0; background-size: 16px 16px; color: #FF4E4E; font-size: 12px; }
+.areaLogin .btnLogin{display: block; width: 100%; height: 50px; line-height: 50px; margin-top: 8px; border-radius: 5px; background: #0F1838; color: #fff; font-size: 16px; font-weight: 600; text-align: center;}
+.areaLogin .profileImage{position: relative; width: 80px; height: 80px; margin: 0 auto 15px auto;}
+.areaLogin .profileImage img, .areaLogin .profileImage svg{width: 100%; height: 100%; object-fit: contain;}
+.areaLogin .txtHello{position: relative; width: 100%; height: auto; line-height: 24px; color: #707070; font-size: 16px; text-align: center; word-break: keep-all;}
+.areaLogin .txtHello .name{color: #131313; font-size: 20px; font-weight: 600;}
+@media all and (max-width: 1023px) {
+    .areaLogin{top: 20px; right: 20px; left: 20px; width: unset; height: 240px; margin-top: 0; padding: 20px; border-radius: 5px; box-sizing: border-box; background: #fff;}
+    .areaLogin .inputLogin input{padding: 11px 15px;}
+    .areaLogin .btnLogin{height: 45px; line-height: 45px;}
+    .areaLogin .txtHello{line-height: 22px; font-size: 14px;}
+    .areaLogin .txtHello .name{font-size: 16px;}
+}
+
+/* 배달긱 장점 */
+.sectionAdvantage{position: relative; width: 1080px; height: auto; margin: 0 auto 80px auto;}
+.titleSection{position: relative; z-index: 5; width:1080px; height: 30px; line-height: 30px; margin:0 auto 40px auto; color: #131313; font-size: 30px; font-weight: 600; text-align: center;}
+.listAdvantage{position: relative; display: flex; align-items: flex-start; width:100%; height: auto;}
+.listAdvantage .la{position: relative; display: flex; flex-direction: column; align-items: center; width: 25%; height: auto;}
+.listAdvantage .la:after{content: ""; position: absolute; top: 10px; right: 0; width: 1px; height: 70px; background: #E8E8E8;}
+.listAdvantage .la:last-child:after{background: transparent;}
+.listAdvantage .laImage{width:90px; height: 90px; margin-bottom: 25px}
+.listAdvantage .laTitle{position: relative; width: 100%; height: auto; line-height: 20px; margin-bottom: 10px; color: #131313; font-size: 20px; font-weight: 600; text-align: center;}
+.listAdvantage .laBody{position: relative; width: 100%; height: auto; line-height: 18px; color: #909090; font-size: 14px; text-align: center;}
+@media all and (max-width: 1023px) {
+    .sectionAdvantage{width: 100%; margin-bottom: 60px;}
+    .titleSection{width: 100%; margin-bottom: 25px; font-size: 22px; font-weight: 700;}
+    .listAdvantage{flex-wrap: wrap;}
+    .listAdvantage .la{width: 50%;}
+    .listAdvantage .la-1,
+    .listAdvantage .la-2{margin-bottom: 20px;}
+    .listAdvantage .laImage{width: 65px; height: 65px; margin-bottom: 15px;}
+    .listAdvantage .laTitle{line-height: 16px; margin-bottom: 5px; font-size: 16px; font-weight: 700; letter-spacing: -0.5px;}
+    .listAdvantage .laBody{line-height: 16px; font-size: 12px;}
+}
+
+/* 광고 */
+.sectionAD{position: relative; width: 100%; height: auto; margin: 0 auto 80px auto; padding-top: 80px;}
+.sectionAD .backgroundAD{position: relative; width: 1080px; height: 230px; margin: 0 auto; padding: 35px 30px 30px 440px; box-sizing: border-box; background: #0F1838 url("../img/bgAD.png") no-repeat right 41%; background-size: 800px;}
+.sectionAD .imgADPhone{position: absolute; bottom: 50%; left: 100px; height: 400px; margin-bottom: -170px;}
+.sectionAD .titleAD{line-height: 45px; margin-bottom: 5px; color: #FFFFFF; font-size: 20px; font-weight: 700;}
+.sectionAD .titleAD .big{color: #FFFFFF; font-size: 30px; font-weight: inherit;}
+.sectionAD .bodyAD{line-height: 20px; margin-bottom: 20px; color: #F0F0F0; font-size: 14px;}
+.sectionAD .btnAD{width: 200px; height: 42px; line-height: 42px; border-radius: 21px; background-color: #F5CC1F; color: #131313; font-size: 16px; font-weight: 700;}
+@media all and (max-width: 1023px) {
+    .sectionAD{margin-bottom: 60px; padding-top: 0; padding-bottom: 235px;}
+    .sectionAD .backgroundAD{width: 100%; height: auto; padding: 30px 30px 90px 30px; background-position: center center; background-size: cover;}
+    .sectionAD .imgADPhone{bottom: -245px; left: 50%; margin-left: -100px; margin-bottom: 0; width: 200px; height: auto;}
+    .sectionAD .titleAD{font-size: 18px;}
+    .sectionAD .titleAD .big{font-size: 24px;}
+    .sectionAD .bodyAD{line-height: 16px; font-size: 12px;}
+    .sectionAD .btnAD{width: 170px; height: 36px; line-height: 36px; border-radius: 18px; font-size: 14px;}
+}
+
+/* 서비스 제휴 */
+.sectionService{position: relative; width: 100%; height: auto; margin-bottom: 60px;}
+.backgroundService{position: relative; width: 100%; height: auto; margin-top: -55px; background: #F8F8F8;}
+.webService{display: block; position: relative; width: 1080px; height: auto; margin: 0 auto; padding: 75px 15px 40px 15px; box-sizing: border-box; overflow: hidden;}
+.mobileService{display: none;}
+.listService{position: relative; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; width: 100%; height: auto;}
+.listService .ls{position: relative; display: flex; flex-direction: column; align-items: center; width:130px; margin-bottom: 35px;}
+.listService .lsImage{height: 70px; margin-bottom: 15px;}
+.listService .lsCaption{color: #505050; font-size: 14px;}
+@media all and (max-width: 1023px) {
+    .sectionService{margin-bottom: 30px;}
+    .backgroundService{margin-top: -42px;}
+    .webService{display: none;}
+    .mobileService{display: block; position: relative; width: 100%; padding:45px 0 20px 0; box-sizing: border-box;}
+    .listService .ls{width: 110px; margin-bottom: 20px;}
+    .listService .lsImage{height: 55px; margin-bottom: 10px;}
+    .listService .lsCaption{font-size: 12px;}
+}
+
+/* Technology */
+.sectionTech{position: relative; width: 100%; height: auto; margin-bottom: 60px;}
+.backgroundTech{position: relative; width: 1080px; height: 230px; margin: 0 auto; padding: 55px 200px; box-sizing: border-box; background: #505050 url(https://cloudstone-partnercenter.s3.ap-northeast-2.amazonaws.com/landing/bgTech.png) repeat 50%; background-size: 1080px 230px;}
+.backgroundTech p{line-height: 45px; color: #FFFFFF; font-size: 30px; font-weight: 600;}
+.backgroundTech p:nth-child(2){padding-left: 25px;}
+.backgroundTech p .tech{color: #F5CC1F; font-weight: 600;}
+.backgroundTech .subCopyTech{line-height: 16px; margin-top: 5px; padding-left: 60px; color: #F0F0F0; font-size: 16px; font-weight: 500;}
+.backgroundTech .subCopyTech .small{color: #A0A0A0; font-size: 12px; font-weight: 500;}
+.backgroundTech .imgTechPhone{position: absolute; bottom: 0; right: 60px; width: 400px;}
+@media all and (max-width: 1023px) {
+    .sectionTech{margin-bottom: 30px;}
+    .sectionTech .titleSection{margin-bottom: 30px;}
+    .backgroundTech{width: 100%; height: 355px; padding: 30px 0;}
+    .backgroundTech .copyTech{width: 270px; margin: 0 auto;}
+    .backgroundTech p{line-height: 32px; font-size: 24px; font-weight: 700;}
+    .backgroundTech p:nth-child(2){padding-left: 15px;}
+    .backgroundTech .subCopyTech{line-height: 12px; margin-top: 8px; padding-left: 30px; font-size: 10px;}
+    .backgroundTech .subCopyTech .small{font-size: 10px;}
+    .backgroundTech .imgTechPhone{right: 50%; width: 300px; margin-right: -150px;}
+}
+
+/* 고정버튼 */
+.asideFixed{position: fixed; z-index: 10; flex-direction: column; align-items: center; justify-content: flex-end; bottom:80px; right: 80px; display: flex;}
+.asideFixed button{width:70px; height: 70px; padding-top:40px; border-radius: 15px; box-sizing: border-box; background-color:rgba(255, 255, 255, 0.9); background-repeat: no-repeat; color: #505050; box-shadow:2px 2px 6px rgba(0,0,0,0.1); font-size: 12px; font-weight: 600; text-align: center; }
+.asideFixed .btnCS{margin-bottom: 10px; background-image:url("https://cloudstone-partnercenter.s3.ap-northeast-2.amazonaws.com/landing/iconCS.svg"); background-position: center 3px; background-size: 40px 40px;}
+.asideFixed .btnTop{background-image:url("https://cloudstone-partnercenter.s3.ap-northeast-2.amazonaws.com/landing/iconTop.svg"); background-position: center 3px; background-size: 40px 40px;}
+@media all and (max-width: 1023px) {
+    .asideFixed{bottom: 30px; right: 20px;}
+    .asideFixed button{width: 60px; height: 60px; padding-top: 30px;}
+    .asideFixed .btnCS{background-position: center 4px; background-size: 30px 30px;}
+    .asideFixed .btnTop{background-position: center 4px; background-size: 30px 30px;}
+}

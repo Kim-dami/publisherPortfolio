@@ -1,0 +1,127 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : partnerOrder
+	설　명 : 판매내역 및 예약내역
+	클래스명 : 카멜케이스, 태그역활 + 컨텐츠내용 조합, 넘버링은 하이픈
+	작성순서 : 1. 레이아웃  2.크기/간격  3.박스모양  4.폰트  5.기타
+			position / display / float / width / height / margin / padding / border / background / font / overflow / etc...
+	메인컬러 : #0F1838
+	폰트컬러 : #131313, #505050, #707070, #909090
+	보더컬러 : #E8E8E8
+	배경컬러 : #F8F8F8, #F0F0F0
+---------------------------------------------*/
+/* 예약내역 */
+.basicPreOrder{position: relative; width: 1080px; margin: 0 auto;}
+.basicPreOrder:after{content: ""; display: block; clear: both;}
+.basicPreOrder h1{margin: 40px 0;}
+.basicPreOrder .btnMobileCalendar{display: none; position: absolute; top: 50%; right: 20px; width:102px; height: 35px; line-height: 33px; margin-top: -17px; border: 1px solid #0F1838; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF; color: #0F1838; font-size: 14px; font-weight: 600; text-align: center;}
+
+.sectionCalendar{float: left; position: relative; width: 450px; margin-bottom: 40px;}
+.sectionCalendar .areaCalendar{position: relative; width: 100%; height: auto;}
+.sectionCalendar .calendar-header{position: relative; width: 100%; height: auto; line-height: 20px; padding: 15px 0; border-bottom: 2px solid #0F1838; text-align: center;}
+.sectionCalendar .calendar-header:after{content: ""; display: block; clear: both;}
+.sectionCalendar .calendar-header .btn-icon-left{float: left; vertical-align: top;}
+.sectionCalendar .calendar-header .btn-icon-right{float: right; vertical-align: top;}
+.sectionCalendar .calendar-header .btn-icon-left svg,
+.sectionCalendar .calendar-header .btn-icon-right svg{vertical-align: top; width: 16px; height: 16px; margin-top: 2px;}
+.sectionCalendar .calendar-header .btn-icon-left svg rect,
+.sectionCalendar .calendar-header .btn-icon-right svg rect{fill: none;}
+.sectionCalendar .calendar-header .btn-icon-left svg path,
+.sectionCalendar .calendar-header .btn-icon-right svg path{fill: none; stroke: #505050; stroke-width: 2px;}
+.sectionCalendar .calendar-header .btn-current-year,
+.sectionCalendar .calendar-header .btn-current-month{vertical-align: top; line-height: 20px; padding: 0 4px; color: #131313; font-size: 20px; font-weight: 600;}
+.sectionCalendar .calendar-content{position: relative; width: 100%; height: auto;}
+.sectionCalendar .calendar-content .table-date{position: relative; width: 100%; height: auto; border-bottom: 1px solid #F0F0F0; border-spacing: 5px; border-collapse: separate;}
+.sectionCalendar .calendar-content th{position: relative; width: 14.28%; height: 50px; line-height: 50px; color: #505050; font-size: 16px; font-weight: 500; text-align: center;}
+.sectionCalendar .calendar-content .cell{vertical-align: top; position: relative; width: 14.28%; height: 74px; box-sizing: border-box; text-align: center;}
+.sectionCalendar .calendar-content .cell.not-current-month{background-color: #FFFFFF; color: #FFFFFF;}
+.sectionCalendar .calendar-content .cell.disabled{background-color: #F8F8F8; color: #A0A0A0;}
+.sectionCalendar .calendar-content .cell.in-range{background-color: #F8F8F8; color: #131313;}
+.sectionCalendar .calendar-content .cell .date{width: 40px; height: 40px; line-height: 40px; margin: 5px auto; border-radius: 100%; background-color: transparent; font-size: 16px; font-weight: 500;}
+.sectionCalendar .calendar-content .cell.active .date{background-color: #FFD522;}
+.sectionCalendar .calendar-content .cell .preOrder{width: 100%; line-height: 20px; padding: 2px 5px; box-sizing: border-box; color: #FFFFFF; font-size: 14px; font-weight: 600; text-align: center; word-break: break-all;}
+.sectionCalendar .calendar-content .cell.in-range .preOrder{background-color: #0F1838;}
+.sectionCalendar .areaTotal{width: 100%; height: auto; padding: 20px 0; border-bottom: 1px solid #F0F0F0;}
+.sectionCalendar .areaTotal .textTotal{width: 100%; height: auto; line-height: 26px; margin-bottom: 12px; color: #131313; font-size: 20px; font-weight: 600;}
+.sectionCalendar .areaTotal .textTotal .total{line-height: 26px; margin: 0 3px 0 10px; font-size: 26px;}
+.sectionCalendar .areaTotal .textTotalDetail{width: 100%; height: auto;}
+.sectionCalendar .areaTotal .textTotalDetail .detail{display: inline-block; line-height: 20px; margin-right: 12px; color: #707070; font-size: 14px;}
+.sectionCalendar .areaDateTotal{width: 100%; height: auto; padding: 20px 0; border-bottom: 1px solid #F0F0F0;}
+.sectionCalendar .areaDateTotal .textDate{width: 100%; height: auto; line-height: 16px; margin-bottom: 12px; color: #131313; font-size: 20px; font-weight: 600;}
+.sectionCalendar .areaDateTotal .textDateDetail{width: 100%; height: auto;}
+.sectionCalendar .areaDateTotal .textDateDetail .detail{line-height: 20px; margin-bottom: 3px; color: #707070; font-size: 14px;}
+.sectionCalendar .areaDateTotal .textDateDetail .change{color: #F85353}
+
+.sectionList{float: right; position: relative; width: 590px; margin-bottom: 40px;}
+.sectionList .orderFilter{position: relative; width: 100%; height: auto;}
+.sectionList .orderFilter:after{content: ""; display: block; clear: both;}
+.sectionList .orderFilterCampus,
+.sectionList .orderFilterTimeBelt{position: relative; width: 280px; height: auto; padding-left: 70px; box-sizing: border-box;}
+.sectionList .orderFilterCampus{float: left;}
+.sectionList .orderFilterTimeBelt{float: right;}
+.sectionList .orderFilterCampus .campusSelectLabel,
+.sectionList .orderFilterTimeBelt .timeBeltSelectLabel{position: absolute; top: 0; left: 0; line-height: 35px; color: #131313; font-size: 16px; font-weight: 600;}
+.sectionList .orderFilterCampus .campusSelectOptions,
+.sectionList .orderFilterTimeBelt .timeBeltSelectOptions{display: block; width: 100%; height: 35px; line-height: 33px; margin: 0; padding: 0 28px 0 12px; border: 1px solid #F0F0F0; border-radius: 4px; box-sizing: border-box; color: #505050; background: #FFFFFF url("https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/icon_arrow-t-2.svg") no-repeat top 8px right 10px; background-size: 18px 18px; font-size: 14px; font-weight: 400;}
+.sectionList .orderList{position:relative; width: 100%; height: auto; padding: 10px 0;}
+.sectionList .orderItem{position:relative; width: 100%; height: auto; margin: 10px 0; padding:20px 30px; border: 1px solid #E8E8E8; border-radius:4px; box-sizing:border-box; background-color:#FFFFFF;}
+.sectionList .orderCheckbox{position: absolute; top: 20px; left: 20px; z-index: 10; width: 20px; height: 20px;}
+.sectionList .orderCheckbox .checkBtn{position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; opacity: 0;}
+.sectionList .orderDetails{position: relative; width:100%; height: auto;}
+.sectionList .orderDetail1{position:relative; width: 100%; height: auto; margin-bottom: 12px;}
+.sectionList .orderDetail1:after{content: ""; display: block; clear: both;}
+.sectionList .orderDetail1 .orderStandby{float: left; width: 65px; height: 22px; line-height: 22px; margin-right: 5px; border-radius:5px; background-color:#f0f0f0; color: #505050; font-size: 14px; text-align: center;}
+.sectionList .orderDetail1 .orderCampus{float: left; position: relative; line-height: 22px; padding: 0 7px; color: #505050; font-size: 14px;}
+.sectionList .orderDetail1 .orderCampus:after{content: ""; position: absolute; top: 50%; right: 0; width: 1px; height: 12px; margin-top: -5px; background-color: #F0F0F0;}
+.sectionList .orderDetail1 .orderTimeBelt{float: left; line-height: 22px; padding: 0 7px; color: #505050; font-size: 14px;}
+.sectionList .orderDetail2{position:relative; width: 100%; height: auto; margin-bottom: 12px;}
+.sectionList .orderDetail2 .orderMenu{line-height: 28px; color: #131313; font-size: 20px; font-weight: 600;}
+.sectionList .orderDetail2 .orderMenuChoice{line-height: 22px; color: #505050; font-size: 14px;}
+.sectionList .orderDetail3{position:relative; width: 100%; height: auto; margin-top: -3px; margin-bottom: 12px;}
+.sectionList .orderDetail3 .orderOption{line-height: 20px; color: #A0A0A0; font-size: 12px;}
+.sectionList .orderDetail4{position:relative; width: 100%; height: auto; padding: 10px 12px; border-radius: 4px; box-sizing: border-box; background: #F8F8F8;}
+.sectionList .orderDetail4 .orderKey{line-height: 16px; color:#A0A0A0; margin-right:15px; font-size:12px;}
+.sectionList .orderDetail4 .orderValue{line-height: 16px; color:#505050; font-size:12px;}
+.sectionList .btnListMore{display: none; width: 100%; height: 40px; line-height: 38px; margin-top: -5px; border: 1px solid #E8E8E8; border-radius: 4px; box-sizing: border-box; background-color: #FFFFFF; color: #505050; font-size: 14px; font-weight: 600; text-align: center;}
+
+@media all and (max-width: 1023px) {
+    .basicPreOrder{width: 100%;}
+    .basicPreOrder h1{margin: 30px 0 30px 0; padding: 0 20px; box-sizing: border-box;}
+    .basicPreOrder .btnMobileCalendar{display: block;}
+    .sectionCalendar{float: none; width: 100%; margin-bottom: 0;}
+    .sectionCalendar .calendar-header{line-height: 16px;}
+    .sectionCalendar .calendar-header .btn-icon-left{padding-left: 20px;}
+    .sectionCalendar .calendar-header .btn-icon-right{padding-right: 20px;}
+    .sectionCalendar .calendar-header .btn-icon-left svg, .sectionCalendar .calendar-header .btn-icon-right svg{margin-top: 0;}
+    .sectionCalendar .calendar-header .btn-current-year, .sectionCalendar .calendar-header .btn-current-month{line-height: 16px; font-size: 16px;}
+    .sectionCalendar .calendar-content th{height: 35px; line-height: 35px; font-size: 14px;}
+    .sectionCalendar .calendar-content .cell{height: 60px;}
+    .sectionCalendar .calendar-content .cell .date{width: 30px; height: 30px; line-height: 30px; font-size: 14px;}
+    .sectionCalendar .calendar-content .cell .preOrder{line-height: 16px; font-size: 12px;}
+    .sectionCalendar .areaTotal{padding: 15px 20px; box-sizing: border-box;}
+    .sectionCalendar .areaTotal .textTotal{line-height: 20px; margin-bottom: 7px; font-size: 16px;}
+    .sectionCalendar .areaTotal .textTotal .total{line-height: 20px; font-size: 20px;}
+    .sectionCalendar .areaTotal .textTotalDetail .detail{line-height: 16px; margin-right: 7px; font-size: 12px;}
+    .sectionCalendar .areaDateTotal{padding: 15px 20px; box-sizing: border-box;}
+    .sectionCalendar .areaDateTotal .textDate{line-height: 16px; margin-bottom: 7px; font-size: 16px;}
+    .sectionCalendar .areaDateTotal .textDateDetail .detail{line-height: 16px; margin-right: 7px; font-size: 12px;}
+
+    .sectionCalendar.fold .areaCalendar{display: none;}
+    .sectionCalendar.fold .areaTotal{display: none}
+    .sectionCalendar.fold  .areaDateTotal{padding-top: 0;}
+    .sectionCalendar.fold .areaDateTotal .textDateDetail .detail{display: inline-block; margin-right: 7px;}
+
+    .sectionList{float: none; width: 100%; padding: 15px 20px; box-sizing: border-box;}
+    .sectionList .orderFilterCampus, .sectionList .orderFilterTimeBelt{width: 100%;}
+    .sectionList .orderFilterCampus{float: none; margin-bottom: 5px;}
+    .sectionList .orderFilterTimeBelt{float: none;}
+    .sectionList .orderFilterCampus, .sectionList .orderFilterTimeBelt{padding-left: 65px;}
+    .sectionList .orderFilterCampus .campusSelectLabel, .sectionList .orderFilterTimeBelt .timeBeltSelectLabel{font-size: 14px;}
+    .sectionList .orderList{padding: 5px 0;}
+    .sectionList .orderItem{padding: 15px;}
+    .sectionList .orderDetail1{margin-bottom: 10px;}
+    .sectionList .orderDetail2{margin-bottom: 10px;}
+    .sectionList .orderDetail3{margin-top: -5px; margin-bottom: 10px;}
+    .sectionList .btnListMore{display: block;}
+    .sectionList .areaPagination{display: none;}
+}

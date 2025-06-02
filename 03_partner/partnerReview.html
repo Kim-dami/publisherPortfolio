@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>배달긱 파트너센터</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta data-hid="description" name="description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" type="image/x-icon" href="https://partner.baedalgeek.kr//favicon.ico">
+    <link rel="stylesheet" type="text/css" href="assets/css/partnerDefault.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/partnerReview.css">
+</head>
+<body>
+<div class="app">
+    <main id="review">
+        <!-- 매장 선택 -->
+        <div class="selectBox">
+            <div class="optionSelected">
+                <span class="textSelected">해롱해롱 마카롱</span>
+                <img src="https://baedalgeek.s3.ap-northeast-2.amazonaws.com/newImage/icon_arrow-t-2.svg" alt="" class="iconSelected">
+            </div>
+            <select name="selectStore" id="selectStore">
+                <option>
+                    해롱해롱 마카롱
+                </option>
+                <option>
+                    카츠앤맘
+                </option>
+            </select>
+        </div>
+        <!-- 매장 선택 -->
+        <!-- 리뷰 대시보드 -->
+        <section class="sectionDashboard">
+            <div class="areaRating">
+                <ul class="ratingOfRecent">
+                    <li class="ror ror-1">
+                        <div class="rorTitle">평점</div>
+                        <div class="rorScore">4.4</div>
+                        <div class="rorUnit">점</div>
+                        <div class="areaTooltip">
+                            <svg class="iconToolTip">
+                                <g transform="translate(-734 -215)">
+                                    <g class="cls-1" transform="translate(734 215)">
+                                        <circle class="cls-3" cx="10.5" cy="10.5" r="10.5"/>
+                                        <circle class="cls-4" cx="10.5" cy="10.5" r="9.5"/>
+                                    </g>
+                                    <path class="cls-2"
+                                          d="M2.859-3.469v.141H4.687v-.141a2.305,2.305,0,0,1,1.3-2.266,2.994,2.994,0,0,0,1.656-2.7c-.008-1.859-1.453-3.031-3.562-3.031C2.148-11.469.586-10.4.531-8.3H2.484A1.531,1.531,0,0,1,4.062-9.844,1.429,1.429,0,0,1,5.594-8.406,2.078,2.078,0,0,1,4.422-6.672C3.437-6.07,2.875-5.461,2.859-3.469Zm-.25,2.375A1.215,1.215,0,0,0,3.828.125a1.222,1.222,0,0,0,1.2-1.219,1.224,1.224,0,0,0-1.2-1.2A1.217,1.217,0,0,0,2.609-1.094Z"
+                                          transform="translate(740.414 231.172)"/>
+                                </g>
+                            </svg>
+                            <div class="hoverTooltip">
+                                2022.05.01 ~ 2022.10.31 최근 6개월 기준
+                            </div>
+                        </div>
+                    </li>
+                    <li class="rorStar">
+                        <div class="maskStar">
+                            <div class="rangeStar" style="width: 100%;"></div>
+                        </div>
+                        <div class="maskStar">
+                            <div class="rangeStar" style="width: 100%;"></div>
+                        </div>
+                        <div class="maskStar">
+                            <div class="rangeStar" style="width: 100%;"></div>
+                        </div>
+                        <div class="maskStar">
+                            <div class="rangeStar" style="width: 100%;"></div>
+                        </div>
+                        <div class="maskStar">
+                            <div class="rangeStar" style="width: 40%;"></div>
+                        </div>
+                    </li>
+                    <li class="ror ror-2">
+                        <div class="rorTitle">맛</div>
+                        <div class="rorScore">4.6</div>
+                        <div class="rorUnit">점</div>
+                    </li>
+                    <li class="ror ror-3">
+                        <div class="rorTitle">양</div>
+                        <div class="rorScore">4.2</div>
+                        <div class="rorUnit">점</div>
+                    </li>
+                    <li class="ror ror-4">
+                        <div class="rorTitle">상태</div>
+                        <div class="rorScore">4.4</div>
+                        <div class="rorUnit">점</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="areaGraph">
+                <div class="numberOfRecent">
+                    <div class="norTitle">최근리뷰</div>
+                    <div class="norScore">452</div>
+                    <div class="norUnit">개</div>
+                </div>
+                <div class="graph" style="background-color: #F8F8F8;">
+
+                </div>
+            </div>
+        </section>
+        <!-- 리뷰 대시보드 -->
+        <!-- 리뷰 리스트 -->
+        <section class="sectionReview">
+            <!-- 리뷰 분류탭 -->
+            <div class="areaTab">
+                <ul class="tabCategoryTag">
+                    <li class="tct tct-1">
+                        <input type="radio" id="tctRadio-1" class="tctRadio" name="tctRadio" checked="checked">
+                        <label for="tctRadio-1" class="tctLabel">전체 (452)</label>
+                    </li>
+                    <li class="tct tct-1">
+                        <input type="radio" id="tctRadio-2" class="tctRadio" name="tctRadio">
+                        <label for="tctRadio-2" class="tctLabel">답변 (53)</label>
+                    </li>
+                    <li class="tct tct-1">
+                        <input type="radio" id="tctRadio-3" class="tctRadio" name="tctRadio">
+                        <label for="tctRadio-3" class="tctLabel">미답변 (399)</label>
+                    </li>
+                </ul>
+                <div class="areaDatepicker">
+                    <div class="noticeDatepicker">한번에 6개월까지 조회 할 수 있어요</div>
+                    <div class="mx-datepicker mx-datepicker-range">
+                        <div class="mx-input-wrapper">
+                            <input name="date" type="text" autocomplete="off" placeholder="" class="mx-input">
+                            <i class="mx-icon-clear">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1em" height="1em">
+                                    <path d="M810.005333 274.005333l-237.994667 237.994667 237.994667 237.994667-60.010667 60.010667-237.994667-237.994667-237.994667 237.994667-60.010667-60.010667 237.994667-237.994667-237.994667-237.994667 60.010667-60.010667 237.994667 237.994667 237.994667-237.994667z"></path>
+                                </svg>
+                            </i>
+                            <i class="mx-icon-calendar">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1em"
+                                     height="1em">
+                                    <path d="M940.218182 107.054545h-209.454546V46.545455h-65.163636v60.50909H363.054545V46.545455H297.890909v60.50909H83.781818c-18.618182 0-32.581818 13.963636-32.581818 32.581819v805.236363c0 18.618182 13.963636 32.581818 32.581818 32.581818h861.090909c18.618182 0 32.581818-13.963636 32.581818-32.581818V139.636364c-4.654545-18.618182-18.618182-32.581818-37.236363-32.581819zM297.890909 172.218182V232.727273h65.163636V172.218182h307.2V232.727273h65.163637V172.218182h176.872727v204.8H116.363636V172.218182h181.527273zM116.363636 912.290909V442.181818h795.927273v470.109091H116.363636z"></path>
+                                </svg>
+                            </i>
+                        </div>
+                    </div>
+                    <button class="btnDatepicker">조회</button>
+                </div>
+            </div>
+            <!-- 리뷰 분류탭 -->
+            <!-- 리스트 없음 -->
+            <div class="listNone hidden">
+                <svg class="iconListNone">
+                    <g transform="translate(-72 -739)">
+                        <g class="cls-1" transform="translate(72 739)">
+                            <circle class="cls-3" cx="20" cy="20" r="20"/>
+                            <circle class="cls-4" cx="20" cy="20" r="18.75"/>
+                        </g>
+                        <path class="cls-2" d="M5.8-21.211H2.373L2.637-6.123h2.9ZM2.021-1.875A2.088,2.088,0,0,0,4.1.205a2.117,2.117,0,0,0,2.08-2.08A2.107,2.107,0,0,0,4.1-3.955,2.079,2.079,0,0,0,2.021-1.875Z" transform="translate(87.979 769.211)"/>
+                    </g>
+                </svg>
+                <div class="txtListNone">해당 기간 내 리뷰가 없어요</div>
+            </div>
+            <!-- 리스트 없음 -->
+            <!-- 리스트 있음 -->
+            <div class="areaReview">
+                <ul class="listReview">
+                    <li class="lr">
+                        <div class="lrRating">
+                            <div class="lrUser">열자리닉네임가능가능</div>
+                            <div class="lrStar">
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 100%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 100%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 100%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 100%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 0%;"></div>
+                                </div>
+                                <div class="lrScore">4.0</div>
+                                <div class="lrUnit">점</div>
+                            </div>
+                            <ul class="lrDetail">
+                                <li class="lrd lrd-1">
+                                    <div class="lrdTitle">맛</div>
+                                    <div class="lrdScore">4</div>
+                                    <div class="lrdUnit">점</div>
+                                </li>
+                                <li class="lrd lrd-2">
+                                    <div class="lrdTitle">양</div>
+                                    <div class="lrdScore">3</div>
+                                    <div class="lrdUnit">점</div>
+                                </li>
+                                <li class="lrd lrd-3">
+                                    <div class="lrdTitle">상태</div>
+                                    <div class="lrdScore">5</div>
+                                    <div class="lrdUnit">점</div>
+                                </li>
+                            </ul>
+                            <div class="lrDate">2022-11-10</div>
+                        </div>
+                        <div class="lrContent">
+                            <ul class="lrOrder">
+                                <li class="lro lro-1">
+                                    <div class="lroTitle">주문번호</div>
+                                    <div class="lroBody">12345678</div>
+                                </li>
+                                <li class="lro lro-1">
+                                    <div class="lroTitle">주문메뉴</div>
+                                    <div class="lroBody">하루가유부초밥 3p</div>
+                                </li>
+                                <li class="lro lro-1">
+                                    <div class="lroTitle">옵션</div>
+                                    <div class="lroBody">유부초밥선택1[데리야끼 2p], 유부초밥선택2[데리야끼 1p]</div>
+                                </li>
+                            </ul>
+                            <div class="lrTxt">
+                                맛있어여 젤리뽀도 감사합니당
+                            </div>
+                            <button class="btnReply">답글 달아주기</button>
+                        </div>
+                    </li>
+                    <li class="lr">
+                        <div class="lrRating">
+                            <div class="lrUser">happyhappy@cloudstone.ai</div>
+                            <div class="lrStar">
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 100%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 100%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 100%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 100%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 30%;"></div>
+                                </div>
+                                <div class="lrScore">4.3</div>
+                                <div class="lrUnit">점</div>
+                            </div>
+                            <ul class="lrDetail">
+                                <li class="lrd lrd-1">
+                                    <div class="lrdTitle">맛</div>
+                                    <div class="lrdScore">5</div>
+                                    <div class="lrdUnit">점</div>
+                                </li>
+                                <li class="lrd lrd-2">
+                                    <div class="lrdTitle">양</div>
+                                    <div class="lrdScore">4</div>
+                                    <div class="lrdUnit">점</div>
+                                </li>
+                                <li class="lrd lrd-3">
+                                    <div class="lrdTitle">상태</div>
+                                    <div class="lrdScore">4</div>
+                                    <div class="lrdUnit">점</div>
+                                </li>
+                            </ul>
+                            <div class="lrDate">2022-11-10</div>
+                        </div>
+                        <div class="lrContent">
+                            <ul class="lrOrder">
+                                <li class="lro lro-1">
+                                    <div class="lroTitle">주문번호</div>
+                                    <div class="lroBody">90123456</div>
+                                </li>
+                                <li class="lro lro-1">
+                                    <div class="lroTitle">주문메뉴</div>
+                                    <div class="lroBody">마루회덮밥</div>
+                                </li>
+                            </ul>
+                            <div class="lrTxt">
+                                식당 방문해서 맛있게 먹었던 기억에 배달로도 시켜봤는데, 똑같이 양도 많고 신선하니 맛있어요.
+                            </div>
+                            <ul class="lrPhoto">
+                                <li class="lrp">
+                                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAyMjJfNTQg%2FMDAxNjQ1NTA4Mzc5NzEy.-ndIE9Vt2Y2GmaWN-dkwWhnxJ2UhDQNr-QaOVfGxszYg.ovvUbBQZ9vztfq8hJlxGK-56WOp4YMjl_aM8li0Wajgg.JPEG.ehdghkakzpt%2F%25C8%25B8.jpg&type=a340">
+                                </li>
+                                <li class="lrp">
+                                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA0MThfODYg%2FMDAxNjUwMjg4NzI2NzE3.a4DN-nykmR6Qlwd9LIxYTNjbKxIx6Kn26kTTRvqKO98g.NiedCQKpYAHc-9GGkHNoUL1vcuTnr9_BZC380qLO5hwg.JPEG.landclearing%2F1650288632716.jpg&type=a340">
+                                </li>
+                                <li class="lrp">
+                                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA0MjZfMTE5%2FMDAxNjUwOTUwNTA2MzE1.A9ecNBq9TeS2ZXN0jHOBm9O0LtU9Az6HHexuFSMTEPQg.siIl8I8X2UYrJeW862ikLmGiJG2e-SUfeAVINfusn6Eg.JPEG.jally12%2F20220416%25A3%25DF121646.jpg&type=a340">
+                                </li>
+                            </ul>
+                            <button class="btnReply">답글 달아주기</button>
+                        </div>
+                    </li>
+                    <li class="lr">
+                        <div class="lrRating">
+                            <div class="lrUser">ㄱㄴㄷ</div>
+                            <div class="lrStar">
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 100%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 100%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 100%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 100%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 30%;"></div>
+                                </div>
+                                <div class="lrScore">4.3</div>
+                                <div class="lrUnit">점</div>
+                            </div>
+                            <ul class="lrDetail">
+                                <li class="lrd lrd-1">
+                                    <div class="lrdTitle">맛</div>
+                                    <div class="lrdScore">5</div>
+                                    <div class="lrdUnit">점</div>
+                                </li>
+                                <li class="lrd lrd-2">
+                                    <div class="lrdTitle">양</div>
+                                    <div class="lrdScore">4</div>
+                                    <div class="lrdUnit">점</div>
+                                </li>
+                                <li class="lrd lrd-3">
+                                    <div class="lrdTitle">상태</div>
+                                    <div class="lrdScore">4</div>
+                                    <div class="lrdUnit">점</div>
+                                </li>
+                            </ul>
+                            <div class="lrDate">2022-11-10</div>
+                        </div>
+                        <div class="lrContent">
+                            <ul class="lrOrder">
+                                <li class="lro lro-1">
+                                    <div class="lroTitle">주문번호</div>
+                                    <div class="lroBody">78901234</div>
+                                </li>
+                                <li class="lro lro-1">
+                                    <div class="lroTitle">주문메뉴</div>
+                                    <div class="lroBody">국물치즈떡닭1인세트(순살)</div>
+                                </li>
+                                <li class="lro lro-1">
+                                    <div class="lroTitle">옵션</div>
+                                    <div class="lroBody">떡볶이 맛 선택(필수선택)[2단계:매콤달콤해요 Best Choice], 음료 변경 선택(필수선택)[사이다500ml로 변경]</div>
+                                </li>
+                            </ul>
+                            <div class="lrTxt">
+                                맛있어요 학교앞에서 파는 분식집 맛이예요
+                            </div>
+                            <ul class="lrPhoto">
+                                <li class="lrp">
+                                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA5MjRfODYg%2FMDAxNjYzOTY5MDU1NzUw.mvqHjwiHLdUe9EXUz3UCe6Svnq2wPp_ztjMJ4PYlCcUg.EfVJfHrL0ObOkQq3ETkYKRcGkawf5YaaOmaYVon8m9gg.JPEG.kslim_007%2F20220923%25A3%25DF130644.jpg&type=l340_165">
+                                </li>
+                            </ul>
+                            <textarea class="lrTextarea" placeholder="답글을 달아주세요 (최대 1000자 가능)"></textarea>
+                            <div class="lrTextareaBtn">
+                                <button class="btnCancel">취소</button>
+                                <button class="btnRegister">등록</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="lr">
+                        <div class="lrRating">
+                            <div class="lrUser">고기고기도시락</div>
+                            <div class="lrStar">
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 100%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 30%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 0%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 0%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 0%;"></div>
+                                </div>
+                                <div class="lrScore">1.3</div>
+                                <div class="lrUnit">점</div>
+                            </div>
+                            <ul class="lrDetail">
+                                <li class="lrd lrd-1">
+                                    <div class="lrdTitle">맛</div>
+                                    <div class="lrdScore">2</div>
+                                    <div class="lrdUnit">점</div>
+                                </li>
+                                <li class="lrd lrd-2">
+                                    <div class="lrdTitle">양</div>
+                                    <div class="lrdScore">1</div>
+                                    <div class="lrdUnit">점</div>
+                                </li>
+                                <li class="lrd lrd-3">
+                                    <div class="lrdTitle">상태</div>
+                                    <div class="lrdScore">1</div>
+                                    <div class="lrdUnit">점</div>
+                                </li>
+                            </ul>
+                            <div class="lrDate">2022-11-10</div>
+                        </div>
+                        <div class="lrContent">
+                            <ul class="lrOrder">
+                                <li class="lro lro-1">
+                                    <div class="lroTitle">주문번호</div>
+                                    <div class="lroBody">56789012</div>
+                                </li>
+                                <li class="lro lro-1">
+                                    <div class="lroTitle">주문메뉴</div>
+                                    <div class="lroBody">빅치킨마요</div>
+                                </li>
+                            </ul>
+                            <div class="lrTxt">
+                                빅치킨마요 치킨이 진짜 작은 닭다리 하나에서 나올 양도 안됩니다
+                            </div>
+                            <div class="lrReply">
+                                <div class="partnerReply">
+                                    <svg class="iconReply">
+                                        <g transform="translate(-425 -987)">
+                                            <rect class="cls-1" width="1" height="8" transform="translate(425 987)"/>
+                                            <rect class="cls-1" width="1" height="8" transform="translate(433 994) rotate(90)"/>
+                                        </g>
+                                    </svg>
+                                    사장님
+                                </div>
+                                <div class="txtReply">
+                                    주문해주셔서 감사합니다.
+                                    양은 한솥에서 제공하는 기준이 있으나 앞으로 조금 더 신경쓰도록 하겠습니다.
+                                </div>
+                            </div>
+                            <button class="btnReply">답글 수정하기</button>
+                        </div>
+                    </li>
+                    <li class="lr">
+                        <div class="lrRating">
+                            <div class="lrUser">고기고기도시락</div>
+                            <div class="lrStar">
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 100%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 30%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 0%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 0%;"></div>
+                                </div>
+                                <div class="maskStar">
+                                    <div class="rangeStar" style="width: 0%;"></div>
+                                </div>
+                                <div class="lrScore">1.3</div>
+                                <div class="lrUnit">점</div>
+                            </div>
+                            <ul class="lrDetail">
+                                <li class="lrd lrd-1">
+                                    <div class="lrdTitle">맛</div>
+                                    <div class="lrdScore">2</div>
+                                    <div class="lrdUnit">점</div>
+                                </li>
+                                <li class="lrd lrd-2">
+                                    <div class="lrdTitle">양</div>
+                                    <div class="lrdScore">1</div>
+                                    <div class="lrdUnit">점</div>
+                                </li>
+                                <li class="lrd lrd-3">
+                                    <div class="lrdTitle">상태</div>
+                                    <div class="lrdScore">1</div>
+                                    <div class="lrdUnit">점</div>
+                                </li>
+                            </ul>
+                            <div class="lrDate">2022-11-10</div>
+                        </div>
+                        <div class="lrContent">
+                            <ul class="lrOrder">
+                                <li class="lro lro-1">
+                                    <div class="lroTitle">주문번호</div>
+                                    <div class="lroBody">34567890</div>
+                                </li>
+                                <li class="lro lro-1">
+                                    <div class="lroTitle">주문메뉴</div>
+                                    <div class="lroBody">휠렛버거</div>
+                                </li>
+                                <li class="lro lro-1">
+                                    <div class="lroTitle">옵션</div>
+                                    <div class="lroBody">메뉴[단품]</div>
+                                </li>
+                            </ul>
+                            <div class="lrTxt">
+                                한입 먹고 발견했는데 웬 털이….그냥 머리카락이었으면 빼서 먹을텐데 하…기분 나빠서 남은 것 버리고 조금 먹은것도 다 토해냈습니
+                                다 위생 상태가 참…<br />
+                                +) 사장님 말씀 들어보니 조리과정에서 불상사가 발생하긴 힘들다는 것 이해했습니다. 제가 이걸 보게된 것도 먹기 편한 부분으로 돌
+                                리다가 햄버거 겉에 붙어 있는걸 발견한거니  포장지에 문제가 있었던 걸지도 모르겠네요. 그리고 당시에 저걸 발견하고 너무 놀라서
+                                제대로 확인하지 않았는데 어쩌면 체모가 아니라 실이 그렇게 보인걸수도 있구요. 어찌됐든 다음에는 좀 더 신경 써주셨으면 합니다.
+                                이 리뷰를 계속 두면 사장님께도 피해가 될테니 추신 확인하시면 직접 지우셔도 되고 아니면 제가 내일 지우겠습니다.
+                            </div>
+                            <ul class="lrPhoto">
+                                <li class="lrp">
+                                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAzMjRfMjk0%2FMDAxNjQ4MDk5NTQ5NTU0.QqiEiloznfFvvr-8tuXyD0H1Ugvy8GP0dRBkHE-F9NUg.MEcBRayIClRU3qjKqY78LUp16auuEh_OZW3Aq8zVxdUg.JPEG.happymode%2FKakaoTalk_20220324_135820587_02.jpg&type=a340">
+                                </li>
+                            </ul>
+                            <div class="lrReply">
+                                <div class="partnerReply">
+                                    <svg class="iconReply">
+                                        <g transform="translate(-425 -987)">
+                                            <rect class="cls-1" width="1" height="8" transform="translate(425 987)"/>
+                                            <rect class="cls-1" width="1" height="8" transform="translate(433 994) rotate(90)"/>
+                                        </g>
+                                    </svg>
+                                    사장님
+                                </div>
+                                <div class="txtReply">
+                                    안녕하세요 맘스터치입니다. 먼저 사과말씀부터 드릴게요. 가게로 전화주셨다면 조치를 취해드렸을텐데 아쉽고 죄송합니다.
+                                    더욱더 신경써서 조리하겠습니다만, 저희 주방은 모두 여성분들이고 가게에 있는 유일한 남자인 저는 버거를 싸는 일이 단체
+                                    주문이외엔 없고 그 마저도 불상사의 확률 자체를 없애기 위해 한여름에도 긴팔만 착용하고 있습니다. 저정도의 털이 있다면
+                                    주방에서 확인이 안될수가 없는 조리방법인데… 저도 참 의아합니다. 버거빵 위에 버거소스를 짜고 그 위에 피클을 올리고 그
+                                    위에 양상추를 올리는데 그 모든 과정이 위치를 확인하지 않으면 진행이 안되는 과정들입니다.. 가게로 전화주시면 조치 취해
+                                    드리겠습니다. 불편 드려 죄송합니다<br /><br />
+                                    추가로 가게에서 고객님들의 리뷰를 삭제하는 기능은 없습니다.
+                                </div>
+                            </div>
+                            <button class="btnReply">답글 수정하기</button>
+                        </div>
+                    </li>
+                </ul>
+                <div class="areaPagination">
+                    <button class="btnPagination firstPage" disabled>
+                        <svg>
+                            <g id="iconFirstPage" transform="translate(-523.9 -2921.8)">
+                                <path class="cls-1" d="M6.7,8.1,2,3.4,3.4,2,6.7,5.3,10,2l1.4,1.4Z" transform="translate(532 2919.8) rotate(90)"/>
+                                <path class="cls-1" d="M6.7,8.1,2,3.4,3.4,2,6.7,5.3,10,2l1.4,1.4Z" transform="translate(538.1 2919.8) rotate(90)"/>
+                            </g>
+                        </svg>
+                    </button>
+                    <button class="btnPagination prePage" disabled>
+                        <svg>
+                            <g id="iconPrePage" transform="translate(-555.9 -2921.8)">
+                                <path class="cls-1" d="M6.7,8.1,2,3.4,3.4,2,6.7,5.3,10,2l1.4,1.4Z" transform="translate(564 2919.8) rotate(90)"/>
+                            </g>
+                        </svg>
+                    </button>
+                    <div class="numberOfPage">
+                        <button class="btnNumber active">1</button>
+                        <button class="btnNumber">2</button>
+                        <button class="btnNumber">3</button>
+                        <button class="btnNumber">4</button>
+                        <button class="btnNumber">5</button>
+                    </div>
+                    <button class="btnPagination nextPage">
+                        <svg>
+                            <g id="iconNextPage" transform="translate(-631.9 -2921.8)">
+                                <path class="cls-1" d="M6.7,8.1,2,3.4,3.4,2,6.7,5.3,10,2l1.4,1.4Z" transform="translate(629.9 2933.2) rotate(-90)"/>
+                            </g>
+                        </svg>
+                    </button>
+                    <button class="btnPagination lastPage">
+                        <svg>
+                            <g transform="translate(-658 -2921.8)">
+                                <path class="cls-1" d="M6.7,8.1,2,3.4,3.4,2,6.7,5.3,10,2l1.4,1.4Z" transform="translate(656 2933.2) rotate(-90)"/>
+                                <path class="cls-1" d="M6.7,8.1,2,3.4,3.4,2,6.7,5.3,10,2l1.4,1.4Z" transform="translate(662.1 2933.2) rotate(-90)"/>
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- 리스트 있음 -->
+        </section>
+        <!-- 리뷰 리스트 -->
+    </main>
+    <!-- 풋터 -->
+    <footer>
+        <section class="sectionTerms">
+            <a href="#" class="linkTerms">이용약관</a>
+            <a href="#" class="linkTerms">전자금융거래 이용약관</a>
+            <a href="#" class="linkTerms"><strong>개인정보 처리방침</strong></a>
+            <a href="#" class="linkTerms">사업자정보확인</a>
+        </section>
+        <section class="sectionFooterInfo">
+            <div class="companyName">
+                (주)클라우드스톤
+                <svg viewBox="0 0 16 16" class="iconUnfold hidden">
+                    <g>
+                        <rect width="16" height="16"/>
+                        <path d="m3.75,5.88l4.25,4.24,4.25-4.24"/>
+                    </g>
+                </svg>
+                <svg viewBox="0 0 16 16" class="iconFold">
+                    <g>
+                        <rect width="16" height="16"/>
+                        <path d="m3.75,10.77l4.25-4.24,4.25,4.24"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="companyNotice">
+                (주)클라우드스톤은 통신판매중개자로서 통신판매의 당사자가 아니며 판매자가 등록한 상품정보 및 거래에 대하여 책임을 지지 않습니다.
+            </div>
+            <div class="companyInfo">
+                <dl class="dlInfo">
+                    <dt class="dtInfo">대표</dt>
+                    <dd class="ddInfo">김민준</dd>
+                </dl>
+                <dl class="dlInfo">
+                    <dt class="dtInfo">사업자번호</dt>
+                    <dd class="ddInfo">467-87-01256 등록정보확인</dd>
+                </dl>
+                <dl class="dlInfo">
+                    <dt class="dtInfo">통신판매업신고번호</dt>
+                    <dd class="ddInfo">2022-광주서구-0049</dd>
+                </dl>
+                <dl class="dlInfo">
+                    <dt class="dtInfo">주소</dt>
+                    <dd class="ddInfo">광주광역시 서구 경열로17번길 12, 3층 302호(농성동)</dd>
+                </dl>
+                <dl class="dlInfo">
+                    <dt class="dtInfo">고객센터</dt>
+                    <dd class="ddInfo">1668-1757 (평일 10 : 00 ~ 19 : 00)</dd>
+                </dl>
+                <dl class="dlInfo">
+                    <dt class="dtInfo">이메일</dt>
+                    <dd class="ddInfo">baedalgeek@cloudstone.ai</dd>
+                </dl>
+            </div>
+            <div class="allRights">
+                ⓒ2019 CLOUDSTONE All Rights Reserved.
+            </div>
+        </section>
+    </footer>
+    <!-- 풋터 -->
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper(".swiper", {
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        on: {
+            activeIndexChange: function () {
+                console.log(this.realIndex + '번째 슬라이드');
+
+                const imageBanner = document.querySelectorAll(".imageBanner .ib");
+                // 기존 있는 active 클래스 제거
+                for (let i = 0; i < imageBanner.length; i++){
+                    imageBanner[i].classList.remove('active')
+                }
+                // 현재 슬라이드에 맞는 이미지에 active 클래스 추가
+                imageBanner[this.realIndex].classList.add('active');
+            }
+        },
+    });
+</script>
+
+</body>
+</html>

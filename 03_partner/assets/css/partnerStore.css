@@ -1,0 +1,74 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : partnerStore
+	설　명 : 리뷰관리
+	클래스명 : 카멜케이스, 태그역활 + 컨텐츠내용 조합, 넘버링은 하이픈
+	작성순서 : 1. 레이아웃  2.크기/간격  3.박스모양  4.폰트  5.기타
+			position / display / float / width / height / margin / padding / border / background / font / overflow / etc...
+	메인컬러 : #0F1838
+	폰트컬러 : #131313, #505050, #707070, #909090
+	보더컬러 : #E8E8E8
+	배경컬러 : #F8F8F8, #F0F0F0
+---------------------------------------------*/
+/* 매장정보 */
+.sectionStoreInfo{position: relative; width: 1080px; height: auto; margin: 60px auto;}
+.sectionStoreInfo h3{padding: 20px 0;}
+.sectionStoreInfo h3 .btnEditor{position: absolute; top: 50%; right: 0; line-height: 20px; margin-top: -20px; padding: 10px; color: #131313; font-size: 16px; font-weight: 400; cursor: pointer;}
+.sectionStoreInfo h3 .btnEditor svg{vertical-align: top; width: 20px; height: 20px;}
+.sectionStoreInfo hr{color: #505050;}
+.sectionStoreInfo .listStoreInfo{position: relative; width: 100%; height: auto; padding: 10px 0;}
+.sectionStoreInfo .lsi{position: relative; width: 100%; height: auto; padding: 20px 0;}
+.sectionStoreInfo .lsiTitle{position: absolute; top: 0; left: 0; width: 180px; height: auto; line-height: 24px; padding: 20px 0; color: #131313; font-size: 16px; font-weight: 600;}
+.sectionStoreInfo .lsiBody{position: relative; width: 100%; height: auto; line-height: 24px; padding: 0 20px 0 180px; box-sizing: border-box; color: #505050; font-size: 16px;}
+.sectionStoreInfo .lsiBody .logoStore{width: 75px; height: 75px; border-radius: 15px;}
+.sectionStoreInfo .tableTime{margin: -7px 0 0 160px;}
+.sectionStoreInfo .tableTime tr{border-bottom: 1px solid #F0F0F0;}
+.sectionStoreInfo .tableTime tr:last-child{border-bottom: none;}
+.sectionStoreInfo .tableTime tr:first-child{background-color: #F8F8F8;}
+.sectionStoreInfo .tableTime td{line-height: 14px; padding: 10px 20px; border-right: 1px solid #F0F0F0; color: #505050; font-size: 14px; text-align: center;}
+.sectionStoreInfo .tableTime td:last-child{border-right: none;}
+.sectionStoreInfo .tableTime td .space{color: #131313; font-weight: 600;}
+.sectionStoreInfo .editorStoreInfo{position: relative; width: 100%; height: auto; line-height: 20px; padding: 30px 0; color: #505050; font-size: 14px;}
+.sectionStoreInfo .editorStoreInfo p{margin-bottom: 10px;}
+.sectionStoreInfo .editorStoreInfo p:last-child{margin-bottom: 0;}
+@media all and (max-width: 1023px) {
+    .sectionStoreInfo{width: 100%; padding: 0 20px; box-sizing: border-box; margin: 40px auto;}
+    .sectionStoreInfo .listStoreInfo{padding: 5px 0;}
+    .sectionStoreInfo .lsi{padding: 15px 0;}
+    .sectionStoreInfo .lsiTitle{width: 110px; line-height: 20px; font-size: 14px;}
+    .sectionStoreInfo .lsiBody{line-height: 20px; padding: 0 15px 0 110px; font-size: 14px;}
+    .sectionStoreInfo .lsiBody .logoStore{width: 65px; height: 65px;}
+    .sectionStoreInfo .tableTime{width: 100%; margin: 40px 0 0 0;}
+    .sectionStoreInfo .tableTime td{line-height: 12px; padding: 10px; font-size: 12px;}
+    .sectionStoreInfo .editorStoreInfo{line-height: 18px; padding: 20px 0; font-size: 12px;}
+}
+
+/* 매장변경 */
+.sectionStores{position: relative; width: 1080px; height: auto; margin: 60px auto;}
+.sectionStores:after{content: ""; display: block; clear: both;}
+.sectionStores h3{padding: 20px 0; clear: both;}
+.sectionStores hr{color: #505050; clear: both;}
+.setRadioCheck{width: 530px; height: auto; margin-top: 15px;}
+.setRadioCheck:nth-child(odd){float: left;}
+.setRadioCheck:nth-child(even){float: right;}
+.setRadioCheck .labelRadioCheck{padding: 30px 40px 30px 115px; border: 1px solid #E8E8E8; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF; overflow: hidden;}
+.setRadioCheck .labelRadioCheck:after{content: ""; display: block; clear: both;}
+.setRadioCheck .photoStores{position: absolute; top: 50%; left: 20px; width: 75px; height: 75px; border-radius: 5px; background-color: #F8F8F8; overflow: hidden; transform: translateY(-50%);}
+.setRadioCheck .photoStores img{width:100%; height:100%; object-fit: cover;}
+.setRadioCheck .infoStores .name{line-height:20px; color: #131313; font-size: 20px; font-weight: 600;}
+.setRadioCheck .infoStores .operation{margin-left: 3px; color: #909090; font-size: 14px; font-weight: 500;}
+.setRadioCheck .infoStores .space{display: inline-block; line-height: 14px; margin-top: 8px; padding: 3px 7px; border-radius: 5px; background-color: #F0F0F0; color: #505050; font-size: 14px;}
+.setRadioCheck .labelRadioCheck .iconRadioCheck{position: absolute; top: 50%; right: 20px; margin-top: -10px; transform: scale(1.2);}
+.setRadioCheck .inputRadioCheck:checked + .labelRadioCheck{border: 1px solid #0F1838; box-shadow: 2px 2px 4px rgba(0,0,0,0.1);}
+
+@media all and (max-width: 1023px) {
+    .sectionStores{width: 100%; padding: 0 20px; box-sizing: border-box; margin: 40px auto;}
+    .setRadioCheck{width: 100%;}
+    .setRadioCheck:nth-child(odd){float: none;}
+    .setRadioCheck:nth-child(even){float: none;}
+    .setRadioCheck .labelRadioCheck{padding: 25px 40px 25px 95px;}
+    .setRadioCheck .photoStores{left: 15px; width: 65px; height: 65px;}
+    .setRadioCheck .infoStores .name{line-height:16px; font-size: 16px;}
+    .setRadioCheck .infoStores .operation{font-size: 12px;}
+    .setRadioCheck .infoStores .space{line-height: 12px; font-size: 12px;}
+}

@@ -1,0 +1,85 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : partnerCalulation
+	설　명 : 정산내역
+	클래스명 : 카멜케이스, 태그역활 + 컨텐츠내용 조합, 넘버링은 하이픈
+	작성순서 : 1. 레이아웃  2.크기/간격  3.박스모양  4.폰트  5.기타
+			position / display / float / width / height / margin / padding / border / background / font / overflow / etc...
+	메인컬러 : #0F1838
+	폰트컬러 : #131313, #505050, #707070, #909090
+	보더컬러 : #E8E8E8
+	배경컬러 : #F8F8F8, #F0F0F0
+---------------------------------------------*/
+.calculation{width: 1080px; margin-left: auto; margin-right: auto; margin-top: 40px}
+.calculationTitle{color: #131313; font-size: 42px; font-weight: 600; margin-bottom: 40px;}
+.calculationFilter{position: relative; width: 100%; margin-bottom: 60px;}
+.calculationFilterRange{position: absolute; top: 0; right: 52px; z-index: 10; height: auto;}
+.calculationFilterRange:after{content: ""; display: block; clear: both;}
+.calculationFilterRange .titleRange{float: left; line-height: 34px; padding-right: 20px; font-weight: 600;}
+.calculationFilterRange .mx-datepicker{float: left; width: 150px;}
+.calculationFilterRange .dash{float: left; line-height: 34px; padding-left: 10px; padding-right: 20px;}
+.calculationFilterButtons{position: relative; display: flex; flex-direction: row; justify-content: space-between; width: 1080px}
+.calculationFilterButtonsDownload{font-weight: 600; width: 109px; height: 35px; border: 1px solid #0f1838; border-radius: 4px;; font-size: 15px;}
+.calculationFilterButtonsSearch{width: 52px; height: 34px; border-radius: 4px; background-color: #0f1838; color: #fff;; font-size:15px}
+.calculationResult{position: relative; width: 100%; margin-bottom: 60px; text-align: center; clear: both;}
+.calculationResultText{line-height: 16px; margin-bottom: 5px; font-size: 16px;}
+.calculationResultAmount{line-height: 42px; color: #131313; font-size: 42px; font-weight: 600;}
+.calculationList{position: relative; width: 100%; height: 610px; margin-bottom: 60px; padding-right: 450px; box-sizing: border-box;  background-color: #F5F5F5;}
+.calculationList .calculationListCategories{width: 100%; height: 50px; line-height: 49px; border-bottom: 1px solid #EAEAEA; box-sizing: border-box;}
+.calculationList .calculationListCategories:after{content: ""; display: block; clear: both;}
+.calculationList .calculationListCategoriesText{float: left; color: #A0A0A0; font-size: 14px; text-align: center;}
+.calculationList .calculationListItem{position: relative; width: 100%; height: auto;}
+.calculationList .calculationListDetail{position: relative; width: 100%; height: 56px; line-height: 55px; border-bottom: 1px solid #EAEAEA; box-sizing: border-box;}
+.calculationList .calculationListDetail.active{background-color: #FFFFFF; box-shadow: 0 0 4px rgba(0,0,0,0.1);}
+.calculationList .calculationListDetail.active:before{content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 4px; height: 100%; background-color: #0F1838;}
+.calculationList .calculationListDetail:last-of-type{border-bottom: none;}
+.calculationList .calculationListDetail:after{content: ""; display: block; clear: both;}
+.calculationList .calculationListDetailText{float: left; color: #131313; font-size: 14px; text-align: center;}
+.calculationList .calculationListCategoriesText:nth-of-type(1),
+.calculationList .calculationListDetailText:nth-of-type(1){width: 40%;}
+.calculationList .calculationListCategoriesText:nth-of-type(2),
+.calculationList .calculationListDetailText:nth-of-type(2){width: 18%;}
+.calculationList .calculationListCategoriesText:nth-of-type(3),
+.calculationList .calculationListDetailText:nth-of-type(3){width: 20%;}
+.calculationList .calculationListCategoriesText:nth-of-type(4),
+.calculationList .calculationListDetailText:nth-of-type(4){width: 22%;}
+
+.calculationCard{position: absolute; top: 0; right: 0; width: 450px; height: 610px; padding: 30px; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,0.2);}
+.calculationCard .calculationCardDate{line-height: 16px; margin-bottom: 20px; color: #131313; font-size: 16px; font-weight: 600;}
+.calculationCard .calculationCardInfo{padding: 12px 0; border-bottom: 1px solid #EAEAEA;}
+.calculationCard .calculationDl{position: relative; padding: 10px 0;}
+.calculationCard .calculationDt{position: absolute; top: 12px; left: 0; line-height: 16px; font-size: 14px;}
+.calculationCard .calculationDd{width: 100%; color: #131313; font-size: 16px; text-align: right;}
+.calculationCard .calculationTotalDl{position: relative; padding: 25px 0;}
+.calculationCard .calculationTotalDt{position: absolute; top: 25px; left: 0; line-height: 20px; font-size: 14px;}
+.calculationCard .calculationTotalDd{width: 100%; color: #131313; font-size: 20px; font-weight: 700; text-align: right;}
+
+@media (max-width:1023px){
+    .calculation{width: 100%; margin-top: 20px}
+    .calculationTitle{font-size: 24px; margin: 10px 20px 15px 20px;}
+    .calculationFilter{margin-bottom: 40px; padding:0 20px; box-sizing: border-box;}
+    .calculationFilterRange{position: relative; right: unset; width: 100%; padding-left: 70px; padding-right: 40px; box-sizing: border-box;}
+    .calculationFilterRange .titleRange{position: absolute; top: 0; left: 0; font-size: 14px;}
+    .calculationFilterRange .mx-datepicker{width: 100%; margin-bottom: 10px;}
+    .calculationFilterRange .dash{position: absolute; top: 0; right: 0; padding-right: 0; font-size: 14px;}
+    .calculationFilterRange .dash:last-of-type{top: 44px;}
+    .calculationFilterButtons{width: 100%; justify-content: flex-end;}
+    .calculationFilterButtonsDownload{margin-right: 7px; font-size: 14px;}
+    .calculationFilterButtonsSearch{font-size: 14px;}
+    .calculationResult{margin-bottom: 40px;}
+    .calculationResultText{line-height: 12px; font-size: 12px;}
+    .calculationResultAmount{line-height: 24px; font-size: 24px;}
+    .calculationList{height: auto; margin-bottom: 40px; padding: 0 20px; background-color: #FFFFFF;}
+    .calculationList .calculationListCategories{display: none;}
+    .calculationList .calculationListItem{display: none;}
+    .calculationCard{position: relative; width: 100%; height: auto; padding: 0; overflow: hidden;}
+    .calculationCard .calculationCardDate{height: 45px; line-height: 45px; margin-bottom: 0; padding: 0 15px; box-sizing: border-box; background-color: #F5F5F5; font-size: 14px;}
+    .calculationCard .calculationCardInfo{margin: 0 15px; padding: 10px 0;}
+    .calculationCard .calculationDl{padding: 7px 0;}
+    .calculationCard .calculationDt{top: 7px; line-height: 14px; font-size: 12px;}
+    .calculationCard .calculationDd{line-height: 14px; font-size: 14px;}
+    .calculationCard .calculationCardTotal{margin: 0 15px;}
+    .calculationCard .calculationTotalDl{padding: 18px 0 20px 0;}
+    .calculationCard .calculationTotalDt{top: 18px; line-height: 16px; font-size: 12px;}
+    .calculationCard .calculationTotalDd{font-size: 16px;}
+}

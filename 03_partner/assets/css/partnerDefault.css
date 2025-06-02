@@ -1,0 +1,587 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : partnerDefault
+	설　명 : 공용
+	클래스명 : 카멜케이스, 태그역활 + 컨텐츠내용 조합, 넘버링은 하이픈
+	작성순서 : 1. 레이아웃  2.크기/간격  3.박스모양  4.폰트  5.기타
+			position / display / float / width / height / margin / padding / border / background / font / overflow / etc...
+	메인컬러 : #0F1838
+	폰트컬러 : #131313, #505050, #707070, #909090
+	보더컬러 : #E8E8E8
+	배경컬러 : #F8F8F8, #F0F0F0
+---------------------------------------------*/
+/* 폰트 */
+@font-face {
+    font-family: Pretendard;
+    src: url(font/Pretendard-Thin.woff) format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Pretendard;
+    src: url(font/Pretendard-ExtraLight.woff) format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Pretendard;
+    src: url(font/Pretendard-Light.woff) format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Pretendard;
+    src: url(font/Pretendard-Regular.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Pretendard-Medium;
+    src: url(font/Pretendard-Medium.woff) format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Pretendard;
+    src: url(font/Pretendard-semiBold.woff) format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Pretendard;
+    src: url(font/Pretendard-Bold.woff) format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Pretendard;
+    src: url(font/Pretendard-ExtraBold.woff) format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Pretendard;
+    src: url(font/Pretendard-Black.woff) format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 초기화 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, a, abbr, acronym, address,
+big, cite, code, del, dfn, em, img, ins, kbd, q,
+s, samp, small, strike, strong, sub, sup, tt,
+var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+{margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;}
+
+html {-webkit-text-size-adjust: 100%; -webkit-overflow-scrolling: touch; -ms-text-size-adjust: 100%; -webkit-touch-callout: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent}
+
+a {display:block; color:inherit; text-decoration:none; cursor:pointer; -webkit-tap-highlight-color: rgba(0,0,0,0);}
+a:link, a:hover, a:active, a:visited, a:any-link, a:-webkit-any-link {display:block; margin:0; padding:0; border:0; outline:0; font-size:100%; background:transparent; color:inherit; text-decoration:none; cursor:pointer;}
+
+article, aside, figcaption, figure,
+footer, header, hgroup, menu, nav, section
+{display:block;}
+
+audio,canvas,progress,video {display: inline-block; vertical-align: baseline}
+audio:not([controls]) {display: none; height: 0}
+
+blockquote, q {quotes:none}
+blockquote:before, blockquote:after, q:before, q:after {content:'';}
+
+b,strong {font-weight: 600}
+sub,sup {position: relative; font-size: .75rem; vertical-align: baseline}
+sup {top: -.3em}
+sub {bottom: -.25em}
+small {font-size: .75rem}
+
+button, input, select, textarea {margin: 0; color: inherit; vertical-align: middle; font-family: inherit; text-transform: none; appearance: none; -webkit-appearance: none; -webkit-tap-highlight-color: rgba(255,255,255,0); -moz-appearance: none; box-shadow: none}
+
+button, input[type=button], input[type=reset], input[type=submit]
+{overflow: visible; -webkit-tap-highlight-color: rgba(255,255,255,0); border: none; border-radius: 0; outline: 0; padding: 0; background: 0 0; vertical-align: middle; cursor: pointer}
+button[disabled], input[disabled] {cursor: default}
+button::-moz-focus-inner, input::-moz-focus-inner {padding: 0; border: 0}
+
+input {line-height: normal; border: none; outline: 0; caret-color: #505050}
+input[type=search] {box-sizing: content-box; -webkit-appearance: textfield; -webkit-box-sizing: content-box; -moz-box-sizing: content-box}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{height: auto; margin: 0; -webkit-appearance: none}
+input[type=checkbox]::-ms-check {border: none; outline: 0}
+input::-ms-clear {display: none}
+input::placeholder {color: #A0A0A0;}
+select {outline: 0}
+select::-ms-expand {display: none}
+
+textarea {overflow: auto; vertical-align: baseline; caret-color: #505050;}
+textarea::placeholder {color: #A0A0A0;}
+
+fieldset {min-width: 0; margin: 0; padding: 0; border: none; outline: 0}
+legend {margin: 0; padding: 0; border: 0}
+
+nav, ul, ol, li {list-style:none;}
+
+table {border-collapse:collapse; border-spacing:0;}
+td,th {padding: 0}
+
+img {border: 0; -ms-interpolation-mode: bicubic}
+
+*{margin:0; padding:0;}
+
+.hidden {display:none!important;}
+.blind{position:absolute; clip:rect(0 0 0 0); width:1px; height:1px; margin:-1px; overflow:hidden;}
+
+html,body{background-color: #FFFFFF; color: #505050; font-family: Pretendard; font-size: 16px; font-weight: 400; overflow-x: hidden;}
+
+/* h3 */
+h1{position: relative; width:100%; height: auto; line-height: 42px; color: #131313; font-size: 42px; font-weight: 600;}
+h2{position: relative; width:100%; height: auto; line-height: 32px; color: #131313; font-size: 32px; font-weight: 600;}
+h3{position: relative; width:100%; height: auto; line-height: 24px; color: #131313; font-size: 24px; font-weight: 600;}
+@media all and (max-width: 1023px) {
+    h1{line-height: 26px; font-size: 26px;}
+    h2{line-height: 23px; font-size: 23px;}
+    h3{line-height: 20px; font-size: 20px;}
+}
+
+/* 탭 - 네임택 디자인 */
+.tabCategoryTag{position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-end;}
+.tabCategoryTag .tct{position:relative; width: 200px;}
+.tabCategoryTag .tctRadio{position: absolute; top: 0; right: 0; bottom: 0; left: 0; display: block; background: transparent; border: none; outline: none; appearance: none; -moz-appearance: none; -webkit-appearance: none; cursor: pointer;}
+.tabCategoryTag .tctRadio + .tctLabel{display:block; width: 100%; height: 48px; line-height: 48px; background: transparent; border-bottom: 2px solid #0F1838; color: #707070; font-size: 16px; text-align: center; letter-spacing: -0.5px;}
+.tabCategoryTag .tctRadio:checked + .tctLabel{background: #0F1838; border-radius: 12px 12px 0 0; color: #FFFFFF; font-weight: 600;}
+@media all and (max-width: 1023px) {
+    .tabCategoryTag{width: 100%;}
+    .tabCategoryTag .tct{width: 33.33%;}
+    .tabCategoryTag .tctRadio + .tctLabel{height: 45px; line-height: 45px; font-size: 14px;}
+}
+
+/* 라디오 - 원형 체크 디자인 */
+.setRadioCheck{position: relative; width: 100%; height: auto;}
+.setRadioCheck .inputRadioCheck{position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 10; width: 100%; height: 100%; opacity: 0;}
+.setRadioCheck .labelRadioCheck{display: block; position: relative; width:100%; height: auto;}
+.setRadioCheck .labelRadioCheck .iconRadioCheck{width: 16px; height: 16px; vertical-align: top;}
+.setRadioCheck .labelRadioCheck .iconRadioCheck rect{fill: none;}
+.setRadioCheck .labelRadioCheck .iconRadioCheck circle{fill: none; stroke: #E8E8E8; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1px;}
+.setRadioCheck .labelRadioCheck .iconRadioCheck path{fill: none; stroke: #fff; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1px;}
+.setRadioCheck .inputRadioCheck:checked + .labelRadioCheck .iconRadioCheck circle{fill: #0F1838; stroke: none;}
+
+/* 셀렉트 */
+.selectBox{display: inline-block; vertical-align: top; position: relative;}
+.selectBox .optionSelected{position: relative; width: 100%; height: auto; line-height: 28px; padding: 20px 0; color: #131313; font-size: 24px; font-weight: 600;}
+.selectBox .iconSelected{display: inline-block; vertical-align: top; width: 28px; height: 28px;}
+.selectBox select{position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; color: #131313; font-size: 24px; font-weight: 600; opacity: 0;}
+.selectBox select option{ color: #131313; font-size: 24px; font-weight: 600;}
+@media all and (max-width: 1023px) {
+    .selectBox .optionSelected{font-size: 20px;}
+}
+
+/* 리스트 없음 */
+.listNone{position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 150px 0;}
+.listNone .iconListNone{width: 40px; height: 40px;}
+.listNone .iconListNone .cls-1,.listNone .iconListNone .cls-4 {fill: none;}
+.listNone .iconListNone .cls-1{stroke: #909090; stroke-linecap: round; stroke-width: 2.5px;}
+.listNone .iconListNone .cls-2{fill: #909090;}
+.listNone .iconListNone .cls-3{stroke: none;}
+.listNone .txtListNone{margin-top:15px; color: #909090; font-size: 20px;}
+
+/* 페이지 네비 */
+.areaPagination{position: relative; display: flex; flex-direction: row; justify-content: center; align-items: center;}
+.areaPagination .btnPagination{display: flex; justify-content: center; align-items: center; width: 30px; height: 30px; border: none; background: transparent; outline: none;}
+.areaPagination .btnPagination .cls-1{fill: #0F1838;}
+.areaPagination .btnPagination:disabled .cls-1{fill: #d8d8d8;}
+.areaPagination .firstPage svg{width: 12.2px; height: 9.4px;}
+.areaPagination .prePage svg{width: 6.1px; height: 9.4px;}
+.areaPagination .nextPage svg{width: 6.1px; height: 9.4px;}
+.areaPagination .lastPage svg{width: 12.2px; height: 9.4px;}
+.areaPagination .numberOfPage{position: relative;}
+.areaPagination .numberOfPage .btnNumber{width: 30px; height: 30px; color: #707070; font-size: 16px; border: none; background: transparent; outline: none; text-align: center;}
+.areaPagination .numberOfPage .btnNumber.active{background: #0F1838; color: #fff; font-weight: 600;}
+
+/* 풋터 */
+footer{position: relative; width: 100%; height: auto; padding: 30px 0 50px 0; background-color: #F0F0F0;}
+footer .sectionTerms{position: relative; width: 1080px; margin: 0 auto 30px auto;}
+footer .sectionTerms .linkTerms{display: inline-block; vertical-align: top; line-height: 12px; margin: 7px 0; padding: 0 15px; border-right: 1px solid #D0D0D0; color: #505050; font-size: 12px;}
+footer .sectionTerms .linkTerms:last-child{border-right: none;}
+footer .sectionFooterInfo{position: relative; width: 1080px; margin: 0 auto; padding: 0 15px; box-sizing: border-box;}
+footer .sectionFooterInfo .companyName{position: relative; width: 100%; height:auto; line-height: 16px; margin-bottom: 10px; color: #505050; font-size: 12px;}
+footer .sectionFooterInfo .companyName .iconUnfold,
+footer .sectionFooterInfo .companyName .iconFold{display: inline-block; vertical-align: top; width: 16px; height: 16px;}
+footer .sectionFooterInfo .companyName .iconUnfold rect,
+footer .sectionFooterInfo .companyName .iconFold rect{fill: none;}
+footer .sectionFooterInfo .companyName .iconUnfold path,
+footer .sectionFooterInfo .companyName .iconFold path{fill: none; stroke: #505050; stroke-width: 1;}
+footer .sectionFooterInfo .companyNotice{position: relative; width: 100%; height:auto; line-height: 16px; color: #A0A0A0; font-size: 12px;}
+footer .sectionFooterInfo .companyInfo{position: relative; width: 100%; height:auto; margin: 30px 0; color: #A0A0A0; font-size: 12px;}
+footer .sectionFooterInfo .dlInfo{position: relative; width: 100%; height:auto;}
+footer .sectionFooterInfo .dtInfo{position: absolute; top: 0; left: 0; width: 120px; height:auto; line-height: 16px; padding: 3px 0; color: #A0A0A0; font-size: 12px;}
+footer .sectionFooterInfo .ddInfo{width: 100%; height:auto; line-height: 16px; padding: 3px 0 3px 120px; box-sizing: border-box; color: #A0A0A0; font-size: 12px;}
+footer .sectionFooterInfo .allRights{width: 100%; height:auto; line-height: 16px; color: #A0A0A0; font-size: 12px;}
+@media all and (max-width: 1023px) {
+    footer .sectionTerms{position: relative; width: 100%; margin: 0 auto 30px auto;}
+    footer .sectionTerms .lineTerms{margin-bottom: 10px;}
+    footer .sectionFooterInfo{width: 100%;}
+    footer .sectionFooterInfo .companyNotice{word-break: keep-all;}
+    footer .sectionFooterInfo .ddInfo{word-break: keep-all;}
+}
+
+/* 데이트피커 */
+.areaDatepicker{
+    padding: 12px 0;
+}
+.mx-datepicker {
+    position: relative;
+    display: inline-block;
+    width: 210px
+}
+
+.mx-datepicker svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: -.15em;
+    fill: currentColor;
+    overflow: hidden
+}
+
+.mx-datepicker-range {
+    width: 320px
+}
+
+.mx-datepicker-inline {
+    width: auto
+}
+
+.mx-input-wrapper {
+    position: relative
+}
+
+.mx-input-wrapper .mx-icon-clear {
+    display: none
+}
+
+.mx-input-wrapper:hover .mx-icon-clear {
+    display: block
+}
+
+.mx-input-wrapper:hover .mx-icon-clear + .mx-icon-calendar {
+    display: none
+}
+
+.mx-input {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 34px;
+    padding: 6px 30px 6px 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
+}
+
+.mx-input:focus, .mx-input:hover {
+    border-color: #409aff
+}
+
+.mx-input.disabled, .mx-input:disabled {
+    color: #ccc;
+    background-color: #f3f3f3;
+    border-color: #ccc;
+    cursor: not-allowed
+}
+
+.mx-input:focus {
+    outline: none
+}
+
+.mx-input::-ms-clear {
+    display: none
+}
+
+.mx-icon-calendar, .mx-icon-clear {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 16px;
+    line-height: 1;
+    color: rgba(0, 0, 0, .5);
+    vertical-align: middle
+}
+
+.mx-icon-clear {
+    cursor: pointer
+}
+
+.mx-icon-clear:hover {
+    color: rgba(0, 0, 0, .8)
+}
+
+.mx-datepicker-main {
+    font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
+    color: #73879c;
+    background-color: #fff;
+    border: 1px solid #e8e8e8
+}
+
+.mx-datepicker-popup {
+    position: absolute;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    z-index: 2001
+}
+
+.mx-datepicker-sidebar {
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100px;
+    padding: 6px;
+    overflow: auto
+}
+
+.mx-datepicker-sidebar + .mx-datepicker-content {
+    margin-left: 100px;
+    border-left: 1px solid #e8e8e8
+}
+
+.mx-datepicker-body {
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.mx-btn-shortcut {
+    display: block;
+    padding: 0 6px;
+    line-height: 24px
+}
+
+.mx-range-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+@media (max-width: 750px) {
+    .mx-range-wrapper {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column
+    }
+}
+
+.mx-datepicker-header {
+    padding: 6px 8px;
+    border-bottom: 1px solid #e8e8e8
+}
+
+.mx-datepicker-footer {
+    padding: 6px 8px;
+    text-align: right;
+    border-top: 1px solid #e8e8e8
+}
+
+.mx-calendar {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 248px;
+    padding: 6px 12px
+}
+
+.mx-calendar + .mx-calendar {
+    border-left: 1px solid #e8e8e8
+}
+
+.mx-calendar-header, .mx-time-header {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    overflow: hidden
+}
+
+.mx-btn-icon-double-left, .mx-btn-icon-left {
+    float: left
+}
+
+.mx-btn-icon-double-right, .mx-btn-icon-right {
+    float: right
+}
+
+.mx-calendar-header-label {
+    font-size: 14px
+}
+
+.mx-calendar-decade-separator {
+    margin: 0 2px
+}
+
+.mx-calendar-decade-separator:after {
+    content: "~"
+}
+
+.mx-calendar-content {
+    position: relative;
+    height: 224px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.mx-calendar-content .cell {
+    cursor: pointer
+}
+
+.mx-calendar-content .cell:hover {
+    color: #73879c;
+    background-color: #f3f9fe
+}
+
+.mx-calendar-content .cell.active {
+    color: #fff;
+    background-color: #1284e7
+}
+
+.mx-calendar-content .cell.hover-in-range, .mx-calendar-content .cell.in-range {
+    color: #73879c;
+    background-color: #dbedfb
+}
+
+.mx-calendar-content .cell.disabled {
+    cursor: not-allowed;
+    color: #ccc;
+    background-color: #f3f3f3
+}
+
+.mx-calendar-week-mode .mx-date-row {
+    cursor: pointer
+}
+
+.mx-calendar-week-mode .mx-date-row:hover {
+    background-color: #f3f9fe
+}
+
+.mx-calendar-week-mode .mx-date-row.mx-active-week {
+    background-color: #dbedfb
+}
+
+.mx-calendar-week-mode .mx-date-row .cell.active, .mx-calendar-week-mode .mx-date-row .cell:hover {
+    color: inherit;
+    background-color: transparent
+}
+
+.mx-week-number {
+    opacity: .5
+}
+
+.btnDatepicker{
+    height: 34px;
+    line-height: 1.4;
+    padding: 6px 12px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    background-color: #0F1838;
+    font-size: 14px;
+    font-weight: 600;
+}
+@media all and (max-width: 1023px) {
+    .areaDatepicker{width: 100%; padding: 20px 75px 20px 20px; box-sizing: border-box;}
+    .mx-datepicker-range{width: 100%;}
+    .btnDatepicker{position: absolute; top: 20px; right: 20px;}
+}
+
+/* 팝업 */
+.popUp{display: table; position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 5000; width: 100%; height: 100%; background: rgba(0,0,0,0.7);}
+.popUp .popCenter{display: table-cell; vertical-align: middle;}
+.popUp .popBg{position: relative; width: 340px; height: auto; margin: 0 auto; background-color: #FFFFFF; border-radius: 5px; overflow: hidden;}
+.popUp .btnPopClose{position: absolute; top: 0; right: 0; z-index: 10; width: 60px; height: 60px; line-height: 50px; text-align: center;}
+.popUp .btnPopClose .iconClose{width: 20px; height: 20px; vertical-align: top; margin-top: 15px;}
+.popUp .btnPopClose .iconClose rect{fill: none;}
+.popUp .btnPopClose .iconClose line{stroke: #131313; stroke-linecap: round; stroke-miterlimit: 4; stroke-width: 2px;}
+.popUp .popBg h1{position: relative; width: 100%; height: 60px; line-height: 60px; padding: 0 60px; box-sizing: border-box; color: #131313; font-size: 18px; font-weight: 700; text-align: center;}
+.popUp .popBg .sectionFull,
+.popUp .popBg .sectionHalf{box-shadow: none; border-top: 1px solid #EAEAEA;}
+.popUp .popBg .setFull .btnFull{height: 45px; line-height: 45px; font-size: 16px;}
+.popUp .popBg .setHalf .btnHalf{height: 45px; line-height: 45px; font-size: 16px;}
+
+/* 풀 버튼 */
+.sectionFull{position: relative; width: 100%; height: auto; padding: 10px 20px; box-sizing: border-box; background-color: #FFFFFF; box-shadow: 0 -1px 4px rgba(0,0,0,12%);}
+.setFull{position: relative; width: 100%; height: auto;}
+.setFull .btnFull{display: block; width: 100%; height: 50px; line-height: 50px; border-radius: 5px; background-color: #0F1838; color: #FFFFFF; font-size: 18px; font-weight: 600; text-align: center;}
+.setFull .btnFull:disabled{background-color: #F5F5F5; color: #A0A0A0;}
+
+/* 반 버튼 */
+.sectionHalf{position: relative; width: 100%; height: auto; padding: 10px 20px; box-sizing: border-box; background-color: #FFFFFF; box-shadow: 0 -1px 4px rgba(0,0,0,12%);}
+.sectionHalf:after{content: ""; display: block; clear: both;}
+.setHalf{position: relative; width: 50%; height: auto; box-sizing: border-box;}
+.setHalf:first-of-type{float: left; padding-right: 5px;}
+.setHalf:last-of-type{float: right; padding-left: 5px;}
+.sectionHalf .btnHalf{display: block; width: 100%; height: 50px; border-radius: 5px; font-size: 18px; font-weight: 700; text-align: center;}
+.sectionHalf .borderMain{line-height: 48px; border: 1px solid #0F1838; background-color: #FFFFFF;}
+.sectionHalf .bgMain{line-height: 50px; background-color: #0F1838; color: #FFFFFF;}
+
+/* 광고신청 접수 팝업 */
+#applyAd .sectionApplyInfo{position: relative; padding: 5px 20px 25px 20px; box-sizing: border-box;}
+#applyAd .titleApplyInfo{position: relative; margin-bottom: 15px; font-size: 16px; font-weight: 700;}
+#applyAd .inputApplyInfo{position: relative; width:100%; height: auto; margin-bottom: 10px;}
+#applyAd .inputApplyInfo input{position: relative; display: block; width:100%; line-height: 14px; padding: 13px 15px; border: 1px solid #D8D8D8; border-radius: 5px; box-sizing: border-box; background: #FFFFFF; color: #505050; font-size: 14px;}
+#applyAd .inputApplyInfo input:focus, .areaLogin .inputLogin input:valid{border-color: #0F1838; outline: none;}
+#applyAd .inputApplyInfo label{position: absolute; top: 14px; left: 15px; line-height: 14px; color: #909090; font-size: 14px; pointer-events:none;}
+#applyAd .inputApplyInfo input:focus + label, .areaLogin .inputLogin input:valid + label{display: none;}
+#applyAd .ulNotice{width: 100%; height: auto; margin-top: 15px;}
+#applyAd .ulNotice .liNotice{position: relative; width: 100%; height: auto; line-height: 16px; margin-bottom: 5px; padding-left: 12px; box-sizing: border-box; color: #A0A0A0; font-size: 12px;}
+#applyAd .ulNotice .liNotice:last-of-type{margin-bottom: 0;}
+#applyAd .ulNotice .liNotice .dot{position: absolute; top: 0; left: 0; line-height: 16px;}
+
+/* 광고 다시 시작하기 팝업 */
+#againAd .sectionAgainAd{position: relative; padding: 5px 20px 25px 20px; box-sizing: border-box;}
+#againAd .titleAgainAd{position: relative; margin-bottom: 15px; font-size: 16px; font-weight: 700;}
+#againAd .areaStore{position: relative; width: 100%; margin-bottom: 20px; padding: 12px 12px 12px 74px; border: 1px solid #0F1838; border-radius: 5px; box-sizing: border-box; background-color: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,0.2);}
+#againAd .areaStore .photoStore{position: absolute; top: 50%; left: 12px; width: 50px; height: 50px; border-radius: 5px; background-color: #F8F8F8; overflow: hidden; transform: translateY(-50%);}
+#againAd .areaStore .photoStore img{width:100%; height:100%; object-fit: cover;}
+#againAd .areaStore .infoStore .name{line-height: 20px; color: #131313; font-size: 16px; font-weight: 600;}
+#againAd .areaStore .infoStore .space{display: inline-block; line-height: 14px; margin-top: 5px; padding: 3px 7px; border-radius: 5px; background-color: #F0F0F0; color: #505050; font-size: 12px;}
+#againAd .areaDateRange{position: relative; width: 100%; height: auto; margin-bottom: 20px;}
+#againAd .areaDateRange:after{content: ""; display: block; clear: both;}
+#againAd .areaDateRange .mx-datepicker{float: left; width: 140px;}
+#againAd .areaDateRange .dash{float: left; width: 20px; line-height: 34px; text-align: center}
+#againAd .ulNotice{width: 100%; height: auto; margin-top: 15px; clear: both;}
+#againAd .ulNotice .liNotice{position: relative; width: 100%; height: auto; line-height: 16px; margin-bottom: 5px; padding-left: 12px; box-sizing: border-box; color: #A0A0A0; font-size: 12px;}
+#againAd .ulNotice .liNotice:last-of-type{margin-bottom: 0;}
+#againAd .ulNotice .liNotice .dot{position: absolute; top: 0; left: 0; line-height: 16px;}
+

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>배달긱 파트너센터</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta data-hid="description" name="description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" type="image/x-icon" href="https://partner.baedalgeek.kr//favicon.ico">
+    <link rel="stylesheet" type="text/css" href="assets/css/partnerDefault.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/partnerOrder.css">
+</head>
+<body>
+<div class="basicPreOrder">
+    <h1>
+        예약내역
+        <button class="btnMobileCalendar">달력 접기</button>
+    </h1>
+    <section class="sectionCalendar"><!-- 달력 접기 클릭시 fold 클래스 추가 -->
+        <div class="areaCalendar">
+            <div class="calendar-header">
+                <button type="button" class="btn-icon-left">
+                    <svg>
+                        <g>
+                            <rect width="16" height="16"/>
+                            <path d="M9.74,11.98L5.5,7.75,9.74,3.5"/>
+                        </g>
+                    </svg>
+                </button>
+                <button type="button" class="btn-icon-right">
+                    <svg>
+                        <g>
+                            <rect width="16" height="16"/>
+                            <path d="M6.26,11.98l4.24-4.24L6.26,3.5"/>
+                        </g>
+                    </svg>
+                </button>
+                <span class="calendar-header-label">
+                    <button type="button" class="btn-current-year">2023년</button>
+                    <button type="button" class="btn-current-month">1월</button>
+                </span>
+            </div>
+            <div class="calendar-content">
+                <table class="table-date">
+                    <thead>
+                    <tr>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                        <th>토</th>
+                        <th>일</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="date-row">
+                        <td class="cell not-current-month">
+                            <div class="date"></div>
+                        </td>
+                        <td class="cell not-current-month">
+                            <div class="date"></div>
+                        </td>
+                        <td class="cell not-current-month">
+                            <div class="date"></div>
+                        </td>
+                        <td class="cell not-current-month">
+                            <div class="date"></div>
+                        </td>
+                        <td class="cell not-current-month">
+                            <div class="date"></div>
+                        </td>
+                        <td class="cell not-current-month">
+                            <div class="date"></div>
+                        </td>
+                        <td class="cell disabled">
+                            <div class="date">1</div>
+                        </td>
+                    </tr>
+                    <tr class="date-row">
+                        <td class="cell disabled">
+                            <div class="date">2</div>
+                        </td>
+                        <td class="cell disabled">
+                            <div class="date">3</div>
+                        </td>
+                        <td class="cell disabled">
+                            <div class="date">4</div>
+                        </td>
+                        <td class="cell disabled">
+                            <div class="date">5</div>
+                        </td>
+                        <td class="cell disabled">
+                            <div class="date">6</div>
+                        </td>
+                        <td class="cell disabled">
+                            <div class="date">7</div>
+                        </td>
+                        <td class="cell disabled">
+                            <div class="date">8</div>
+                        </td>
+                    </tr>
+                    <tr class="date-row">
+                        <td class="cell disabled">
+                            <div class="date">9</div>
+                        </td>
+                        <td class="cell disabled">
+                            <div class="date">10</div>
+                        </td>
+                        <td class="cell disabled">
+                            <div class="date">11</div>
+                        </td>
+                        <td class="cell disabled">
+                            <div class="date">12</div>
+                        </td>
+                        <td class="cell in-range active">
+                            <div class="date">13</div>
+                            <div class="preOrder">81건</div>
+                        </td>
+                        <td class="cell in-range">
+                            <div class="date">14</div>
+                            <div class="preOrder">20건</div>
+                        </td>
+                        <td class="cell in-range">
+                            <div class="date">15</div>
+                            <div class="preOrder">21건</div>
+                        </td>
+                    </tr>
+                    <tr class="date-row">
+                        <td class="cell in-range">
+                            <div class="date">16</div>
+                            <div class="preOrder">172건</div>
+                        </td>
+                        <td class="cell in-range">
+                            <div class="date">17</div>
+                            <div class="preOrder">45건</div>
+                        </td>
+                        <td class="cell in-range">
+                            <div class="date">18</div>
+                            <div class="preOrder">45건</div>
+                        </td>
+                        <td class="cell in-range">
+                            <div class="date">19</div>
+                        </td>
+                        <td class="cell in-range">
+                            <div class="date">20</div>
+                            <div class="preOrder">13건</div>
+                        </td>
+                        <td class="cell in-range">
+                            <div class="date">21</div>
+                        </td>
+                        <td class="cell in-range">
+                            <div class="date">22</div>
+                            <div class="preOrder">2건</div>
+                        </td>
+                    </tr>
+                    <tr class="date-row">
+                        <td class="cell in-range">
+                            <div class="date">23</div>
+                        </td>
+                        <td class="cell in-range">
+                            <div class="date">24</div>
+                        </td>
+                        <td class="cell in-range">
+                            <div class="date">25</div>
+                        </td>
+                        <td class="cell in-range">
+                            <div class="date">26</div>
+                        </td>
+                        <td class="cell in-range">
+                            <div class="date">27</div>
+                        </td>
+                        <td class="cell in-range">
+                            <div class="date">28</div>
+                        </td>
+                        <td class="cell in-range">
+                            <div class="date">29</div>
+                        </td>
+                    </tr>
+                    <tr class="date-row">
+                        <td class="cell in-range">
+                            <div class="date">30</div>
+                        </td>
+                        <td class="cell in-range">
+                            <div class="date">31</div>
+                        </td>
+                        <td class="cell not-current-month">
+                            <div class="date"></div>
+                        </td>
+                        <td class="cell not-current-month">
+                            <div class="date"></div>
+                        </td>
+                        <td class="cell not-current-month">
+                            <div class="date"></div>
+                        </td>
+                        <td class="cell not-current-month">
+                            <div class="date"></div>
+                        </td>
+                        <td class="cell not-current-month">
+                            <div class="date"></div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="areaTotal">
+            <div class="textTotal">총<span class="total">138</span>건</div>
+            <div class="textTotalDetail">
+                <span class="detail">아메리카노 80건</span>
+                <span class="detail">돼지바 10건</span>
+                <span class="detail">뽀도 15건</span>
+                <span class="detail">헤이즐넛 아메리카노 3건</span>
+                <span class="detail">전대 전용 6구 랜덤 3건</span>
+                <span class="detail">마카롱15구 1건</span>
+                <span class="detail">녹차라떼 3건</span>
+                <span class="detail">한라봉에이드 5건</span>
+                <span class="detail">바닐라라떼 10건</span>
+                <span class="detail">패션후루츠에이드 1건</span>
+                <span class="detail">복숭아아이스티 7건</span>
+            </div>
+        </div>
+        <div class="areaTotal">
+            <div class="textTotal">2023-01-13<span class="total">15</span>건</div>
+            <div class="textTotalDetail">
+                <span class="detail">아메리카노 3건</span>
+                <span class="detail">돼지바 1건</span>
+                <span class="detail">뽀도 5건</span>
+                <span class="detail">마카롱15구 1건</span>
+                <span class="detail">한라봉에이드 5건</span>
+            </div>
+        </div>
+    </section>
+    <section class="sectionList">
+        <div class="orderFilter">
+            <div class="orderFilterCampus">
+                <label for="campusSelect" class="campusSelectLabel">캠퍼스</label> <select id="campusSelect" class="campusSelectOptions">
+                    <option>전체보기</option>
+                    <option>광주과학기술원</option>
+                    <option>첨단</option>
+                </select>
+            </div>
+            <div class="orderFilterTimeBelt">
+                <label for="timeBeltSelect" class="timeBeltSelectLabel">배달시간</label>
+                <select id="timeBeltSelect" class="timeBeltSelectOptions">
+                    <option>전체보기</option>
+                    <option>(지스트)점심1</option>
+                    <option>(지스트)점심2</option>
+                    <option>(지스트)저녁1</option>
+                    <option>(지스트)저녁2</option>
+                </select>
+            </div>
+        </div>
+        <div class="orderList">
+            <div class="orderItem">
+                <div class="orderCheckbox" style="display: none;">
+                    <input type="checkbox" id="checkBtn" class="checkBtn">
+                    <label for="checkBtn"></label>
+                </div>
+                <div class="orderDetails">
+                    <div class="orderDetail1">
+                        <div class="orderStandby">접수완료</div>
+                        <div class="orderCampus">전남대학교</div>
+                        <div class="orderTimeBelt">저녁1</div>
+                    </div>
+                    <div class="orderDetail2">
+                        <div class="orderMenu">매콤치즈알밥</div>
+                        <div class="orderMenuChoice">곱배기</div>
+                    </div>
+                    <div class="orderDetail3">
+                        <div class="orderOption">
+                            옵셥 [ 계란후라이 추가, 콜라 추가 ]
+                        </div>
+                    </div>
+                    <div class="orderDetail4">
+                        <div>
+                            <span class="orderKey">주문번호</span>
+                            <span class="orderValue">945456</span>
+                        </div>
+                        <div>
+                            <span class="orderKey">수령장소</span>
+                            <span class="orderValue">학사기숙사(B동)</span>
+                        </div>
+                        <div>
+                            <span class="orderKey">주문자명</span>
+                            <span class="orderValue">임동규 [ 050413659549 ]</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="orderButtons">
+                    <button class="btnConfirm" style="display: none;">주문 접수</button>
+                    <button class="btnCancel" style="display: none;">주문 취소</button>
+                </div>
+            </div>
+            <div class="orderItem">
+                <div class="orderCheckbox" style="display: none;">
+                    <input type="checkbox" id="checkBtn" class="checkBtn">
+                    <label for="checkBtn"></label>
+                </div>
+                <div class="orderDetails">
+                    <div class="orderDetail1">
+                        <div class="orderStandby">접수완료</div>
+                        <div class="orderCampus">광주과학기술원</div>
+                        <div class="orderTimeBelt">(지스트)저녁1</div>
+                    </div>
+                    <div class="orderDetail2">
+                        <div class="orderMenu">스팸 철판볶음밥</div>
+                        <div class="orderMenuChoice"></div>
+                    </div>
+                    <div class="orderDetail4">
+                        <div>
+                            <span class="orderKey">주문번호</span>
+                            <span class="orderValue">945445</span>
+                        </div>
+                        <div>
+                            <span class="orderKey">수령장소</span>
+                            <span class="orderValue">대학원기숙사(중앙)</span>
+                        </div>
+                        <div>
+                            <span class="orderKey">주문자명</span>
+                            <span class="orderValue">김성은 [ 050413659556 ]</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="orderButtons">
+                    <button class="btnConfirm" style="display: none;">주문 접수</button>
+                    <button class="btnCancel" style="display: none;">주문 취소</button>
+                </div>
+            </div>
+            <div class="orderItem">
+                <div class="orderCheckbox" style="display: none;">
+                    <input type="checkbox" id="checkBtn" class="checkBtn">
+                    <label for="checkBtn"></label>
+                </div>
+                <div class="orderDetails">
+                    <div class="orderDetail1">
+                        <div class="orderStandby">접수완료</div>
+                        <div class="orderCampus">광주과학기술원</div>
+                        <div class="orderTimeBelt">(지스트)저녁1</div>
+                    </div>
+                    <div class="orderDetail2">
+                        <div class="orderMenu">스팸 철판볶음밥</div>
+                        <div class="orderMenuChoice"></div>
+                    </div>
+                    <div class="orderDetail4">
+                        <div>
+                            <span class="orderKey">주문번호</span>
+                            <span class="orderValue">945445</span>
+                        </div>
+                        <div>
+                            <span class="orderKey">수령장소</span>
+                            <span class="orderValue">대학원기숙사(중앙)</span>
+                        </div>
+                        <div>
+                            <span class="orderKey">주문자명</span>
+                            <span class="orderValue">김성은 [ 050413659556 ]</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="orderButtons">
+                    <button class="btnConfirm" style="display: none;">주문 접수</button>
+                    <button class="btnCancel" style="display: none;">주문 취소</button>
+                </div>
+            </div>
+            <div class="orderItem">
+                <div class="orderCheckbox" style="display: none;">
+                    <input type="checkbox" id="checkBtn" class="checkBtn">
+                    <label for="checkBtn"></label>
+                </div>
+                <div class="orderDetails">
+                    <div class="orderDetail1">
+                        <div class="orderStandby">접수완료</div>
+                        <div class="orderCampus">광주과학기술원</div>
+                        <div class="orderTimeBelt">(지스트)저녁1</div>
+                    </div>
+                    <div class="orderDetail2">
+                        <div class="orderMenu">스팸 철판볶음밥</div>
+                        <div class="orderMenuChoice"></div>
+                    </div>
+                    <div class="orderDetail4">
+                        <div>
+                            <span class="orderKey">주문번호</span>
+                            <span class="orderValue">945445</span>
+                        </div>
+                        <div>
+                            <span class="orderKey">수령장소</span>
+                            <span class="orderValue">대학원기숙사(중앙)</span>
+                        </div>
+                        <div>
+                            <span class="orderKey">주문자명</span>
+                            <span class="orderValue">김성은 [ 050413659556 ]</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="orderButtons">
+                    <button class="btnConfirm" style="display: none;">주문 접수</button>
+                    <button class="btnCancel" style="display: none;">주문 취소</button>
+                </div>
+            </div>
+            <div class="orderItem">
+                <div class="orderCheckbox" style="display: none;">
+                    <input type="checkbox" id="checkBtn" class="checkBtn">
+                    <label for="checkBtn"></label>
+                </div>
+                <div class="orderDetails">
+                    <div class="orderDetail1">
+                        <div class="orderStandby">접수완료</div>
+                        <div class="orderCampus">광주과학기술원</div>
+                        <div class="orderTimeBelt">(지스트)저녁1</div>
+                    </div>
+                    <div class="orderDetail2">
+                        <div class="orderMenu">스팸 철판볶음밥</div>
+                        <div class="orderMenuChoice"></div>
+                    </div>
+                    <div class="orderDetail4">
+                        <div>
+                            <span class="orderKey">주문번호</span>
+                            <span class="orderValue">945445</span>
+                        </div>
+                        <div>
+                            <span class="orderKey">수령장소</span>
+                            <span class="orderValue">대학원기숙사(중앙)</span>
+                        </div>
+                        <div>
+                            <span class="orderKey">주문자명</span>
+                            <span class="orderValue">김성은 [ 050413659556 ]</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="orderButtons">
+                    <button class="btnConfirm" style="display: none;">주문 접수</button>
+                    <button class="btnCancel" style="display: none;">주문 취소</button>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btnListMore">
+            더보기 +
+        </button>
+
+        <div class="areaPagination">
+            <button class="btnPagination firstPage" disabled>
+                <svg>
+                    <g id="iconFirstPage" transform="translate(-523.9 -2921.8)">
+                        <path class="cls-1" d="M6.7,8.1,2,3.4,3.4,2,6.7,5.3,10,2l1.4,1.4Z" transform="translate(532 2919.8) rotate(90)"/>
+                        <path class="cls-1" d="M6.7,8.1,2,3.4,3.4,2,6.7,5.3,10,2l1.4,1.4Z" transform="translate(538.1 2919.8) rotate(90)"/>
+                    </g>
+                </svg>
+            </button>
+            <button class="btnPagination prePage" disabled>
+                <svg>
+                    <g id="iconPrePage" transform="translate(-555.9 -2921.8)">
+                        <path class="cls-1" d="M6.7,8.1,2,3.4,3.4,2,6.7,5.3,10,2l1.4,1.4Z" transform="translate(564 2919.8) rotate(90)"/>
+                    </g>
+                </svg>
+            </button>
+            <div class="numberOfPage">
+                <button class="btnNumber active">1</button>
+                <button class="btnNumber">2</button>
+                <button class="btnNumber">3</button>
+                <button class="btnNumber">4</button>
+                <button class="btnNumber">5</button>
+            </div>
+            <button class="btnPagination nextPage">
+                <svg>
+                    <g id="iconNextPage" transform="translate(-631.9 -2921.8)">
+                        <path class="cls-1" d="M6.7,8.1,2,3.4,3.4,2,6.7,5.3,10,2l1.4,1.4Z" transform="translate(629.9 2933.2) rotate(-90)"/>
+                    </g>
+                </svg>
+            </button>
+            <button class="btnPagination lastPage">
+                <svg>
+                    <g transform="translate(-658 -2921.8)">
+                        <path class="cls-1" d="M6.7,8.1,2,3.4,3.4,2,6.7,5.3,10,2l1.4,1.4Z" transform="translate(656 2933.2) rotate(-90)"/>
+                        <path class="cls-1" d="M6.7,8.1,2,3.4,3.4,2,6.7,5.3,10,2l1.4,1.4Z" transform="translate(662.1 2933.2) rotate(-90)"/>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

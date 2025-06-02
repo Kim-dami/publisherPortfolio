@@ -1,0 +1,140 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : partnerReview
+	설　명 : 리뷰관리
+	클래스명 : 카멜케이스, 태그역활 + 컨텐츠내용 조합, 넘버링은 하이픈
+	작성순서 : 1. 레이아웃  2.크기/간격  3.박스모양  4.폰트  5.기타
+			position / display / float / width / height / margin / padding / border / background / font / overflow / etc...
+	메인컬러 : #0F1838
+	폰트컬러 : #131313, #505050, #707070, #909090
+	보더컬러 : #E8E8E8
+	배경컬러 : #F8F8F8, #F0F0F0
+---------------------------------------------*/
+#review{position: relative; width: 1080px; height: auto; margin: 0 auto;}
+@media all and (max-width: 1023px) {
+    #review{width: 100%;}
+}
+/* 리뷰 대시보드 */
+.sectionDashboard{position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start; width:100%; height: auto; padding: 30px 60px 0 60px; border-radius:5px; box-sizing: border-box; background-color: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.2);}
+.sectionDashboard .areaRating{position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; width: 30%;}
+.sectionDashboard .areaGraph{position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; width: 70%;}
+.sectionDashboard .ratingOfRecent{position: relative; width: 100%; height: auto;}
+.sectionDashboard .ror{position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start; width: 100%; height: auto; line-height: 24px; margin-bottom: 15px; font-size: 16px; text-align: center;}
+.sectionDashboard .ror:last-child{margin-bottom: 0;}
+.sectionDashboard .rorTitle{width: 70px; color: #505050;}
+.sectionDashboard .rorScore{width: 70px; padding-left: 10px; box-sizing: border-box; color: #505050; font-size: 24px; font-weight: 600;}
+.sectionDashboard .rorUnit{width: 35px; color: #505050;}
+.sectionDashboard .ror-1{height: 32px; line-height: 32px; font-size: 20px;}
+.sectionDashboard .ror-1 .rorTitle{height: 100%; color: #131313;}
+.sectionDashboard .ror-1 .rorScore{height: 100%; color: #131313; font-size: 32px;}
+.sectionDashboard .ror-1 .rorUnit{height: 100%; color: #131313;}
+.sectionDashboard .areaTooltip{position: relative; height: 32px; padding: 5px; box-sizing: border-box;}
+.sectionDashboard .iconToolTip{width: 22px; height: 22px;}
+.sectionDashboard .iconToolTip .cls-1{fill: none; stroke: #909090; stroke-width: 2px;}
+.sectionDashboard .iconToolTip .cls-2{fill: #909090;}
+.sectionDashboard .iconToolTip .cls-3{stroke: none;}
+.sectionDashboard .iconToolTip .cls-4{fill: none;}
+.sectionDashboard .hoverTooltip{display: none; position: absolute; top: -45px; left: -5px; width: 280px; line-height: 14px; padding: 10px 0; background-color: #909090; border-radius: 4px; color: #fff; font-size: 14px; font-weight: 400; text-align: center}
+.sectionDashboard .hoverTooltip:after{content: ""; position: absolute; bottom: -20px; left: 12px; display: block; width: 0; height: 0; border-bottom: 10px solid transparent; border-top: 10px solid #909090; border-left: 7px solid transparent; border-right: 7px solid transparent;}
+.sectionDashboard .areaTooltip:hover .hoverTooltip{display: block;}
+.sectionDashboard .rorStar{position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 25px; padding-left: 20px;}
+.sectionDashboard .maskStar{position: relative; width: 30px; height: 30px; margin-right: 2px; background-color: #E8E8E8; -webkit-mask-image: url("../img/maskStar.svg"); -webkit-mask-repeat: no-repeat; -webkit-mask-size: 30px 30px; mask-image: url("../img/maskStar.svg"); mask-repeat: no-repeat; mask-size: 30px 30px;}
+.sectionDashboard .maskStar:last-child{margin-right: 0px;}
+.sectionDashboard .maskStar .rangeStar{position: absolute; top: 0; bottom: 0; left: 0; height: 100%; background-color: #FFC611;}
+.sectionDashboard .numberOfRecent{position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start; width: 100%; height: 32px; line-height: 32px; margin-bottom: 15px; font-size: 20px; text-align: center;}
+.sectionDashboard .norTitle{height: 100%; margin-right: 20px; color: #131313;}
+.sectionDashboard .norScore{height: 100%; margin-right: 10px; color: #131313; font-size: 32px; font-weight: 600;}
+.sectionDashboard .norUnit{height: 100%; color: #131313;}
+.sectionDashboard .graph{position: relative; top: -18px; left: -45px; width: 100%; height: 300px;}
+@media all and (max-width: 1023px) {
+    .selectBox{margin-left: 20px;}
+    .sectionDashboard{flex-direction: column; padding: 20px 20px 0 20px; border-radius: 0px;}
+    .sectionDashboard .areaRating{width: 100%;}
+    .sectionDashboard .areaGraph{width: 100%;}
+    .sectionDashboard .ratingOfRecent{margin-bottom: 10px; padding-left: 170px; box-sizing: border-box;}
+    .sectionDashboard .ror{margin-bottom: 5px; font-size: 14px}
+    .sectionDashboard .rorTitle{width: 50px;}
+    .sectionDashboard .rorScore{width: 50px; padding-left: 10px; font-size: 16px;}
+    .sectionDashboard .rorUnit{width: 25px;}
+    .sectionDashboard .ror-1{position: absolute; top: 0; left: 0; width: 170px; margin-bottom: 0; font-size: 20px; text-align: left;}
+    .sectionDashboard .ror-1 .rorTitle{width: auto; margin-right: 15px;}
+    .sectionDashboard .ror-1 .rorScore{width: auto; margin-right: 5px; padding-left: 0; font-size: 24px;}
+    .sectionDashboard .ror-1 .rorUnit{width: auto; margin-right: 5px;}
+    .sectionDashboard .rorStar{position: absolute; top: 40px; left: 0; width: 170px; margin-bottom: 0; padding-left: 3px;}
+    .sectionDashboard .maskStar{width: 25px; height: 25px; mask-size: 25px 25px; -webkit-mask-size: 25px 25px;}
+    .sectionDashboard .hoverTooltip{top: -42px; left: -110px;}
+    .sectionDashboard .hoverTooltip:after{left: 118px;}
+    .sectionDashboard .numberOfRecent{font-size: 20px;}
+    .sectionDashboard .norTitle{margin-right: 15px;}
+    .sectionDashboard .norScore{margin-right: 5px; font-size: 24px;}
+    .sectionDashboard .graph{top: 0; left: 0; height: 200px;}
+}
+
+/* 리뷰 리스트 */
+.sectionReview{position: relative; width: 100%; height: auto;}
+.sectionReview .areaTab{position: relative; display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end;}
+.sectionReview .noticeDatepicker{line-height: 12px; color: #909090; font-size: 12px; padding:10px 0px 5px 10px; box-sizing: border-box;}
+.sectionReview .areaReview{position: relative; width: 100%; height: auto; margin-bottom: 50px;}
+.sectionReview .listReview{position: relative; width: 100%; height: auto; padding: 10px; box-sizing: border-box; background: #F8F8F8; margin-bottom: 25px;}
+.sectionReview .lr{position: relative; display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; width: 100%; height: auto; margin-bottom: 10px; padding: 30px; background-color: #FFFFFF; border: 1px solid #E8E8E8; border-radius: 4px; box-sizing: border-box;}
+.sectionReview .lr:last-child{margin-bottom: 0;}
+.sectionReview .lrRating{position: relative; width: 200px; height: auto;}
+.sectionReview .lrUser{width:100%; height: auto; line-height: 24px; margin-bottom: 12px; color: #131313; font-size: 18px; font-weight: 600; word-break: break-all;}
+.sectionReview .lrStar{position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; height: 20px; line-height: 20px; margin-bottom: 15px; color: #131313; font-size: 16px; font-weight: 400;}
+.sectionReview .maskStar{position: relative; width: 20px; height: 20px; margin-right: 1px; background-color: #E8E8E8; -webkit-mask-image: url("../img/maskStar.svg"); -webkit-mask-repeat: no-repeat; -webkit-mask-size: 20px 20px; mask-image: url("../img/maskStar.svg"); mask-repeat: no-repeat; mask-size: 20px 20px;}
+.sectionReview .maskStar .rangeStar{position: absolute; top: 0; bottom: 0; left: 0; height: 100%; background-color: #FFC611;}
+.sectionReview .lrScore{height: 100%; margin-left: 8px; font-weight: 600;}
+.sectionReview .lrUnit{height: 100%; margin-left: 2px;}
+.sectionReview .lrDetail{position: relative; width: 100%; height: auto; margin-bottom: 15px;}
+.sectionReview .lrd{position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start; width: 100%; height: auto; line-height: 14px; margin-bottom: 12px; font-size: 16px; font-weight: 400; text-align: center;}
+.sectionReview .lrd:last-child{margin-bottom: 0;}
+.sectionReview .lrdTitle{width: 30px; color: #505050;}
+.sectionReview .lrdScore{width: 30px; padding-left: 5px; box-sizing: border-box; color: #505050; font-weight: 600;}
+.sectionReview .lrdUnit{width: 15px; color: #505050;}
+.sectionReview .lrDate{line-height: 14px; color: #A0A0A0; font-size: 14px;}
+.sectionReview .lrContent{position: relative; width: 770px; height: auto}
+.sectionReview .lrOrder{position: relative; width: 100%; height: auto; padding-bottom: 20px; border-bottom: 1px solid #E8E8E8;}
+.sectionReview .lro{position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start; width: 100%; height: auto; line-height: 14px; margin-bottom: 12px; font-size: 14px;}
+.sectionReview .lro:last-child{margin-bottom: 0;}
+.sectionReview .lroTitle{flex-shrink: 0; width: 70px; color: #A0A0A0;}
+.sectionReview .lroBody{color: #505050;}
+.sectionReview .lrTxt{line-height: 22px; margin: 20px 0 15px 0; color: #131313;}
+.sectionReview .lrPhoto{position: relative; display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start; width: 100%; height: auto; margin-bottom: 15px;}
+.sectionReview .lrp{width: 142px; height: 142px; margin-right: 15px; overflow: hidden;}
+.sectionReview .lrp img{display: block; width: 100%; height: 100%; object-fit: cover;}
+.sectionReview .lrTextarea{display: block; width:100%; height: 120px; line-height: 20px; margin-bottom: 15px; padding: 20px; border: 1px solid #E8E8E8; border-radius: 4px; box-sizing: border-box; background: #FFFFFF; color: #505050; font-size: 14px; outline: none; resize: none;}
+.sectionReview .lrTextarea:focus{border:1px solid #B8B8B8;}
+.sectionReview .lrTextareaBtn{display: flex; flex-direction: row; justify-content: flex-end; align-items: center;}
+.sectionReview .btnCancel{display: block; width:80px; height: 37px; line-height: 35px; margin-right: 10px; border: 1px solid #0F1838; border-radius: 4px; box-sizing: border-box; background: #FFFFFF; color: #0F1838; font-size: 14px; font-weight: 600; text-align: center;}
+.sectionReview .btnRegister{display: block; width:80px; height: 37px; line-height: 37px; border-radius: 4px; box-sizing: border-box; background: #0F1838; color: #FFFFFF; font-size: 14px; font-weight: 600; text-align: center;}
+.sectionReview .lrReply{width:100%; height: auto; margin-bottom: 15px; padding: 20px; box-sizing: border-box; background: #F0F0F0; font-size: 14px}
+.sectionReview .partnerReply{line-height: 14px; margin-bottom: 5px; color: #707070;}
+.sectionReview .iconReply{display: inline-block; vertical-align: top; width: 8px; height: 8px; margin-right: 2px;}
+.sectionReview .iconReply .cls-1{fill: #707070;}
+.sectionReview .txtReply{padding-left:15px; box-sizing: border-box; color: #505050;}
+.sectionReview .btnReply{display: block; width:160px; height: 37px; line-height: 35px; border: 1px solid #0F1838; border-radius: 4px; box-sizing: border-box; background: #FFFFFF; color: #0F1838; font-size: 14px; font-weight: 600; text-align: center;}
+@media all and (max-width: 1023px) {
+    .sectionReview .areaTab{flex-direction: column-reverse; align-items: flex-start;}
+    .sectionReview .noticeDatepicker{display: none;}
+    .sectionReview .lr{flex-direction: column; justify-content: flex-start; padding: 20px;}
+    .sectionReview .lrRating{width: 100%;}
+    .sectionReview .lrUser{line-height: 16px; margin-bottom: 10px; font-size: 16px;}
+    .sectionReview .lrStar{margin-bottom: 20px;}
+    .sectionReview .lrScore{margin-left: 5px;}
+    .sectionReview .lrDetail{position: absolute; top: 30px; left: 160px; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 0;}
+    .sectionReview .lrd{width: auto; line-height: 12px; margin-right: 7px; margin-bottom: 0; font-size: 14px;}
+    .sectionReview .lrdTitle{width: auto;}
+    .sectionReview .lrdScore{width: auto; margin-right: 1px; padding-left: 3px;}
+    .sectionReview .lrdUnit{width: auto;}
+    .sectionReview .lrDate{position: absolute; top: 0; right: 0; line-height: 16px; font-size: 12px; text-align: right;}
+    .sectionReview .lrContent{width: 100%;}
+    .sectionReview .lro{margin-bottom: 6px; font-size: 12px;}
+    .sectionReview .lroTitle{width: 60px;}
+    .sectionReview .lrTxt{line-height: 20px; font-size: 14px;}
+    .sectionReview .lrp{width: 90px; height: 90px; margin-right: 10px;}
+    .sectionReview .lrTextarea{padding: 15px;}
+    .sectionReview .btnReply{width: 140px;}
+    .sectionReview .btnCancel{width: 70px; margin-right: 7px;}
+    .sectionReview .btnRegister{width: 70px;}
+    .sectionReview .lrReply{line-height: 16px; padding: 15px; font-size: 12px;}
+}
